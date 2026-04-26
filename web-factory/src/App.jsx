@@ -123,29 +123,43 @@ export default function App() {
   const [statusMsg, setStatusMsg] = useState('');
   const [loadError, setLoadError] = useState('');
 
+  const CLOUD_URL = "https://jsonblob.com/api/jsonBlob/019d9864-1f9e-7334-9063-075468551478";
+
   useEffect(() => {
-    let finalLessons = [];
-    try {
-      const saved = localStorage.getItem('repite_factory_lessons');
-      if (saved) {
-        finalLessons = JSON.parse(saved);
-      }
-      
-      if (!finalLessons || finalLessons.length === 0) {
-        finalLessons = Object.values(lessonsData).flat();
-      }
+    const init = async () => {
+      let finalLessons = [];
+      try {
+        // 1. Try Local Storage first for speed
+        const saved = localStorage.getItem('repite_factory_lessons');
+        if (saved) {
+          finalLessons = JSON.parse(saved);
+        } else {
+          // 2. If nothing in local, try Cloud
+          try {
+            const resp = await fetch(CLOUD_URL);
+            if (resp.ok) {
+              const cloudData = await resp.json();
+              if (cloudData && Array.isArray(cloudData)) finalLessons = cloudData;
+            }
+          } catch(e) { console.warn("Cloud load failed, using local json", e); }
+        }
+        
+        if (!finalLessons || finalLessons.length === 0) {
+          finalLessons = Object.values(lessonsData).flat();
+        }
 
-      // Reset states
-      const cleaned = finalLessons.map(l => ({
-        ...l,
-        sentences: (l.sentences || []).map(s => ({...s, isGenerating: false}))
-      }));
+        const cleaned = finalLessons.map(l => ({
+          ...l,
+          sentences: (l.sentences || []).map(s => ({...s, isGenerating: false}))
+        }));
 
-      setLessons(cleaned);
-      setSelectedLesson(cleaned[1]); // البدء من الدرس الثاني المليء بالبيانات
-    } catch(e) {
-      setLoadError('Error initializing: ' + e.message);
-    }
+        setLessons(cleaned);
+        setSelectedLesson(cleaned[1] || cleaned[0]);
+      } catch(e) {
+        setLoadError('Error initializing: ' + e.message);
+      }
+    };
+    init();
   }, []);
 
   const saveLessons = (all) => {
@@ -815,27 +829,46 @@ export default function App() {
             {geminiKey && <span style={{position:'absolute', right:10, top:6, fontSize:10}}>🍌</span>}
           </div>
           <button className="btn-reset" onClick={factoryReset} style={{background:'rgba(255,255,255,0.1)', color:'white', border:'1px solid rgba(255,255,255,0.2)', padding:'10px 18px', borderRadius:10, fontWeight:700, cursor:'pointer'}}>🧹 Master Clear</button>
-          <button className="btn-upload" style={{background:'white', color:'#6d28d9', padding:'10px 18px', borderRadius:10, fontWeight:800, border:'none', cursor:'pointer'}} 
+          <button className="btn-upload" style={{background:'rgba(255,255,255,0.1)', color:'white', border:'1px solid rgba(255,255,255,0.2)', padding:'10px 18px', borderRadius:10, fontWeight:700, cursor:'pointer'}} 
             onClick={async ()=>{
               setIsSyncing(true);
               try {
-                const resp = await fetch(`http://${window.location.hostname}:9009/api/save-full-library`, {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify(lessons)
-                });
+                const resp = await fetch(CLOUD_URL);
                 if (resp.ok) {
-                  setStatusMsg('✅ تم الحفظ والمزامنة بنجاح!');
-                } else {
-                  throw new Error('Save failed');
+                  const cloudData = await resp.json();
+                  setLessons(cloudData);
+                  localStorage.setItem('repite_factory_lessons', JSON.stringify(cloudData));
+                  setStatusMsg('✅ تم الجلب من السحاب بنجاح!');
                 }
               } catch (e) {
-                setStatusMsg('❌ فشل الحفظ: ' + e.message);
+                setStatusMsg('❌ فشل الجلب: ' + e.message);
               }
               setIsSyncing(false);
               setTimeout(()=>setStatusMsg(''), 4000);
             }}>
-            {isSyncing ? '⏳' : '☁'} Upload App
+            {isSyncing ? '⏳' : '☁'} Sync From Cloud
+          </button>
+          <button className="btn-upload" style={{background:'white', color:'#6d28d9', padding:'10px 18px', borderRadius:10, fontWeight:800, border:'none', cursor:'pointer'}} 
+            onClick={async ()=>{
+              setIsSyncing(true);
+              try {
+                const resp = await fetch(CLOUD_URL, {
+                  method: 'PUT',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(lessons)
+                });
+                if (resp.ok) {
+                  setStatusMsg('✅ تم الرفع للسحاب بنجاح!');
+                } else {
+                  throw new Error('Upload failed');
+                }
+              } catch (e) {
+                setStatusMsg('❌ فشل الرفع: ' + e.message);
+              }
+              setIsSyncing(false);
+              setTimeout(()=>setStatusMsg(''), 4000);
+            }}>
+            {isSyncing ? '⏳' : '🚀'} Upload App
           </button>
         </div>
       </header>
