@@ -1,0 +1,137 @@
+<resources>
+    <string name="app_name">Repite Conmigo</string>
+    
+    <!-- Register Screen -->
+    <string name="register_title">Create New Account ✨</string>
+    <string name="register_subtitle">Join us and start the learning journey</string>
+    <string name="full_name_label">Full Name</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="confirm_password_label">Confirm Password</string>
+    <string name="passwords_dont_match">Passwords do not match</string>
+    <string name="register_button">Create Account</string>
+    <string name="already_have_account">Already have an account? Log in</string>
+    <string name="error_creating_account">Error creating account</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">Welcome Back! 👋</string>
+    <string name="login_subtitle">Log in to continue your journey</string>
+    <string name="login_button">Log In</string>
+    <string name="google_login_button">Sign in with Google</string>
+    <string name="no_account_register">Don\'t have an account? Register now</string>
+    <string name="login_error">Login failed</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="learning_language">Learning Language</string>
+    <string name="accuracy_threshold">Accuracy Threshold: %1$d%%</string>
+    <string name="accuracy_description">The higher the threshold, the harder it is to pass the next phrase.</string>
+    <string name="admin_dashboard">Admin Dashboard</string>
+    <string name="lesson_management">Lesson Management (RLP Protocol)</string>
+    <string name="import_lessons">Import new lessons (.json)</string>
+    <string name="export_lessons">Export current lessons</string>
+    <string name="external_memory">External Memory and Self-Intelligence 💾</string>
+    <string name="backup_progress">Backup progress (external file)</string>
+    <string name="restore_progress">Restore progress from file</string>
+    <string name="restore_success">Data restored successfully! 🔄</string>
+    <string name="close_settings">Close Settings</string>
+    <string name="logout">Sign Out</string>
+
+    <!-- Advanced Level -->
+    <string name="advanced_title">Advanced Level</string>
+    <string name="advanced_subtitle">Advanced challenges: reading, analysis, and complex topics</string>
+    <string name="level_quizzes">Level Quizzes</string>
+    <string name="pronunciation_challenge">Advanced Pronunciation Challenge</string>
+    <string name="tf_challenge">Advanced True/False Challenge</string>
+    <string name="fill_blank_challenge">Advanced Fill-in-the-Blank Challenge</string>
+    <string name="add_custom_lesson">Add Custom Advanced Lesson</string>
+    <string name="back">Back</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_lessons">Lessons</string>
+    <string name="nav_progress">Stats</string>
+    <string name="nav_settings">Settings</string>
+    <string name="sentences_count">%1$d sentences</string>
+
+    <!-- Home Screen -->
+    <string name="app_subtitle">Master pronunciation with AI power</string>
+    <string name="accuracy_rate">Accuracy Rate</string>
+    <string name="completed_lessons">Completed Lessons: %1$d</string>
+    <string name="quick_challenge">Quick Challenge ⚡</string>
+    <string name="mcq_quiz_title">Vocabulary Quiz (MCQ)</string>
+    <string name="mcq_quiz_desc">Test your vocabulary now!</string>
+    <string name="tf_quiz_title">True or False?</string>
+    <string name="tf_quiz_desc">Test your intuition and translation!</string>
+    <string name="fill_blank_quiz_title">Fill in the Blank</string>
+    <string name="fill_blank_quiz_desc">Test your sentence building skills!</string>
+    <string name="reorder_quiz_title">Sentence Reorder</string>
+    <string name="reorder_quiz_desc">Rearrange the scrambled words correctly!</string>
+    <string name="matching_quiz_title">Word Matching</string>
+    <string name="matching_quiz_desc">Connect words with their correct meaning!</string>
+    <string name="writing_quiz_title">Writing Quiz</string>
+    <string name="writing_quiz_desc">Write the correct translation yourself!</string>
+    <string name="translate_to_spanish_title">Translate to Spanish</string>
+    <string name="translate_to_spanish_desc">Write the translation in Spanish directly!</string>
+    <string name="choose_level">Choose Your Level</string>
+    <string name="beginner_level_title">Beginner</string>
+    <string name="beginner_level_desc">Letters and Sounds</string>
+    <string name="intermediate_level_title">Intermediate</string>
+    <string name="intermediate_level_desc">Words and Phrases</string>
+    <string name="advanced_level_desc">Sentences, Grammar, and Texts</string>
+
+    <!-- Setup Profile Screen -->
+    <string name="setup_profile_title">Tell us more about you 👤</string>
+    <string name="setup_profile_subtitle">To better personalize your learning experience</string>
+    <string name="gender_label">Gender</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="age_label">Age</string>
+    <string name="country_label">Country</string>
+    <string name="mother_tongue_label">Mother Tongue</string>
+    <string name="target_language_prompt">Which language do you want to learn?</string>
+    <string name="complete_profile_button">Complete Profile</string>
+    <string name="connection_error">Connection error: Make sure Internet/Firestore is enabled</string>
+    <string name="unexpected_error">An unexpected error occurred: %1$s</string>
+    
+    <!-- Languages -->
+    <string name="lang_arabic">Arabic</string>
+    <string name="lang_english">English</string>
+    <string name="lang_spanish">Spanish</string>
+    <string name="lang_french">French</string>
+    <string name="lang_other">Other</string>
+
+    <!-- Stats Screen -->
+    <string name="stats_title">Your Stats 📊</string>
+    <string name="total_xp">Total XP</string>
+    <string name="highest_accuracy">Max Accuracy</string>
+    <string name="active_days">Active Days</string>
+    <string name="sessions">Sessions</string>
+    <string name="level_label">Level</string>
+    <string name="level_elite">Elite</string>
+    <string name="stats_motivation">Keep it up! You\'re improving every day.</string>
+    
+    <!-- UI Language -->
+    <string name="ui_language">App Language</string>
+    <string name="lang_conflict_error">Native language and learning language cannot be the same</string>
+
+    <!-- Quiz Shared -->
+    <string name="quiz_choose_correct_word">Choose the correct translation for this word 🎯</string>
+    <string name="quiz_fill_blank_instruction">Complete the blank with the correct word ✍️</string>
+    <string name="quiz_translation_label">Translation:</string>
+    <string name="check">Check</string>
+    <string name="next">Next</string>
+    <string name="quiz_true_false_instruction">Is this translation correct? ✅/❌</string>
+    <string name="true_label">True</string>
+    <string name="false_label">False</string>
+    <string name="quiz_reorder_instruction">Reorder the words to form the correct sentence 🧩</string>
+    <string name="quiz_matching_instruction">Match the words with their translations 🔗</string>
+    <string name="quiz_writing_instruction">Write the correct translation ✍️</string>
+    <string name="quiz_audio_instruction">Listen and choose the correct word 🎧</string>
+    <string name="quiz_result_correct">Brilliant answer! 🎉</string>
+    <string name="quiz_result_wrong">Unfortunately, that\'s wrong</string>
+    <string name="correct_translation_is">The correct translation is: %1$s</string>
+    <string name="well_done_next">Well done! Next</string>
+    <string name="quiz_mcq_instruction">What does this word mean?</string>
+    <string name="check_answer">Check Answer</string>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "245336262893",
+    "project_id": "repite-conmigo",
+    "storage_bucket": "repite-conmigo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245336262893:android:f2d8cbdb2e192de143a4e4",
+        "android_client_info": {
+          "package_name": "com.repite.conmigo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245336262893-m8vlvqvj35e2dklfk8n50cq6q9cnn9je.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.repite.conmigo",
+            "certificate_hash": "ec24a766a86ea88d07e941bfe96c78f88a561d16"
+          }
+        },
+        {
+          "client_id": "245336262893-d52trismp61rdfukn8h31uf33c6iuojr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjcEWZU2Y_EBPcTx5lu0Tg-y3tYKu13BQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245336262893-d52trismp61rdfukn8h31uf33c6iuojr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

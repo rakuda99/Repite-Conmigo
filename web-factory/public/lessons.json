@@ -1,0 +1,6605 @@
+{
+  "Grammar Level 📘": [
+    {
+      "id": "lesson_1771530940050_ffkeu",
+      "title": {
+        "ar-SA": "الحروف والنطق",
+        "en-US": "El Alfabeto-Intro"
+      },
+      "rawLevel": "Grammar Level 📘",
+      "icon": "🔤",
+      "color": "bg-indigo-600",
+      "sentences": []
+    },
+    {
+      "id": "lesson_1771530940051_ecn81",
+      "title": {
+        "ar-SA": "فعل \"Ser\" و \"Estar\"",
+        "en-US": "Ser vs Estar"
+      },
+      "rawLevel": "Grammar Level 📘",
+      "icon": "🆚",
+      "color": "bg-purple-600",
+      "sentences": [
+        {
+          "es": "Intro: Ser vs Estar",
+          "ar": "أهم فعلين في الإسبانية! (يجب التفريق بينهما)",
+          "imagePrompt": "Illustration of two different masks representing identity and state, flat style"
+        },
+        {
+          "es": "Ser: Usage",
+          "ar": "Ser يُستخدم للديمومة (الأصل، المهنة، الصفات الثابتة)",
+          "imagePrompt": "Illustration of a passport or ID card showing permanent identity, flat style"
+        },
+        {
+          "es": "Ser: Conjugation",
+          "ar": "Yo soy, Tú eres, Él es... (أنا أكون، أنت تكون...)",
+          "imagePrompt": "Illustration of a conjugation chart for Ser, flat style"
+        },
+        {
+          "es": "Ser: Example",
+          "ar": "Yo soy Sulaiman (أنا سليمان",
+          "imagePrompt": "Illustration of a man pointing to himself confidently, flat style"
+        },
+        {
+          "es": "Ser: Example",
+          "ar": "Ella es doctora (هي طبيبة",
+          "imagePrompt": "Illustration of a female doctor in uniform, flat style"
+        },
+        {
+          "es": "Ser: Example",
+          "ar": "Hoy es lunes. (اليوم الاثنين",
+          "imagePrompt": "Illustration of a calendar showing Monday, flat style"
+        },
+        {
+          "es": "Estar: Usage",
+          "ar": "Estar يُستخدم للمؤقت (المكان، المشاعر، الحالة)",
+          "imagePrompt": "Illustration of a mood swing or changing location pin, flat style"
+        },
+        {
+          "es": "Estar: Conjugation",
+          "ar": "Yo estoy, Tú estás, Él está... (أنا أكون حالياً...)",
+          "imagePrompt": "Illustration of a conjugation chart for Estar, flat style"
+        },
+        {
+          "es": "Estar: Example",
+          "ar": "Yo estoy cansado (أنا متعب",
+          "imagePrompt": "Illustration of a tired person with battery low icon, flat style"
+        },
+        {
+          "es": "Estar: Example",
+          "ar": "Ella está en casa (هي في المنزل",
+          "imagePrompt": "Illustration of a location pin on a house, flat style"
+        },
+        {
+          "es": "Estar: Example",
+          "ar": "Nosotros estamos felices (نحن سعداء",
+          "imagePrompt": "Illustration of happy friends jumping, flat style"
+        },
+        {
+          "es": "Vs: Comparison",
+          "ar": "Ser (دائم/هوية) vs Estar (مؤقت/حالة)",
+          "imagePrompt": "Illustration of a scale balancing permanent vs temporary, flat style"
+        },
+        {
+          "es": "Quiz: Yo ___ en casa",
+          "ar": "(estoy) لأن المكان مؤقت/موقع",
+          "imagePrompt": "Illustration of a house quiz, flat style"
+        },
+        {
+          "es": "Quiz: Ella ___ mexicana",
+          "ar": "(es) لأن الجنسية دائمة",
+          "imagePrompt": "Illustration of a Mexican flag quiz, flat style"
+        },
+        {
+          "es": "Quiz: Nosotros ___ cansados",
+          "ar": "(estamos) لأن التعب حالة مؤقتة",
+          "imagePrompt": "Illustration of a tired face quiz, flat style"
+        },
+        {
+          "es": "Quiz: Hoy ___ martes",
+          "ar": "(es) لأن الوقت يُستخدم معه Ser",
+          "imagePrompt": "Illustration of a calendar quiz, flat style"
+        },
+        {
+          "es": "Quiz: Tú ___ estudiante",
+          "ar": "(eres) لأن المهنة صفة هوية",
+          "imagePrompt": "Illustration of a student with backpack quiz, flat style"
+        }
+      ]
+    }
+  ],
+  "Primary Level 👶": [
+    {
+      "id": "lesson_1771530939987_jqv07",
+      "title": {
+        "ar-SA": "التحية والأساسيات",
+        "en-US": "Greetings & Basics"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "👋",
+      "color": "bg-blue-500",
+      "sentences": [
+        {
+          "es": "Hola",
+          "ar": "مرحباً",
+          "imagePrompt": "Illustration of Hola"
+        },
+        {
+          "es": "Adiós",
+          "ar": "وداعاً",
+          "imagePrompt": "Illustration of Adiós"
+        },
+        {
+          "es": "Por favor",
+          "ar": "لو سمحت",
+          "imagePrompt": "Illustration of Por favor"
+        },
+        {
+          "es": "Gracias",
+          "ar": "شكراً",
+          "imagePrompt": "Illustration of Gracias"
+        },
+        {
+          "es": "Sí",
+          "ar": "نعم",
+          "imagePrompt": "Illustration of Sí"
+        },
+        {
+          "es": "No",
+          "ar": "لا",
+          "imagePrompt": "Illustration of No"
+        },
+        {
+          "es": "Buenos días",
+          "ar": "صباح الخير",
+          "imagePrompt": "Illustration of Buenos días"
+        },
+        {
+          "es": "Buenas noches",
+          "ar": "تصبح على خير",
+          "imagePrompt": "Illustration of Buenas noches"
+        },
+        {
+          "es": "Bien",
+          "ar": "جيد",
+          "imagePrompt": "Illustration of Bien"
+        },
+        {
+          "es": "Mal",
+          "ar": "سيء",
+          "imagePrompt": "Illustration of Mal"
+        },
+        {
+          "es": "Hola, ¿cómo estás?",
+          "ar": "مرحباً، كيف حالك؟",
+          "imagePrompt": "Scene showing Greetings & Basics concept"
+        },
+        {
+          "es": "Buenos días, amigo.",
+          "ar": "صباح الخير يا صديقي."
+        },
+        {
+          "es": "Buenas noches, hasta mañana.",
+          "ar": "تصبح على خير، أراك غداً.",
+          "imagePrompt": "Scene showing Greetings & Basics concept"
+        },
+        {
+          "es": "Por favor, ayuda.",
+          "ar": "لو سمحت، مساعدة."
+        },
+        {
+          "es": "Gracias por todo.",
+          "ar": "شكراً على كل شيء.",
+          "imagePrompt": "Scene showing Greetings & Basics concept"
+        },
+        {
+          "es": "Sí, quiero.",
+          "ar": "نعم، أريد."
+        },
+        {
+          "es": "No, gracias.",
+          "ar": "لا، شكراً.",
+          "imagePrompt": "Scene showing Greetings & Basics concept"
+        },
+        {
+          "es": "Todo está bien.",
+          "ar": "كل شيء جيد."
+        },
+        {
+          "es": "No está mal.",
+          "ar": "ليس سيئاً.",
+          "imagePrompt": "Scene showing Greetings & Basics concept"
+        },
+        {
+          "es": "Adiós, nos vemos.",
+          "ar": "وداعاً، نلتقي لاحقاً."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939995_5psia",
+      "title": {
+        "ar-SA": "أفراد العائلة",
+        "en-US": "Family Members"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "👨‍👩‍👧",
+      "color": "bg-pink-500",
+      "sentences": [
+        {
+          "es": "Padre",
+          "ar": "أب",
+          "imagePrompt": "Illustration of Padre"
+        },
+        {
+          "es": "Madre",
+          "ar": "أم",
+          "imagePrompt": "Illustration of Madre"
+        },
+        {
+          "es": "Hermano",
+          "ar": "أخ",
+          "imagePrompt": "Illustration of Hermano"
+        },
+        {
+          "es": "Hermana",
+          "ar": "أخت",
+          "imagePrompt": "Illustration of Hermana"
+        },
+        {
+          "es": "Abuelo",
+          "ar": "جد",
+          "imagePrompt": "Illustration of Abuelo"
+        },
+        {
+          "es": "Abuela",
+          "ar": "جدة",
+          "imagePrompt": "Illustration of Abuela"
+        },
+        {
+          "es": "Tío",
+          "ar": "عم / خال",
+          "imagePrompt": "Illustration of Tío"
+        },
+        {
+          "es": "Tía",
+          "ar": "عمة / خالة",
+          "imagePrompt": "Illustration of Tía"
+        },
+        {
+          "es": "Primo",
+          "ar": "ابن العم / الخال",
+          "imagePrompt": "Illustration of Primo"
+        },
+        {
+          "es": "Hijo",
+          "ar": "ابن",
+          "imagePrompt": "Illustration of Hijo"
+        },
+        {
+          "es": "Mi padre es alto.",
+          "ar": "أبي طويل.",
+          "imagePrompt": "Scene showing Family Members concept"
+        },
+        {
+          "es": "Amo a mi madre.",
+          "ar": "أحب أمي."
+        },
+        {
+          "es": "Tengo un hermano.",
+          "ar": "لدي أخ.",
+          "imagePrompt": "Scene showing Family Members concept"
+        },
+        {
+          "es": "Mi hermana es pequeña.",
+          "ar": "أختي صغيرة."
+        },
+        {
+          "es": "El abuelo es viejo.",
+          "ar": "الجد كبير في السن.",
+          "imagePrompt": "Scene showing Family Members concept"
+        },
+        {
+          "es": "La abuela cocina bien.",
+          "ar": "الجدة تطبخ جيداً."
+        },
+        {
+          "es": "Mi tío vive aquí.",
+          "ar": "عمي يعيش هنا.",
+          "imagePrompt": "Scene showing Family Members concept"
+        },
+        {
+          "es": "Mi tía es amable.",
+          "ar": "عمتي لطيفة."
+        },
+        {
+          "es": "Juego con mi primo.",
+          "ar": "ألعب مع ابن عمي.",
+          "imagePrompt": "Scene showing Family Members concept"
+        },
+        {
+          "es": "Su hijo es inteligente.",
+          "ar": "ابنه ذكي."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939995_j1n51",
+      "title": {
+        "ar-SA": "الأرقام 1-10",
+        "en-US": "Numbers 1-10"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "🔢",
+      "color": "bg-indigo-500",
+      "sentences": [
+        {
+          "es": "Uno",
+          "ar": "واحد",
+          "imagePrompt": "Illustration of Uno"
+        },
+        {
+          "es": "Dos",
+          "ar": "اثنان",
+          "imagePrompt": "Illustration of Dos"
+        },
+        {
+          "es": "Tres",
+          "ar": "ثلاثة",
+          "imagePrompt": "Illustration of Tres"
+        },
+        {
+          "es": "Cuatro",
+          "ar": "أربعة",
+          "imagePrompt": "Illustration of Cuatro"
+        },
+        {
+          "es": "Cinco",
+          "ar": "خمسة",
+          "imagePrompt": "Illustration of Cinco"
+        },
+        {
+          "es": "Seis",
+          "ar": "ستة",
+          "imagePrompt": "Illustration of Seis"
+        },
+        {
+          "es": "Siete",
+          "ar": "سبعة",
+          "imagePrompt": "Illustration of Siete"
+        },
+        {
+          "es": "Ocho",
+          "ar": "ثمانية",
+          "imagePrompt": "Illustration of Ocho"
+        },
+        {
+          "es": "Nueve",
+          "ar": "تسعة",
+          "imagePrompt": "Illustration of Nueve"
+        },
+        {
+          "es": "Diez",
+          "ar": "عشرة",
+          "imagePrompt": "Illustration of Diez"
+        },
+        {
+          "es": "Tengo uno.",
+          "ar": "لدي واحد.",
+          "imagePrompt": "Scene showing Numbers 1-10 concept"
+        },
+        {
+          "es": "Son las dos.",
+          "ar": "إنها الساعة الثانية."
+        },
+        {
+          "es": "Tres gatos.",
+          "ar": "ثلاث قطط.",
+          "imagePrompt": "Scene showing Numbers 1-10 concept"
+        },
+        {
+          "es": "Cuatro coches.",
+          "ar": "أربع سيارات."
+        },
+        {
+          "es": "Cinco dedos.",
+          "ar": "خمسة أصابع.",
+          "imagePrompt": "Scene showing Numbers 1-10 concept"
+        },
+        {
+          "es": "Seis libros.",
+          "ar": "ستة كتب."
+        },
+        {
+          "es": "Siete días.",
+          "ar": "سبعة أيام.",
+          "imagePrompt": "Scene showing Numbers 1-10 concept"
+        },
+        {
+          "es": "Ocho horas.",
+          "ar": "ثماني ساعات."
+        },
+        {
+          "es": "Nueve vidas.",
+          "ar": "تسعة أرواح.",
+          "imagePrompt": "Scene showing Numbers 1-10 concept"
+        },
+        {
+          "es": "Diez puntos.",
+          "ar": "عشر نقاط."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939995_73dwt",
+      "title": {
+        "ar-SA": "الألوان",
+        "en-US": "Colors"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "🎨",
+      "color": "bg-purple-500",
+      "sentences": [
+        {
+          "es": "Rojo",
+          "ar": "أحمر",
+          "imagePrompt": "Illustration of Rojo"
+        },
+        {
+          "es": "Azul",
+          "ar": "أزرق",
+          "imagePrompt": "Illustration of Azul"
+        },
+        {
+          "es": "Verde",
+          "ar": "اخضر",
+          "imagePrompt": "Illustration of Verde"
+        },
+        {
+          "es": "Amarillo",
+          "ar": "أصفر",
+          "imagePrompt": "Illustration of Amarillo"
+        },
+        {
+          "es": "Negro",
+          "ar": "أسود",
+          "imagePrompt": "Illustration of Negro"
+        },
+        {
+          "es": "Blanco",
+          "ar": "أبيض",
+          "imagePrompt": "Illustration of Blanco"
+        },
+        {
+          "es": "Gris",
+          "ar": "رمادي",
+          "imagePrompt": "Illustration of Gris"
+        },
+        {
+          "es": "Rosa",
+          "ar": "وردي",
+          "imagePrompt": "Illustration of Rosa"
+        },
+        {
+          "es": "Naranja",
+          "ar": "برتقالي",
+          "imagePrompt": "Illustration of Naranja"
+        },
+        {
+          "es": "Marrón",
+          "ar": "بني",
+          "imagePrompt": "Illustration of Marrón"
+        },
+        {
+          "es": "El coche es rojo.",
+          "ar": "السيارة حمراء.",
+          "imagePrompt": "Scene showing Colors concept"
+        },
+        {
+          "es": "El cielo es azul.",
+          "ar": "السماء زرقاء."
+        },
+        {
+          "es": "El árbol es verde.",
+          "ar": "الشجرة خضراء.",
+          "imagePrompt": "Scene showing Colors concept"
+        },
+        {
+          "es": "El sol es amarillo.",
+          "ar": "الشمس صفراء."
+        },
+        {
+          "es": "El gato es negro.",
+          "ar": "القط أسود.",
+          "imagePrompt": "Scene showing Colors concept"
+        },
+        {
+          "es": "La nieve es blanca.",
+          "ar": "الثلج أبيض."
+        },
+        {
+          "es": "El cielo está gris.",
+          "ar": "السماء رمادية.",
+          "imagePrompt": "Scene showing Colors concept"
+        },
+        {
+          "es": "La flor es rosa.",
+          "ar": "الزهرة وردية."
+        },
+        {
+          "es": "Megerusta el naranja.",
+          "ar": "أحب اللون البرتقالي.",
+          "imagePrompt": "Scene showing Colors concept"
+        },
+        {
+          "es": "El oso es marrón.",
+          "ar": "الدب بني."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939996_y4rfr",
+      "title": {
+        "ar-SA": "الطعام والشراب",
+        "en-US": "Food & Drink"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "🍔",
+      "color": "bg-yellow-600",
+      "sentences": [
+        {
+          "es": "Pan",
+          "ar": "خبز",
+          "imagePrompt": "Illustration of Pan"
+        },
+        {
+          "es": "Queso",
+          "ar": "جبن",
+          "imagePrompt": "Illustration of Queso"
+        },
+        {
+          "es": "Carne",
+          "ar": "لحم",
+          "imagePrompt": "Illustration of Carne"
+        },
+        {
+          "es": "Pescado",
+          "ar": "سمك",
+          "imagePrompt": "Illustration of Pescado"
+        },
+        {
+          "es": "Pollo",
+          "ar": "دجاج",
+          "imagePrompt": "Illustration of Pollo"
+        },
+        {
+          "es": "Arroz",
+          "ar": "أرز",
+          "imagePrompt": "Illustration of Arroz"
+        },
+        {
+          "es": "Agua",
+          "ar": "ماء",
+          "imagePrompt": "Illustration of Agua"
+        },
+        {
+          "es": "Leche",
+          "ar": "حليب",
+          "imagePrompt": "Illustration of Leche"
+        },
+        {
+          "es": "Café",
+          "ar": "قهوة",
+          "imagePrompt": "Illustration of Café"
+        },
+        {
+          "es": "Té",
+          "ar": "شاي",
+          "imagePrompt": "Illustration of Té"
+        },
+        {
+          "es": "Como pan.",
+          "ar": "آكل الخبز.",
+          "imagePrompt": "Scene showing Food & Drink concept"
+        },
+        {
+          "es": "Me gusta el queso.",
+          "ar": "أحب الجبن."
+        },
+        {
+          "es": "La carne es rica.",
+          "ar": "اللحم لذيذ.",
+          "imagePrompt": "Scene showing Food & Drink concept"
+        },
+        {
+          "es": "El pescado es fresco.",
+          "ar": "السمك طازج."
+        },
+        {
+          "es": "Pollo con arroz.",
+          "ar": "دجاج مع أرز.",
+          "imagePrompt": "Scene showing Food & Drink concept"
+        },
+        {
+          "es": "Quiero agua.",
+          "ar": "أريد ماء."
+        },
+        {
+          "es": "Leche fría.",
+          "ar": "حليب بارد.",
+          "imagePrompt": "Scene showing Food & Drink concept"
+        },
+        {
+          "es": "Café caliente.",
+          "ar": "قهوة ساخنة."
+        },
+        {
+          "es": "Té verde.",
+          "ar": "شاي أخضر.",
+          "imagePrompt": "Scene showing Food & Drink concept"
+        },
+        {
+          "es": "Compro comida.",
+          "ar": "أشتري طعاماً."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939996_534vo",
+      "title": {
+        "ar-SA": "الحيوانات",
+        "en-US": "Animals"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "🐶",
+      "color": "bg-orange-500",
+      "sentences": [
+        {
+          "es": "Perro",
+          "ar": "كلب",
+          "imagePrompt": "Illustration of Perro"
+        },
+        {
+          "es": "Gato",
+          "ar": "قطة",
+          "imagePrompt": "Illustration of Gato"
+        },
+        {
+          "es": "Pájaro",
+          "ar": "عصفور",
+          "imagePrompt": "Illustration of Pájaro"
+        },
+        {
+          "es": "Pez",
+          "ar": "سمكة",
+          "imagePrompt": "Illustration of Pez"
+        },
+        {
+          "es": "Caballo",
+          "ar": "حصان",
+          "imagePrompt": "Illustration of Caballo"
+        },
+        {
+          "es": "Vaca",
+          "ar": "بقرة",
+          "imagePrompt": "Illustration of Vaca"
+        },
+        {
+          "es": "León",
+          "ar": "أسد",
+          "imagePrompt": "Illustration of León"
+        },
+        {
+          "es": "Elefante",
+          "ar": "فيل",
+          "imagePrompt": "Illustration of Elefante"
+        },
+        {
+          "es": "Mono",
+          "ar": "قرد",
+          "imagePrompt": "Illustration of Mono"
+        },
+        {
+          "es": "Ratón",
+          "ar": "فأر",
+          "imagePrompt": "Illustration of Ratón"
+        },
+        {
+          "es": "El perro ladra.",
+          "ar": "الكلب ينبح.",
+          "imagePrompt": "Scene showing Animals concept"
+        },
+        {
+          "es": "El gato duerme.",
+          "ar": "القط ينام."
+        },
+        {
+          "es": "El pájaro vuela.",
+          "ar": "العصفور يطير.",
+          "imagePrompt": "Scene showing Animals concept"
+        },
+        {
+          "es": "El pez nada.",
+          "ar": "السمكة تسبح."
+        },
+        {
+          "es": "Caballo rápido.",
+          "ar": "حصان سريع.",
+          "imagePrompt": "Scene showing Animals concept"
+        },
+        {
+          "es": "Vaca grande.",
+          "ar": "بقرة كبيرة."
+        },
+        {
+          "es": "León fuerte.",
+          "ar": "أسد قوي.",
+          "imagePrompt": "Scene showing Animals concept"
+        },
+        {
+          "es": "Elefante gris.",
+          "ar": "فيل رمادي."
+        },
+        {
+          "es": "Mono divertido.",
+          "ar": "قرد مضحك.",
+          "imagePrompt": "Scene showing Animals concept"
+        },
+        {
+          "es": "Ratón pequeño.",
+          "ar": "فأر صغير."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939996_a45mt",
+      "title": {
+        "ar-SA": "أعضاء الجسم",
+        "en-US": "Body Parts"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "👀",
+      "color": "bg-red-400",
+      "sentences": [
+        {
+          "es": "Cabeza",
+          "ar": "رأس",
+          "imagePrompt": "Illustration of Cabeza"
+        },
+        {
+          "es": "Ojo",
+          "ar": "عين",
+          "imagePrompt": "Illustration of Ojo"
+        },
+        {
+          "es": "Nariz",
+          "ar": "أنف",
+          "imagePrompt": "Illustration of Nariz"
+        },
+        {
+          "es": "Boca",
+          "ar": "فم",
+          "imagePrompt": "Illustration of Boca"
+        },
+        {
+          "es": "Oreja",
+          "ar": "أذن",
+          "imagePrompt": "Illustration of Oreja"
+        },
+        {
+          "es": "Mano",
+          "ar": "يد",
+          "imagePrompt": "Illustration of Mano"
+        },
+        {
+          "es": "Pie",
+          "ar": "قدم",
+          "imagePrompt": "Illustration of Pie"
+        },
+        {
+          "es": "Brazo",
+          "ar": "ذراع",
+          "imagePrompt": "Illustration of Brazo"
+        },
+        {
+          "es": "Pierna",
+          "ar": "ساق",
+          "imagePrompt": "Illustration of Pierna"
+        },
+        {
+          "es": "Pelo",
+          "ar": "شعر",
+          "imagePrompt": "Illustration of Pelo"
+        },
+        {
+          "es": "Me duele la cabeza.",
+          "ar": "رأسي يؤلمني.",
+          "imagePrompt": "Scene showing Body Parts concept"
+        },
+        {
+          "es": "Abre la boca.",
+          "ar": "افتح فمك."
+        },
+        {
+          "es": "Cierra los ojos.",
+          "ar": "أغلق عينيك.",
+          "imagePrompt": "Scene showing Body Parts concept"
+        },
+        {
+          "es": "Lava tus manos.",
+          "ar": "اغسل يديك."
+        },
+        {
+          "es": "Mueve los pies.",
+          "ar": "حرك قدميك.",
+          "imagePrompt": "Scene showing Body Parts concept"
+        },
+        {
+          "es": "Toca tu nariz.",
+          "ar": "المس أنفك."
+        },
+        {
+          "es": "Brazo fuerte.",
+          "ar": "ذراع قوية.",
+          "imagePrompt": "Scene showing Body Parts concept"
+        },
+        {
+          "es": "Pierna larga.",
+          "ar": "ساق طويلة."
+        },
+        {
+          "es": "Pelo negro.",
+          "ar": "شعر أسود.",
+          "imagePrompt": "Scene showing Body Parts concept"
+        },
+        {
+          "es": "Dos orejas.",
+          "ar": "أذنان."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939997_030ja",
+      "title": {
+        "ar-SA": "الملابس",
+        "en-US": "Clothes"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "👕",
+      "color": "bg-purple-400",
+      "sentences": [
+        {
+          "es": "Camisa",
+          "ar": "قميص",
+          "imagePrompt": "Illustration of Camisa"
+        },
+        {
+          "es": "Pantalón",
+          "ar": "بنطلون",
+          "imagePrompt": "Illustration of Pantalón"
+        },
+        {
+          "es": "Vestido",
+          "ar": "فستان",
+          "imagePrompt": "Illustration of Vestido"
+        },
+        {
+          "es": "Zapatos",
+          "ar": "حذاء",
+          "imagePrompt": "Illustration of Zapatos"
+        },
+        {
+          "es": "Sombrero",
+          "ar": "قبعة",
+          "imagePrompt": "Illustration of Sombrero"
+        },
+        {
+          "es": "Calcetines",
+          "ar": "جوارب",
+          "imagePrompt": "Illustration of Calcetines"
+        },
+        {
+          "es": "Chaqueta",
+          "ar": "سترة",
+          "imagePrompt": "Illustration of Chaqueta"
+        },
+        {
+          "es": "Falda",
+          "ar": "تنورة",
+          "imagePrompt": "Illustration of Falda"
+        },
+        {
+          "es": "Guantes",
+          "ar": "قفازات",
+          "imagePrompt": "Illustration of Guantes"
+        },
+        {
+          "es": "Bufanda",
+          "ar": "وشاح",
+          "imagePrompt": "Illustration of Bufanda"
+        },
+        {
+          "es": "Camisa azul.",
+          "ar": "قميص أزرق.",
+          "imagePrompt": "Scene showing Clothes concept"
+        },
+        {
+          "es": "Pantalón negro.",
+          "ar": "بنطلون أسود."
+        },
+        {
+          "es": "Vestido bonito.",
+          "ar": "فستان جميل.",
+          "imagePrompt": "Scene showing Clothes concept"
+        },
+        {
+          "es": "Zapatos nuevos.",
+          "ar": "حذاء جديد."
+        },
+        {
+          "es": "Ponte el sombrero.",
+          "ar": "اِرتدِ القبعة.",
+          "imagePrompt": "Scene showing Clothes concept"
+        },
+        {
+          "es": "Calcetines rojos.",
+          "ar": "جوارب حمراء."
+        },
+        {
+          "es": "Chaqueta caliente.",
+          "ar": "سترة دافئة.",
+          "imagePrompt": "Scene showing Clothes concept"
+        },
+        {
+          "es": "Falda larga.",
+          "ar": "تنورة طويلة."
+        },
+        {
+          "es": "Guantes de lana.",
+          "ar": "قفازات صوفية.",
+          "imagePrompt": "Scene showing Clothes concept"
+        },
+        {
+          "es": "Bufanda suave.",
+          "ar": "وشاح ناعم."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939997_q5s58",
+      "title": {
+        "ar-SA": "المنزل",
+        "en-US": "House"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "🏠",
+      "color": "bg-indigo-400",
+      "sentences": [
+        {
+          "es": "Casa",
+          "ar": "منزل",
+          "imagePrompt": "Illustration of Casa"
+        },
+        {
+          "es": "Puerta",
+          "ar": "باب",
+          "imagePrompt": "Illustration of Puerta"
+        },
+        {
+          "es": "Ventana",
+          "ar": "نافذة",
+          "imagePrompt": "Illustration of Ventana"
+        },
+        {
+          "es": "Mesa",
+          "ar": "طاولة",
+          "imagePrompt": "Illustration of Mesa"
+        },
+        {
+          "es": "Silla",
+          "ar": "كرسي",
+          "imagePrompt": "Illustration of Silla"
+        },
+        {
+          "es": "Cama",
+          "ar": "سرير",
+          "imagePrompt": "Illustration of Cama"
+        },
+        {
+          "es": "Cocina",
+          "ar": "مطبخ",
+          "imagePrompt": "Illustration of Cocina"
+        },
+        {
+          "es": "Baño",
+          "ar": "حمام",
+          "imagePrompt": "Illustration of Baño"
+        },
+        {
+          "es": "Salón",
+          "ar": "غرفة جلوس",
+          "imagePrompt": "Illustration of Salón"
+        },
+        {
+          "es": "Jardín",
+          "ar": "حديقة",
+          "imagePrompt": "Illustration of Jardín"
+        },
+        {
+          "es": "Esta es mi casa.",
+          "ar": "هذا هو منزلي.",
+          "imagePrompt": "Scene showing House concept"
+        },
+        {
+          "es": "Abre la puerta.",
+          "ar": "افتح الباب."
+        },
+        {
+          "es": "Cierra la ventana.",
+          "ar": "أغلق النافذة.",
+          "imagePrompt": "Scene showing House concept"
+        },
+        {
+          "es": "La mesa es grande.",
+          "ar": "الطاولة كبيرة."
+        },
+        {
+          "es": "Silla cómoda.",
+          "ar": "كرسي مريح.",
+          "imagePrompt": "Scene showing House concept"
+        },
+        {
+          "es": "Voy a la cama.",
+          "ar": "أنا ذاهب للسرير."
+        },
+        {
+          "es": "Cocina limpia.",
+          "ar": "مطبخ نظيف.",
+          "imagePrompt": "Scene showing House concept"
+        },
+        {
+          "es": "Baño pequeño.",
+          "ar": "حمام صغير."
+        },
+        {
+          "es": "Salón bonito.",
+          "ar": "غرفة جلوس جميلة.",
+          "imagePrompt": "Scene showing House concept"
+        },
+        {
+          "es": "Flor en el jardín.",
+          "ar": "زهرة في الحديقة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939997_tfcl5",
+      "title": {
+        "ar-SA": "المدرسة",
+        "en-US": "School"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "🏫",
+      "color": "bg-yellow-500",
+      "sentences": [
+        {
+          "es": "Escuela",
+          "ar": "مدرسة",
+          "imagePrompt": "Illustration of Escuela"
+        },
+        {
+          "es": "Libro",
+          "ar": "كتاب",
+          "imagePrompt": "Illustration of Libro"
+        },
+        {
+          "es": "Lápiz",
+          "ar": "قلم رصاص",
+          "imagePrompt": "Illustration of Lápiz"
+        },
+        {
+          "es": "Mochila",
+          "ar": "حقيبة",
+          "imagePrompt": "Illustration of Mochila"
+        },
+        {
+          "es": "Maestro",
+          "ar": "معلم",
+          "imagePrompt": "Illustration of Maestro"
+        },
+        {
+          "es": "Estudiante",
+          "ar": "طالب",
+          "imagePrompt": "Illustration of Estudiante"
+        },
+        {
+          "es": "Pizarra",
+          "ar": "سبورة",
+          "imagePrompt": "Illustration of Pizarra"
+        },
+        {
+          "es": "Papel",
+          "ar": "ورقة",
+          "imagePrompt": "Illustration of Papel"
+        },
+        {
+          "es": "Clase",
+          "ar": "صف",
+          "imagePrompt": "Illustration of Clase"
+        },
+        {
+          "es": "Examen",
+          "ar": "اختبار",
+          "imagePrompt": "Illustration of Examen"
+        },
+        {
+          "es": "Voy a la escuela.",
+          "ar": "أذهب للمدرسة.",
+          "imagePrompt": "Scene showing School concept"
+        },
+        {
+          "es": "Leo un libro.",
+          "ar": "أقرأ كتاباً."
+        },
+        {
+          "es": "Escribo con lápiz.",
+          "ar": "أكتب بقلم رصاص.",
+          "imagePrompt": "Scene showing School concept"
+        },
+        {
+          "es": "Mochila pesada.",
+          "ar": "حقيبة ثقيلة."
+        },
+        {
+          "es": "Maestro bueno.",
+          "ar": "معلم جيد.",
+          "imagePrompt": "Scene showing School concept"
+        },
+        {
+          "es": "Estudiante nuevo.",
+          "ar": "طالب جديد."
+        },
+        {
+          "es": "Mira la pizarra.",
+          "ar": "انظر للسبورة.",
+          "imagePrompt": "Scene showing School concept"
+        },
+        {
+          "es": "Papel blanco.",
+          "ar": "ورقة بيضاء."
+        },
+        {
+          "es": "Clase de español.",
+          "ar": "صف اللغة الإسبانية.",
+          "imagePrompt": "Scene showing School concept"
+        },
+        {
+          "es": "Examen difícil.",
+          "ar": "اختبار صعب."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939998_i8gwr",
+      "title": {
+        "ar-SA": "المواصلات",
+        "en-US": "Transport"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "🚗",
+      "color": "bg-blue-600",
+      "sentences": [
+        {
+          "es": "Coche",
+          "ar": "سيارة",
+          "imagePrompt": "Illustration of Coche"
+        },
+        {
+          "es": "Autobús",
+          "ar": "حافلة",
+          "imagePrompt": "Illustration of Autobús"
+        },
+        {
+          "es": "Tren",
+          "ar": "قطار",
+          "imagePrompt": "Illustration of Tren"
+        },
+        {
+          "es": "Avión",
+          "ar": "طائرة",
+          "imagePrompt": "Illustration of Avión"
+        },
+        {
+          "es": "Barco",
+          "ar": "قارب",
+          "imagePrompt": "Illustration of Barco"
+        },
+        {
+          "es": "Bicicleta",
+          "ar": "دراجة",
+          "imagePrompt": "Illustration of Bicicleta"
+        },
+        {
+          "es": "Taxi",
+          "ar": "تاكسي",
+          "imagePrompt": "Illustration of Taxi"
+        },
+        {
+          "es": "Metro",
+          "ar": "مترو",
+          "imagePrompt": "Illustration of Metro"
+        },
+        {
+          "es": "Moto",
+          "ar": "دراجة نارية",
+          "imagePrompt": "Illustration of Moto"
+        },
+        {
+          "es": "Camión",
+          "ar": "شاحنة",
+          "imagePrompt": "Illustration of Camión"
+        },
+        {
+          "es": "Conduzco el coche.",
+          "ar": "أقود السيارة.",
+          "imagePrompt": "Scene showing Transport concept"
+        },
+        {
+          "es": "Espero el autobús.",
+          "ar": "أنتظر الحافلة."
+        },
+        {
+          "es": "Tren rápido.",
+          "ar": "قطار سريع.",
+          "imagePrompt": "Scene showing Transport concept"
+        },
+        {
+          "es": "Avión alto.",
+          "ar": "طائرة في العالي."
+        },
+        {
+          "es": "Barco grande.",
+          "ar": "قارب كبير.",
+          "imagePrompt": "Scene showing Transport concept"
+        },
+        {
+          "es": "Monto bicicleta.",
+          "ar": "أركب الدراجة."
+        },
+        {
+          "es": "Llama un taxi.",
+          "ar": "اطلب تاكسي.",
+          "imagePrompt": "Scene showing Transport concept"
+        },
+        {
+          "es": "Metro lleno.",
+          "ar": "مترو مزدحم."
+        },
+        {
+          "es": "Moto roja.",
+          "ar": "دراجة نارية حمراء.",
+          "imagePrompt": "Scene showing Transport concept"
+        },
+        {
+          "es": "Camión fuerte.",
+          "ar": "شاحنة قوية."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939998_4tstx",
+      "title": {
+        "ar-SA": "الطبيعة",
+        "en-US": "Nature"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "🌳",
+      "color": "bg-green-600",
+      "sentences": [
+        {
+          "es": "Árbol",
+          "ar": "شجرة",
+          "imagePrompt": "Illustration of Árbol"
+        },
+        {
+          "es": "Flor",
+          "ar": "زهرة",
+          "imagePrompt": "Illustration of Flor"
+        },
+        {
+          "es": "Sol",
+          "ar": "شمس",
+          "imagePrompt": "Illustration of Sol"
+        },
+        {
+          "es": "Luna",
+          "ar": "قمر",
+          "imagePrompt": "Illustration of Luna"
+        },
+        {
+          "es": "Estrella",
+          "ar": "نجمة",
+          "imagePrompt": "Illustration of Estrella"
+        },
+        {
+          "es": "Río",
+          "ar": "نهر",
+          "imagePrompt": "Illustration of Río"
+        },
+        {
+          "es": "Mar",
+          "ar": "بحر",
+          "imagePrompt": "Illustration of Mar"
+        },
+        {
+          "es": "Montaña",
+          "ar": "جبل",
+          "imagePrompt": "Illustration of Montaña"
+        },
+        {
+          "es": "Lluvia",
+          "ar": "مطر",
+          "imagePrompt": "Illustration of Lluvia"
+        },
+        {
+          "es": "Nieve",
+          "ar": "ثلج",
+          "imagePrompt": "Illustration of Nieve"
+        },
+        {
+          "es": "Árbol verde.",
+          "ar": "شجرة خضراء.",
+          "imagePrompt": "Scene showing Nature concept"
+        },
+        {
+          "es": "Flor bonita.",
+          "ar": "زهرة جميلة."
+        },
+        {
+          "es": "Sol caliente.",
+          "ar": "شمس حارة.",
+          "imagePrompt": "Scene showing Nature concept"
+        },
+        {
+          "es": "Luna llena.",
+          "ar": "قمر مكتمل."
+        },
+        {
+          "es": "Estrella brillante.",
+          "ar": "نجمة لامعة.",
+          "imagePrompt": "Scene showing Nature concept"
+        },
+        {
+          "es": "Río largo.",
+          "ar": "نهر طويل."
+        },
+        {
+          "es": "Mar azul.",
+          "ar": "بحر أزرق.",
+          "imagePrompt": "Scene showing Nature concept"
+        },
+        {
+          "es": "Montaña alta.",
+          "ar": "جبل عالٍ."
+        },
+        {
+          "es": "Lluvia fuerte.",
+          "ar": "مطر غزير.",
+          "imagePrompt": "Scene showing Nature concept"
+        },
+        {
+          "es": "Nieve fría.",
+          "ar": "ثلج بارد."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939998_srw1v",
+      "title": {
+        "ar-SA": "الوظائف",
+        "en-US": "Jobs"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "👷",
+      "color": "bg-gray-600",
+      "sentences": [
+        {
+          "es": "Doctor",
+          "ar": "طبيب",
+          "imagePrompt": "Illustration of Doctor"
+        },
+        {
+          "es": "Policía",
+          "ar": "شرطي",
+          "imagePrompt": "Illustration of Policía"
+        },
+        {
+          "es": "Bombero",
+          "ar": "رجل إطفاء",
+          "imagePrompt": "Illustration of Bombero"
+        },
+        {
+          "es": "Cocinero",
+          "ar": "طباخ",
+          "imagePrompt": "Illustration of Cocinero"
+        },
+        {
+          "es": "Maestro",
+          "ar": "معلم",
+          "imagePrompt": "Illustration of Maestro"
+        },
+        {
+          "es": "Piloto",
+          "ar": "طيار",
+          "imagePrompt": "Illustration of Piloto"
+        },
+        {
+          "es": "Granjero",
+          "ar": "مزارع",
+          "imagePrompt": "Illustration of Granjero"
+        },
+        {
+          "es": "Artista",
+          "ar": "فنان",
+          "imagePrompt": "Illustration of Artista"
+        },
+        {
+          "es": "Cantante",
+          "ar": "مغني",
+          "imagePrompt": "Illustration of Cantante"
+        },
+        {
+          "es": "Juez",
+          "ar": "قاضي",
+          "imagePrompt": "Illustration of Juez"
+        },
+        {
+          "es": "El doctor ayuda.",
+          "ar": "الطبيب يساعد.",
+          "imagePrompt": "Scene showing Jobs concept"
+        },
+        {
+          "es": "Policía valiente.",
+          "ar": "شرطي شجاع."
+        },
+        {
+          "es": "Bombero rápido.",
+          "ar": "رجل إطفاء سريع.",
+          "imagePrompt": "Scene showing Jobs concept"
+        },
+        {
+          "es": "Cocinero bueno.",
+          "ar": "طباخ جيد."
+        },
+        {
+          "es": "Maestro enseña.",
+          "ar": "المعلم يعلم.",
+          "imagePrompt": "Scene showing Jobs concept"
+        },
+        {
+          "es": "Piloto vuela.",
+          "ar": "الطيار يطير."
+        },
+        {
+          "es": "Granjero trabaja.",
+          "ar": "المزارع يعمل.",
+          "imagePrompt": "Scene showing Jobs concept"
+        },
+        {
+          "es": "Artista pinta.",
+          "ar": "الفنان يرسم."
+        },
+        {
+          "es": "Cantante canta.",
+          "ar": "المغني يغني.",
+          "imagePrompt": "Scene showing Jobs concept"
+        },
+        {
+          "es": "Juez justo.",
+          "ar": "قاضي عادل."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939998_y6if3",
+      "title": {
+        "ar-SA": "أفعال 1",
+        "en-US": "Verbs 1"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "🏃",
+      "color": "bg-red-500",
+      "sentences": [
+        {
+          "es": "Comer",
+          "ar": "يأكل",
+          "imagePrompt": "Illustration of Comer"
+        },
+        {
+          "es": "Beber",
+          "ar": "يشرب",
+          "imagePrompt": "Illustration of Beber"
+        },
+        {
+          "es": "Dormir",
+          "ar": "ينام",
+          "imagePrompt": "Illustration of Dormir"
+        },
+        {
+          "es": "Correr",
+          "ar": "يجري",
+          "imagePrompt": "Illustration of Correr"
+        },
+        {
+          "es": "Saltar",
+          "ar": "يقفز",
+          "imagePrompt": "Illustration of Saltar"
+        },
+        {
+          "es": "Hablar",
+          "ar": "يتحدث",
+          "imagePrompt": "Illustration of Hablar"
+        },
+        {
+          "es": "Escuchar",
+          "ar": "يسمع",
+          "imagePrompt": "Illustration of Escuchar"
+        },
+        {
+          "es": "Mirar",
+          "ar": "ينظر",
+          "imagePrompt": "Illustration of Mirar"
+        },
+        {
+          "es": "Caminar",
+          "ar": "يمشي",
+          "imagePrompt": "Illustration of Caminar"
+        },
+        {
+          "es": "Jugar",
+          "ar": "يلعب",
+          "imagePrompt": "Illustration of Jugar"
+        },
+        {
+          "es": "Quiero comer.",
+          "ar": "أريد أن آكل.",
+          "imagePrompt": "Scene showing Verbs 1 concept"
+        },
+        {
+          "es": "Voy a beber.",
+          "ar": "سأشرب."
+        },
+        {
+          "es": "A dormir.",
+          "ar": "إلى النوم.",
+          "imagePrompt": "Scene showing Verbs 1 concept"
+        },
+        {
+          "es": "Correr es bueno.",
+          "ar": "الجري جيد."
+        },
+        {
+          "es": "Saltar alto.",
+          "ar": "القفز عالياً.",
+          "imagePrompt": "Scene showing Verbs 1 concept"
+        },
+        {
+          "es": "Hablar español.",
+          "ar": "التحدث بالإسبانية."
+        },
+        {
+          "es": "Escuchar música.",
+          "ar": "سماع الموسيقى.",
+          "imagePrompt": "Scene showing Verbs 1 concept"
+        },
+        {
+          "es": "Mirar la tele.",
+          "ar": "مشاهدة التلفاز."
+        },
+        {
+          "es": "Caminar lento.",
+          "ar": "المشي ببطء.",
+          "imagePrompt": "Scene showing Verbs 1 concept"
+        },
+        {
+          "es": "Jugar fútbol.",
+          "ar": "لعب كرة القدم."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530939999_jegf3",
+      "title": {
+        "ar-SA": "أفعال 2",
+        "en-US": "Verbs 2"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "✍️",
+      "color": "bg-teal-500",
+      "sentences": [
+        {
+          "es": "Escribir",
+          "ar": "يكتب",
+          "imagePrompt": "Illustration of Escribir"
+        },
+        {
+          "es": "Leer",
+          "ar": "يقرأ",
+          "imagePrompt": "Illustration of Leer"
+        },
+        {
+          "es": "Cantar",
+          "ar": "يغني",
+          "imagePrompt": "Illustration of Cantar"
+        },
+        {
+          "es": "Bailar",
+          "ar": "يرقص",
+          "imagePrompt": "Illustration of Bailar"
+        },
+        {
+          "es": "Estudiar",
+          "ar": "يدرس",
+          "imagePrompt": "Illustration of Estudiar"
+        },
+        {
+          "es": "Trabajar",
+          "ar": "يعمل",
+          "imagePrompt": "Illustration of Trabajar"
+        },
+        {
+          "es": "Comprar",
+          "ar": "يشتري",
+          "imagePrompt": "Illustration of Comprar"
+        },
+        {
+          "es": "Vender",
+          "ar": "يبيع",
+          "imagePrompt": "Illustration of Vender"
+        },
+        {
+          "es": "Abrir",
+          "ar": "يفتح",
+          "imagePrompt": "Illustration of Abrir"
+        },
+        {
+          "es": "Cerrar",
+          "ar": "يغلق",
+          "imagePrompt": "Illustration of Cerrar"
+        },
+        {
+          "es": "Escribir carta.",
+          "ar": "كتابة رسالة.",
+          "imagePrompt": "Scene showing Verbs 2 concept"
+        },
+        {
+          "es": "Leer libro.",
+          "ar": "قراءة كتاب."
+        },
+        {
+          "es": "Cantar canción.",
+          "ar": "غناء أغنية.",
+          "imagePrompt": "Scene showing Verbs 2 concept"
+        },
+        {
+          "es": "Bailar salsa.",
+          "ar": "رقص السالسا."
+        },
+        {
+          "es": "Estudiar mucho.",
+          "ar": "دراسة كثيرة.",
+          "imagePrompt": "Scene showing Verbs 2 concept"
+        },
+        {
+          "es": "Trabajar duro.",
+          "ar": "عمل بجد."
+        },
+        {
+          "es": "Comprar pan.",
+          "ar": "شراء الخبز.",
+          "imagePrompt": "Scene showing Verbs 2 concept"
+        },
+        {
+          "es": "Vender coche.",
+          "ar": "بيع السيارة."
+        },
+        {
+          "es": "Abrir puerta.",
+          "ar": "فتح الباب.",
+          "imagePrompt": "Scene showing Verbs 2 concept"
+        },
+        {
+          "es": "Cerrar ventana.",
+          "ar": "إغلاق النافذة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940001_er8y5",
+      "title": {
+        "ar-SA": "الصفات",
+        "en-US": "Adjectives"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "✨",
+      "color": "bg-pink-500",
+      "sentences": [
+        {
+          "es": "Grande",
+          "ar": "كبير",
+          "imagePrompt": "Illustration of Grande"
+        },
+        {
+          "es": "Pequeño",
+          "ar": "صغير",
+          "imagePrompt": "Illustration of Pequeño"
+        },
+        {
+          "es": "Rápido",
+          "ar": "سريع",
+          "imagePrompt": "Illustration of Rápido"
+        },
+        {
+          "es": "Lento",
+          "ar": "بطيء",
+          "imagePrompt": "Illustration of Lento"
+        },
+        {
+          "es": "Alto",
+          "ar": "طويل",
+          "imagePrompt": "Illustration of Alto"
+        },
+        {
+          "es": "Bajo",
+          "ar": "قصير",
+          "imagePrompt": "Illustration of Bajo"
+        },
+        {
+          "es": "Nuevo",
+          "ar": "جديد",
+          "imagePrompt": "Illustration of Nuevo"
+        },
+        {
+          "es": "Viejo",
+          "ar": "قديم",
+          "imagePrompt": "Illustration of Viejo"
+        },
+        {
+          "es": "Caliente",
+          "ar": "ساخن",
+          "imagePrompt": "Illustration of Caliente"
+        },
+        {
+          "es": "Frío",
+          "ar": "بارد",
+          "imagePrompt": "Illustration of Frío"
+        },
+        {
+          "es": "Casa grande.",
+          "ar": "منزل كبير.",
+          "imagePrompt": "Scene showing Adjectives concept"
+        },
+        {
+          "es": "Gato pequeño.",
+          "ar": "قط صغير."
+        },
+        {
+          "es": "Coche rápido.",
+          "ar": "سيارة سريعة.",
+          "imagePrompt": "Scene showing Adjectives concept"
+        },
+        {
+          "es": "Tortuga lenta.",
+          "ar": "سلحفاة بطيئة."
+        },
+        {
+          "es": "Edificio alto.",
+          "ar": "مبنى عالٍ.",
+          "imagePrompt": "Scene showing Adjectives concept"
+        },
+        {
+          "es": "Mesa baja.",
+          "ar": "طاولة منخفضة."
+        },
+        {
+          "es": "Teléfono nuevo.",
+          "ar": "هاتف جديد.",
+          "imagePrompt": "Scene showing Adjectives concept"
+        },
+        {
+          "es": "Libro viejo.",
+          "ar": "كتاب قديم."
+        },
+        {
+          "es": "Sopa caliente.",
+          "ar": "حساء ساخن.",
+          "imagePrompt": "Scene showing Adjectives concept"
+        },
+        {
+          "es": "Agua fría.",
+          "ar": "ماء بارد."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940003_1y3gg",
+      "title": {
+        "ar-SA": "الوقت",
+        "en-US": "Time"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "⏰",
+      "color": "bg-indigo-700",
+      "sentences": [
+        {
+          "es": "Hora",
+          "ar": "ساعة",
+          "imagePrompt": "Illustration of Hora"
+        },
+        {
+          "es": "Minuto",
+          "ar": "دقيقة",
+          "imagePrompt": "Illustration of Minuto"
+        },
+        {
+          "es": "Segundo",
+          "ar": "ثانية",
+          "imagePrompt": "Illustration of Segundo"
+        },
+        {
+          "es": "Día",
+          "ar": "يوم",
+          "imagePrompt": "Illustration of Día"
+        },
+        {
+          "es": "Noche",
+          "ar": "ليل",
+          "imagePrompt": "Illustration of Noche"
+        },
+        {
+          "es": "Semana",
+          "ar": "أسبوع",
+          "imagePrompt": "Illustration of Semana"
+        },
+        {
+          "es": "Mes",
+          "ar": "شهر",
+          "imagePrompt": "Illustration of Mes"
+        },
+        {
+          "es": "Año",
+          "ar": "سنة",
+          "imagePrompt": "Illustration of Año"
+        },
+        {
+          "es": "Mañana",
+          "ar": "صباح/غدا",
+          "imagePrompt": "Illustration of Mañana"
+        },
+        {
+          "es": "Tarde",
+          "ar": "مساء",
+          "imagePrompt": "Illustration of Tarde"
+        },
+        {
+          "es": "Qué hora es.",
+          "ar": "كم الساعة.",
+          "imagePrompt": "Scene showing Time concept"
+        },
+        {
+          "es": "Un minuto.",
+          "ar": "دقيقة واحدة."
+        },
+        {
+          "es": "Buenos días.",
+          "ar": "صباح الخير.",
+          "imagePrompt": "Scene showing Time concept"
+        },
+        {
+          "es": "Buenas noches.",
+          "ar": "تصبح على خير."
+        },
+        {
+          "es": "Fin de semana.",
+          "ar": "نهاية الأسبوع.",
+          "imagePrompt": "Scene showing Time concept"
+        },
+        {
+          "es": "Este mes.",
+          "ar": "هذا الشهر."
+        },
+        {
+          "es": "Feliz año.",
+          "ar": "سنة سعيدة.",
+          "imagePrompt": "Scene showing Time concept"
+        },
+        {
+          "es": "Hasta mañana.",
+          "ar": "أراك غداً."
+        },
+        {
+          "es": "Buena tarde.",
+          "ar": "مساء الخير.",
+          "imagePrompt": "Scene showing Time concept"
+        },
+        {
+          "es": "Todo el día.",
+          "ar": "طوال اليوم."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940004_6ag9o",
+      "title": {
+        "ar-SA": "الطقس",
+        "en-US": "Weather"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "🌦️",
+      "color": "bg-blue-400",
+      "sentences": [
+        {
+          "es": "Sol",
+          "ar": "شمس",
+          "imagePrompt": "Illustration of Sol"
+        },
+        {
+          "es": "Lluvia",
+          "ar": "مطر",
+          "imagePrompt": "Illustration of Lluvia"
+        },
+        {
+          "es": "Nube",
+          "ar": "سحابة",
+          "imagePrompt": "Illustration of Nube"
+        },
+        {
+          "es": "Nieve",
+          "ar": "ثلج",
+          "imagePrompt": "Illustration of Nieve"
+        },
+        {
+          "es": "Viento",
+          "ar": "رياح",
+          "imagePrompt": "Illustration of Viento"
+        },
+        {
+          "es": "Tormenta",
+          "ar": "عاصفة",
+          "imagePrompt": "Illustration of Tormenta"
+        },
+        {
+          "es": "Calor",
+          "ar": "حرارة",
+          "imagePrompt": "Illustration of Calor"
+        },
+        {
+          "es": "Frío",
+          "ar": "برد",
+          "imagePrompt": "Illustration of Frío"
+        },
+        {
+          "es": "Niebla",
+          "ar": "ضباب",
+          "imagePrompt": "Illustration of Niebla"
+        },
+        {
+          "es": "Hielo",
+          "ar": "جليد",
+          "imagePrompt": "Illustration of Hielo"
+        },
+        {
+          "es": "Hace sol.",
+          "ar": "الجو مشمس.",
+          "imagePrompt": "Scene showing Weather concept"
+        },
+        {
+          "es": "Hay lluvia.",
+          "ar": "يوجد مطر."
+        },
+        {
+          "es": "Nube blanca.",
+          "ar": "سحابة بيضاء.",
+          "imagePrompt": "Scene showing Weather concept"
+        },
+        {
+          "es": "Cae nieve.",
+          "ar": "يسقط الثلج."
+        },
+        {
+          "es": "Mucho viento.",
+          "ar": "رياح قوية.",
+          "imagePrompt": "Scene showing Weather concept"
+        },
+        {
+          "es": "Tormenta fuerte.",
+          "ar": "عاصفة قوية."
+        },
+        {
+          "es": "Hace calor.",
+          "ar": "الجو حار.",
+          "imagePrompt": "Scene showing Weather concept"
+        },
+        {
+          "es": "Hace frío.",
+          "ar": "الجو بارد."
+        },
+        {
+          "es": "Hay niebla.",
+          "ar": "يوجد ضباب.",
+          "imagePrompt": "Scene showing Weather concept"
+        },
+        {
+          "es": "Agua hielo.",
+          "ar": "ماء مثلج."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940004_0rzn5",
+      "title": {
+        "ar-SA": "الأيام والشهور",
+        "en-US": "Days & Months"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "📅",
+      "color": "bg-green-500",
+      "sentences": [
+        {
+          "es": "Lunes",
+          "ar": "الاثنين",
+          "imagePrompt": "Illustration of Lunes"
+        },
+        {
+          "es": "Martes",
+          "ar": "الثلاثاء",
+          "imagePrompt": "Illustration of Martes"
+        },
+        {
+          "es": "Miércoles",
+          "ar": "الأربعاء",
+          "imagePrompt": "Illustration of Miércoles"
+        },
+        {
+          "es": "Jueves",
+          "ar": "الخميس",
+          "imagePrompt": "Illustration of Jueves"
+        },
+        {
+          "es": "Viernes",
+          "ar": "الجمعة",
+          "imagePrompt": "Illustration of Viernes"
+        },
+        {
+          "es": "Sábado",
+          "ar": "السبت",
+          "imagePrompt": "Illustration of Sábado"
+        },
+        {
+          "es": "Domingo",
+          "ar": "الأحد",
+          "imagePrompt": "Illustration of Domingo"
+        },
+        {
+          "es": "Enero",
+          "ar": "يناير",
+          "imagePrompt": "Illustration of Enero"
+        },
+        {
+          "es": "Junio",
+          "ar": "يونيو",
+          "imagePrompt": "Illustration of Junio"
+        },
+        {
+          "es": "Diciembre",
+          "ar": "ديسمبر",
+          "imagePrompt": "Illustration of Diciembre"
+        },
+        {
+          "es": "Hoy es lunes.",
+          "ar": "اليوم الاثنين.",
+          "imagePrompt": "Scene showing Days & Months concept"
+        },
+        {
+          "es": "Martes tarde.",
+          "ar": "الثلاثاء ظهراً."
+        },
+        {
+          "es": "Miércoles bueno.",
+          "ar": "أربعاء جيد.",
+          "imagePrompt": "Scene showing Days & Months concept"
+        },
+        {
+          "es": "Jueves cena.",
+          "ar": "عشاء الخميس."
+        },
+        {
+          "es": "Viernes fiesta.",
+          "ar": "حفلة الجمعة.",
+          "imagePrompt": "Scene showing Days & Months concept"
+        },
+        {
+          "es": "Sábado libre.",
+          "ar": "سبت عطلة."
+        },
+        {
+          "es": "Domingo sol.",
+          "ar": "أحد مشمس.",
+          "imagePrompt": "Scene showing Days & Months concept"
+        },
+        {
+          "es": "Enero frío.",
+          "ar": "يناير بارد."
+        },
+        {
+          "es": "Junio calor.",
+          "ar": "يونيو حار.",
+          "imagePrompt": "Scene showing Days & Months concept"
+        },
+        {
+          "es": "Diciembre navidad.",
+          "ar": "ديسمبر عيد الميلاد."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940004_z87h5",
+      "title": {
+        "ar-SA": "المشاعر",
+        "en-US": "Emotions"
+      },
+      "rawLevel": "المستوى الابتدائي 👶",
+      "icon": "😊",
+      "color": "bg-yellow-400",
+      "sentences": [
+        {
+          "es": "Feliz",
+          "ar": "سعيد",
+          "imagePrompt": "Illustration of Feliz"
+        },
+        {
+          "es": "Triste",
+          "ar": "حزين",
+          "imagePrompt": "Illustration of Triste"
+        },
+        {
+          "es": "Enojado",
+          "ar": "غاضب",
+          "imagePrompt": "Illustration of Enojado"
+        },
+        {
+          "es": "Cansado",
+          "ar": "متعب",
+          "imagePrompt": "Illustration of Cansado"
+        },
+        {
+          "es": "Asustado",
+          "ar": "خائف",
+          "imagePrompt": "Illustration of Asustado"
+        },
+        {
+          "es": "Sorprendido",
+          "ar": "متفاجئ",
+          "imagePrompt": "Illustration of Sorprendido"
+        },
+        {
+          "es": "Aburrido",
+          "ar": "ملل",
+          "imagePrompt": "Illustration of Aburrido"
+        },
+        {
+          "es": "Enfermo",
+          "ar": "مريض",
+          "imagePrompt": "Illustration of Enfermo"
+        },
+        {
+          "es": "Enamorado",
+          "ar": "مغرم",
+          "imagePrompt": "Illustration of Enamorado"
+        },
+        {
+          "es": "Confundido",
+          "ar": "مرتبك",
+          "imagePrompt": "Illustration of Confundido"
+        },
+        {
+          "es": "Estoy feliz.",
+          "ar": "أنا سعيد.",
+          "imagePrompt": "Scene showing Emotions concept"
+        },
+        {
+          "es": "Estás triste.",
+          "ar": "أنت حزين."
+        },
+        {
+          "es": "Hombre enojado.",
+          "ar": "رجل غاضب.",
+          "imagePrompt": "Scene showing Emotions concept"
+        },
+        {
+          "es": "Niño cansado.",
+          "ar": "طفل متعب."
+        },
+        {
+          "es": "Gato asustado.",
+          "ar": "قط خائف.",
+          "imagePrompt": "Scene showing Emotions concept"
+        },
+        {
+          "es": "Estoy sorprendido.",
+          "ar": "أنا متفاجئ."
+        },
+        {
+          "es": "Estoy aburrido.",
+          "ar": "أشعر بالملل.",
+          "imagePrompt": "Scene showing Emotions concept"
+        },
+        {
+          "es": "Estoy enfermo.",
+          "ar": "أنا مريض."
+        },
+        {
+          "es": "Estoy enamorado.",
+          "ar": "أنا مغرم.",
+          "imagePrompt": "Scene showing Emotions concept"
+        },
+        {
+          "es": "Estoy confundido.",
+          "ar": "أنا مرتبك."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940050_54now",
+      "title": {
+        "ar-SA": "فعل \"Ser\" و \"Estar\"",
+        "en-US": "Ser vs Estar"
+      },
+      "rawLevel": "Primary Level 👶",
+      "icon": "📚",
+      "color": "bg-indigo-500",
+      "sentences": [
+        {
+          "es": "A: Amigo",
+          "ar": "أ: صديق (تُنطق: أميغو)",
+          "imagePrompt": "Illustration of two friends hugging, flat style"
+        },
+        {
+          "es": "B: Bueno",
+          "ar": "ب: جيد (تُنطق: بوينو)",
+          "imagePrompt": "Illustration of a thumbs up gesture, flat style"
+        },
+        {
+          "es": "C: Casa",
+          "ar": "ك: منزل (C تُنطق كَـ هنا)",
+          "imagePrompt": "Illustration of a cute colorful house, flat style"
+        },
+        {
+          "es": "C: Cine",
+          "ar": "س: سينما (C تُنطق سَـ أمام i/e)",
+          "imagePrompt": "Illustration of cinema popcorn and film reel, flat style"
+        },
+        {
+          "es": "D: Día",
+          "ar": "د: يوم (تُنطق: ديا)",
+          "imagePrompt": "Illustration of a sunny day window view, flat style"
+        },
+        {
+          "es": "E: España",
+          "ar": "إ: إسبانيا (تُنطق: إسبانيا)",
+          "imagePrompt": "Illustration of map of Spain, flat style"
+        },
+        {
+          "es": "F: Familia",
+          "ar": "ف: عائلة (تُنطق: فاميليا)",
+          "imagePrompt": "Illustration of a happy family, flat style"
+        },
+        {
+          "es": "G: Gato",
+          "ar": "غ: قطة (G تُنطق غَـ هنا)",
+          "imagePrompt": "Illustration of a cute cat, flat style"
+        },
+        {
+          "es": "G: Gente",
+          "ar": "خ: ناس (G تُنطق خَـ أمام i/e)",
+          "imagePrompt": "Illustration of a group of people avatars, flat style"
+        },
+        {
+          "es": "H: Hola",
+          "ar": "(H صامتة لا تُنطق أبداً!)",
+          "imagePrompt": "Illustration of a hand waving hello, flat style"
+        },
+        {
+          "es": "I: Iglesia",
+          "ar": "إي: كنيسة (تُنطق: إيغليسيا)",
+          "imagePrompt": "Illustration of a church building, flat style"
+        },
+        {
+          "es": "J: Jugar",
+          "ar": "خ: يلعب (J تُنطق خَـ دائماً)",
+          "imagePrompt": "Illustration of kids playing with toys, flat style"
+        },
+        {
+          "es": "L: Libro",
+          "ar": "ل: كتاب (تُنطق: ليبرو)",
+          "imagePrompt": "Illustration of a closed book, flat style"
+        },
+        {
+          "es": "M: Mesa",
+          "ar": "م: طاولة (تُنطق: ميسا)",
+          "imagePrompt": "Illustration of a wooden table, flat style"
+        },
+        {
+          "es": "N: Noche",
+          "ar": "ن: ليل (تُنطق: نوتشي)",
+          "imagePrompt": "Illustration of a crescent moon and stars, flat style"
+        },
+        {
+          "es": "Ñ: Niño",
+          "ar": "نْيَـ: طفل (حرف مميز للإسبانية!)",
+          "imagePrompt": "Illustration of a happy little boy, flat style"
+        },
+        {
+          "es": "O: Ojo",
+          "ar": "أو: عين (تُنطق: أوخو)",
+          "imagePrompt": "Illustration of a human eye, flat style"
+        },
+        {
+          "es": "P: Perro",
+          "ar": "ب: كلب (RR راء قوية جداً!)",
+          "imagePrompt": "Illustration of a puppy dog, flat style"
+        },
+        {
+          "es": "Q: Qué",
+          "ar": "ك: ماذا (U صامتة هنا)",
+          "imagePrompt": "Illustration of a question mark symbol, flat style"
+        },
+        {
+          "es": "R: Rosa",
+          "ar": "ر: وردة (R في البداية قوية)",
+          "imagePrompt": "Illustration of a red rose, flat style"
+        },
+        {
+          "es": "S: Sol",
+          "ar": "س: شمس (تُنطق: سول)",
+          "imagePrompt": "Illustration of a bright sun, flat style"
+        },
+        {
+          "es": "T: Tarde",
+          "ar": "ت: مساء (تُنطق: تاردي)",
+          "imagePrompt": "Illustration of a sunset horizon, flat style"
+        },
+        {
+          "es": "U: Uno",
+          "ar": "أو: واحد (تُنطق: أونو)",
+          "imagePrompt": "Illustration of number one digit, flat style"
+        },
+        {
+          "es": "V: Vaso",
+          "ar": "ب: كوب (V تُنطق مثل B المخففة)",
+          "imagePrompt": "Illustration of a glass of water, flat style"
+        },
+        {
+          "es": "X: Taxi",
+          "ar": "كس: تاكسي",
+          "imagePrompt": "Illustration of a yellow taxi car, flat style"
+        },
+        {
+          "es": "Z: Zapato",
+          "ar": "ث: حذاء (Z تُنطق ثَـ في إسبانيا)",
+          "imagePrompt": "Illustration of a shoe, flat style"
+        },
+        {
+          "es": "Quiz: Hola",
+          "ar": "اختبار: كيف تُنطق Hola؟ (أولا)",
+          "imagePrompt": "Illustration of a quiz mark, flat style"
+        },
+        {
+          "es": "Quiz: Gato",
+          "ar": "اختبار: كيف تُنطق Gato؟ (غاتو وليست خاتو)",
+          "imagePrompt": "Illustration of a cat face quiz, flat style"
+        },
+        {
+          "es": "Quiz: Cine",
+          "ar": "اختبار: كيف تُنطق Cine؟ (سيني وليست كيني)",
+          "imagePrompt": "Illustration of a cinema ticket quiz, flat style"
+        }
+      ]
+    }
+  ],
+  "Intermediate Level 🚀": [
+    {
+      "id": "lesson_1771530940005_8bngk",
+      "title": {
+        "ar-SA": "في المطار",
+        "en-US": "At the Airport"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "✈️",
+      "color": "bg-blue-600",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre At the Airport.",
+          "ar": "أحب أن أتعلم عن في المطار.",
+          "imagePrompt": "Illustration of At the Airport context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre At the Airport?",
+          "ar": "ماذا تعرف عن في المطار؟"
+        },
+        {
+          "es": "At the Airport es interesante.",
+          "ar": "في المطار أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar At the Airport.",
+          "ar": "لنتدرب على في المطار."
+        },
+        {
+          "es": "Hablamos mucho de At the Airport.",
+          "ar": "نتحدث كثيراً عن في المطار.",
+          "imagePrompt": "Illustration of At the Airport context 4"
+        },
+        {
+          "es": "Esto es importante para At the Airport.",
+          "ar": "هذا مهم لـ في المطار."
+        },
+        {
+          "es": "Me gusta aprender sobre At the Airport.",
+          "ar": "أحب أن أتعلم عن في المطار."
+        },
+        {
+          "es": "¿Qué sabes sobre At the Airport?",
+          "ar": "ماذا تعرف عن في المطار؟"
+        },
+        {
+          "es": "At the Airport es interesante.",
+          "ar": "في المطار أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of At the Airport context 8"
+        },
+        {
+          "es": "Vamos a practicar At the Airport.",
+          "ar": "لنتدرب على في المطار."
+        },
+        {
+          "es": "Hablamos mucho de At the Airport.",
+          "ar": "نتحدث كثيراً عن في المطار."
+        },
+        {
+          "es": "Esto es importante para At the Airport.",
+          "ar": "هذا مهم لـ في المطار."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940005_mpvw7",
+      "title": {
+        "ar-SA": "تسجيل الدخول في الفندق",
+        "en-US": "Hotel Check-in"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🏨",
+      "color": "bg-indigo-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Hotel Check-in.",
+          "ar": "أحب أن أتعلم عن تسجيل الدخول في الفندق.",
+          "imagePrompt": "Illustration of Hotel Check-in context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Hotel Check-in?",
+          "ar": "ماذا تعرف عن تسجيل الدخول في الفندق؟"
+        },
+        {
+          "es": "Hotel Check-in es interesante.",
+          "ar": "تسجيل الدخول في الفندق أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Hotel Check-in.",
+          "ar": "لنتدرب على تسجيل الدخول في الفندق."
+        },
+        {
+          "es": "Hablamos mucho de Hotel Check-in.",
+          "ar": "نتحدث كثيراً عن تسجيل الدخول في الفندق.",
+          "imagePrompt": "Illustration of Hotel Check-in context 4"
+        },
+        {
+          "es": "Esto es importante para Hotel Check-in.",
+          "ar": "هذا مهم لـ تسجيل الدخول في الفندق."
+        },
+        {
+          "es": "Me gusta aprender sobre Hotel Check-in.",
+          "ar": "أحب أن أتعلم عن تسجيل الدخول في الفندق."
+        },
+        {
+          "es": "¿Qué sabes sobre Hotel Check-in?",
+          "ar": "ماذا تعرف عن تسجيل الدخول في الفندق؟"
+        },
+        {
+          "es": "Hotel Check-in es interesante.",
+          "ar": "تسجيل الدخول في الفندق أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Hotel Check-in context 8"
+        },
+        {
+          "es": "Vamos a practicar Hotel Check-in.",
+          "ar": "لنتدرب على تسجيل الدخول في الفندق."
+        },
+        {
+          "es": "Hablamos mucho de Hotel Check-in.",
+          "ar": "نتحدث كثيراً عن تسجيل الدخول في الفندق."
+        },
+        {
+          "es": "Esto es importante para Hotel Check-in.",
+          "ar": "هذا مهم لـ تسجيل الدخول في الفندق."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940005_y4h36",
+      "title": {
+        "ar-SA": "السؤال عن الاتجاهات",
+        "en-US": "Asking Directions"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🗺️",
+      "color": "bg-green-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Asking Directions.",
+          "ar": "أحب أن أتعلم عن السؤال عن الاتجاهات.",
+          "imagePrompt": "Illustration of Asking Directions context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Asking Directions?",
+          "ar": "ماذا تعرف عن السؤال عن الاتجاهات؟"
+        },
+        {
+          "es": "Asking Directions es interesante.",
+          "ar": "السؤال عن الاتجاهات أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Asking Directions.",
+          "ar": "لنتدرب على السؤال عن الاتجاهات."
+        },
+        {
+          "es": "Hablamos mucho de Asking Directions.",
+          "ar": "نتحدث كثيراً عن السؤال عن الاتجاهات.",
+          "imagePrompt": "Illustration of Asking Directions context 4"
+        },
+        {
+          "es": "Esto es importante para Asking Directions.",
+          "ar": "هذا مهم لـ السؤال عن الاتجاهات."
+        },
+        {
+          "es": "Me gusta aprender sobre Asking Directions.",
+          "ar": "أحب أن أتعلم عن السؤال عن الاتجاهات."
+        },
+        {
+          "es": "¿Qué sabes sobre Asking Directions?",
+          "ar": "ماذا تعرف عن السؤال عن الاتجاهات؟"
+        },
+        {
+          "es": "Asking Directions es interesante.",
+          "ar": "السؤال عن الاتجاهات أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Asking Directions context 8"
+        },
+        {
+          "es": "Vamos a practicar Asking Directions.",
+          "ar": "لنتدرب على السؤال عن الاتجاهات."
+        },
+        {
+          "es": "Hablamos mucho de Asking Directions.",
+          "ar": "نتحدث كثيراً عن السؤال عن الاتجاهات."
+        },
+        {
+          "es": "Esto es importante para Asking Directions.",
+          "ar": "هذا مهم لـ السؤال عن الاتجاهات."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940006_6d264",
+      "title": {
+        "ar-SA": "شراء الملابس",
+        "en-US": "Shopping for Clothes"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "👗",
+      "color": "bg-pink-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Shopping for Clothes.",
+          "ar": "أحب أن أتعلم عن شراء الملابس.",
+          "imagePrompt": "Illustration of Shopping for Clothes context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Shopping for Clothes?",
+          "ar": "ماذا تعرف عن شراء الملابس؟"
+        },
+        {
+          "es": "Shopping for Clothes es interesante.",
+          "ar": "شراء الملابس أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Shopping for Clothes.",
+          "ar": "لنتدرب على شراء الملابس."
+        },
+        {
+          "es": "Hablamos mucho de Shopping for Clothes.",
+          "ar": "نتحدث كثيراً عن شراء الملابس.",
+          "imagePrompt": "Illustration of Shopping for Clothes context 4"
+        },
+        {
+          "es": "Esto es importante para Shopping for Clothes.",
+          "ar": "هذا مهم لـ شراء الملابس."
+        },
+        {
+          "es": "Me gusta aprender sobre Shopping for Clothes.",
+          "ar": "أحب أن أتعلم عن شراء الملابس."
+        },
+        {
+          "es": "¿Qué sabes sobre Shopping for Clothes?",
+          "ar": "ماذا تعرف عن شراء الملابس؟"
+        },
+        {
+          "es": "Shopping for Clothes es interesante.",
+          "ar": "شراء الملابس أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Shopping for Clothes context 8"
+        },
+        {
+          "es": "Vamos a practicar Shopping for Clothes.",
+          "ar": "لنتدرب على شراء الملابس."
+        },
+        {
+          "es": "Hablamos mucho de Shopping for Clothes.",
+          "ar": "نتحدث كثيراً عن شراء الملابس."
+        },
+        {
+          "es": "Esto es importante para Shopping for Clothes.",
+          "ar": "هذا مهم لـ شراء الملابس."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940006_zavnb",
+      "title": {
+        "ar-SA": "عند الطبيب",
+        "en-US": "At the Doctor"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "👨‍⚕️",
+      "color": "bg-red-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre At the Doctor.",
+          "ar": "أحب أن أتعلم عن عند الطبيب.",
+          "imagePrompt": "Illustration of At the Doctor context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre At the Doctor?",
+          "ar": "ماذا تعرف عن عند الطبيب؟"
+        },
+        {
+          "es": "At the Doctor es interesante.",
+          "ar": "عند الطبيب أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar At the Doctor.",
+          "ar": "لنتدرب على عند الطبيب."
+        },
+        {
+          "es": "Hablamos mucho de At the Doctor.",
+          "ar": "نتحدث كثيراً عن عند الطبيب.",
+          "imagePrompt": "Illustration of At the Doctor context 4"
+        },
+        {
+          "es": "Esto es importante para At the Doctor.",
+          "ar": "هذا مهم لـ عند الطبيب."
+        },
+        {
+          "es": "Me gusta aprender sobre At the Doctor.",
+          "ar": "أحب أن أتعلم عن عند الطبيب."
+        },
+        {
+          "es": "¿Qué sabes sobre At the Doctor?",
+          "ar": "ماذا تعرف عن عند الطبيب؟"
+        },
+        {
+          "es": "At the Doctor es interesante.",
+          "ar": "عند الطبيب أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of At the Doctor context 8"
+        },
+        {
+          "es": "Vamos a practicar At the Doctor.",
+          "ar": "لنتدرب على عند الطبيب."
+        },
+        {
+          "es": "Hablamos mucho de At the Doctor.",
+          "ar": "نتحدث كثيراً عن عند الطبيب."
+        },
+        {
+          "es": "Esto es importante para At the Doctor.",
+          "ar": "هذا مهم لـ عند الطبيب."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940020_hi7wj",
+      "title": {
+        "ar-SA": "مقابلة عمل",
+        "en-US": "Job Interview"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "jj",
+      "color": "bg-gray-600",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Job Interview.",
+          "ar": "أحب أن أتعلم عن مقابلة عمل.",
+          "imagePrompt": "Illustration of Job Interview context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Job Interview?",
+          "ar": "ماذا تعرف عن مقابلة عمل؟"
+        },
+        {
+          "es": "Job Interview es interesante.",
+          "ar": "مقابلة عمل أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Job Interview.",
+          "ar": "لنتدرب على مقابلة عمل."
+        },
+        {
+          "es": "Hablamos mucho de Job Interview.",
+          "ar": "نتحدث كثيراً عن مقابلة عمل.",
+          "imagePrompt": "Illustration of Job Interview context 4"
+        },
+        {
+          "es": "Esto es importante para Job Interview.",
+          "ar": "هذا مهم لـ مقابلة عمل."
+        },
+        {
+          "es": "Me gusta aprender sobre Job Interview.",
+          "ar": "أحب أن أتعلم عن مقابلة عمل."
+        },
+        {
+          "es": "¿Qué sabes sobre Job Interview?",
+          "ar": "ماذا تعرف عن مقابلة عمل؟"
+        },
+        {
+          "es": "Job Interview es interesante.",
+          "ar": "مقابلة عمل أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Job Interview context 8"
+        },
+        {
+          "es": "Vamos a practicar Job Interview.",
+          "ar": "لنتدرب على مقابلة عمل."
+        },
+        {
+          "es": "Hablamos mucho de Job Interview.",
+          "ar": "نتحدث كثيراً عن مقابلة عمل."
+        },
+        {
+          "es": "Esto es importante para Job Interview.",
+          "ar": "هذا مهم لـ مقابلة عمل."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940021_h18dz",
+      "title": {
+        "ar-SA": "اجتماع عمل",
+        "en-US": "Business Meeting"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🤝",
+      "color": "bg-blue-800",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Business Meeting.",
+          "ar": "أحب أن أتعلم عن اجتماع عمل.",
+          "imagePrompt": "Illustration of Business Meeting context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Business Meeting?",
+          "ar": "ماذا تعرف عن اجتماع عمل؟"
+        },
+        {
+          "es": "Business Meeting es interesante.",
+          "ar": "اجتماع عمل أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Business Meeting.",
+          "ar": "لنتدرب على اجتماع عمل."
+        },
+        {
+          "es": "Hablamos mucho de Business Meeting.",
+          "ar": "نتحدث كثيراً عن اجتماع عمل.",
+          "imagePrompt": "Illustration of Business Meeting context 4"
+        },
+        {
+          "es": "Esto es importante para Business Meeting.",
+          "ar": "هذا مهم لـ اجتماع عمل."
+        },
+        {
+          "es": "Me gusta aprender sobre Business Meeting.",
+          "ar": "أحب أن أتعلم عن اجتماع عمل."
+        },
+        {
+          "es": "¿Qué sabes sobre Business Meeting?",
+          "ar": "ماذا تعرف عن اجتماع عمل؟"
+        },
+        {
+          "es": "Business Meeting es interesante.",
+          "ar": "اجتماع عمل أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Business Meeting context 8"
+        },
+        {
+          "es": "Vamos a practicar Business Meeting.",
+          "ar": "لنتدرب على اجتماع عمل."
+        },
+        {
+          "es": "Hablamos mucho de Business Meeting.",
+          "ar": "نتحدث كثيراً عن اجتماع عمل."
+        },
+        {
+          "es": "Esto es importante para Business Meeting.",
+          "ar": "هذا مهم لـ اجتماع عمل."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940021_nnsqt",
+      "title": {
+        "ar-SA": "حجز مطعم",
+        "en-US": "Restaurant Reservation"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🍽️",
+      "color": "bg-orange-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Restaurant Reservation.",
+          "ar": "أحب أن أتعلم عن حجز مطعم.",
+          "imagePrompt": "Illustration of Restaurant Reservation context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Restaurant Reservation?",
+          "ar": "ماذا تعرف عن حجز مطعم؟"
+        },
+        {
+          "es": "Restaurant Reservation es interesante.",
+          "ar": "حجز مطعم أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Restaurant Reservation.",
+          "ar": "لنتدرب على حجز مطعم."
+        },
+        {
+          "es": "Hablamos mucho de Restaurant Reservation.",
+          "ar": "نتحدث كثيراً عن حجز مطعم.",
+          "imagePrompt": "Illustration of Restaurant Reservation context 4"
+        },
+        {
+          "es": "Esto es importante para Restaurant Reservation.",
+          "ar": "هذا مهم لـ حجز مطعم."
+        },
+        {
+          "es": "Me gusta aprender sobre Restaurant Reservation.",
+          "ar": "أحب أن أتعلم عن حجز مطعم."
+        },
+        {
+          "es": "¿Qué sabes sobre Restaurant Reservation?",
+          "ar": "ماذا تعرف عن حجز مطعم؟"
+        },
+        {
+          "es": "Restaurant Reservation es interesante.",
+          "ar": "حجز مطعم أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Restaurant Reservation context 8"
+        },
+        {
+          "es": "Vamos a practicar Restaurant Reservation.",
+          "ar": "لنتدرب على حجز مطعم."
+        },
+        {
+          "es": "Hablamos mucho de Restaurant Reservation.",
+          "ar": "نتحدث كثيراً عن حجز مطعم."
+        },
+        {
+          "es": "Esto es importante para Restaurant Reservation.",
+          "ar": "هذا مهم لـ حجز مطعم."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940022_so41w",
+      "title": {
+        "ar-SA": "النقل العام",
+        "en-US": "Public Transport"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🚌",
+      "color": "bg-yellow-600",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Public Transport.",
+          "ar": "أحب أن أتعلم عن النقل العام.",
+          "imagePrompt": "Illustration of Public Transport context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Public Transport?",
+          "ar": "ماذا تعرف عن النقل العام؟"
+        },
+        {
+          "es": "Public Transport es interesante.",
+          "ar": "النقل العام أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Public Transport.",
+          "ar": "لنتدرب على النقل العام."
+        },
+        {
+          "es": "Hablamos mucho de Public Transport.",
+          "ar": "نتحدث كثيراً عن النقل العام.",
+          "imagePrompt": "Illustration of Public Transport context 4"
+        },
+        {
+          "es": "Esto es importante para Public Transport.",
+          "ar": "هذا مهم لـ النقل العام."
+        },
+        {
+          "es": "Me gusta aprender sobre Public Transport.",
+          "ar": "أحب أن أتعلم عن النقل العام."
+        },
+        {
+          "es": "¿Qué sabes sobre Public Transport?",
+          "ar": "ماذا تعرف عن النقل العام؟"
+        },
+        {
+          "es": "Public Transport es interesante.",
+          "ar": "النقل العام أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Public Transport context 8"
+        },
+        {
+          "es": "Vamos a practicar Public Transport.",
+          "ar": "لنتدرب على النقل العام."
+        },
+        {
+          "es": "Hablamos mucho de Public Transport.",
+          "ar": "نتحدث كثيراً عن النقل العام."
+        },
+        {
+          "es": "Esto es importante para Public Transport.",
+          "ar": "هذا مهم لـ النقل العام."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940022_mhr58",
+      "title": {
+        "ar-SA": "معاملة بنكية",
+        "en-US": "Bank Transaction"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🏦",
+      "color": "bg-green-700",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Bank Transaction.",
+          "ar": "أحب أن أتعلم عن معاملة بنكية.",
+          "imagePrompt": "Illustration of Bank Transaction context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Bank Transaction?",
+          "ar": "ماذا تعرف عن معاملة بنكية؟"
+        },
+        {
+          "es": "Bank Transaction es interesante.",
+          "ar": "معاملة بنكية أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Bank Transaction.",
+          "ar": "لنتدرب على معاملة بنكية."
+        },
+        {
+          "es": "Hablamos mucho de Bank Transaction.",
+          "ar": "نتحدث كثيراً عن معاملة بنكية.",
+          "imagePrompt": "Illustration of Bank Transaction context 4"
+        },
+        {
+          "es": "Esto es importante para Bank Transaction.",
+          "ar": "هذا مهم لـ معاملة بنكية."
+        },
+        {
+          "es": "Me gusta aprender sobre Bank Transaction.",
+          "ar": "أحب أن أتعلم عن معاملة بنكية."
+        },
+        {
+          "es": "¿Qué sabes sobre Bank Transaction?",
+          "ar": "ماذا تعرف عن معاملة بنكية؟"
+        },
+        {
+          "es": "Bank Transaction es interesante.",
+          "ar": "معاملة بنكية أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Bank Transaction context 8"
+        },
+        {
+          "es": "Vamos a practicar Bank Transaction.",
+          "ar": "لنتدرب على معاملة بنكية."
+        },
+        {
+          "es": "Hablamos mucho de Bank Transaction.",
+          "ar": "نتحدث كثيراً عن معاملة بنكية."
+        },
+        {
+          "es": "Esto es importante para Bank Transaction.",
+          "ar": "هذا مهم لـ معاملة بنكية."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940022_et41i",
+      "title": {
+        "ar-SA": "مكتب البريد",
+        "en-US": "Post Office"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "📮",
+      "color": "bg-blue-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Post Office.",
+          "ar": "أحب أن أتعلم عن مكتب البريد.",
+          "imagePrompt": "Illustration of Post Office context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Post Office?",
+          "ar": "ماذا تعرف عن مكتب البريد؟"
+        },
+        {
+          "es": "Post Office es interesante.",
+          "ar": "مكتب البريد أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Post Office.",
+          "ar": "لنتدرب على مكتب البريد."
+        },
+        {
+          "es": "Hablamos mucho de Post Office.",
+          "ar": "نتحدث كثيراً عن مكتب البريد.",
+          "imagePrompt": "Illustration of Post Office context 4"
+        },
+        {
+          "es": "Esto es importante para Post Office.",
+          "ar": "هذا مهم لـ مكتب البريد."
+        },
+        {
+          "es": "Me gusta aprender sobre Post Office.",
+          "ar": "أحب أن أتعلم عن مكتب البريد."
+        },
+        {
+          "es": "¿Qué sabes sobre Post Office?",
+          "ar": "ماذا تعرف عن مكتب البريد؟"
+        },
+        {
+          "es": "Post Office es interesante.",
+          "ar": "مكتب البريد أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Post Office context 8"
+        },
+        {
+          "es": "Vamos a practicar Post Office.",
+          "ar": "لنتدرب على مكتب البريد."
+        },
+        {
+          "es": "Hablamos mucho de Post Office.",
+          "ar": "نتحدث كثيراً عن مكتب البريد."
+        },
+        {
+          "es": "Esto es importante para Post Office.",
+          "ar": "هذا مهم لـ مكتب البريد."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940022_u8ote",
+      "title": {
+        "ar-SA": "تأجير السيارات",
+        "en-US": "Car Rental"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🚗",
+      "color": "bg-orange-600",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Car Rental.",
+          "ar": "أحب أن أتعلم عن تأجير السيارات.",
+          "imagePrompt": "Illustration of Car Rental context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Car Rental?",
+          "ar": "ماذا تعرف عن تأجير السيارات؟"
+        },
+        {
+          "es": "Car Rental es interesante.",
+          "ar": "تأجير السيارات أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Car Rental.",
+          "ar": "لنتدرب على تأجير السيارات."
+        },
+        {
+          "es": "Hablamos mucho de Car Rental.",
+          "ar": "نتحدث كثيراً عن تأجير السيارات.",
+          "imagePrompt": "Illustration of Car Rental context 4"
+        },
+        {
+          "es": "Esto es importante para Car Rental.",
+          "ar": "هذا مهم لـ تأجير السيارات."
+        },
+        {
+          "es": "Me gusta aprender sobre Car Rental.",
+          "ar": "أحب أن أتعلم عن تأجير السيارات."
+        },
+        {
+          "es": "¿Qué sabes sobre Car Rental?",
+          "ar": "ماذا تعرف عن تأجير السيارات؟"
+        },
+        {
+          "es": "Car Rental es interesante.",
+          "ar": "تأجير السيارات أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Car Rental context 8"
+        },
+        {
+          "es": "Vamos a practicar Car Rental.",
+          "ar": "لنتدرب على تأجير السيارات."
+        },
+        {
+          "es": "Hablamos mucho de Car Rental.",
+          "ar": "نتحدث كثيراً عن تأجير السيارات."
+        },
+        {
+          "es": "Esto es importante para Car Rental.",
+          "ar": "هذا مهم لـ تأجير السيارات."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940022_sfvqb",
+      "title": {
+        "ar-SA": "مركز الشرطة",
+        "en-US": "Police Station"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "👮",
+      "color": "bg-blue-900",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Police Station.",
+          "ar": "أحب أن أتعلم عن مركز الشرطة.",
+          "imagePrompt": "Illustration of Police Station context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Police Station?",
+          "ar": "ماذا تعرف عن مركز الشرطة؟"
+        },
+        {
+          "es": "Police Station es interesante.",
+          "ar": "مركز الشرطة أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Police Station.",
+          "ar": "لنتدرب على مركز الشرطة."
+        },
+        {
+          "es": "Hablamos mucho de Police Station.",
+          "ar": "نتحدث كثيراً عن مركز الشرطة.",
+          "imagePrompt": "Illustration of Police Station context 4"
+        },
+        {
+          "es": "Esto es importante para Police Station.",
+          "ar": "هذا مهم لـ مركز الشرطة."
+        },
+        {
+          "es": "Me gusta aprender sobre Police Station.",
+          "ar": "أحب أن أتعلم عن مركز الشرطة."
+        },
+        {
+          "es": "¿Qué sabes sobre Police Station?",
+          "ar": "ماذا تعرف عن مركز الشرطة؟"
+        },
+        {
+          "es": "Police Station es interesante.",
+          "ar": "مركز الشرطة أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Police Station context 8"
+        },
+        {
+          "es": "Vamos a practicar Police Station.",
+          "ar": "لنتدرب على مركز الشرطة."
+        },
+        {
+          "es": "Hablamos mucho de Police Station.",
+          "ar": "نتحدث كثيراً عن مركز الشرطة."
+        },
+        {
+          "es": "Esto es importante para Police Station.",
+          "ar": "هذا مهم لـ مركز الشرطة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940024_4vlwq",
+      "title": {
+        "ar-SA": "الصيدلية",
+        "en-US": "Pharmacy"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "💊",
+      "color": "bg-red-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Pharmacy.",
+          "ar": "أحب أن أتعلم عن الصيدلية.",
+          "imagePrompt": "Illustration of Pharmacy context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Pharmacy?",
+          "ar": "ماذا تعرف عن الصيدلية؟"
+        },
+        {
+          "es": "Pharmacy es interesante.",
+          "ar": "الصيدلية أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Pharmacy.",
+          "ar": "لنتدرب على الصيدلية."
+        },
+        {
+          "es": "Hablamos mucho de Pharmacy.",
+          "ar": "نتحدث كثيراً عن الصيدلية.",
+          "imagePrompt": "Illustration of Pharmacy context 4"
+        },
+        {
+          "es": "Esto es importante para Pharmacy.",
+          "ar": "هذا مهم لـ الصيدلية."
+        },
+        {
+          "es": "Me gusta aprender sobre Pharmacy.",
+          "ar": "أحب أن أتعلم عن الصيدلية."
+        },
+        {
+          "es": "¿Qué sabes sobre Pharmacy?",
+          "ar": "ماذا تعرف عن الصيدلية؟"
+        },
+        {
+          "es": "Pharmacy es interesante.",
+          "ar": "الصيدلية أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Pharmacy context 8"
+        },
+        {
+          "es": "Vamos a practicar Pharmacy.",
+          "ar": "لنتدرب على الصيدلية."
+        },
+        {
+          "es": "Hablamos mucho de Pharmacy.",
+          "ar": "نتحدث كثيراً عن الصيدلية."
+        },
+        {
+          "es": "Esto es importante para Pharmacy.",
+          "ar": "هذا مهم لـ الصيدلية."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940025_sauiw",
+      "title": {
+        "ar-SA": "السوبر ماركت",
+        "en-US": "Supermarket"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🛒",
+      "color": "bg-green-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Supermarket.",
+          "ar": "أحب أن أتعلم عن السوبر ماركت.",
+          "imagePrompt": "Illustration of Supermarket context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Supermarket?",
+          "ar": "ماذا تعرف عن السوبر ماركت؟"
+        },
+        {
+          "es": "Supermarket es interesante.",
+          "ar": "السوبر ماركت أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Supermarket.",
+          "ar": "لنتدرب على السوبر ماركت."
+        },
+        {
+          "es": "Hablamos mucho de Supermarket.",
+          "ar": "نتحدث كثيراً عن السوبر ماركت.",
+          "imagePrompt": "Illustration of Supermarket context 4"
+        },
+        {
+          "es": "Esto es importante para Supermarket.",
+          "ar": "هذا مهم لـ السوبر ماركت."
+        },
+        {
+          "es": "Me gusta aprender sobre Supermarket.",
+          "ar": "أحب أن أتعلم عن السوبر ماركت."
+        },
+        {
+          "es": "¿Qué sabes sobre Supermarket?",
+          "ar": "ماذا تعرف عن السوبر ماركت؟"
+        },
+        {
+          "es": "Supermarket es interesante.",
+          "ar": "السوبر ماركت أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Supermarket context 8"
+        },
+        {
+          "es": "Vamos a practicar Supermarket.",
+          "ar": "لنتدرب على السوبر ماركت."
+        },
+        {
+          "es": "Hablamos mucho de Supermarket.",
+          "ar": "نتحدث كثيراً عن السوبر ماركت."
+        },
+        {
+          "es": "Esto es importante para Supermarket.",
+          "ar": "هذا مهم لـ السوبر ماركت."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940026_nwt3p",
+      "title": {
+        "ar-SA": "المكتبة",
+        "en-US": "Library"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "📚",
+      "color": "bg-brown-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Library.",
+          "ar": "أحب أن أتعلم عن المكتبة.",
+          "imagePrompt": "Illustration of Library context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Library?",
+          "ar": "ماذا تعرف عن المكتبة؟"
+        },
+        {
+          "es": "Library es interesante.",
+          "ar": "المكتبة أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Library.",
+          "ar": "لنتدرب على المكتبة."
+        },
+        {
+          "es": "Hablamos mucho de Library.",
+          "ar": "نتحدث كثيراً عن المكتبة.",
+          "imagePrompt": "Illustration of Library context 4"
+        },
+        {
+          "es": "Esto es importante para Library.",
+          "ar": "هذا مهم لـ المكتبة."
+        },
+        {
+          "es": "Me gusta aprender sobre Library.",
+          "ar": "أحب أن أتعلم عن المكتبة."
+        },
+        {
+          "es": "¿Qué sabes sobre Library?",
+          "ar": "ماذا تعرف عن المكتبة؟"
+        },
+        {
+          "es": "Library es interesante.",
+          "ar": "المكتبة أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Library context 8"
+        },
+        {
+          "es": "Vamos a practicar Library.",
+          "ar": "لنتدرب على المكتبة."
+        },
+        {
+          "es": "Hablamos mucho de Library.",
+          "ar": "نتحدث كثيراً عن المكتبة."
+        },
+        {
+          "es": "Esto es importante para Library.",
+          "ar": "هذا مهم لـ المكتبة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940026_i91cs",
+      "title": {
+        "ar-SA": "السينما",
+        "en-US": "Cinema"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🎬",
+      "color": "bg-purple-600",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Cinema.",
+          "ar": "أحب أن أتعلم عن السينما.",
+          "imagePrompt": "Illustration of Cinema context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Cinema?",
+          "ar": "ماذا تعرف عن السينما؟"
+        },
+        {
+          "es": "Cinema es interesante.",
+          "ar": "السينما أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Cinema.",
+          "ar": "لنتدرب على السينما."
+        },
+        {
+          "es": "Hablamos mucho de Cinema.",
+          "ar": "نتحدث كثيراً عن السينما.",
+          "imagePrompt": "Illustration of Cinema context 4"
+        },
+        {
+          "es": "Esto es importante para Cinema.",
+          "ar": "هذا مهم لـ السينما."
+        },
+        {
+          "es": "Me gusta aprender sobre Cinema.",
+          "ar": "أحب أن أتعلم عن السينما."
+        },
+        {
+          "es": "¿Qué sabes sobre Cinema?",
+          "ar": "ماذا تعرف عن السينما؟"
+        },
+        {
+          "es": "Cinema es interesante.",
+          "ar": "السينما أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Cinema context 8"
+        },
+        {
+          "es": "Vamos a practicar Cinema.",
+          "ar": "لنتدرب على السينما."
+        },
+        {
+          "es": "Hablamos mucho de Cinema.",
+          "ar": "نتحدث كثيراً عن السينما."
+        },
+        {
+          "es": "Esto es importante para Cinema.",
+          "ar": "هذا مهم لـ السينما."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940027_huwof",
+      "title": {
+        "ar-SA": "المتحف",
+        "en-US": "Museum"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🏛️",
+      "color": "bg-yellow-700",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Museum.",
+          "ar": "أحب أن أتعلم عن المتحف.",
+          "imagePrompt": "Illustration of Museum context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Museum?",
+          "ar": "ماذا تعرف عن المتحف؟"
+        },
+        {
+          "es": "Museum es interesante.",
+          "ar": "المتحف أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Museum.",
+          "ar": "لنتدرب على المتحف."
+        },
+        {
+          "es": "Hablamos mucho de Museum.",
+          "ar": "نتحدث كثيراً عن المتحف.",
+          "imagePrompt": "Illustration of Museum context 4"
+        },
+        {
+          "es": "Esto es importante para Museum.",
+          "ar": "هذا مهم لـ المتحف."
+        },
+        {
+          "es": "Me gusta aprender sobre Museum.",
+          "ar": "أحب أن أتعلم عن المتحف."
+        },
+        {
+          "es": "¿Qué sabes sobre Museum?",
+          "ar": "ماذا تعرف عن المتحف؟"
+        },
+        {
+          "es": "Museum es interesante.",
+          "ar": "المتحف أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Museum context 8"
+        },
+        {
+          "es": "Vamos a practicar Museum.",
+          "ar": "لنتدرب على المتحف."
+        },
+        {
+          "es": "Hablamos mucho de Museum.",
+          "ar": "نتحدث كثيراً عن المتحف."
+        },
+        {
+          "es": "Esto es importante para Museum.",
+          "ar": "هذا مهم لـ المتحف."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940027_cwdai",
+      "title": {
+        "ar-SA": "الحديقة",
+        "en-US": "Park"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🌳",
+      "color": "bg-green-600",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Park.",
+          "ar": "أحب أن أتعلم عن الحديقة.",
+          "imagePrompt": "Illustration of Park context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Park?",
+          "ar": "ماذا تعرف عن الحديقة؟"
+        },
+        {
+          "es": "Park es interesante.",
+          "ar": "الحديقة أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Park.",
+          "ar": "لنتدرب على الحديقة."
+        },
+        {
+          "es": "Hablamos mucho de Park.",
+          "ar": "نتحدث كثيراً عن الحديقة.",
+          "imagePrompt": "Illustration of Park context 4"
+        },
+        {
+          "es": "Esto es importante para Park.",
+          "ar": "هذا مهم لـ الحديقة."
+        },
+        {
+          "es": "Me gusta aprender sobre Park.",
+          "ar": "أحب أن أتعلم عن الحديقة."
+        },
+        {
+          "es": "¿Qué sabes sobre Park?",
+          "ar": "ماذا تعرف عن الحديقة؟"
+        },
+        {
+          "es": "Park es interesante.",
+          "ar": "الحديقة أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Park context 8"
+        },
+        {
+          "es": "Vamos a practicar Park.",
+          "ar": "لنتدرب على الحديقة."
+        },
+        {
+          "es": "Hablamos mucho de Park.",
+          "ar": "نتحدث كثيراً عن الحديقة."
+        },
+        {
+          "es": "Esto es importante para Park.",
+          "ar": "هذا مهم لـ الحديقة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940028_entke",
+      "title": {
+        "ar-SA": "الشاطئ",
+        "en-US": "Beach"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🏖️",
+      "color": "bg-cyan-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Beach.",
+          "ar": "أحب أن أتعلم عن الشاطئ.",
+          "imagePrompt": "Illustration of Beach context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Beach?",
+          "ar": "ماذا تعرف عن الشاطئ؟"
+        },
+        {
+          "es": "Beach es interesante.",
+          "ar": "الشاطئ أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Beach.",
+          "ar": "لنتدرب على الشاطئ."
+        },
+        {
+          "es": "Hablamos mucho de Beach.",
+          "ar": "نتحدث كثيراً عن الشاطئ.",
+          "imagePrompt": "Illustration of Beach context 4"
+        },
+        {
+          "es": "Esto es importante para Beach.",
+          "ar": "هذا مهم لـ الشاطئ."
+        },
+        {
+          "es": "Me gusta aprender sobre Beach.",
+          "ar": "أحب أن أتعلم عن الشاطئ."
+        },
+        {
+          "es": "¿Qué sabes sobre Beach?",
+          "ar": "ماذا تعرف عن الشاطئ؟"
+        },
+        {
+          "es": "Beach es interesante.",
+          "ar": "الشاطئ أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Beach context 8"
+        },
+        {
+          "es": "Vamos a practicar Beach.",
+          "ar": "لنتدرب على الشاطئ."
+        },
+        {
+          "es": "Hablamos mucho de Beach.",
+          "ar": "نتحدث كثيراً عن الشاطئ."
+        },
+        {
+          "es": "Esto es importante para Beach.",
+          "ar": "هذا مهم لـ الشاطئ."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940028_q3v6c",
+      "title": {
+        "ar-SA": "الجبل",
+        "en-US": "Mountain"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "⛰️",
+      "color": "bg-gray-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Mountain.",
+          "ar": "أحب أن أتعلم عن الجبل.",
+          "imagePrompt": "Illustration of Mountain context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Mountain?",
+          "ar": "ماذا تعرف عن الجبل؟"
+        },
+        {
+          "es": "Mountain es interesante.",
+          "ar": "الجبل أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Mountain.",
+          "ar": "لنتدرب على الجبل."
+        },
+        {
+          "es": "Hablamos mucho de Mountain.",
+          "ar": "نتحدث كثيراً عن الجبل.",
+          "imagePrompt": "Illustration of Mountain context 4"
+        },
+        {
+          "es": "Esto es importante para Mountain.",
+          "ar": "هذا مهم لـ الجبل."
+        },
+        {
+          "es": "Me gusta aprender sobre Mountain.",
+          "ar": "أحب أن أتعلم عن الجبل."
+        },
+        {
+          "es": "¿Qué sabes sobre Mountain?",
+          "ar": "ماذا تعرف عن الجبل؟"
+        },
+        {
+          "es": "Mountain es interesante.",
+          "ar": "الجبل أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Mountain context 8"
+        },
+        {
+          "es": "Vamos a practicar Mountain.",
+          "ar": "لنتدرب على الجبل."
+        },
+        {
+          "es": "Hablamos mucho de Mountain.",
+          "ar": "نتحدث كثيراً عن الجبل."
+        },
+        {
+          "es": "Esto es importante para Mountain.",
+          "ar": "هذا مهم لـ الجبل."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940028_mgb3z",
+      "title": {
+        "ar-SA": "التخييم",
+        "en-US": "Camping"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "⛺",
+      "color": "bg-green-800",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Camping.",
+          "ar": "أحب أن أتعلم عن التخييم.",
+          "imagePrompt": "Illustration of Camping context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Camping?",
+          "ar": "ماذا تعرف عن التخييم؟"
+        },
+        {
+          "es": "Camping es interesante.",
+          "ar": "التخييم أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Camping.",
+          "ar": "لنتدرب على التخييم."
+        },
+        {
+          "es": "Hablamos mucho de Camping.",
+          "ar": "نتحدث كثيراً عن التخييم.",
+          "imagePrompt": "Illustration of Camping context 4"
+        },
+        {
+          "es": "Esto es importante para Camping.",
+          "ar": "هذا مهم لـ التخييم."
+        },
+        {
+          "es": "Me gusta aprender sobre Camping.",
+          "ar": "أحب أن أتعلم عن التخييم."
+        },
+        {
+          "es": "¿Qué sabes sobre Camping?",
+          "ar": "ماذا تعرف عن التخييم؟"
+        },
+        {
+          "es": "Camping es interesante.",
+          "ar": "التخييم أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Camping context 8"
+        },
+        {
+          "es": "Vamos a practicar Camping.",
+          "ar": "لنتدرب على التخييم."
+        },
+        {
+          "es": "Hablamos mucho de Camping.",
+          "ar": "نتحدث كثيراً عن التخييم."
+        },
+        {
+          "es": "Esto es importante para Camping.",
+          "ar": "هذا مهم لـ التخييم."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940028_n1nr1",
+      "title": {
+        "ar-SA": "صيد السمك",
+        "en-US": "Fishing"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🎣",
+      "color": "bg-blue-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Fishing.",
+          "ar": "أحب أن أتعلم عن صيد السمك.",
+          "imagePrompt": "Illustration of Fishing context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Fishing?",
+          "ar": "ماذا تعرف عن صيد السمك؟"
+        },
+        {
+          "es": "Fishing es interesante.",
+          "ar": "صيد السمك أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Fishing.",
+          "ar": "لنتدرب على صيد السمك."
+        },
+        {
+          "es": "Hablamos mucho de Fishing.",
+          "ar": "نتحدث كثيراً عن صيد السمك.",
+          "imagePrompt": "Illustration of Fishing context 4"
+        },
+        {
+          "es": "Esto es importante para Fishing.",
+          "ar": "هذا مهم لـ صيد السمك."
+        },
+        {
+          "es": "Me gusta aprender sobre Fishing.",
+          "ar": "أحب أن أتعلم عن صيد السمك."
+        },
+        {
+          "es": "¿Qué sabes sobre Fishing?",
+          "ar": "ماذا تعرف عن صيد السمك؟"
+        },
+        {
+          "es": "Fishing es interesante.",
+          "ar": "صيد السمك أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Fishing context 8"
+        },
+        {
+          "es": "Vamos a practicar Fishing.",
+          "ar": "لنتدرب على صيد السمك."
+        },
+        {
+          "es": "Hablamos mucho de Fishing.",
+          "ar": "نتحدث كثيراً عن صيد السمك."
+        },
+        {
+          "es": "Esto es importante para Fishing.",
+          "ar": "هذا مهم لـ صيد السمك."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940029_rkj3l",
+      "title": {
+        "ar-SA": "الطبخ",
+        "en-US": "Cooking"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🍳",
+      "color": "bg-orange-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Cooking.",
+          "ar": "أحب أن أتعلم عن الطبخ.",
+          "imagePrompt": "Illustration of Cooking context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Cooking?",
+          "ar": "ماذا تعرف عن الطبخ؟"
+        },
+        {
+          "es": "Cooking es interesante.",
+          "ar": "الطبخ أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Cooking.",
+          "ar": "لنتدرب على الطبخ."
+        },
+        {
+          "es": "Hablamos mucho de Cooking.",
+          "ar": "نتحدث كثيراً عن الطبخ.",
+          "imagePrompt": "Illustration of Cooking context 4"
+        },
+        {
+          "es": "Esto es importante para Cooking.",
+          "ar": "هذا مهم لـ الطبخ."
+        },
+        {
+          "es": "Me gusta aprender sobre Cooking.",
+          "ar": "أحب أن أتعلم عن الطبخ."
+        },
+        {
+          "es": "¿Qué sabes sobre Cooking?",
+          "ar": "ماذا تعرف عن الطبخ؟"
+        },
+        {
+          "es": "Cooking es interesante.",
+          "ar": "الطبخ أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Cooking context 8"
+        },
+        {
+          "es": "Vamos a practicar Cooking.",
+          "ar": "لنتدرب على الطبخ."
+        },
+        {
+          "es": "Hablamos mucho de Cooking.",
+          "ar": "نتحدث كثيراً عن الطبخ."
+        },
+        {
+          "es": "Esto es importante para Cooking.",
+          "ar": "هذا مهم لـ الطبخ."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940029_f4lb1",
+      "title": {
+        "ar-SA": "التنظيف",
+        "en-US": "Cleaning"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🧹",
+      "color": "bg-teal-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Cleaning.",
+          "ar": "أحب أن أتعلم عن التنظيف.",
+          "imagePrompt": "Illustration of Cleaning context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Cleaning?",
+          "ar": "ماذا تعرف عن التنظيف؟"
+        },
+        {
+          "es": "Cleaning es interesante.",
+          "ar": "التنظيف أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Cleaning.",
+          "ar": "لنتدرب على التنظيف."
+        },
+        {
+          "es": "Hablamos mucho de Cleaning.",
+          "ar": "نتحدث كثيراً عن التنظيف.",
+          "imagePrompt": "Illustration of Cleaning context 4"
+        },
+        {
+          "es": "Esto es importante para Cleaning.",
+          "ar": "هذا مهم لـ التنظيف."
+        },
+        {
+          "es": "Me gusta aprender sobre Cleaning.",
+          "ar": "أحب أن أتعلم عن التنظيف."
+        },
+        {
+          "es": "¿Qué sabes sobre Cleaning?",
+          "ar": "ماذا تعرف عن التنظيف؟"
+        },
+        {
+          "es": "Cleaning es interesante.",
+          "ar": "التنظيف أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Cleaning context 8"
+        },
+        {
+          "es": "Vamos a practicar Cleaning.",
+          "ar": "لنتدرب على التنظيف."
+        },
+        {
+          "es": "Hablamos mucho de Cleaning.",
+          "ar": "نتحدث كثيراً عن التنظيف."
+        },
+        {
+          "es": "Esto es importante para Cleaning.",
+          "ar": "هذا مهم لـ التنظيف."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940029_fo9qk",
+      "title": {
+        "ar-SA": "البستنة",
+        "en-US": "Gardening"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🌻",
+      "color": "bg-green-300",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Gardening.",
+          "ar": "أحب أن أتعلم عن البستنة.",
+          "imagePrompt": "Illustration of Gardening context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Gardening?",
+          "ar": "ماذا تعرف عن البستنة؟"
+        },
+        {
+          "es": "Gardening es interesante.",
+          "ar": "البستنة أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Gardening.",
+          "ar": "لنتدرب على البستنة."
+        },
+        {
+          "es": "Hablamos mucho de Gardening.",
+          "ar": "نتحدث كثيراً عن البستنة.",
+          "imagePrompt": "Illustration of Gardening context 4"
+        },
+        {
+          "es": "Esto es importante para Gardening.",
+          "ar": "هذا مهم لـ البستنة."
+        },
+        {
+          "es": "Me gusta aprender sobre Gardening.",
+          "ar": "أحب أن أتعلم عن البستنة."
+        },
+        {
+          "es": "¿Qué sabes sobre Gardening?",
+          "ar": "ماذا تعرف عن البستنة؟"
+        },
+        {
+          "es": "Gardening es interesante.",
+          "ar": "البستنة أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Gardening context 8"
+        },
+        {
+          "es": "Vamos a practicar Gardening.",
+          "ar": "لنتدرب على البستنة."
+        },
+        {
+          "es": "Hablamos mucho de Gardening.",
+          "ar": "نتحدث كثيراً عن البستنة."
+        },
+        {
+          "es": "Esto es importante para Gardening.",
+          "ar": "هذا مهم لـ البستنة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940030_0mx0a",
+      "title": {
+        "ar-SA": "إصلاح الأشياء",
+        "en-US": "Fixing Things"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🔧",
+      "color": "bg-gray-700",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Fixing Things.",
+          "ar": "أحب أن أتعلم عن إصلاح الأشياء.",
+          "imagePrompt": "Illustration of Fixing Things context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Fixing Things?",
+          "ar": "ماذا تعرف عن إصلاح الأشياء؟"
+        },
+        {
+          "es": "Fixing Things es interesante.",
+          "ar": "إصلاح الأشياء أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Fixing Things.",
+          "ar": "لنتدرب على إصلاح الأشياء."
+        },
+        {
+          "es": "Hablamos mucho de Fixing Things.",
+          "ar": "نتحدث كثيراً عن إصلاح الأشياء.",
+          "imagePrompt": "Illustration of Fixing Things context 4"
+        },
+        {
+          "es": "Esto es importante para Fixing Things.",
+          "ar": "هذا مهم لـ إصلاح الأشياء."
+        },
+        {
+          "es": "Me gusta aprender sobre Fixing Things.",
+          "ar": "أحب أن أتعلم عن إصلاح الأشياء."
+        },
+        {
+          "es": "¿Qué sabes sobre Fixing Things?",
+          "ar": "ماذا تعرف عن إصلاح الأشياء؟"
+        },
+        {
+          "es": "Fixing Things es interesante.",
+          "ar": "إصلاح الأشياء أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Fixing Things context 8"
+        },
+        {
+          "es": "Vamos a practicar Fixing Things.",
+          "ar": "لنتدرب على إصلاح الأشياء."
+        },
+        {
+          "es": "Hablamos mucho de Fixing Things.",
+          "ar": "نتحدث كثيراً عن إصلاح الأشياء."
+        },
+        {
+          "es": "Esto es importante para Fixing Things.",
+          "ar": "هذا مهم لـ إصلاح الأشياء."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940032_iw9zk",
+      "title": {
+        "ar-SA": "التكنولوجيا",
+        "en-US": "Technology"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "💻",
+      "color": "bg-indigo-600",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Technology.",
+          "ar": "أحب أن أتعلم عن التكنولوجيا.",
+          "imagePrompt": "Illustration of Technology context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Technology?",
+          "ar": "ماذا تعرف عن التكنولوجيا؟"
+        },
+        {
+          "es": "Technology es interesante.",
+          "ar": "التكنولوجيا أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Technology.",
+          "ar": "لنتدرب على التكنولوجيا."
+        },
+        {
+          "es": "Hablamos mucho de Technology.",
+          "ar": "نتحدث كثيراً عن التكنولوجيا.",
+          "imagePrompt": "Illustration of Technology context 4"
+        },
+        {
+          "es": "Esto es importante para Technology.",
+          "ar": "هذا مهم لـ التكنولوجيا."
+        },
+        {
+          "es": "Me gusta aprender sobre Technology.",
+          "ar": "أحب أن أتعلم عن التكنولوجيا."
+        },
+        {
+          "es": "¿Qué sabes sobre Technology?",
+          "ar": "ماذا تعرف عن التكنولوجيا؟"
+        },
+        {
+          "es": "Technology es interesante.",
+          "ar": "التكنولوجيا أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Technology context 8"
+        },
+        {
+          "es": "Vamos a practicar Technology.",
+          "ar": "لنتدرب على التكنولوجيا."
+        },
+        {
+          "es": "Hablamos mucho de Technology.",
+          "ar": "نتحدث كثيراً عن التكنولوجيا."
+        },
+        {
+          "es": "Esto es importante para Technology.",
+          "ar": "هذا مهم لـ التكنولوجيا."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940032_yqgbw",
+      "title": {
+        "ar-SA": "وسائل التواصل",
+        "en-US": "Social Media"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "📱",
+      "color": "bg-blue-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Social Media.",
+          "ar": "أحب أن أتعلم عن وسائل التواصل.",
+          "imagePrompt": "Illustration of Social Media context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Social Media?",
+          "ar": "ماذا تعرف عن وسائل التواصل؟"
+        },
+        {
+          "es": "Social Media es interesante.",
+          "ar": "وسائل التواصل أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Social Media.",
+          "ar": "لنتدرب على وسائل التواصل."
+        },
+        {
+          "es": "Hablamos mucho de Social Media.",
+          "ar": "نتحدث كثيراً عن وسائل التواصل.",
+          "imagePrompt": "Illustration of Social Media context 4"
+        },
+        {
+          "es": "Esto es importante para Social Media.",
+          "ar": "هذا مهم لـ وسائل التواصل."
+        },
+        {
+          "es": "Me gusta aprender sobre Social Media.",
+          "ar": "أحب أن أتعلم عن وسائل التواصل."
+        },
+        {
+          "es": "¿Qué sabes sobre Social Media?",
+          "ar": "ماذا تعرف عن وسائل التواصل؟"
+        },
+        {
+          "es": "Social Media es interesante.",
+          "ar": "وسائل التواصل أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Social Media context 8"
+        },
+        {
+          "es": "Vamos a practicar Social Media.",
+          "ar": "لنتدرب على وسائل التواصل."
+        },
+        {
+          "es": "Hablamos mucho de Social Media.",
+          "ar": "نتحدث كثيراً عن وسائل التواصل."
+        },
+        {
+          "es": "Esto es importante para Social Media.",
+          "ar": "هذا مهم لـ وسائل التواصل."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940033_wux8m",
+      "title": {
+        "ar-SA": "الأخبار",
+        "en-US": "News"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "📰",
+      "color": "bg-gray-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre News.",
+          "ar": "أحب أن أتعلم عن الأخبار.",
+          "imagePrompt": "Illustration of News context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre News?",
+          "ar": "ماذا تعرف عن الأخبار؟"
+        },
+        {
+          "es": "News es interesante.",
+          "ar": "الأخبار أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar News.",
+          "ar": "لنتدرب على الأخبار."
+        },
+        {
+          "es": "Hablamos mucho de News.",
+          "ar": "نتحدث كثيراً عن الأخبار.",
+          "imagePrompt": "Illustration of News context 4"
+        },
+        {
+          "es": "Esto es importante para News.",
+          "ar": "هذا مهم لـ الأخبار."
+        },
+        {
+          "es": "Me gusta aprender sobre News.",
+          "ar": "أحب أن أتعلم عن الأخبار."
+        },
+        {
+          "es": "¿Qué sabes sobre News?",
+          "ar": "ماذا تعرف عن الأخبار؟"
+        },
+        {
+          "es": "News es interesante.",
+          "ar": "الأخبار أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of News context 8"
+        },
+        {
+          "es": "Vamos a practicar News.",
+          "ar": "لنتدرب على الأخبار."
+        },
+        {
+          "es": "Hablamos mucho de News.",
+          "ar": "نتحدث كثيراً عن الأخبار."
+        },
+        {
+          "es": "Esto es importante para News.",
+          "ar": "هذا مهم لـ الأخبار."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940033_kwls7",
+      "title": {
+        "ar-SA": "السياسة",
+        "en-US": "Politics"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🗳️",
+      "color": "bg-red-800",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Politics.",
+          "ar": "أحب أن أتعلم عن السياسة.",
+          "imagePrompt": "Illustration of Politics context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Politics?",
+          "ar": "ماذا تعرف عن السياسة؟"
+        },
+        {
+          "es": "Politics es interesante.",
+          "ar": "السياسة أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Politics.",
+          "ar": "لنتدرب على السياسة."
+        },
+        {
+          "es": "Hablamos mucho de Politics.",
+          "ar": "نتحدث كثيراً عن السياسة.",
+          "imagePrompt": "Illustration of Politics context 4"
+        },
+        {
+          "es": "Esto es importante para Politics.",
+          "ar": "هذا مهم لـ السياسة."
+        },
+        {
+          "es": "Me gusta aprender sobre Politics.",
+          "ar": "أحب أن أتعلم عن السياسة."
+        },
+        {
+          "es": "¿Qué sabes sobre Politics?",
+          "ar": "ماذا تعرف عن السياسة؟"
+        },
+        {
+          "es": "Politics es interesante.",
+          "ar": "السياسة أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Politics context 8"
+        },
+        {
+          "es": "Vamos a practicar Politics.",
+          "ar": "لنتدرب على السياسة."
+        },
+        {
+          "es": "Hablamos mucho de Politics.",
+          "ar": "نتحدث كثيراً عن السياسة."
+        },
+        {
+          "es": "Esto es importante para Politics.",
+          "ar": "هذا مهم لـ السياسة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940034_63a4z",
+      "title": {
+        "ar-SA": "التاريخ",
+        "en-US": "History"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "📜",
+      "color": "bg-yellow-800",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre History.",
+          "ar": "أحب أن أتعلم عن التاريخ.",
+          "imagePrompt": "Illustration of History context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre History?",
+          "ar": "ماذا تعرف عن التاريخ؟"
+        },
+        {
+          "es": "History es interesante.",
+          "ar": "التاريخ أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar History.",
+          "ar": "لنتدرب على التاريخ."
+        },
+        {
+          "es": "Hablamos mucho de History.",
+          "ar": "نتحدث كثيراً عن التاريخ.",
+          "imagePrompt": "Illustration of History context 4"
+        },
+        {
+          "es": "Esto es importante para History.",
+          "ar": "هذا مهم لـ التاريخ."
+        },
+        {
+          "es": "Me gusta aprender sobre History.",
+          "ar": "أحب أن أتعلم عن التاريخ."
+        },
+        {
+          "es": "¿Qué sabes sobre History?",
+          "ar": "ماذا تعرف عن التاريخ؟"
+        },
+        {
+          "es": "History es interesante.",
+          "ar": "التاريخ أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of History context 8"
+        },
+        {
+          "es": "Vamos a practicar History.",
+          "ar": "لنتدرب على التاريخ."
+        },
+        {
+          "es": "Hablamos mucho de History.",
+          "ar": "نتحدث كثيراً عن التاريخ."
+        },
+        {
+          "es": "Esto es importante para History.",
+          "ar": "هذا مهم لـ التاريخ."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940034_apjpy",
+      "title": {
+        "ar-SA": "العلوم",
+        "en-US": "Science"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🔬",
+      "color": "bg-purple-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Science.",
+          "ar": "أحب أن أتعلم عن العلوم.",
+          "imagePrompt": "Illustration of Science context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Science?",
+          "ar": "ماذا تعرف عن العلوم؟"
+        },
+        {
+          "es": "Science es interesante.",
+          "ar": "العلوم أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Science.",
+          "ar": "لنتدرب على العلوم."
+        },
+        {
+          "es": "Hablamos mucho de Science.",
+          "ar": "نتحدث كثيراً عن العلوم.",
+          "imagePrompt": "Illustration of Science context 4"
+        },
+        {
+          "es": "Esto es importante para Science.",
+          "ar": "هذا مهم لـ العلوم."
+        },
+        {
+          "es": "Me gusta aprender sobre Science.",
+          "ar": "أحب أن أتعلم عن العلوم."
+        },
+        {
+          "es": "¿Qué sabes sobre Science?",
+          "ar": "ماذا تعرف عن العلوم؟"
+        },
+        {
+          "es": "Science es interesante.",
+          "ar": "العلوم أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Science context 8"
+        },
+        {
+          "es": "Vamos a practicar Science.",
+          "ar": "لنتدرب على العلوم."
+        },
+        {
+          "es": "Hablamos mucho de Science.",
+          "ar": "نتحدث كثيراً عن العلوم."
+        },
+        {
+          "es": "Esto es importante para Science.",
+          "ar": "هذا مهم لـ العلوم."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940035_5i3a7",
+      "title": {
+        "ar-SA": "الفضاء",
+        "en-US": "Space"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🚀",
+      "color": "bg-black",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Space.",
+          "ar": "أحب أن أتعلم عن الفضاء.",
+          "imagePrompt": "Illustration of Space context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Space?",
+          "ar": "ماذا تعرف عن الفضاء؟"
+        },
+        {
+          "es": "Space es interesante.",
+          "ar": "الفضاء أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Space.",
+          "ar": "لنتدرب على الفضاء."
+        },
+        {
+          "es": "Hablamos mucho de Space.",
+          "ar": "نتحدث كثيراً عن الفضاء.",
+          "imagePrompt": "Illustration of Space context 4"
+        },
+        {
+          "es": "Esto es importante para Space.",
+          "ar": "هذا مهم لـ الفضاء."
+        },
+        {
+          "es": "Me gusta aprender sobre Space.",
+          "ar": "أحب أن أتعلم عن الفضاء."
+        },
+        {
+          "es": "¿Qué sabes sobre Space?",
+          "ar": "ماذا تعرف عن الفضاء؟"
+        },
+        {
+          "es": "Space es interesante.",
+          "ar": "الفضاء أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Space context 8"
+        },
+        {
+          "es": "Vamos a practicar Space.",
+          "ar": "لنتدرب على الفضاء."
+        },
+        {
+          "es": "Hablamos mucho de Space.",
+          "ar": "نتحدث كثيراً عن الفضاء."
+        },
+        {
+          "es": "Esto es importante para Space.",
+          "ar": "هذا مهم لـ الفضاء."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940035_d374e",
+      "title": {
+        "ar-SA": "البيئة",
+        "en-US": "Environment"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🌍",
+      "color": "bg-green-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Environment.",
+          "ar": "أحب أن أتعلم عن البيئة.",
+          "imagePrompt": "Illustration of Environment context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Environment?",
+          "ar": "ماذا تعرف عن البيئة؟"
+        },
+        {
+          "es": "Environment es interesante.",
+          "ar": "البيئة أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Environment.",
+          "ar": "لنتدرب على البيئة."
+        },
+        {
+          "es": "Hablamos mucho de Environment.",
+          "ar": "نتحدث كثيراً عن البيئة.",
+          "imagePrompt": "Illustration of Environment context 4"
+        },
+        {
+          "es": "Esto es importante para Environment.",
+          "ar": "هذا مهم لـ البيئة."
+        },
+        {
+          "es": "Me gusta aprender sobre Environment.",
+          "ar": "أحب أن أتعلم عن البيئة."
+        },
+        {
+          "es": "¿Qué sabes sobre Environment?",
+          "ar": "ماذا تعرف عن البيئة؟"
+        },
+        {
+          "es": "Environment es interesante.",
+          "ar": "البيئة أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Environment context 8"
+        },
+        {
+          "es": "Vamos a practicar Environment.",
+          "ar": "لنتدرب على البيئة."
+        },
+        {
+          "es": "Hablamos mucho de Environment.",
+          "ar": "نتحدث كثيراً عن البيئة."
+        },
+        {
+          "es": "Esto es importante para Environment.",
+          "ar": "هذا مهم لـ البيئة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940036_djmde",
+      "title": {
+        "ar-SA": "الفن",
+        "en-US": "Art"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🎨",
+      "color": "bg-pink-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Art.",
+          "ar": "أحب أن أتعلم عن الفن.",
+          "imagePrompt": "Illustration of Art context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Art?",
+          "ar": "ماذا تعرف عن الفن؟"
+        },
+        {
+          "es": "Art es interesante.",
+          "ar": "الفن أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Art.",
+          "ar": "لنتدرب على الفن."
+        },
+        {
+          "es": "Hablamos mucho de Art.",
+          "ar": "نتحدث كثيراً عن الفن.",
+          "imagePrompt": "Illustration of Art context 4"
+        },
+        {
+          "es": "Esto es importante para Art.",
+          "ar": "هذا مهم لـ الفن."
+        },
+        {
+          "es": "Me gusta aprender sobre Art.",
+          "ar": "أحب أن أتعلم عن الفن."
+        },
+        {
+          "es": "¿Qué sabes sobre Art?",
+          "ar": "ماذا تعرف عن الفن؟"
+        },
+        {
+          "es": "Art es interesante.",
+          "ar": "الفن أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Art context 8"
+        },
+        {
+          "es": "Vamos a practicar Art.",
+          "ar": "لنتدرب على الفن."
+        },
+        {
+          "es": "Hablamos mucho de Art.",
+          "ar": "نتحدث كثيراً عن الفن."
+        },
+        {
+          "es": "Esto es importante para Art.",
+          "ar": "هذا مهم لـ الفن."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940036_7aat8",
+      "title": {
+        "ar-SA": "نظرية الموسيقى",
+        "en-US": "Music Theory"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🎼",
+      "color": "bg-gray-800",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Music Theory.",
+          "ar": "أحب أن أتعلم عن نظرية الموسيقى.",
+          "imagePrompt": "Illustration of Music Theory context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Music Theory?",
+          "ar": "ماذا تعرف عن نظرية الموسيقى؟"
+        },
+        {
+          "es": "Music Theory es interesante.",
+          "ar": "نظرية الموسيقى أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Music Theory.",
+          "ar": "لنتدرب على نظرية الموسيقى."
+        },
+        {
+          "es": "Hablamos mucho de Music Theory.",
+          "ar": "نتحدث كثيراً عن نظرية الموسيقى.",
+          "imagePrompt": "Illustration of Music Theory context 4"
+        },
+        {
+          "es": "Esto es importante para Music Theory.",
+          "ar": "هذا مهم لـ نظرية الموسيقى."
+        },
+        {
+          "es": "Me gusta aprender sobre Music Theory.",
+          "ar": "أحب أن أتعلم عن نظرية الموسيقى."
+        },
+        {
+          "es": "¿Qué sabes sobre Music Theory?",
+          "ar": "ماذا تعرف عن نظرية الموسيقى؟"
+        },
+        {
+          "es": "Music Theory es interesante.",
+          "ar": "نظرية الموسيقى أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Music Theory context 8"
+        },
+        {
+          "es": "Vamos a practicar Music Theory.",
+          "ar": "لنتدرب على نظرية الموسيقى."
+        },
+        {
+          "es": "Hablamos mucho de Music Theory.",
+          "ar": "نتحدث كثيراً عن نظرية الموسيقى."
+        },
+        {
+          "es": "Esto es importante para Music Theory.",
+          "ar": "هذا مهم لـ نظرية الموسيقى."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940037_tyma5",
+      "title": {
+        "ar-SA": "التصوير",
+        "en-US": "Photography"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "📷",
+      "color": "bg-gray-900",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Photography.",
+          "ar": "أحب أن أتعلم عن التصوير.",
+          "imagePrompt": "Illustration of Photography context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Photography?",
+          "ar": "ماذا تعرف عن التصوير؟"
+        },
+        {
+          "es": "Photography es interesante.",
+          "ar": "التصوير أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Photography.",
+          "ar": "لنتدرب على التصوير."
+        },
+        {
+          "es": "Hablamos mucho de Photography.",
+          "ar": "نتحدث كثيراً عن التصوير.",
+          "imagePrompt": "Illustration of Photography context 4"
+        },
+        {
+          "es": "Esto es importante para Photography.",
+          "ar": "هذا مهم لـ التصوير."
+        },
+        {
+          "es": "Me gusta aprender sobre Photography.",
+          "ar": "أحب أن أتعلم عن التصوير."
+        },
+        {
+          "es": "¿Qué sabes sobre Photography?",
+          "ar": "ماذا تعرف عن التصوير؟"
+        },
+        {
+          "es": "Photography es interesante.",
+          "ar": "التصوير أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Photography context 8"
+        },
+        {
+          "es": "Vamos a practicar Photography.",
+          "ar": "لنتدرب على التصوير."
+        },
+        {
+          "es": "Hablamos mucho de Photography.",
+          "ar": "نتحدث كثيراً عن التصوير."
+        },
+        {
+          "es": "Esto es importante para Photography.",
+          "ar": "هذا مهم لـ التصوير."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940037_lk8r5",
+      "title": {
+        "ar-SA": "الموضة",
+        "en-US": "Fashion"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "👠",
+      "color": "bg-rose-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Fashion.",
+          "ar": "أحب أن أتعلم عن الموضة.",
+          "imagePrompt": "Illustration of Fashion context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Fashion?",
+          "ar": "ماذا تعرف عن الموضة؟"
+        },
+        {
+          "es": "Fashion es interesante.",
+          "ar": "الموضة أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Fashion.",
+          "ar": "لنتدرب على الموضة."
+        },
+        {
+          "es": "Hablamos mucho de Fashion.",
+          "ar": "نتحدث كثيراً عن الموضة.",
+          "imagePrompt": "Illustration of Fashion context 4"
+        },
+        {
+          "es": "Esto es importante para Fashion.",
+          "ar": "هذا مهم لـ الموضة."
+        },
+        {
+          "es": "Me gusta aprender sobre Fashion.",
+          "ar": "أحب أن أتعلم عن الموضة."
+        },
+        {
+          "es": "¿Qué sabes sobre Fashion?",
+          "ar": "ماذا تعرف عن الموضة؟"
+        },
+        {
+          "es": "Fashion es interesante.",
+          "ar": "الموضة أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Fashion context 8"
+        },
+        {
+          "es": "Vamos a practicar Fashion.",
+          "ar": "لنتدرب على الموضة."
+        },
+        {
+          "es": "Hablamos mucho de Fashion.",
+          "ar": "نتحدث كثيراً عن الموضة."
+        },
+        {
+          "es": "Esto es importante para Fashion.",
+          "ar": "هذا مهم لـ الموضة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940037_djr2z",
+      "title": {
+        "ar-SA": "العمارة",
+        "en-US": "Architecture"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🏗️",
+      "color": "bg-orange-700",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Architecture.",
+          "ar": "أحب أن أتعلم عن العمارة.",
+          "imagePrompt": "Illustration of Architecture context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Architecture?",
+          "ar": "ماذا تعرف عن العمارة؟"
+        },
+        {
+          "es": "Architecture es interesante.",
+          "ar": "العمارة أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Architecture.",
+          "ar": "لنتدرب على العمارة."
+        },
+        {
+          "es": "Hablamos mucho de Architecture.",
+          "ar": "نتحدث كثيراً عن العمارة.",
+          "imagePrompt": "Illustration of Architecture context 4"
+        },
+        {
+          "es": "Esto es importante para Architecture.",
+          "ar": "هذا مهم لـ العمارة."
+        },
+        {
+          "es": "Me gusta aprender sobre Architecture.",
+          "ar": "أحب أن أتعلم عن العمارة."
+        },
+        {
+          "es": "¿Qué sabes sobre Architecture?",
+          "ar": "ماذا تعرف عن العمارة؟"
+        },
+        {
+          "es": "Architecture es interesante.",
+          "ar": "العمارة أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Architecture context 8"
+        },
+        {
+          "es": "Vamos a practicar Architecture.",
+          "ar": "لنتدرب على العمارة."
+        },
+        {
+          "es": "Hablamos mucho de Architecture.",
+          "ar": "نتحدث كثيراً عن العمارة."
+        },
+        {
+          "es": "Esto es importante para Architecture.",
+          "ar": "هذا مهم لـ العمارة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940037_jjy59",
+      "title": {
+        "ar-SA": "علم النفس",
+        "en-US": "Psychology"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🧠",
+      "color": "bg-purple-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Psychology.",
+          "ar": "أحب أن أتعلم عن علم النفس.",
+          "imagePrompt": "Illustration of Psychology context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Psychology?",
+          "ar": "ماذا تعرف عن علم النفس؟"
+        },
+        {
+          "es": "Psychology es interesante.",
+          "ar": "علم النفس أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Psychology.",
+          "ar": "لنتدرب على علم النفس."
+        },
+        {
+          "es": "Hablamos mucho de Psychology.",
+          "ar": "نتحدث كثيراً عن علم النفس.",
+          "imagePrompt": "Illustration of Psychology context 4"
+        },
+        {
+          "es": "Esto es importante para Psychology.",
+          "ar": "هذا مهم لـ علم النفس."
+        },
+        {
+          "es": "Me gusta aprender sobre Psychology.",
+          "ar": "أحب أن أتعلم عن علم النفس."
+        },
+        {
+          "es": "¿Qué sabes sobre Psychology?",
+          "ar": "ماذا تعرف عن علم النفس؟"
+        },
+        {
+          "es": "Psychology es interesante.",
+          "ar": "علم النفس أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Psychology context 8"
+        },
+        {
+          "es": "Vamos a practicar Psychology.",
+          "ar": "لنتدرب على علم النفس."
+        },
+        {
+          "es": "Hablamos mucho de Psychology.",
+          "ar": "نتحدث كثيراً عن علم النفس."
+        },
+        {
+          "es": "Esto es importante para Psychology.",
+          "ar": "هذا مهم لـ علم النفس."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940038_e293w",
+      "title": {
+        "ar-SA": "الفلسفة",
+        "en-US": "Philosophy"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🤔",
+      "color": "bg-blue-300",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Philosophy.",
+          "ar": "أحب أن أتعلم عن الفلسفة.",
+          "imagePrompt": "Illustration of Philosophy context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Philosophy?",
+          "ar": "ماذا تعرف عن الفلسفة؟"
+        },
+        {
+          "es": "Philosophy es interesante.",
+          "ar": "الفلسفة أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Philosophy.",
+          "ar": "لنتدرب على الفلسفة."
+        },
+        {
+          "es": "Hablamos mucho de Philosophy.",
+          "ar": "نتحدث كثيراً عن الفلسفة.",
+          "imagePrompt": "Illustration of Philosophy context 4"
+        },
+        {
+          "es": "Esto es importante para Philosophy.",
+          "ar": "هذا مهم لـ الفلسفة."
+        },
+        {
+          "es": "Me gusta aprender sobre Philosophy.",
+          "ar": "أحب أن أتعلم عن الفلسفة."
+        },
+        {
+          "es": "¿Qué sabes sobre Philosophy?",
+          "ar": "ماذا تعرف عن الفلسفة؟"
+        },
+        {
+          "es": "Philosophy es interesante.",
+          "ar": "الفلسفة أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Philosophy context 8"
+        },
+        {
+          "es": "Vamos a practicar Philosophy.",
+          "ar": "لنتدرب على الفلسفة."
+        },
+        {
+          "es": "Hablamos mucho de Philosophy.",
+          "ar": "نتحدث كثيراً عن الفلسفة."
+        },
+        {
+          "es": "Esto es importante para Philosophy.",
+          "ar": "هذا مهم لـ الفلسفة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940038_gegzm",
+      "title": {
+        "ar-SA": "الأديان",
+        "en-US": "Religion"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🛐",
+      "color": "bg-indigo-800",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Religion.",
+          "ar": "أحب أن أتعلم عن الأديان.",
+          "imagePrompt": "Illustration of Religion context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Religion?",
+          "ar": "ماذا تعرف عن الأديان؟"
+        },
+        {
+          "es": "Religion es interesante.",
+          "ar": "الأديان أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Religion.",
+          "ar": "لنتدرب على الأديان."
+        },
+        {
+          "es": "Hablamos mucho de Religion.",
+          "ar": "نتحدث كثيراً عن الأديان.",
+          "imagePrompt": "Illustration of Religion context 4"
+        },
+        {
+          "es": "Esto es importante para Religion.",
+          "ar": "هذا مهم لـ الأديان."
+        },
+        {
+          "es": "Me gusta aprender sobre Religion.",
+          "ar": "أحب أن أتعلم عن الأديان."
+        },
+        {
+          "es": "¿Qué sabes sobre Religion?",
+          "ar": "ماذا تعرف عن الأديان؟"
+        },
+        {
+          "es": "Religion es interesante.",
+          "ar": "الأديان أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Religion context 8"
+        },
+        {
+          "es": "Vamos a practicar Religion.",
+          "ar": "لنتدرب على الأديان."
+        },
+        {
+          "es": "Hablamos mucho de Religion.",
+          "ar": "نتحدث كثيراً عن الأديان."
+        },
+        {
+          "es": "Esto es importante para Religion.",
+          "ar": "هذا مهم لـ الأديان."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940038_z9kbj",
+      "title": {
+        "ar-SA": "الثقافة",
+        "en-US": "Culture"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🎎",
+      "color": "bg-red-600",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Culture.",
+          "ar": "أحب أن أتعلم عن الثقافة.",
+          "imagePrompt": "Illustration of Culture context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Culture?",
+          "ar": "ماذا تعرف عن الثقافة؟"
+        },
+        {
+          "es": "Culture es interesante.",
+          "ar": "الثقافة أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Culture.",
+          "ar": "لنتدرب على الثقافة."
+        },
+        {
+          "es": "Hablamos mucho de Culture.",
+          "ar": "نتحدث كثيراً عن الثقافة.",
+          "imagePrompt": "Illustration of Culture context 4"
+        },
+        {
+          "es": "Esto es importante para Culture.",
+          "ar": "هذا مهم لـ الثقافة."
+        },
+        {
+          "es": "Me gusta aprender sobre Culture.",
+          "ar": "أحب أن أتعلم عن الثقافة."
+        },
+        {
+          "es": "¿Qué sabes sobre Culture?",
+          "ar": "ماذا تعرف عن الثقافة؟"
+        },
+        {
+          "es": "Culture es interesante.",
+          "ar": "الثقافة أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Culture context 8"
+        },
+        {
+          "es": "Vamos a practicar Culture.",
+          "ar": "لنتدرب على الثقافة."
+        },
+        {
+          "es": "Hablamos mucho de Culture.",
+          "ar": "نتحدث كثيراً عن الثقافة."
+        },
+        {
+          "es": "Esto es importante para Culture.",
+          "ar": "هذا مهم لـ الثقافة."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940038_8pd7x",
+      "title": {
+        "ar-SA": "التقاليد",
+        "en-US": "Traditions"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🏮",
+      "color": "bg-red-700",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Traditions.",
+          "ar": "أحب أن أتعلم عن التقاليد.",
+          "imagePrompt": "Illustration of Traditions context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Traditions?",
+          "ar": "ماذا تعرف عن التقاليد؟"
+        },
+        {
+          "es": "Traditions es interesante.",
+          "ar": "التقاليد أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Traditions.",
+          "ar": "لنتدرب على التقاليد."
+        },
+        {
+          "es": "Hablamos mucho de Traditions.",
+          "ar": "نتحدث كثيراً عن التقاليد.",
+          "imagePrompt": "Illustration of Traditions context 4"
+        },
+        {
+          "es": "Esto es importante para Traditions.",
+          "ar": "هذا مهم لـ التقاليد."
+        },
+        {
+          "es": "Me gusta aprender sobre Traditions.",
+          "ar": "أحب أن أتعلم عن التقاليد."
+        },
+        {
+          "es": "¿Qué sabes sobre Traditions?",
+          "ar": "ماذا تعرف عن التقاليد؟"
+        },
+        {
+          "es": "Traditions es interesante.",
+          "ar": "التقاليد أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Traditions context 8"
+        },
+        {
+          "es": "Vamos a practicar Traditions.",
+          "ar": "لنتدرب على التقاليد."
+        },
+        {
+          "es": "Hablamos mucho de Traditions.",
+          "ar": "نتحدث كثيراً عن التقاليد."
+        },
+        {
+          "es": "Esto es importante para Traditions.",
+          "ar": "هذا مهم لـ التقاليد."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940038_c9wib",
+      "title": {
+        "ar-SA": "الأعياد",
+        "en-US": "Holidays"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🎉",
+      "color": "bg-yellow-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Holidays.",
+          "ar": "أحب أن أتعلم عن الأعياد.",
+          "imagePrompt": "Illustration of Holidays context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Holidays?",
+          "ar": "ماذا تعرف عن الأعياد؟"
+        },
+        {
+          "es": "Holidays es interesante.",
+          "ar": "الأعياد أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Holidays.",
+          "ar": "لنتدرب على الأعياد."
+        },
+        {
+          "es": "Hablamos mucho de Holidays.",
+          "ar": "نتحدث كثيراً عن الأعياد.",
+          "imagePrompt": "Illustration of Holidays context 4"
+        },
+        {
+          "es": "Esto es importante para Holidays.",
+          "ar": "هذا مهم لـ الأعياد."
+        },
+        {
+          "es": "Me gusta aprender sobre Holidays.",
+          "ar": "أحب أن أتعلم عن الأعياد."
+        },
+        {
+          "es": "¿Qué sabes sobre Holidays?",
+          "ar": "ماذا تعرف عن الأعياد؟"
+        },
+        {
+          "es": "Holidays es interesante.",
+          "ar": "الأعياد أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Holidays context 8"
+        },
+        {
+          "es": "Vamos a practicar Holidays.",
+          "ar": "لنتدرب على الأعياد."
+        },
+        {
+          "es": "Hablamos mucho de Holidays.",
+          "ar": "نتحدث كثيراً عن الأعياد."
+        },
+        {
+          "es": "Esto es importante para Holidays.",
+          "ar": "هذا مهم لـ الأعياد."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940038_rg7z1",
+      "title": {
+        "ar-SA": "أحداث رياضية",
+        "en-US": "Sports Events"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🏆",
+      "color": "bg-yellow-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Sports Events.",
+          "ar": "أحب أن أتعلم عن أحداث رياضية.",
+          "imagePrompt": "Illustration of Sports Events context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Sports Events?",
+          "ar": "ماذا تعرف عن أحداث رياضية؟"
+        },
+        {
+          "es": "Sports Events es interesante.",
+          "ar": "أحداث رياضية أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Sports Events.",
+          "ar": "لنتدرب على أحداث رياضية."
+        },
+        {
+          "es": "Hablamos mucho de Sports Events.",
+          "ar": "نتحدث كثيراً عن أحداث رياضية.",
+          "imagePrompt": "Illustration of Sports Events context 4"
+        },
+        {
+          "es": "Esto es importante para Sports Events.",
+          "ar": "هذا مهم لـ أحداث رياضية."
+        },
+        {
+          "es": "Me gusta aprender sobre Sports Events.",
+          "ar": "أحب أن أتعلم عن أحداث رياضية."
+        },
+        {
+          "es": "¿Qué sabes sobre Sports Events?",
+          "ar": "ماذا تعرف عن أحداث رياضية؟"
+        },
+        {
+          "es": "Sports Events es interesante.",
+          "ar": "أحداث رياضية أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Sports Events context 8"
+        },
+        {
+          "es": "Vamos a practicar Sports Events.",
+          "ar": "لنتدرب على أحداث رياضية."
+        },
+        {
+          "es": "Hablamos mucho de Sports Events.",
+          "ar": "نتحدث كثيراً عن أحداث رياضية."
+        },
+        {
+          "es": "Esto es importante para Sports Events.",
+          "ar": "هذا مهم لـ أحداث رياضية."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940039_pazlu",
+      "title": {
+        "ar-SA": "الألعاب الأولمبية",
+        "en-US": "Olympic Games"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🥇",
+      "color": "bg-blue-500",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Olympic Games.",
+          "ar": "أحب أن أتعلم عن الألعاب الأولمبية.",
+          "imagePrompt": "Illustration of Olympic Games context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Olympic Games?",
+          "ar": "ماذا تعرف عن الألعاب الأولمبية؟"
+        },
+        {
+          "es": "Olympic Games es interesante.",
+          "ar": "الألعاب الأولمبية أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Olympic Games.",
+          "ar": "لنتدرب على الألعاب الأولمبية."
+        },
+        {
+          "es": "Hablamos mucho de Olympic Games.",
+          "ar": "نتحدث كثيراً عن الألعاب الأولمبية.",
+          "imagePrompt": "Illustration of Olympic Games context 4"
+        },
+        {
+          "es": "Esto es importante para Olympic Games.",
+          "ar": "هذا مهم لـ الألعاب الأولمبية."
+        },
+        {
+          "es": "Me gusta aprender sobre Olympic Games.",
+          "ar": "أحب أن أتعلم عن الألعاب الأولمبية."
+        },
+        {
+          "es": "¿Qué sabes sobre Olympic Games?",
+          "ar": "ماذا تعرف عن الألعاب الأولمبية؟"
+        },
+        {
+          "es": "Olympic Games es interesante.",
+          "ar": "الألعاب الأولمبية أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Olympic Games context 8"
+        },
+        {
+          "es": "Vamos a practicar Olympic Games.",
+          "ar": "لنتدرب على الألعاب الأولمبية."
+        },
+        {
+          "es": "Hablamos mucho de Olympic Games.",
+          "ar": "نتحدث كثيراً عن الألعاب الأولمبية."
+        },
+        {
+          "es": "Esto es importante para Olympic Games.",
+          "ar": "هذا مهم لـ الألعاب الأولمبية."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940039_o1gyu",
+      "title": {
+        "ar-SA": "كأس العالم",
+        "en-US": "World Cup"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "⚽",
+      "color": "bg-green-600",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre World Cup.",
+          "ar": "أحب أن أتعلم عن كأس العالم.",
+          "imagePrompt": "Illustration of World Cup context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre World Cup?",
+          "ar": "ماذا تعرف عن كأس العالم؟"
+        },
+        {
+          "es": "World Cup es interesante.",
+          "ar": "كأس العالم أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar World Cup.",
+          "ar": "لنتدرب على كأس العالم."
+        },
+        {
+          "es": "Hablamos mucho de World Cup.",
+          "ar": "نتحدث كثيراً عن كأس العالم.",
+          "imagePrompt": "Illustration of World Cup context 4"
+        },
+        {
+          "es": "Esto es importante para World Cup.",
+          "ar": "هذا مهم لـ كأس العالم."
+        },
+        {
+          "es": "Me gusta aprender sobre World Cup.",
+          "ar": "أحب أن أتعلم عن كأس العالم."
+        },
+        {
+          "es": "¿Qué sabes sobre World Cup?",
+          "ar": "ماذا تعرف عن كأس العالم؟"
+        },
+        {
+          "es": "World Cup es interesante.",
+          "ar": "كأس العالم أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of World Cup context 8"
+        },
+        {
+          "es": "Vamos a practicar World Cup.",
+          "ar": "لنتدرب على كأس العالم."
+        },
+        {
+          "es": "Hablamos mucho de World Cup.",
+          "ar": "نتحدث كثيراً عن كأس العالم."
+        },
+        {
+          "es": "Esto es importante para World Cup.",
+          "ar": "هذا مهم لـ كأس العالم."
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940040_y20z3",
+      "title": {
+        "ar-SA": "البطولات",
+        "en-US": "Championships"
+      },
+      "rawLevel": "Intermediate Level 🚀",
+      "icon": "🏅",
+      "color": "bg-orange-400",
+      "sentences": [
+        {
+          "es": "Me gusta aprender sobre Championships.",
+          "ar": "أحب أن أتعلم عن البطولات.",
+          "imagePrompt": "Illustration of Championships context 0"
+        },
+        {
+          "es": "¿Qué sabes sobre Championships?",
+          "ar": "ماذا تعرف عن البطولات؟"
+        },
+        {
+          "es": "Championships es interesante.",
+          "ar": "البطولات أمر مثير للاهتمام."
+        },
+        {
+          "es": "Vamos a practicar Championships.",
+          "ar": "لنتدرب على البطولات."
+        },
+        {
+          "es": "Hablamos mucho de Championships.",
+          "ar": "نتحدث كثيراً عن البطولات.",
+          "imagePrompt": "Illustration of Championships context 4"
+        },
+        {
+          "es": "Esto es importante para Championships.",
+          "ar": "هذا مهم لـ البطولات."
+        },
+        {
+          "es": "Me gusta aprender sobre Championships.",
+          "ar": "أحب أن أتعلم عن البطولات."
+        },
+        {
+          "es": "¿Qué sabes sobre Championships?",
+          "ar": "ماذا تعرف عن البطولات؟"
+        },
+        {
+          "es": "Championships es interesante.",
+          "ar": "البطولات أمر مثير للاهتمام.",
+          "imagePrompt": "Illustration of Championships context 8"
+        },
+        {
+          "es": "Vamos a practicar Championships.",
+          "ar": "لنتدرب على البطولات."
+        },
+        {
+          "es": "Hablamos mucho de Championships.",
+          "ar": "نتحدث كثيراً عن البطولات."
+        },
+        {
+          "es": "Esto es importante para Championships.",
+          "ar": "هذا مهم لـ البطولات."
+        }
+      ]
+    }
+  ],
+  "Advanced Level 🎓": [
+    {
+      "id": "lesson_1771530940041_xrh30",
+      "title": {
+        "ar-SA": "البطريق التائه",
+        "en-US": "The Lost Penguin"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🐧",
+      "color": "bg-blue-300",
+      "sentences": [
+        {
+          "es": "Pingo era un pingüino pequeño que vivía en la Antártida.",
+          "ar": "كان بينجو بطريقاً صغيراً يعيش في القارة القطبية الجنوبية.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Un día, decidió caminar más lejos de lo habitual.",
+          "ar": "في أحد الأيام، قرر المشي لمسافة أبعد من المعتاد.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Encontró un barco grande y rojo cerca de la costa.",
+          "ar": "وجد سفينة كبيرة حمراء بالقرب من الساحل.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Curioso, subió al barco y se quedó dormido.",
+          "ar": "بدافع الفضول، صعد إلى السفينة وغط في النوم.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Cuando despertó, ¡estaba en una playa soleada de Brasil!",
+          "ar": "عندما استيقظ، كان على شاطئ مشمس في البرازيل!",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Hizo muchos amigos nuevos que le enseñaron a bailar samba.",
+          "ar": "كون العديد من الأصدقاء الجدد الذين علموه رقص السامبا.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Aunque extrañaba el frío, amaba sus nuevas aventuras.",
+          "ar": "على الرغم من أنه اشتاق للبرد، إلا أنه أحب مغامراته الجديدة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Finalmente, el barco regresó y Pingo volvió a casa con muchas historias.",
+          "ar": "أخيراً، عادت السفينة وعاد بينجو إلى المنزل ومعه الكثير من القصص.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940041_14zwc",
+      "title": {
+        "ar-SA": "الطباخ السحري",
+        "en-US": "The Magic Chef"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "👨‍🍳",
+      "color": "bg-orange-400",
+      "sentences": [
+        {
+          "es": "Pablo no era un cocinero normal.",
+          "ar": "لم يكن بابلو طباخاً عادياً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Todo lo que cocinaba tenía un efecto mágico.",
+          "ar": "كل ما طبخه كان له تأثير سحري.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Si comías su sopa, podías volar por diez minutos.",
+          "ar": "إذا أكلت حساءه، يمكنك الطيران لمدة عشر دقائق.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Su pastel de chocolate te hacía cantar ópera.",
+          "ar": "كعكة الشوكولاتة خاصته تجعلك تغني الأوبرا.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Un día, el rey visitó su restaurante.",
+          "ar": "في أحد الأيام، زار الملك مطعمه.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Pablo le sirvió una ensalada especial.",
+          "ar": "قدم له بابلو سلطة خاصة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "El rey se volvió invisible y jugó bromas a sus guardias.",
+          "ar": "أصبح الملك غير مرئي ولعب مقالب مع حراسه.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Fue el día más divertido en el reino.",
+          "ar": "كان أمتع يوم في المملكة.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940041_djl5u",
+      "title": {
+        "ar-SA": "القط الذي ينبح",
+        "en-US": "The cat who barked"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🐱",
+      "color": "bg-amber-500",
+      "sentences": [
+        {
+          "es": "Mishi era un gato muy confundido.",
+          "ar": "كان ميشي قطاً مرتبكاً جداً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Creció rodeado de cinco perros grandes.",
+          "ar": "نشأ محاطاً بخمسة كلاب كبيرة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "En lugar de maullar, Mishi ladraba: '¡Gua, gua!'",
+          "ar": "بدلاً من المواء، كان ميشي ينبح: 'هوهو، هوهو!'",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Los otros gatos del barrio se reían de él.",
+          "ar": "كانت قطط الحي الأخرى تضحك عليه.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Pero un día, un ladrón entró en la casa.",
+          "ar": "لكن في أحد الأيام، دخل لص إلى المنزل.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Mishi ladró tan fuerte que el ladrón salió corriendo asustado.",
+          "ar": "نبح ميشي بصوت عالٍ جداً لدرجة أن اللص هرب خائفاً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Desde entonces, Mishi es un héroe.",
+          "ar": "منذ ذلك الحين، أصبح ميشي بطلاً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Ahora todos los gatos intentan ladrar también.",
+          "ar": "الآن تحاول كل القطط النباح أيضاً.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940041_qsdqf",
+      "title": {
+        "ar-SA": "الدراجة الطائرة",
+        "en-US": "The Flying Bicycle"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🚲",
+      "color": "bg-purple-400",
+      "sentences": [
+        {
+          "es": "Elena encontró una bicicleta vieja en el garaje.",
+          "ar": "وجدت إيلينا دراجة قديمة في المرآب.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Tenía un botón rojo extraño en el manillar.",
+          "ar": "كان بها زر أحمر غريب على المقود.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Cuando presionó el botón, ¡alas salieron de las ruedas!",
+          "ar": "عندما ضغطت الزر، خرجت أجنحة من العجلات!",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Elena pedaleó fuerte y subió al cielo.",
+          "ar": "داست إيلينا بقوة وصعدت إلى السماء.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Voló junto a los pájaros y saludó a los aviones.",
+          "ar": "طارت بجانب الطيور ولوحت للطائرات.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Vio su escuela desde arriba, parecía muy pequeña.",
+          "ar": "رأت مدرستها من الأعلى، كانت تبدو صغيرة جداً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Aterrizó suavemente en el patio de su casa.",
+          "ar": "هبطت ببطء في فناء منزلها.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Es su secreto mejor guardado.",
+          "ar": "إنه سرها المحفوظ جيداً.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940042_2xwlr",
+      "title": {
+        "ar-SA": "الفتي الذي أوقف الزمن",
+        "en-US": "The Boy Who Stopped Time"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "⏱️",
+      "color": "bg-slate-600",
+      "sentences": [
+        {
+          "es": "Mateo descubrió que podía detener el tiempo si estornudaba tres veces.",
+          "ar": "اكتشف ماتيو أنه يستطيع إيقاف الزمن إذا عطس ثلاث مرات.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Todo el mundo se quedaba congelado como estatuas.",
+          "ar": "كان الجميع يتجمدون مثل التماثيل.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Aprovechaba para comer helado gratis.",
+          "ar": "استغل الفرصة لأكل الآيس كريم مجاناً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "También salvaba vasos antes de que cayeran al suelo.",
+          "ar": "كما كان ينقذ الأكواب قبل أن تسقط على الأرض.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Un día, vio que un perro iba a perseguir a un gato.",
+          "ar": "في يوم من الأيام، رأى كلباً يطارد قطة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Detuvo el tiempo y movió al gato a un árbol seguro.",
+          "ar": "أوقف الزمن ونقل القطة إلى شجرة آمنة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Cuando el tiempo volvió, el perro estaba muy confundido.",
+          "ar": "عندما عاد الزمن، كان الكلب مرتبكاً جداً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Mateo sonrió, sabiendo que era un superhéroe secreto.",
+          "ar": "ابتسم ماتيو، عالماً بأنه بطل خارق سري.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940042_ad7iw",
+      "title": {
+        "ar-SA": "مكتبة الهمسات",
+        "en-US": "The Library of Whispers"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "📚",
+      "color": "bg-brown-600",
+      "sentences": [
+        {
+          "es": "Había una biblioteca donde los libros te hablaban.",
+          "ar": "كانت هناك مكتبة حيث تتحدث الكتب إليك.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "No leías las páginas, solo escuchabas.",
+          "ar": "لم تكن تقرأ الصفحات، بل تستمع فقط.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Un libro de historia gritaba sobre batallas antiguas.",
+          "ar": "كان كتاب التاريخ يصرخ حول المعارك القديمة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Un libro de cocina susurraba recetas deliciosas.",
+          "ar": "كان كتاب الطبخ يهمس بوصفات لذيذة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Sara abrió un libro sin título.",
+          "ar": "فتحت سارة كتاباً بلا عنوان.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "El libro le contó sobre un tesoro escondido en la ciudad.",
+          "ar": "أخبرها الكتاب عن كنز مخفي في المدينة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Sara siguió las instrucciones y encontró una caja vieja.",
+          "ar": "اتبعت سارة التعليمات ووجدت صندوقاً قديماً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Dentro había... ¡otro libro!",
+          "ar": "بداخلها كان... كتاب آخر!",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940042_6t6bn",
+      "title": {
+        "ar-SA": "البستاني الآلي",
+        "en-US": "The Robot Gardener"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🤖",
+      "color": "bg-green-700",
+      "sentences": [
+        {
+          "es": "X-200 era un robot diseñado para construir coches.",
+          "ar": "كان X-200 روبوتاً مصمماً لبناء السيارات.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Pero a él no le gustaba el metal, le gustaban las flores.",
+          "ar": "لكنه لم يكن يحب المعدن، كان يحب الزهور.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Escapó de la fábrica y encontró un jardín abandonado.",
+          "ar": "هرب من المصنع ووجد حديقة مهجورة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Con sus manos de acero, plantó rosas con mucho cuidado.",
+          "ar": "بيديه الفولاذيتين، زرع الورود بحذر شديد.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Regaba las plantas con aceite y agua.",
+          "ar": "كان يسقي النباتات بالزيت والماء.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Pronto, el jardín fue el más hermoso de la ciudad.",
+          "ar": "سرعان ما أصبحت الحديقة الأجمل في المدينة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "La gente venía a ver al robot que amaba la naturaleza.",
+          "ar": "جاء الناس ليروا الروبوت الذي أحب الطبيعة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "X-200 encontró su verdadero propósito.",
+          "ar": "وجد X-200 هدفه الحقيقي.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940042_wys0n",
+      "title": {
+        "ar-SA": "قرية الغيوم",
+        "en-US": "The Village of Clouds"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "☁️",
+      "color": "bg-sky-400",
+      "sentences": [
+        {
+          "es": "Arriba, muy arriba en el cielo, vive gente.",
+          "ar": "في الأعلى، عالياً جداً في السماء، يعيش أناس.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Sus casas están hechas de nubes esponjosas.",
+          "ar": "بيوتهم مصنوعة من الغيوم المنفوشة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Caminan sobre arcoíris para ir al trabajo.",
+          "ar": "يمشون على قوس قزح للذهاب إلى العمل.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Nunca llueve allí, porque ellos hacen la lluvia.",
+          "ar": "لا تمطر هناك أبداً، لأنهم هم من يصنعون المطر.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Un día, un niño llamado Lucas cayó de una nube.",
+          "ar": "في أحد الأيام، سقط طفل اسمه لوكاس من غيمة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Aterrizó en un trampolín gigante en la Tierra.",
+          "ar": "هبط على ترامبولين عملاق في الأرض.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Nadie le creyó cuando contó de dónde venía.",
+          "ar": "لم يصدقه أحد عندما أخبرهم من أين أتى.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Pero él siempre mira al cielo, saludando a su familia.",
+          "ar": "لكنه ينظر دائماً إلى السماء، ملوحاً لعائلته.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940043_5d7qt",
+      "title": {
+        "ar-SA": "الكلب المحقق",
+        "en-US": "The Detective Dog"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🕵️‍♂️",
+      "color": "bg-gray-800",
+      "sentences": [
+        {
+          "es": "Rex no era un perro policía, era un detective privado.",
+          "ar": "لم يكن ريكس كلباً بوليسياً، كان محققاً خاصاً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Llevaba un sombrero y una lupa en su collar.",
+          "ar": "كان يرتدي قبعة ويحمل عدسة مكبرة في طوقه.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Su especialidad era encontrar juguetes perdidos.",
+          "ar": "تخصصه كان العثور على الألعاب المفقودة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Un día, el gato de la vecina perdió su collar de diamantes.",
+          "ar": "في يوم ما، أضاعت قطة الجارة طوقها الماسي.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Rex olió el rastro hasta el parque.",
+          "ar": "شم ريكس الأثر حتى الحديقة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Encontró el collar en el nido de un pájaro travieso.",
+          "ar": "وجد الطوق في عش طائر مشاغب.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "La vecina le dio un hueso gigante como pago.",
+          "ar": "أعطته الجارة عظمة عملاقة كدفعة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Caso cerrado para el detective Rex.",
+          "ar": "أُغلقت القضية بالنسبة للمحقق ريكس.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940044_9cfg2",
+      "title": {
+        "ar-SA": "مخبز منتصف الليل",
+        "en-US": "The Midnight Bakery"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🥐",
+      "color": "bg-yellow-600",
+      "sentences": [
+        {
+          "es": "Hay una panadería que solo abre a las 12 de la noche.",
+          "ar": "هناك مخبز يفتح فقط في الساعة 12 منتصف الليل.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "El panadero es un oso amable llamado Bruno.",
+          "ar": "الخباز هو دب لطيف اسمه برونو.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Sus clientes son búhos, murciélagos y gatos callejeros.",
+          "ar": "زبائنه هم البوم، والخفافيش، وقطط الشوارع.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Vende galletas con sabor a luna y estrellas.",
+          "ar": "يبيع بسكويت بطعم القمر والنجوم.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Una niña despierta lo vio una noche.",
+          "ar": "رأته فتاة مستيقظة في ليلة ما.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Bruno le regaló un pastel que brillaba en la oscuridad.",
+          "ar": "أهداها برونو كعكة تتوهج في الظلام.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Sabía a sueños felices y vainilla.",
+          "ar": "كان طعمها مثل الأحلام السعيدة والفانيليا.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Ahora ella espera despierta cada noche.",
+          "ar": "الآن تنتظر هي مستيقظة كل ليلة.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940044_5y64b",
+      "title": {
+        "ar-SA": "الأحذية المغنية",
+        "en-US": "The Singing Shoes"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "👞",
+      "color": "bg-red-400",
+      "sentences": [
+        {
+          "es": "Pedro compró unos zapatos muy baratos.",
+          "ar": "اشترى بيدرو أحذية رخيصة جداً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "No sabía que estaban encantados.",
+          "ar": "لم يكن يعلم أنها مسكونة بالسحر.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Cada vez que daba un paso, los zapatos cantaban una nota.",
+          "ar": "كلما خطا خطوة، كانت الأحذية تغني نغمة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Si corría, sonaba como una canción de rock.",
+          "ar": "إذا ركض، كان الصوت يشبه أغنية روك.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Si caminaba lento, era una balada triste.",
+          "ar": "إذا مشى ببطء، كانت أغنية حزينة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "No podía jugar a las escondidas nunca.",
+          "ar": "لم يستطع لعب الغميضة أبداً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Pero se convirtió en el mejor bailarín de la escuela.",
+          "ar": "لكنه أصبح أفضل راقص في المدرسة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Sus pies siempre tenían ritmo.",
+          "ar": "كانت قدماه تتمتعان دائماً بالإيقاع.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940045_k2hvh",
+      "title": {
+        "ar-SA": "جزيرة الجوارب المفقودة",
+        "en-US": "The Island of Lost Socks"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🧦",
+      "color": "bg-indigo-300",
+      "sentences": [
+        {
+          "es": "¿A dónde van los calcetines que pierdes en la lavadora?",
+          "ar": "أين تذهب الجوارب التي تفقدها في الغسالة؟",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Van a una isla secreta en medio del océano.",
+          "ar": "تذهب إلى جزيرة سرية في وسط المحيط.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Allí, los calcetines viven libres y felices.",
+          "ar": "هناك، تعيش الجوارب حرة وسعيدة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "No necesitan pies, saltan solos.",
+          "ar": "لا تحتاج إلى أقدام، فهي تقفز وحدها.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Tienen un rey, que es un calcetín de rombos.",
+          "ar": "لديهم ملك، وهو جورب مزخرف بالمعينات.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Hacen fiestas de algodón y lana.",
+          "ar": "يقيمون حفلات من القطن والصوف.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Si ves un barco de ropa, aléjate.",
+          "ar": "إذا رأيت قارباً من الملابس، ابتعد.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Podrías asustar a los calcetines salvajes.",
+          "ar": "قد تخيف الجوارب البرية.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940047_yn73x",
+      "title": {
+        "ar-SA": "سر صانع الساعات",
+        "en-US": "The Clockmaker's Secret"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🕰️",
+      "color": "bg-amber-700",
+      "sentences": [
+        {
+          "es": "El señor Tic Tac arreglaba relojes en el pueblo.",
+          "ar": "كان السيد تيك تاك يصلح الساعات في القرية.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Pero tenía un reloj especial en su bolsillo.",
+          "ar": "لكن كان لديه ساعة خاصة في جيبه.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Este reloj no marcaba las horas, marcaba los recuerdos.",
+          "ar": "هذه الساعة لم تكن تشير إلى الساعات، بل إلى الذكريات.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Podía ver lo que pasó ayer o hace diez años.",
+          "ar": "كان يستطيع رؤية ما حدث بالأمس أو قبل عشر سنوات.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Ayudaba a la gente a encontrar cosas perdidas.",
+          "ar": "كان يساعد الناس في العثور على الأشياء المفقودة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Nadie sabía cómo lo hacía, solo le decían 'mago'.",
+          "ar": "لم يعرف أحد كيف يفعل ذلك، كانوا يسمونه 'سمكراً' فقط.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Un día, el reloj se rompió.",
+          "ar": "في أحد الأيام، انكسرت الساعة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "El señor Tic Tac decidió vivir solo el presente.",
+          "ar": "قرر السيد تيك تاك أن يعيش الحاضر فقط.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940048_kinx3",
+      "title": {
+        "ar-SA": "التنين الذي أحب الشاي",
+        "en-US": "The Dragon Who Loved Tea"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🐉",
+      "color": "bg-green-600",
+      "sentences": [
+        {
+          "es": "Fuego no era un dragón normal que quemaba pueblos.",
+          "ar": "لم يكن فويغو تنينًا عاديًا يحرق القرى.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Él usaba su fuego para calentar agua.",
+          "ar": "كان يستخدم ناره لتسخين الماء.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Le encantaba el té de menta y manzanilla.",
+          "ar": "كان يحب شاي النعناع والبابونج.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Abrió una casa de té en la cima de la montaña.",
+          "ar": "فتح بيت شاي على قمة الجبل.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Los caballeros subían, no para pelear, sino para beber.",
+          "ar": "كان الفرسان يصعدون، ليس للقتال، بل للشرب.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Fuego servía las tazas con su cola con cuidado.",
+          "ar": "كان فويغو يقدم الأكواب بذيله بحذر.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Se hizo famoso por sus galletas crujientes.",
+          "ar": "أصبح مشهوراً ببسكويته المقرمش.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Demostró que los dragones pueden ser amables.",
+          "ar": "أثبت أن التنانين يمكن أن تكون لطيفة.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940048_zt216",
+      "title": {
+        "ar-SA": "الرسام غير المرئي",
+        "en-US": "The Invisible Painter"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🖌️",
+      "color": "bg-purple-300",
+      "sentences": [
+        {
+          "es": "En París, aparecían pinturas en las paredes cada noche.",
+          "ar": "في باريس، كانت تظهر لوحات على الجدران كل ليلة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Eran hermosas, pero nadie veía al artista.",
+          "ar": "كانت جميلة، لكن لم ير أحد الفنان.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "La policía intentó atraparlo muchas veces.",
+          "ar": "حاولت الشرطة الإمساك به عدة مرات.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Resultó ser un fantasma llamado Pierre.",
+          "ar": "اتضح أنه شبح اسمه بيير.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Pintaba con luz de luna y sombras.",
+          "ar": "كان يرسم بضوء القمر والظلال.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Quería dejar el mundo más bonito.",
+          "ar": "أراد أن يترك العالم أكثر جمالاً.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Ahora, la gente deja pintura en las esquinas para él.",
+          "ar": "الآن، يترك الناس الطلاء في الزوايا من أجله.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Es el artista más famoso que nadie ha visto.",
+          "ar": "إنه أشهر فنان لم يره أحد.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940048_2t5kk",
+      "title": {
+        "ar-SA": "الشجرة ذات الأوراق الذهبية",
+        "en-US": "The Tree with Golden Leaves"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🌳",
+      "color": "bg-yellow-500",
+      "sentences": [
+        {
+          "es": "En el bosque profundo, había un árbol brillante.",
+          "ar": "في الغابة العميقة، كانت هناك شجرة لامعة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Sus hojas eran de oro puro.",
+          "ar": "كانت أوراقها من الذهب الخالص.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Un hombre avaro intentó cortar una rama.",
+          "ar": "حاول رجل بخيل قطع غصن منها.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "El árbol se convirtió en piedra y el oro desapareció.",
+          "ar": "تحولت الشجرة إلى حجر واختفى الذهب.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "El hombre aprendió que la avaricia rompe la magia.",
+          "ar": "تعلم الرجل أن الجشع يكسر السحر.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Años después, una niña le dio agua al árbol de piedra.",
+          "ar": "بعد سنوات، سقت طفلة الشجرة الحجرية بالماء.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Con su bondad, el árbol volvió a la vida.",
+          "ar": "بلطفها، عادت الشجرة إلى الحياة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Pero el oro solo brillaba para los corazones puros.",
+          "ar": "لكن الذهب كان يلمع فقط للقلوب النقية.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940048_vvroq",
+      "title": {
+        "ar-SA": "النملة رائدة الفضاء",
+        "en-US": "The Astronaut Ant"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🐜",
+      "color": "bg-red-600",
+      "sentences": [
+        {
+          "es": "Anita era una hormiga con un gran sueño.",
+          "ar": "كانت أنيتا نملة ولديها حلم كبير.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Quería ser la primera hormiga en la Luna.",
+          "ar": "أرادت أن تكون أول نملة على القمر.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Construyó un cohete con una botella de plástico.",
+          "ar": "بنت صاروخاً باستخدام زجاجة بلاستيكية.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Usó bicarbonato y vinagre como combustible.",
+          "ar": "استخدمت صودا الخبز والخل كوقود.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Despegó desde el jardín trasero.",
+          "ar": "انطلقت من الحديقة الخلفية.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Voló alto, más alto que los árboles.",
+          "ar": "طارت عالياً، أعلى من الأشجار.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Aterrizó en una lámpara de la calle, que parecía una luna.",
+          "ar": "هبطت على مصباح الشارع، الذي كان يشبه القمر.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Para ella, fue un gran paso para la 'hormigahumanidad'.",
+          "ar": "بالنسبة لها، كانت خطوة كبيرة لـ 'جنس النمل'.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940049_4ismi",
+      "title": {
+        "ar-SA": "المدينة تحت الماء",
+        "en-US": "The Underwater City"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🏙️",
+      "color": "bg-cyan-600",
+      "sentences": [
+        {
+          "es": "Dicen que Atlántida está perdida, pero yo la vi.",
+          "ar": "يقولون إن أطلانتس مفقودة، لكنني رأيتها.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Estaba buceando cerca de Grecia.",
+          "ar": "كنت أغوص بالقرب من اليونان.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Vi luces brillando en el fondo del mar.",
+          "ar": "رأيت أضواء تلمع في قاع البحر.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Sirenas y peces vivían juntos en casas de coral.",
+          "ar": "كانت حوريات البحر والأسماك تعيش معاً في منازل من المرجان.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Usaban perlas como monedas y algas como ropa.",
+          "ar": "كانوا يستخدمون اللؤلؤ كعملات والطحالب كملابس.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Me invitaron a una cena de sushi sin pescado.",
+          "ar": "دعوني إلى عشاء سوشي خالي من السمك.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Prometí no revelar su ubicación exacta.",
+          "ar": "وعدت بعدم كشف موقعهم الدقيق.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Es un paraíso azul y silencioso.",
+          "ar": "إنه جنة زرقاء وصامتة.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940049_2tllh",
+      "title": {
+        "ar-SA": "الفتي الذي تحدث مع الغيوم",
+        "en-US": "The Boy Who Talked to Clouds"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "🌥️",
+      "color": "bg-slate-400",
+      "sentences": [
+        {
+          "es": "Tomás se aburría en la escuela.",
+          "ar": "كان توماس يشعر بالملل في المدرسة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Miraba por la ventana y hablaba con las nubes.",
+          "ar": "كان ينظر من النافذة ويتحدث مع الغيوم.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Le pedía a una nube que tomara forma de dragón.",
+          "ar": "طلب من غيمة أن تتشكل بهيئة تنين.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "¡Y la nube obedeció!",
+          "ar": "وأطاعت الغيمة!",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Le pidió a otra que lloviera solo sobre el jardín.",
+          "ar": "طلب من أخرى أن تمطر فقط فوق الحديقة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Se convirtió en el mejor amigo del clima.",
+          "ar": "أصبح أفضل صديق للطقس.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Nunca se mojaba si no quería.",
+          "ar": "لم يكن يبتل أبداً إذا لم يرد ذلك.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Las nubes siempre lo protegían del sol fuerte.",
+          "ar": "كانت الغيوم تحميه دائماً من الشمس القوية.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    },
+    {
+      "id": "lesson_1771530940049_mkrfj",
+      "title": {
+        "ar-SA": "مكتبة الأحلام",
+        "en-US": "The Library of Dreams"
+      },
+      "rawLevel": "Advanced Level 🎓",
+      "icon": "💤",
+      "color": "bg-purple-900",
+      "sentences": [
+        {
+          "es": "Cuando duermes, tus sueños van a una biblioteca.",
+          "ar": "عندما تنام، تذهب أحلامك إلى مكتبة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Están escritos en libros de cristal.",
+          "ar": "إنها مكتوبة في كتب من الكريستال.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "El bibliotecario es un gato negro sabio.",
+          "ar": "أمين المكتبة هو قط أسود حكيم.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Él organiza los sueños felices y las pesadillas.",
+          "ar": "إنه ينظم الأحلام السعيدة والكوابيس.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Si tienes un sueño repetido, es porque perdiste la página.",
+          "ar": "إذا كان لديك حلم متكرر، فذلك لأنك فقدت الصفحة.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "A veces, presta sueños de otras personas.",
+          "ar": "أحياناً، يقرض أحلام أشخاص آخرين.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Por eso a veces sueñas con lugares que no conoces.",
+          "ar": "لهذا السبب تحلم أحياناً بأماكن لا تعرفها.",
+          "imagePrompt": "Scene from story"
+        },
+        {
+          "es": "Cuida tus sueños, son historias valiosas.",
+          "ar": "احرص على أحلامك، فهي قصص قيمة.",
+          "imagePrompt": "Scene from story"
+        }
+      ]
+    }
+  ]
+}

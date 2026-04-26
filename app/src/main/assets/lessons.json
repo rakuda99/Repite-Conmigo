@@ -1,0 +1,33 @@
+{
+  "Grammar Level 📘": [
+    {
+      "id": "lesson_1771530940050_ffkeu",
+      "title": { "ar-SA": "الحروف والنطق", "en-US": "El Alfabeto-Intro" },
+      "rawLevel": "Grammar Level 📘",
+      "icon": "🔤",
+      "color": "bg-indigo-600",
+      "sentences": []
+    },
+    {
+      "id": "lesson_1771530940051_ecn81",
+      "title": { "ar-SA": "فعل Ser و Estar", "en-US": "Ser vs Estar" },
+      "rawLevel": "Grammar Level 📘",
+      "icon": "🆚",
+      "color": "bg-purple-600",
+      "sentences": [
+        { "es": "Yo soy de Arabia Saudita", "ar": "أنا من السعودية", "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/512px-Flag_of_Saudi_Arabia.svg.png" },
+        { "es": "Él es un buen doctor", "ar": "هو طبيب جيد", "imageUrl": "https://api.dicebear.com/7.x/noto-emoji/svg?seed=doctor" }
+      ]
+    }
+  ],
+  "Primary Level 👶": [
+     {
+       "id": "lesson_food",
+       "title": { "ar-SA": "الطعام والشراب", "en-US": "Food & Drink" },
+       "icon": "🍕",
+       "sentences": [
+         { "es": "Pollo - حيوانات", "ar": "دجاج", "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Hecheff_Chicken.jpg/512px-Hecheff_Chicken.jpg" }
+       ]
+     }
+  ]
+}

@@ -1,0 +1,137 @@
+<resources>
+    <string name="app_name">كرر معي</string>
+    
+    <!-- Register Screen -->
+    <string name="register_title">إنشاء حساب جديد ✨</string>
+    <string name="register_subtitle">انضم إلينا وابدأ رحلة التعلم</string>
+    <string name="full_name_label">الاسم الكامل</string>
+    <string name="email_label">البريد الإلكتروني</string>
+    <string name="password_label">كلمة المرور</string>
+    <string name="confirm_password_label">تأكيد كلمة المرور</string>
+    <string name="passwords_dont_match">كلمات المرور غير متطابقة</string>
+    <string name="register_button">إنشاء حساب</string>
+    <string name="already_have_account">لديك حساب بالفعل؟ سجل دخولك</string>
+    <string name="error_creating_account">خطأ في إنشاء الحساب</string>
+    
+    <!-- Login Screen -->
+    <string name="login_title">مرحباً بك مجدداً! 👋</string>
+    <string name="login_subtitle">سجل دخولك لمواصلة التعلم</string>
+    <string name="login_button">تسجيل الدخول</string>
+    <string name="google_login_button">تسجيل الدخول عبر Google</string>
+    <string name="no_account_register">ليس لديك حساب؟ سجل الآن</string>
+    <string name="login_error">خطأ في تسجيل الدخول</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="learning_language">لغة التعلم</string>
+    <string name="accuracy_threshold">عتبة الدقة: %1$d%%</string>
+    <string name="accuracy_description">كلما زادت النسبة، زادت صعوبة الانتقال للجملة التالية.</string>
+    <string name="admin_dashboard">لوحة التحكم</string>
+    <string name="lesson_management">إدارة الدروس (RLP Protocol)</string>
+    <string name="import_lessons">استيراد دروس جديدة (.json)</string>
+    <string name="export_lessons">تصدير دروسي الحالية</string>
+    <string name="external_memory">الذاكرة الخارجية والذكاء الذاتي 💾</string>
+    <string name="backup_progress">عمل نسخة احتياطية للتقدم (ملف خارجي)</string>
+    <string name="restore_progress">استعادة التقدم من الملف</string>
+    <string name="restore_success">تمت استعادة البيانات بنجاح! 🔄</string>
+    <string name="close_settings">إغـلاق الإعـدادات</string>
+    <string name="logout">تسجيل الخروج</string>
+
+    <!-- Advanced Level -->
+    <string name="advanced_title">المستوى المتقدم</string>
+    <string name="advanced_subtitle">تحديات متقدمة: قراءة نصوص، تحليل لغوي، ومواضيع معقدة</string>
+    <string name="level_quizzes">اختبارات المستوى</string>
+    <string name="pronunciation_challenge">تحدي النطق المتقدم</string>
+    <string name="tf_challenge">تحدي صحيح أم خطأ المتقدم</string>
+    <string name="fill_blank_challenge">تحدي أكمل الفراغ المتقدم</string>
+    <string name="add_custom_lesson">إضافة درس مخصص متقدم</string>
+    <string name="back">رجوع</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_lessons">الدروس</string>
+    <string name="nav_progress">الإحصائيات</string>
+    <string name="nav_settings">الإعدادات</string>
+    <string name="sentences_count">%1$d جملة</string>
+
+    <!-- Home Screen -->
+    <string name="app_subtitle">أتقن النطق بقوة الذكاء الاصطناعي</string>
+    <string name="accuracy_rate">معدل الدقة</string>
+    <string name="completed_lessons">الدروس المكتملة: %1$d</string>
+    <string name="quick_challenge">تحدي سريع ⚡</string>
+    <string name="mcq_quiz_title">اختبار المعاني (MCQ)</string>
+    <string name="mcq_quiz_desc">اختبر حصيلتك اللغوية الآن!</string>
+    <string name="tf_quiz_title">صحيح أم خطأ؟</string>
+    <string name="tf_quiz_desc">تحدي سرعة البديهة والترجمة!</string>
+    <string name="fill_blank_quiz_title">أكمل الفراغ</string>
+    <string name="fill_blank_quiz_desc">اختبر قدرتك على بناء الجمل!</string>
+    <string name="reorder_quiz_title">ترتيب الجملة</string>
+    <string name="reorder_quiz_desc">رتب الكلمات المبعثرة بشكل صحيح!</string>
+    <string name="matching_quiz_title">توصيل الكلمات</string>
+    <string name="matching_quiz_desc">وصّل الكلمة بمعناها الصحيح!</string>
+    <string name="writing_quiz_title">اختبار الكتابة</string>
+    <string name="writing_quiz_desc">اكتب الترجمة الصحيحة بنفسك!</string>
+    <string name="translate_to_spanish_title">ترجم إلى الإسبانية</string>
+    <string name="translate_to_spanish_desc">اكتب الترجمة بالإسبانية مباشرة!</string>
+    <string name="choose_level">اختر مستواك</string>
+    <string name="beginner_level_title">مبتدئ</string>
+    <string name="beginner_level_desc">الحروف والأصوات</string>
+    <string name="intermediate_level_title">متوسط</string>
+    <string name="intermediate_level_desc">الكلمات والعبارات</string>
+    <string name="advanced_level_desc">الجمل، القواعد، والنصوص</string>
+
+    <!-- Setup Profile Screen -->
+    <string name="setup_profile_title">أخبرنا المزيد عنك 👤</string>
+    <string name="setup_profile_subtitle">لنخصص تجربتك التعليمية بشكل أفضل</string>
+    <string name="gender_label">الجنس</string>
+    <string name="gender_male">ذكر</string>
+    <string name="gender_female">أنثى</string>
+    <string name="age_label">العمر</string>
+    <string name="country_label">الدولة</string>
+    <string name="mother_tongue_label">اللغة الأم</string>
+    <string name="target_language_prompt">ما اللغة التي تريد تعلمها؟</string>
+    <string name="complete_profile_button">استكمال الملف الشخصي</string>
+    <string name="connection_error">خطأ في الاتصال: تأكد من تفعيل الإنترنت/Firestore</string>
+    <string name="unexpected_error">حدث خطأ غير متوقع: %1$s</string>
+    
+    <!-- Languages -->
+    <string name="lang_arabic">العربية</string>
+    <string name="lang_english">الإنجليزية</string>
+    <string name="lang_spanish">الإسبانية</string>
+    <string name="lang_french">الفرنسية</string>
+    <string name="lang_other">أخرى</string>
+
+    <!-- Stats Screen -->
+    <string name="stats_title">إحصائياتك 📊</string>
+    <string name="total_xp">إجمالي النقاط</string>
+    <string name="highest_accuracy">أعلى دقة</string>
+    <string name="active_days">أيام النشاط</string>
+    <string name="sessions">الجلسات</string>
+    <string name="level_label">المستوى</string>
+    <string name="level_elite">نخبة</string>
+    <string name="stats_motivation">استمر! أنت تتحسن كل يوم.</string>
+
+    <!-- UI Language -->
+    <string name="ui_language">لغة واجهة التطبيق</string>
+    <string name="lang_conflict_error">لا يمكن أن تكون اللغة الأم ولغة التعلم متطابقتين</string>
+
+    <!-- Quiz Shared -->
+    <string name="quiz_choose_correct_word">اختر الترجمة الصحيحة لهذه الكلمة 🎯</string>
+    <string name="quiz_fill_blank_instruction">أكمل الفراغ بالكلمة الصحيحة ✍️</string>
+    <string name="quiz_translation_label">الترجمة:</string>
+    <string name="check">تحقق</string>
+    <string name="next">التالي</string>
+    <string name="quiz_true_false_instruction">هل هذه الترجمة صحيحة؟ ✅/❌</string>
+    <string name="true_label">صحيح</string>
+    <string name="false_label">خطأ</string>
+    <string name="quiz_reorder_instruction">رتب الكلمات لتكوين جملة صحيحة 🧩</string>
+    <string name="quiz_matching_instruction">وصّل الكلمات بمعانيها الصحيحة 🔗</string>
+    <string name="quiz_writing_instruction">اكتب الترجمة الصحيحة ✍️</string>
+    <string name="quiz_audio_instruction">استمع واختر الكلمة الصحيحة 🎧</string>
+    <string name="quiz_result_correct">إجابة ذكية! 🎉</string>
+    <string name="quiz_result_wrong">للأسف، الإجابة غير صحيحة</string>
+    <string name="correct_translation_is">الترجمة الصحيحة هي: %1$s</string>
+    <string name="well_done_next">أحسنت! التالي</string>
+    <string name="quiz_mcq_instruction">ما معنى هذه الكلمة؟</string>
+    <string name="check_answer">تحقق من الإجابة</string>
+</resources>
