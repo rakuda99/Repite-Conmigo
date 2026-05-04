@@ -14,8 +14,8 @@ android {
         applicationId = "com.repite.conmigo"
         minSdk = 24
         targetSdk = 34
-        versionCode = 113
-        versionName = "11.0.0"
+        versionCode = 300
+        versionName = "12.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -49,9 +49,10 @@ android {
     }
 
     applicationVariants.all {
-        outputs.all {
+        val variant = this
+        variant.outputs.all {
             val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
-            output.outputFileName = "RepiteConmigo_v${versionName}_b${versionCode}_debug.apk"
+            output.outputFileName = "REPITE_V12_GOD_MODE.apk"
         }
     }
 }

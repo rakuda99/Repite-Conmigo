@@ -42,15 +42,33 @@ fun AdminDashboardScreen(
                     }
                 },
                 actions = {
-                    Button(onClick = {
-                        scope.launch {
-                            isLoading = true
-                            contentService.seedDatabase()
-                            lessons = contentService.getLessons()
-                            isLoading = false
+                    Row {
+                        Button(
+                            onClick = {
+                                scope.launch {
+                                    isLoading = true
+                                    contentService.clearAllLocalData() // New method
+                                    lessons = contentService.getLessons()
+                                    isLoading = false
+                                }
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
+                        ) {
+                            Text("مسح وإعادة تحميل 🔄")
                         }
-                    }) {
-                        Text("رفع البيانات المحلية")
+                        
+                        Spacer(modifier = Modifier.width(8.dp))
+                        
+                        Button(onClick = {
+                            scope.launch {
+                                isLoading = true
+                                contentService.seedDatabase()
+                                lessons = contentService.getLessons()
+                                isLoading = false
+                            }
+                        }) {
+                            Text("رفع المحلي ⬆️")
+                        }
                     }
                 }
             )

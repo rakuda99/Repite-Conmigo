@@ -13,6 +13,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
 import com.repite.conmigo.logic.AuthService
 import androidx.compose.ui.res.stringResource
 import com.repite.conmigo.R
@@ -21,6 +23,7 @@ import com.repite.conmigo.ui.theme.DuoGreen
 import com.repite.conmigo.ui.theme.DuoRed
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
+import androidx.compose.ui.text.style.TextAlign
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -35,6 +38,7 @@ fun SettingsScreen(
     val accuracyThreshold by viewModel.accuracyThreshold.collectAsState()
     val learningLang by viewModel.learningLanguage.collectAsState()
     val scope = rememberCoroutineScope()
+    val context = LocalContext.current
 
     Scaffold(
         topBar = {
@@ -103,6 +107,60 @@ fun SettingsScreen(
                     )
                 }
             }
+            
+            Text(
+                "Lesson Management (RLP Protocol)",
+                style = MaterialTheme.typography.titleLarge,
+                color = DuoBlue,
+                modifier = Modifier.padding(top = 16.dp)
+            )
+            Divider(color = DuoGreen, thickness = 2.dp, modifier = Modifier.padding(vertical = 8.dp))
+            
+            val uiState by viewModel.uiState.collectAsState()
+            if (uiState.feedback.isNotEmpty()) {
+                Surface(
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                    color = DuoBlue.copy(alpha = 0.1f),
+                    shape = RoundedCornerShape(8.dp)
+                ) {
+                    Text(
+                        uiState.feedback,
+                        modifier = Modifier.padding(12.dp),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = DuoBlue,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
+
+            Button(
+                onClick = { 
+                    scope.launch {
+                        viewModel.clearAllSentences()
+                        viewModel.loadGlobalLessons(context)
+                        viewModel.syncRemoteContent(context)
+                    }
+                },
+                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Red.copy(alpha = 0.7f)),
+                shape = RoundedCornerShape(12.dp)
+            ) {
+                Text("Reset and Re-sync Lessons 🔄", fontWeight = FontWeight.Bold)
+            }
+
+            Button(
+                onClick = { 
+                    scope.launch {
+                        viewModel.syncRemoteContent(context)
+                    }
+                },
+                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = DuoBlue),
+                shape = RoundedCornerShape(12.dp)
+            ) {
+                Text("Sync with Cloud Library 🌍", fontWeight = FontWeight.Bold)
+            }
 
             Divider(modifier = Modifier.padding(vertical = 16.dp))
 
@@ -152,7 +210,7 @@ fun SettingsScreen(
             Text(stringResource(R.string.lesson_management), color = DuoBlue, fontWeight = FontWeight.Bold)
             
             Button(
-                onClick = { viewModel.syncRemoteContent() },
+                onClick = { viewModel.syncRemoteContent(context) },
                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
                 shape = RoundedCornerShape(12.dp)
             ) {

@@ -1,5 +1,127 @@
 import React, { useState, useEffect } from 'react';
+import { Search, Plus, Trash2, Download, Cloud, Sparkles, Image as ImageIcon, Volume2, Save, Wand2, Globe, Copy, Check, ExternalLink, Smartphone, Archive, Languages, FileJson, Share2, Upload, LogOut, Lock, Mail, Key } from 'lucide-react';
+import { initializeApp, getApps, getApp } from "firebase/app";
+import { getDatabase, ref, set, get, child } from "firebase/database";
+import { getFirestore, collection, getDocs, doc, setDoc, serverTimestamp, increment, arrayUnion } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, signInAnonymously } from "firebase/auth";
 import lessonsData from './lessons.json';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCjcEWZU2Y_EBPcTx5lu0Tg-y3tYKu13BQ",
+  authDomain: "repite-conmigo.firebaseapp.com",
+  databaseURL: "https://repite-conmigo-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "repite-conmigo",
+  storageBucket: "repite-conmigo.firebasestorage.app",
+  messagingSenderId: "245336262893",
+  appId: "1:245336262893:web:4423a5cc24e87e7043a4e4",
+  measurementId: "G-QPX3W5VTZ7"
+};
+
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const db = getDatabase(app);
+const firestore = getFirestore(app);
+const auth = getAuth(app);
+
+function Login({ onGuest, onAdminSuccess }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [showEmailForm, setShowEmailForm] = useState(false);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError('');
+    if (password === '2026') {
+      setLoading(true);
+      try {
+        await signInAnonymously(auth);
+        localStorage.setItem('repite_admin_session', 'true');
+        onAdminSuccess(true);
+        onGuest();
+      } catch (err) {
+        // Fallback: grant local admin rights even if auth fails
+        localStorage.setItem('repite_admin_session', 'true');
+        onAdminSuccess(true);
+        onGuest();
+        console.warn('Firebase Auth failed, but PIN is correct. Local Admin enabled.');
+      }
+      setLoading(false);
+    } else {
+      setError('❌ الكود السري غير صحيح');
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    setError('');
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      if (result?.user) {
+        if (result.user.email === 'rakuda99@gmail.com') {
+          localStorage.setItem('repite_admin_session', 'true');
+          onAdminSuccess(true);
+        } else {
+          localStorage.removeItem('repite_admin_session');
+          onAdminSuccess(false);
+        }
+        onGuest();
+      }
+    } catch (err) {
+      console.error("Login Error:", err);
+      if (err.code === 'auth/popup-closed-by-user') {
+        setError('❌ تم إغلاق نافذة تسجيل الدخول');
+      } else {
+        setError('❌ خطأ في جوجل: ' + err.message);
+      }
+    }
+    setLoading(false);
+  };
+
+  return (
+    <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#030712', fontFamily: 'Inter, sans-serif' }}>
+      <div style={{ width: '420px', padding: '48px', background: 'rgba(30, 41, 59, 0.4)', borderRadius: '40px', border: '1px solid rgba(255,255,255,0.08)', backdropFilter: 'blur(30px)', textAlign: 'center', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}>
+        <div style={{ width: '80px', height: '80px', background: 'linear-gradient(135deg, #8b5cf6, #3b82f6)', borderRadius: '24px', margin: '0 auto 32px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 30px rgba(139,92,246,0.3)' }}>
+          <Lock size={36} color="white" />
+        </div>
+        <h1 style={{ color: 'white', fontSize: '32px', fontWeight: 900, marginBottom: '8px', letterSpacing: '-1px' }}>MAGIC FACTORY</h1>
+        <p style={{ color: '#94a3b8', marginBottom: '40px', fontSize: '15px' }}>Welcome! Choose how you want to enter</p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <button onClick={handleGoogleLogin} disabled={loading} style={{ width: '100%', padding: '16px', background: 'white', color: '#1f2937', border: 'none', borderRadius: '16px', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', transition: '0.3s' }}>
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" alt="G" />
+            Sign in with Google
+          </button>
+
+          <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', margin: '10px 0' }}></div>
+
+          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <p style={{color:'#64748b', fontSize:11, fontWeight:700}}>ADMIN ACCESS</p>
+            <input 
+              type="password" 
+              placeholder="Enter Secret PIN" 
+              value={password} 
+              onChange={e => setPassword(e.target.value)} 
+              required 
+              style={{ padding: '16px', borderRadius: '16px', background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)', color: 'white', outline: 'none', textAlign: 'center', fontSize: 18, letterSpacing: 4 }} 
+            />
+            {error && <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700 }}>{error}</div>}
+            <button type="submit" disabled={loading} style={{ padding: '16px', borderRadius: '16px', background: 'linear-gradient(135deg, #8b5cf6, #6366f1)', color: 'white', border: 'none', fontWeight: 800, cursor: 'pointer', boxShadow: '0 10px 20px rgba(139,92,246,0.2)' }}>
+              {loading ? 'Unlocking...' : 'Unlock Admin Dashboard'}
+            </button>
+          </form>
+
+          <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', margin: '10px 0' }}></div>
+
+          <button onClick={onGuest} style={{ width: '100%', padding: '16px', background: 'linear-gradient(135deg, #10b981, #059669)', color: 'white', border: 'none', borderRadius: '16px', fontWeight: 800, cursor: 'pointer', boxShadow: '0 10px 20px rgba(16,185,129,0.2)' }}>
+            Enter as Guest (View Only)
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function VectorIcon({ word }) {
   const w = (word || '').toLowerCase().trim();
@@ -115,57 +237,226 @@ function hasVector(word) {
 }
 
 export default function App() {
-  const [view, setView] = useState('studio');
+  const [user, setUser] = useState(null);
+  const [hasEntered, setHasEntered] = useState(false);
+  const [adminSession, setAdminSession] = useState(localStorage.getItem('repite_admin_session') === 'true');
+  const isAdmin = (user && user.email === 'rakuda99@gmail.com') || adminSession;
+  const [authLoading, setAuthLoading] = useState(true);
+  const [view, setView] = useState('studio'); // 'studio', 'player', 'users'
   const [lessons, setLessons] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
+  const [usersLoading, setUsersLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedLesson, setSelectedLesson] = useState(null);
   const [geminiKey, setGeminiKey] = useState(localStorage.getItem('repite_banana_key') || 'AIzaSyCjjvBx9VfEKOCMnxaFbp-FKc2u9z_V8Ec');
   const [isSyncing, setIsSyncing] = useState(false);
   const [statusMsg, setStatusMsg] = useState('');
   const [loadError, setLoadError] = useState('');
+  const [lastSaved, setLastSaved] = useState(null);
 
-  const CLOUD_URL = "https://jsonblob.com/api/jsonBlob/019d9864-1f9e-7334-9063-075468551478";
+  useEffect(() => {
+    // Handle Redirect Result
+    getRedirectResult(auth).then((result) => {
+      if (result?.user) {
+        setHasEntered(true);
+        if (result.user.email === 'rakuda99@gmail.com') {
+          localStorage.setItem('repite_admin_session', 'true');
+          setAdminSession(true);
+        } else {
+          localStorage.removeItem('repite_admin_session');
+          setAdminSession(false);
+        }
+      }
+    }).catch((error) => {
+      console.error("Redirect Auth Error:", error);
+      setAuthLoading(false);
+    });
+
+    const unsubscribe = onAuthStateChanged(auth, async (u) => {
+      setUser(u);
+      if (u && !u.isAnonymous) {
+         try {
+            await setDoc(doc(firestore, "users", u.uid), {
+                name: u.displayName || "Unknown User",
+                email: u.email || "",
+                lastLogin: serverTimestamp(),
+                visits: increment(1)
+            }, { merge: true });
+         } catch(e) { console.error("Tracking error:", e); }
+      }
+      setAuthLoading(false);
+    }, (err) => {
+      console.error("Auth State Error:", err);
+      setAuthLoading(false);
+    });
+
+    // Fallback timeout in case Firebase is stuck (e.g., invalid API key)
+    const fallbackTimer = setTimeout(() => {
+      setAuthLoading(false);
+    }, 1500);
+
+    return () => {
+      unsubscribe();
+      clearTimeout(fallbackTimer);
+    };
+  }, []);
+
+  // Track Time Spent
+  useEffect(() => {
+    if (!user || user.isAnonymous) return;
+    const interval = setInterval(async () => {
+      try {
+         await setDoc(doc(firestore, "users", user.uid), {
+             timeSpentMinutes: increment(1)
+         }, { merge: true });
+      } catch(e) {}
+    }, 60000); // every 1 minute
+    return () => clearInterval(interval);
+  }, [user]);
+
+  const syncWithCloud = async (allLessons) => {
+    setIsSyncing(true);
+    setStatusMsg('🚀 Uploading to server (Firestore)...');
+    try {
+      for (const l of allLessons) {
+        const enTitle = l.title['en-US'] || 'Untitled';
+        const formattedLesson = {
+          id: l.id,
+          title: enTitle,
+          categoryId: enTitle,
+          type: 'remote',
+          rawLevel: l.rawLevel || 'Custom Lessons 🌟',
+          icon: l.icon || '📚',
+          content: (l.sentences || []).map(s => ({
+            text: s.translations?.es || s.es || '',
+            translations: s.translations || { ar: s.ar || '' },
+            translation: s.translations?.ar || s.ar || '', // Fallback for old apps
+            targetLang: 'es',
+            sourceLang: 'auto',
+            category: enTitle,
+            contentType: (s.translations?.es || s.es || '').length < 15 ? 'word' : 'sentence',
+            imageUrl: s.imageUrl || null
+          }))
+        };
+        await setDoc(doc(firestore, "lessons", l.id), formattedLesson);
+      }
+      setStatusMsg('✅ All lessons uploaded successfully!');
+    } catch (e) {
+      console.error(e);
+      setStatusMsg('❌ Upload failed: ' + e.message);
+    }
+    setIsSyncing(false);
+    setTimeout(() => setStatusMsg(''), 4000);
+  };
+
+  const syncSingleLessonWithCloud = async () => {
+    if(!selectedLesson) return;
+    setIsSyncing(true);
+    setStatusMsg(`🚀 Uploading lesson [${selectedLesson.title['en-US']}] to server...`);
+    try {
+      const enTitle = selectedLesson.title['en-US'] || 'Untitled';
+      const formattedLesson = {
+        id: selectedLesson.id,
+        title: enTitle,
+        categoryId: enTitle,
+        type: 'remote',
+        rawLevel: 1,
+        authorId: user?.uid || 'admin',
+        authorEmail: user?.email || 'admin',
+        icon: selectedLesson.icon || '📚',
+        content: (selectedLesson.sentences || []).map(s => ({
+          text: s.translations?.es || s.es || '',
+          translations: s.translations || { ar: s.ar || '' },
+          translation: s.translations?.ar || s.ar || '',
+          targetLang: 'es',
+          sourceLang: 'auto',
+          category: selectedLesson.title, // Use actual title
+          contentType: (s.translations?.es || s.es || '').length < 15 ? 'word' : 'sentence',
+          imageUrl: s.imageUrl || null
+        }))
+      };
+      await setDoc(doc(firestore, "lessons", selectedLesson.id), formattedLesson);
+      
+      // Track created lesson for normal users
+      if (user && !user.isAnonymous) {
+         await setDoc(doc(firestore, "users", user.uid), {
+             createdLessons: arrayUnion(selectedLesson.title['en-US'])
+         }, { merge: true });
+      }
+      
+      setStatusMsg('✅ Lesson uploaded successfully!');
+    } catch (e) {
+      console.error(e);
+      setStatusMsg('❌ Upload failed: ' + e.message);
+    }
+    setIsSyncing(false);
+    setTimeout(() => setStatusMsg(''), 4000);
+  };
+
 
   useEffect(() => {
     const init = async () => {
       let finalLessons = [];
       try {
-        // 1. Try Local Storage first for speed
+        // 1. Try Local Storage
         const saved = localStorage.getItem('repite_factory_lessons');
         if (saved) {
           finalLessons = JSON.parse(saved);
         } else {
-          // 2. If nothing in local, try Cloud
-          try {
-            const resp = await fetch(CLOUD_URL);
-            if (resp.ok) {
-              const cloudData = await resp.json();
-              if (cloudData && Array.isArray(cloudData)) finalLessons = cloudData;
-            }
-          } catch(e) { console.warn("Cloud load failed, using local json", e); }
+          // 2. Try Firebase (Public Read)
+          const dbRef = ref(db);
+          const snapshot = await get(child(dbRef, 'lessons'));
+          if (snapshot.exists()) {
+            finalLessons = snapshot.val();
+          }
         }
-        
-        if (!finalLessons || finalLessons.length === 0) {
-          finalLessons = Object.values(lessonsData).flat();
-        }
-
-        const cleaned = finalLessons.map(l => ({
-          ...l,
-          sentences: (l.sentences || []).map(s => ({...s, isGenerating: false}))
-        }));
-
-        setLessons(cleaned);
-        setSelectedLesson(cleaned[1] || cleaned[0]);
-      } catch(e) {
-        setLoadError('Error initializing: ' + e.message);
+      } catch (e) {
+        console.error('Initial load failed:', e);
       }
+      
+      // 3. Fallback to bundled JSON
+      if (!finalLessons || !Array.isArray(finalLessons) || finalLessons.length === 0) {
+        finalLessons = Array.isArray(lessonsData) ? lessonsData : Object.values(lessonsData).flat();
+      }
+
+      const cleaned = finalLessons.map(l => ({
+        ...l,
+        sentences: (l.sentences || []).map(s => ({...s, isGenerating: false}))
+      }));
+      setLessons(cleaned);
+      if (cleaned.length > 0) setSelectedLesson(cleaned[0]);
     };
     init();
-  }, []);
+  }, []); // Load on mount, regardless of user
+
+  const fetchUsers = async () => {
+    if (!isAdmin) return;
+    setUsersLoading(true);
+    try {
+      const querySnapshot = await getDocs(collection(firestore, "users"));
+      const usersList = [];
+      querySnapshot.forEach((doc) => {
+        usersList.push({ id: doc.id, ...doc.data() });
+      });
+      setAllUsers(usersList);
+    } catch (e) {
+      console.error("Error fetching users:", e);
+    }
+    setUsersLoading(false);
+  };
+
+  useEffect(() => {
+    if (view === 'users') {
+      fetchUsers();
+    }
+  }, [view, isAdmin]);
 
   const saveLessons = (all) => {
     setLessons(all);
     try {
       localStorage.setItem('repite_factory_lessons', JSON.stringify(all));
+      setLastSaved(new Date().toLocaleTimeString());
+      setTimeout(() => setLastSaved(null), 2000);
     } catch(e) {
       console.error('Failed to save lessons:', e);
     }
@@ -210,7 +501,6 @@ export default function App() {
   };
 
   const autoTranslateRow = async (idx) => {
-    // Get the latest word from current state implicitly via functional update later
     const sourceWord = selectedLesson.sentences[idx].translations?.es || selectedLesson.sentences[idx].es;
     if (!sourceWord || sourceWord === 'Nueva palabra') return;
 
@@ -247,7 +537,7 @@ export default function App() {
         saveLessons(lessons.map(l => l.id === newLesson.id ? newLesson : l));
         return newLesson;
       });
-      setStatusMsg(`🌍 ${sourceWord} -> تم!`);
+      setStatusMsg(`🌍 ${sourceWord} -> Done!`);
     } catch (e) {
       console.warn("AI Failed, using Translate Fallback:", e.message);
       try {
@@ -265,7 +555,6 @@ export default function App() {
                 `Aquí tienes una lección sobre ${sourceWord}.`,
                 `Aprenderemos sobre ${sourceWord}.`
             ];
-            // Shuffle and pick 3
             fallbackEsArray = conceptTemplates.sort(() => 0.5 - Math.random()).slice(0, 3);
         } else {
             const wordTemplates = [
@@ -285,7 +574,6 @@ export default function App() {
         let generatedExamples = fallbackEsArray.map(es => ({ es }));
         while(generatedExamples.length < 3) { generatedExamples.push({}); }
         
-        // Join with a unique separator that translate handles well
         const combinedEs = fallbackEsArray.join(' ||| ');
         
         for (const [key, code] of Object.entries(langs)) {
@@ -325,14 +613,14 @@ export default function App() {
           saveLessons(lessons.map(l => l.id === newLesson.id ? newLesson : l));
           return newLesson;
         });
-        setStatusMsg(`⚡ ${sourceWord} -> تم (سريع)!`);
+        setStatusMsg(`⚡ ${sourceWord} -> Done (Fast)!`);
       } catch (fallbackErr) {
         setSelectedLesson(prev => {
           const sents = [...prev.sentences];
           sents[idx].isTranslating = false;
           return { ...prev, sentences: sents };
         });
-        setStatusMsg(`❌ خطأ: ${fallbackErr.message}`);
+        setStatusMsg(`❌ Error: ${fallbackErr.message}`);
       }
     }
   };
@@ -343,7 +631,7 @@ export default function App() {
     
     for (let i = 0; i < total; i++) {
       const currentWord = selectedLesson.sentences[i].translations?.es || selectedLesson.sentences[i].es || '...';
-      setStatusMsg(`🚀 جاري تعبئة البنك: (${i + 1} من ${total}) - [ ${currentWord} ]`);
+      setStatusMsg(`🚀 Filling bank: (${i + 1} of ${total}) - [ ${currentWord} ]`);
       
       try {
         await autoTranslateRow(i);
@@ -351,22 +639,18 @@ export default function App() {
         console.error("Batch error at index", i, err);
       }
       
-      // Delay to avoid overwhelming the API
       await new Promise(r => setTimeout(r, 800));
     }
     
-    setStatusMsg('✅ تم تعبئة بنك الكلمات للدرس بالكامل!');
+    setStatusMsg('✅ Lesson word bank filled completely!');
   };
 
   const rescueAssets = async () => {
-    // This function will attempt to restore images by matching words
-    // We'll use a local map derived from the files we found
-    setStatusMsg("🩹 جاري البحث في ملفات الأندرويد عن الصور المفقودة...");
+    setStatusMsg("🩹 Searching Android files for missing images...");
     const rescueMap = {
       "Yo soy de Arabia Saudita": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/512px-Flag_of_Saudi_Arabia.svg.png",
       "Él es un buen doctor": "https://api.dicebear.com/7.x/noto-emoji/svg?seed=doctor",
       "Pollo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Hecheff_Chicken.jpg/512px-Hecheff_Chicken.jpg"
-      // More can be added or dynamically matched
     };
 
     setSelectedLesson(prev => {
@@ -381,7 +665,7 @@ export default function App() {
       saveLessons(lessons.map(l => l.id === newLesson.id ? newLesson : l));
       return newLesson;
     });
-    setStatusMsg("✅ اكتملت عملية الإنقاذ! تم استرجاع ما وجدناه.");
+    setStatusMsg("✅ Rescue complete! Recovered what we found.");
   };
 
   const deleteEntry = (idx) => {
@@ -398,131 +682,10 @@ export default function App() {
     speechSynthesis.speak(u);
   };
 
-  const PHOTO_MAP = {
-    // Family
-    'padre':'father man portrait','madre':'mother woman portrait','hermano':'brother boy',
-    'hermana':'sister girl','abuelo':'grandfather elderly man','abuela':'grandmother elderly woman',
-    'hijo':'son child boy','hija':'daughter child girl','tío':'uncle man','tía':'aunt woman',
-    'primo':'cousin youth','bebé':'baby infant','familia':'family together',
-    // Body Parts
-    'ojo':'eye closeup','ojos':'eyes closeup','nariz':'nose face','boca':'mouth lips',
-    'oreja':'ear closeup','cabeza':'head portrait','mano':'hand palm','pie':'foot barefoot',
-    'brazo':'arm muscle','pierna':'leg human','dedo':'finger hand','pelo':'hair woman',
-    // Animals
-    'perro':'dog cute','gato':'cat cute','pájaro':'bird colorful','pajaro':'bird colorful',
-    'pez':'fish underwater','pescado':'fish market','caballo':'horse running',
-    'vaca':'cow farm','pollo':'chicken farm','oveja':'sheep wool','conejo':'rabbit cute',
-    'oso':'bear wildlife','león':'lion safari','tigre':'tiger wildlife',
-    'elefante':'elephant africa','mono':'monkey wildlife','ratón':'mouse small',
-    // Food & Drink
-    'pan':'bread bakery','queso':'cheese',  'carne':'meat steak','arroz':'rice bowl',
-    'agua':'water glass clear','leche':'milk glass white','café':'coffee cup',
-    'té':'tea cup','manzana':'apple red fruit','naranja fruit':'orange fruit',
-    'plátano':'banana fruit','uva':'grapes vine','fresa':'strawberry red',
-    'zanahoria':'carrot vegetable','tomate':'tomato red','huevo':'egg breakfast',
-    'pizza':'pizza food','hamburguesa':'burger food','ensalada':'salad fresh',
-    // Colors (nature scenes)
-    'rojo':'red roses vibrant','azul':'blue ocean sky','verde':'green forest nature',
-    'amarillo':'yellow sunflower field','negro':'black night sky','blanco':'white snow',
-    'rosa':'pink flowers','gris':'grey fog mountains','naranja':'orange sunset',
-    'marrón':'brown wood texture','morado':'purple lavender','violeta':'violet flowers',
-    // Transport
-    'coche':'car modern','carro':'car street','autobús':'bus city','tren':'train railway',
-    'avión':'airplane sky','bicicleta':'bicycle cycling','barco':'boat sea','moto':'motorcycle',
-    'taxi':'taxi yellow city','metro':'subway underground',
-    // Nature & Weather
-    'sol':'sun bright sky','luna':'moon night','árbol':'tree forest','arbol':'tree forest',
-    'flor':'flower garden','montaña':'mountain landscape','mar':'sea ocean beach',
-    'río':'river water','playa':'beach tropical','bosque':'forest trees',
-    'desierto':'desert sand','lluvia':'rain drops','nieve':'snow winter',
-    'nube':'clouds sky','viento':'wind leaves',
-    // House
-    'casa':'house home','silla':'chair furniture','cama':'bed bedroom','mesa':'table wood',
-    'puerta':'door entrance','ventana':'window glass','cocina':'kitchen cooking',
-    'baño':'bathroom','jardín':'garden green','sala':'living room',
-    // School & Objects
-    'libro':'book reading','lapiz':'pencil drawing','bolígrafo':'pen writing','mochila':'backpack school',
-    'gafas':'glasses eyewear','teléfono':'phone smartphone','ordenador':'computer laptop',
-    'reloj':'watch clock','llave':'key metal','dinero':'money cash',
-    // Greetings/Abstracts
-    'hola':'greeting friends happy','adiós':'goodbye farewell waving',
-    'gracias':'thank you gesture','feliz':'happy smiling people','triste':'sad person',
-    'cansado':'tired person sleeping','hambre':'hunger food','sed':'thirst water drink',
-    // Nature items
-    'fuego':'fire flames','agua nature':'waterfall nature','piedra':'stone rock',
-    'tierra':'earth soil','madera':'wood timber',
-    // Clothes
-    'camisa':'shirt clothing','pantalón':'pants jeans','vestido':'dress fashion',
-    'zapatos':'shoes footwear','sombrero':'hat fashion','abrigo':'coat winter',
-    'falda':'skirt fashion','calcetines':'socks clothing',
-    // Jobs
-    'médico':'doctor hospital','profesor':'teacher classroom','cocinero':'chef cooking',
-    'policía':'police officer','bombero':'firefighter','ingeniero':'engineer work',
-    'artista':'artist painting','músico':'musician playing',
-  };
-
-  const getEmojiUrl = (es) => {
-    const map = {
-      'pollo':'1f414','chicken':'1f414','gallina':'1f413','huevo':'1f95a',
-      'queso':'1f9c0','cheese':'1f9c0','leche':'1f95b','milk':'1f95b',
-      'pan':'1f35e','bread':'1f35e','agua':'1f4a7','water':'1f4a7',
-      'perro':'1f415','dog':'1f415','gato':'1f408','cat':'1f408',
-      'vaca':'1f404','cow':'1f404','pez':'1f41f','fish':'1f41f',
-      'ratón':'1f401','mouse':'1f401','raton':'1f401',
-      'casa':'1f3e0','house':'1f3e0','sol':'2600','sun':'2600',
-      'manzana':'1f34e','apple':'1f34e','platano':'1f34c','banana':'1f34c'
-    };
-    const code = map[es.toLowerCase().trim()] || '2728'; // Sparkles fallback
-    return `https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/emoji.svg`;
-  };
-
-
-
-  // ============================================
-  // GOOGLE IMAGEN 3 - REAL AI IMAGE GENERATION
-  // ============================================
-  const GEMINI_KEY = 'AIzaSyCo2A0LQWth3j9hU_KTLTNdZaDxDbPF3pE';
-
-  const generateGeminiImage = async (prompt) => {
-    // Imagen 4 / Gemini image generation requires billing enabled on Google Cloud.
-    // Using Pollinations.ai (Stable Diffusion XL) - free, no API key needed, real AI.
-    // To switch to Google Imagen 4: enable billing at console.cloud.google.com/billing
-    // then replace this with: imagen-4.0-fast-generate-001:predict endpoint
-    const encodedPrompt = encodeURIComponent(prompt + ', high quality, vibrant colors, clean background');
-    const seed = Math.floor(Math.random() * 99999);
-    const url = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=512&height=512&model=flux&nologo=true&seed=${seed}`;
-    // Return URL directly (Pollinations serves the image on GET)
-    return url;
-  };
-
-  const getPhotoUrl = (es) => {
-    const query = getPhotoQuery(es);
-    const term = query.split(' ')[0];
-    return `https://loremflickr.com/400/400/${encodeURIComponent(term)}/all`;
-  };
-
-  // Preload image using JS - avoids silent browser timeouts
-  const loadImageUrl = (src) => new Promise((resolve, reject) => {
-    const img = new window.Image();
-    img.onload = () => resolve(src);
-    img.onerror = () => reject(new Error('Could not load photo'));
-    setTimeout(() => reject(new Error('Photo timeout – try again')), 20000);
-    img.src = src;
-  });
-
-  const getPhotoQuery = (text) => {
-    let q = text.toLowerCase().trim();
-    if (q === 'ratón' || q === 'un ratón') return 'cute mouse animal 3d';
-    if (q === 'perro' || q === 'el perro') return 'cute dog 3d';
-    if (q === 'gato' || q === 'el gato') return 'cute cat 3d';
-    return `${q} 3d render digital art`;
-  };
-
   const generateAI = async (idx) => {
     const sent = selectedLesson.sentences[idx];
-    setStatusMsg(`🎨 جارٍ ابتكار خيارات احترافية لـ "${sent.es}"...`);
+    setStatusMsg(`🎨 Generating professional options for "${sent.es}"...`);
 
-    // 1. Set loading state
     updateSentence(idx, 'isGenerating', true);
     updateSentence(idx, 'candidates', []);
 
@@ -531,12 +694,10 @@ export default function App() {
       let engTerm = rawTerm;
       const variants = [];
 
-      // 1. Get English Translation
       const trResp = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=${encodeURIComponent(rawTerm)}`);
       const trData = await trResp.json();
       engTerm = trData && trData[0] && trData[0][0] && trData[0][0][0] ? trData[0][0][0].toLowerCase() : rawTerm;
 
-      // 2. Google Knowledge Graph (The most stable source)
       if (geminiKey) {
         try {
           const kgResp = await fetch(`https://kgsearch.googleapis.com/v1/entities:search?query=${encodeURIComponent(rawTerm)}&key=${geminiKey}&limit=2`);
@@ -547,7 +708,6 @@ export default function App() {
         } catch (e) { console.error('Google KG Fail:', e); }
       }
 
-      // 3. Wikimedia Commons (Public, High Quality, Real Photos)
       try {
         const wikiResp = await fetch(`https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(engTerm)}&gsrlimit=2&prop=imageinfo&iiprop=url`);
         const wikiData = await wikiResp.json();
@@ -558,7 +718,6 @@ export default function App() {
         }
       } catch (e) { console.error('Wiki Fail:', e); }
 
-      // 4. Fallback high-quality direct icons (Icons8 raw)
       if (variants.length < 4) {
         variants.push(`https://img.icons8.com/3d-fluency/512/${engTerm}.png`);
         variants.push(`https://img.icons8.com/color/512/${engTerm}.png`);
@@ -576,11 +735,11 @@ export default function App() {
         return finalLesson;
       });
 
-      setStatusMsg('🍌 تم التوليد بنظام بنانا الصاروخي!');
+      setStatusMsg('🍌 Generated with the Banana Rocket system!');
     } catch (e) {
       console.error(e);
       updateSentence(idx, 'isGenerating', false);
-      setStatusMsg('❌ فشل تحميل الخيارات');
+      setStatusMsg('❌ Failed to load options');
     }
   };
 
@@ -595,11 +754,73 @@ export default function App() {
       document.body.appendChild(link);
       link.click();
       setTimeout(() => document.body.removeChild(link), 100);
-      setStatusMsg(`✅ تم التنزيل: ${fileName}`);
+      setStatusMsg(`✅ Downloaded: ${fileName}`);
     } catch (e) {
       console.error(e);
-      setStatusMsg("❌ فشل التحميل");
+      setStatusMsg("❌ Download failed");
     }
+  };
+
+  const exportForAndroid = () => {
+    try {
+      const androidFormat = {
+        "Custom Lessons 🌟": lessons.map(l => ({
+          ...l,
+          title: { "en-US": l.title['en-US'], "ar-SA": l.title.ar || l.title['en-US'] }
+        }))
+      };
+      const json = JSON.stringify(androidFormat, null, 2);
+      const dataStr = "data:application/json;base64," + btoa(unescape(encodeURIComponent(json)));
+      const link = document.createElement('a');
+      link.setAttribute("href", dataStr);
+      link.setAttribute("download", "lessons.json");
+      document.body.appendChild(link);
+      link.click();
+      setTimeout(() => document.body.removeChild(link), 100);
+      setStatusMsg('✅ Exported lessons.json successfully! Place it in your Android project.');
+    } catch (err) {
+      setStatusMsg('❌ Export error: ' + err.message);
+    }
+  };
+  
+  const importJSON = () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = (e) => {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onload = (re) => {
+        try {
+          const data = JSON.parse(re.target.result);
+          if (Array.isArray(data)) {
+            setLessons(data);
+            saveLessons(data);
+            setStatusMsg("✅ Full lesson bank imported!");
+          } else if (data.id && data.sentences) {
+            const exists = lessons.find(l => l.id === data.id);
+            if (exists) {
+               if(confirm("Lesson already exists, do you want to overwrite it?")) {
+                 const updated = lessons.map(l => l.id === data.id ? data : l);
+                 setLessons(updated);
+                 saveLessons(updated);
+                 setSelectedLesson(data);
+               }
+            } else {
+              const updated = [...lessons, data];
+              setLessons(updated);
+              saveLessons(updated);
+              setSelectedLesson(data);
+              setStatusMsg("✅ Lesson imported successfully!");
+            }
+          }
+        } catch (err) {
+          setStatusMsg("❌ Import failed: Invalid file");
+        }
+      };
+      reader.readAsText(file);
+    };
+    input.click();
   };
 
   const downloadSingleLesson = () => {
@@ -650,14 +871,12 @@ export default function App() {
     setTimeout(() => setStatusMsg(''), 2000);
   };
 
-
   const generateAllPhotos = async () => {
     if (!selectedLesson || !selectedLesson.sentences) return;
     const total = selectedLesson.sentences.length;
     
     for (let i = 0; i < total; i++) {
         const s = selectedLesson.sentences[i];
-        // Only draw if missing photo
         if (!s.image && !s.imageUrl) {
             const word = s.translations?.es || s.es || '...';
             setStatusMsg(`🎨 جاري رسم صورة لـ: (${i + 1} من ${total}) - [ ${word} ]`);
@@ -691,8 +910,19 @@ export default function App() {
     }
   };
 
+  const deleteLesson = (id, e) => {
+    e.stopPropagation();
+    if (confirm('Are you sure you want to delete this lesson entirely?')) {
+      const updated = lessons.filter(l => l.id !== id);
+      setLessons(updated);
+      saveLessons(updated);
+      if (selectedLesson?.id === id) setSelectedLesson(null);
+      setStatusMsg('✅ Lesson deleted successfully');
+      setTimeout(() => setStatusMsg(''), 2000);
+    }
+  };
+
   const selectLesson = (lesson) => {
-    // Force reset any generation states when switching
     const cleaned = {
       ...lesson,
       sentences: (lesson.sentences || []).map(s => ({...s, isGenerating: false}))
@@ -700,20 +930,9 @@ export default function App() {
     setSelectedLesson(cleaned);
   };
 
-  if (loadError) return (
-    <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',height:'100vh',background:'#030712',color:'white',fontFamily:'Inter,sans-serif',gap:20}}>
-      <div style={{fontSize:48}}>⚠️</div>
-      <div style={{color:'#ef4444',textAlign:'center',maxWidth:400}}>{loadError}</div>
-      <button onClick={() => location.reload()} style={{background:'#8b5cf6',color:'white',border:'none',padding:'12px 24px',borderRadius:12,cursor:'pointer',fontWeight:700,fontSize:15}}>🔄 Retry</button>
-    </div>
-  );
+  if (authLoading) return <div style={{height:'100vh', background:'#030712', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontSize:20}}>⏳ Loading Magic...</div>;
 
-  if (!lessons.length) return (
-    <div style={{display:'flex',alignItems:'center',justifyContent:'center',height:'100vh',background:'#030712',color:'white',fontFamily:'Inter,sans-serif',fontSize:18,gap:12}}>
-      <div style={{width:24,height:24,border:'3px solid #8b5cf6',borderTopColor:'transparent',borderRadius:'50%',animation:'spin 0.8s linear infinite'}} />
-      Loading...
-    </div>
-  );
+  if (!hasEntered && !user) return <Login onGuest={() => setHasEntered(true)} onAdminSuccess={setAdminSession} />;
 
   return (
     <div className="app-container">
@@ -745,7 +964,8 @@ export default function App() {
         .lesson-count { font-size: 11px; color: #475569; margin-top: 2px; }
         .stage { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
         .module-header { background: rgba(17,24,39,0.85); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 15px 24px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; align-items: center; }
-        .module-title-input { background: transparent; border: none; font-size: 28px; font-weight: 900; color: white; outline: none; letter-spacing: -0.5px; flex: 1; min-width: 250px; }
+        .module-title-input { background: rgba(0,0,0,0.2); border: 2px dashed rgba(255,255,255,0.2); border-radius: 12px; padding: 8px 16px; font-size: 28px; font-weight: 900; color: white; outline: none; letter-spacing: -0.5px; flex: 1; min-width: 250px; transition: 0.2s; }
+        .module-title-input:focus { border-color: #8b5cf6; background: rgba(139,92,246,0.1); }
         .sync-badge { background: rgba(16,185,129,0.1); color: #10b981; padding: 5px 14px; border-radius: 100px; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
         .card { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 24px; margin-bottom: 24px; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5); }
         .card-top { display: flex; flex-direction: column; gap: 20px; margin-bottom: 20px; }
@@ -785,6 +1005,8 @@ export default function App() {
         .btn-add { background: linear-gradient(135deg,#8b5cf6,#3b82f6); color: white; border: none; padding: 20px; border-radius: 20px; font-weight: 900; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 10px 30px rgba(139,92,246,0.25); transition: 0.25s; width: 100%; }
         .btn-add:hover { transform: translateY(-3px); filter: brightness(1.1); }
         .toast { position: fixed; bottom: 32px; right: 32px; background: #10b981; color: white; padding: 14px 24px; border-radius: 14px; font-weight: 800; box-shadow: 0 20px 40px rgba(0,0,0,0.5); z-index: 1000; animation: slideUp 0.3s ease; }
+        .save-indicator { position: fixed; bottom: 32px; left: 32px; background: rgba(16,185,129,0.9); color: white; padding: 8px 16px; border-radius: 100px; font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 8px; backdrop-filter: blur(10px); z-index: 1000; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
@@ -813,307 +1035,433 @@ export default function App() {
         <div className="tab-group" style={{display:'flex', gap:10}}>
           <button className={`tab ${view==='studio'?'active':''}`} onClick={()=>setView('studio')} style={{padding: '8px 16px', borderRadius: 10, background: view==='studio'?'white':'transparent', color: view==='studio'?'black':'white', border: 'none', cursor: 'pointer', fontWeight: 700}}>⬛ STUDIO</button>
           <button className={`tab ${view==='player'?'active':''}`} onClick={()=>setView('player')} style={{padding: '8px 16px', borderRadius: 10, background: view==='player'?'white':'transparent', color: view==='player'?'black':'white', border: 'none', cursor: 'pointer', fontWeight: 700}}>▶ PREVIEW</button>
+          {isAdmin && (
+            <button className={`tab ${view==='users'?'active':''}`} onClick={()=>setView('users')} style={{padding: '8px 16px', borderRadius: 10, background: view==='users'?'#10b981':'transparent', color: 'white', border: 'none', cursor: 'pointer', fontWeight: 700}}>👥 USERS</button>
+          )}
         </div>
-        <div className="hdr-btns" style={{display:'flex', gap:10, alignItems:'center'}}>
-          <div style={{position:'relative'}}>
-            <input 
-              type="password"
-              placeholder="Google Banana Key..." 
-              value={geminiKey} 
-              onChange={(e) => {
-                setGeminiKey(e.target.value);
-                localStorage.setItem('repite_banana_key', e.target.value);
-              }}
-              style={{background:'rgba(0,0,0,0.3)', border:'1px solid #ffdf00', borderRadius:'20px', padding:'6px 15px', color:'#ffdf00', fontSize:11, width:150, outline:'none'}} 
-            />
-            {geminiKey && <span style={{position:'absolute', right:10, top:6, fontSize:10}}>🍌</span>}
-          </div>
-          <button className="btn-reset" onClick={factoryReset} style={{background:'rgba(255,255,255,0.1)', color:'white', border:'1px solid rgba(255,255,255,0.2)', padding:'10px 18px', borderRadius:10, fontWeight:700, cursor:'pointer'}}>🧹 Master Clear</button>
-          <button className="btn-upload" style={{background:'rgba(255,255,255,0.1)', color:'white', border:'1px solid rgba(255,255,255,0.2)', padding:'10px 18px', borderRadius:10, fontWeight:700, cursor:'pointer'}} 
-            onClick={async ()=>{
-              setIsSyncing(true);
-              try {
-                const resp = await fetch(CLOUD_URL);
-                if (resp.ok) {
-                  const cloudData = await resp.json();
-                  setLessons(cloudData);
-                  localStorage.setItem('repite_factory_lessons', JSON.stringify(cloudData));
-                  setStatusMsg('✅ تم الجلب من السحاب بنجاح!');
-                }
-              } catch (e) {
-                setStatusMsg('❌ فشل الجلب: ' + e.message);
-              }
-              setIsSyncing(false);
-              setTimeout(()=>setStatusMsg(''), 4000);
-            }}>
-            {isSyncing ? '⏳' : '☁'} Sync From Cloud
-          </button>
-          <button className="btn-upload" style={{background:'white', color:'#6d28d9', padding:'10px 18px', borderRadius:10, fontWeight:800, border:'none', cursor:'pointer'}} 
-            onClick={async ()=>{
-              setIsSyncing(true);
-              try {
-                const resp = await fetch(CLOUD_URL, {
-                  method: 'PUT',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify(lessons)
-                });
-                if (resp.ok) {
-                  setStatusMsg('✅ تم الرفع للسحاب بنجاح!');
-                } else {
-                  throw new Error('Upload failed');
-                }
-              } catch (e) {
-                setStatusMsg('❌ فشل الرفع: ' + e.message);
-              }
-              setIsSyncing(false);
-              setTimeout(()=>setStatusMsg(''), 4000);
-            }}>
-            {isSyncing ? '⏳' : '🚀'} Upload App
-          </button>
+        <div className="hdr-btns" style={{display:'flex', gap:12, alignItems:'center'}}>
+          {!user ? (
+             <div style={{display:'flex', alignItems:'center', gap:10}}>
+               <span style={{fontSize:12, color:'#a78bfa', fontWeight:800}}>🌍 GUEST MODE</span>
+               <button className="btn-upload" onClick={() => setHasEntered(false)} style={{padding:'6px 12px', fontSize:11, borderRadius:8}}>Login</button>
+             </div>
+          ) : (
+            <>
+              <div style={{display:'flex', alignItems:'center', gap:10, color:'#94a3b8', fontSize:12}}>
+                {isAdmin ? '🛡️ ADMIN' : '👤 USER'}
+              </div>
+              {isAdmin && (
+                <button className="btn-upload" style={{background:'white', color:'#6d28d9', padding:'8px 16px', borderRadius:10, fontWeight:800, border:'none', cursor:'pointer'}} 
+                  onClick={async ()=>{
+                    await syncWithCloud(lessons);
+                    setStatusMsg('🚀 تم التحديث النهائي بنجاح!');
+                  }}>
+                  🚀 Update
+                </button>
+              )}
+              <button onClick={() => { signOut(auth); localStorage.removeItem('repite_admin_session'); setHasEntered(false); window.location.reload(); }} style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', border: 'none', padding: '8px 12px', borderRadius: 8, fontWeight: 700, cursor: 'pointer' }}>
+                Exit
+              </button>
+            </>
+          )}
         </div>
       </header>
 
-      <main>
-        <aside className="sidebar">
-          <div className="sidebar-label">Lesson Archive</div>
-          <div className="lesson-list">
-            {lessons.map(l => (
-              <div key={l.id} className={`lesson-item ${selectedLesson?.id===l.id?'active':''}`} onClick={()=>setSelectedLesson(l)}>
-                <span className="lesson-icon">{l.icon}</span>
-                <div>
-                  <div className="lesson-name">{l.title['en-US']}</div>
-                  <div className="lesson-count">{l.sentences.length} items</div>
-                </div>
-              </div>
-            ))}
+      <main style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+        {view === 'users' && isAdmin && (
+        <div style={{padding: 40, maxWidth: 1200, margin: '0 auto'}}>
+          <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:30}}>
+            <h2 style={{fontSize:32, fontWeight:900}}>Registered Users</h2>
+            <button onClick={fetchUsers} disabled={usersLoading} style={{background:'#10b981', color:'white', border:'none', padding:'10px 20px', borderRadius:10, fontWeight:700, cursor:'pointer'}}>
+              {usersLoading ? 'Refreshing...' : '🔄 Refresh List'}
+            </button>
           </div>
-        </aside>
+          <div style={{background:'rgba(255,255,255,0.03)', borderRadius:24, border:'1px solid rgba(255,255,255,0.08)', overflow:'hidden'}}>
+            <table style={{width:'100%', borderCollapse:'collapse', textAlign:'left'}}>
+              <thead>
+                <tr style={{background:'rgba(255,255,255,0.05)', color:'#94a3b8', fontSize:12, textTransform:'uppercase', letterSpacing:1}}>
+                  <th style={{padding:'20px 24px'}}>Name</th>
+                  <th style={{padding:'20px 24px'}}>Gender</th>
+                  <th style={{padding:'20px 24px'}}>Country</th>
+                  <th style={{padding:'20px 24px'}}>Language</th>
+                  <th style={{padding:'20px 24px'}}>Age</th>
+                  <th style={{padding:'20px 24px'}}>UID</th>
+                </tr>
+              </thead>
+              <tbody>
+                {allUsers.length === 0 ? (
+                  <tr><td colSpan="6" style={{padding:40, textAlign:'center', color:'#64748b'}}>No users found yet.</td></tr>
+                ) : allUsers.map(u => (
+                  <tr key={u.id} style={{borderBottom:'1px solid rgba(255,255,255,0.05)', transition:'0.2s'}} className="user-row">
+                    <td style={{padding:'20px 24px', fontWeight:700}}>{u.fullName || 'Anonymous'}</td>
+                    <td style={{padding:'20px 24px'}}>{u.gender === 'Male' ? '♂️ Male' : u.gender === 'Female' ? '♀️ Female' : u.gender || 'Unknown'}</td>
+                    <td style={{padding:'20px 24px'}}>{u.country ? `📍 ${u.country}` : 'Not Set'}</td>
+                    <td style={{padding:'20px 24px'}}>{u.motherTongue || 'Not Set'}</td>
+                    <td style={{padding:'20px 24px'}}>{u.age || '-'}</td>
+                    <td style={{padding:'20px 24px', fontSize:10, color:'#475569'}}>{u.id}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <style>{`
+            .user-row:hover { background: rgba(255,255,255,0.02); }
+          `}</style>
+        </div>
+      )}
 
-        <section className="stage">
-          {selectedLesson && <>
-            <div className="module-header">
-              <input className="module-title-input" value={selectedLesson.title['en-US']} onChange={e=>{
-                const u={...selectedLesson,title:{...selectedLesson.title,'en-US':e.target.value}};
-                setSelectedLesson(u);
-                saveLessons(lessons.map(l=>l.id===u.id?u:l));
-              }}/>
-              <div style={{display:'flex', gap:10, alignItems:'center', flexWrap:'wrap'}}>
-                <button onClick={downloadJSON} style={{background:'rgba(139,92,246,0.1)',color:'#a78bfa',border:'1px solid rgba(139,92,246,0.2)',padding:'10px 18px',borderRadius:10,fontWeight:700,cursor:'pointer',fontSize:12,whiteSpace:'nowrap'}}>📥 حفظ الكل</button>
-                <button onClick={downloadSingleLesson} style={{background:'linear-gradient(135deg,#0ea5e9,#0284c7)',color:'white',border:'none',padding:'10px 22px',borderRadius:10,fontWeight:800,cursor:'pointer',fontSize:13,boxShadow:'0 4px 15px rgba(14,165,233,0.3)', whiteSpace:'nowrap'}}>📄 حفظ هذا الدرس فقط</button>
-                <button onClick={rescueAssets} style={{background:'rgba(239,68,68,0.1)',color:'#f87171',border:'1px solid rgba(239,68,68,0.2)',padding:'10px 18px',borderRadius:10,fontWeight:800,cursor:'pointer',fontSize:12,whiteSpace:'nowrap'}}>🩹 Rescue Images</button>
-                <button onClick={autoTranslateAll} style={{background:'rgba(16,185,129,0.1)',color:'#10b981',border:'1px solid rgba(16,185,129,0.2)',padding:'10px 18px',borderRadius:10,fontWeight:800,cursor:'pointer',fontSize:12,whiteSpace:'nowrap'}}>🌍 Bank All Words</button>
-                <button onClick={generateAllPhotos} style={{background:'rgba(255,158,11,0.1)',color:'#f59e0b',border:'1px solid rgba(255,158,11,0.2)',padding:'10px 18px',borderRadius:10,fontWeight:800,cursor:'pointer',fontSize:12,whiteSpace:'nowrap'}}>🎨 Generate All</button>
-                <button onClick={clearAllImages} style={{background:'rgba(239,68,68,0.08)',color:'#f87171',border:'1px solid rgba(239,68,68,0.25)',padding:'10px 14px',borderRadius:10,fontWeight:700,cursor:'pointer',fontSize:12,whiteSpace:'nowrap'}}>🗑 Clear Images</button>
-                <div className="sync-badge">Ready for Sync</div>
+      {view === 'studio' && (
+  <div style={{ display: 'grid', gridTemplateColumns: '260px minmax(0, 1fr)', gap: '20px', padding: '20px', maxWidth: '1600px', margin: '0 auto', width: '100%', boxSizing: 'border-box' }}>
+            <aside className="sidebar">
+              <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:10}}>
+                 <div className="sidebar-label">Lesson Archive</div>
               </div>
-            </div>
-
-            {selectedLesson.sentences.map((sent, idx) => (
-              <div className="card" key={idx}>
-                <div className="card-top">
-                  <div style={{display:'flex', gap:12, width:'100%', flexWrap:'wrap', alignItems:'center'}}>
-                    <div className="primary-input-wrap" style={{flex:'1 1 300px'}}>
-                      <button className="btn-speak" onClick={()=>speak(sent.translations?.es || sent.es)} title="Listen">🗣️</button>
-                      <input className="primary-input" placeholder="Primary Spanish Word" value={sent.translations?.es || sent.es} onChange={e=>updateTranslation(idx,'es',e.target.value)}/>
+              
+              {user && (
+                <button onClick={()=>{
+                  const newId = Date.now().toString();
+                  const newLesson = { id: newId, icon: "🆕", title: { "en-US": "Lesson NAME", "ar": "Lesson NAME" }, sentences: [] };
+                  const updated = [newLesson, ...lessons];
+                  setLessons(updated);
+                  saveLessons(updated);
+                  setSelectedLesson(newLesson);
+                }} style={{width:'100%', background:'linear-gradient(135deg,#8b5cf6,#3b82f6)', color:'white', border:'none', padding:'12px', borderRadius:10, fontWeight:800, cursor:'pointer', fontSize:14, marginBottom:15, boxShadow:'0 4px 15px rgba(139,92,246,0.3)', display:'flex', alignItems:'center', justifyContent:'center', gap:8}}>
+                  <Plus size={18} /> Create New Lesson
+                </button>
+              )}
+              <div style={{position:'relative', marginBottom:15}}>
+                 <input 
+                   type="text" 
+                   placeholder="Search lessons..." 
+                   value={searchQuery}
+                   onChange={(e) => setSearchQuery(e.target.value)}
+                   style={{width:'100%', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.1)', padding:'10px 12px 10px 32px', borderRadius:10, color:'white', fontSize:13, outline:'none'}}
+                 />
+                 <span style={{position:'absolute', left:10, top:10, opacity:0.4}}>🔍</span>
+              </div>
+              <div className="lesson-list">
+                {lessons.filter(l => l.title['en-US'].toLowerCase().includes(searchQuery.toLowerCase()) || l.title.ar?.includes(searchQuery)).map(l => (
+                  <div key={l.id} className={`lesson-item ${selectedLesson?.id===l.id?'active':''}`} onClick={()=>selectLesson(l)}>
+                    <span className="lesson-icon">{l.icon}</span>
+                    <div style={{flex: 1}}>
+                      <div className="lesson-name">{l.title['en-US']}</div>
+                      <div className="lesson-count">{l.sentences ? l.sentences.length : 0} items</div>
                     </div>
-                    
-                    <button 
-                      className="btn-ai" 
-                      onClick={() => autoTranslateRow(idx)}
-                      disabled={sent.isTranslating}
-                      style={{height:60, flexShrink:0, background: 'linear-gradient(135deg, #3b82f6, #6366f1)', border:'none', color:'white', borderRadius:16, fontWeight:900, cursor:'pointer', padding:'0 24px', fontSize:14, display:'flex', alignItems:'center', gap:8, boxShadow:'0 4px 15px rgba(59,130,246,0.3)'}}
-                    >
-                      {sent.isTranslating ? '⏳ Processing...' : '✨ Magic Bank'}
-                    </button>
-                    
-                    <button className="btn-delete" onClick={()=>deleteEntry(idx)} style={{flexShrink:0}} title="Delete">🗑️ Delete</button>
-                  </div>
-
-                  <div className="lang-grid">
-                    {[
-                      {code:'ar', label:'Arabic', color:'#fbbf24', dir:'rtl'},
-                      {code:'en', label:'English', color:'#60a5fa', dir:'ltr'},
-                      {code:'fr', label:'French', color:'#f87171', dir:'ltr'},
-                      {code:'tr', label:'Turkish', color:'#34d399', dir:'ltr'},
-                      {code:'de', label:'German', color:'#a78bfa', dir:'ltr'},
-                      {code:'zh', label:'Chinese', color:'#fb7185', dir:'ltr'},
-                      {code:'ja', label:'Japanese', color:'#facc15', dir:'ltr'}
-                    ].map(lang => (
-                      <div className="lang-box" key={lang.code}>
-                        <div className="lang-label" style={{color: lang.color}}>{lang.label}</div>
-                        <input 
-                          className="lang-input" 
-                          dir={lang.dir} 
-                          value={sent.translations?.[lang.code] || sent[lang.code] || ''} 
-                          onChange={e=>updateTranslation(idx, lang.code, e.target.value)}
-                        />
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="examples-section">
-                      <div style={{fontSize:10, color:'rgba(255,255,255,0.4)', marginBottom:12, fontWeight:800, letterSpacing:1}}>EXAMPLE SENTENCES</div>
-                      
-                      {(sent.examples || (sent.exampleTranslations ? [sent.exampleTranslations] : [{}])).map((ex, exIdx) => (
-                      <div key={exIdx} style={{display:'flex', flexDirection:'column', gap:12, marginBottom:16, paddingBottom:16, borderBottom:(exIdx===((sent.examples?.length || 1)-1) ? 'none' : '1px solid rgba(255,255,255,0.05)')}}>
-                        <div className="primary-input-wrap" style={{background:'rgba(0,0,0,0.2)', border:'1px solid rgba(255,255,255,0.05)', boxShadow:'none', padding:'2px 8px'}}>
-                          <span style={{color:'#3b82f6', fontWeight:900, fontSize:12, marginRight:10}}>ES {exIdx + 1}</span>
-                          <input className="primary-input" style={{fontSize:16}} value={ex.es || ''} onChange={e=>updateTranslation(idx,'es',e.target.value, true, exIdx)}/>
-                        </div>
-                        <div className="lang-grid">
-                          {[
-                            {code:'ar', label:'Arabic', color:'#fbbf24', dir:'rtl'},
-                            {code:'en', label:'English', color:'#60a5fa', dir:'ltr'},
-                            {code:'fr', label:'French', color:'#f87171', dir:'ltr'},
-                            {code:'tr', label:'Turkish', color:'#34d399', dir:'ltr'},
-                            {code:'de', label:'German', color:'#a78bfa', dir:'ltr'},
-                            {code:'zh', label:'Chinese', color:'#fb7185', dir:'ltr'},
-                            {code:'ja', label:'Japanese', color:'#facc15', dir:'ltr'}
-                          ].map(lang => (
-                            <div className="lang-box" key={lang.code} style={{padding:'8px 12px'}}>
-                              <div className="lang-label" style={{color: lang.color}}>{lang.code}</div>
-                              <input 
-                                className="lang-input" 
-                                style={{fontSize:14}}
-                                dir={lang.dir}
-                                value={ex[lang.code] || ''} 
-                                onChange={e=>updateTranslation(idx,lang.code,e.target.value, true, exIdx)}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      ))}
-                      
-                      {(!sent.examples || sent.examples.length < 4) && (
-                      <button 
-                        onClick={() => {
-                          const sents = [...selectedLesson.sentences];
-                          if (!sents[idx].examples) {
-                            sents[idx].examples = sents[idx].exampleTranslations ? [ { ...sents[idx].exampleTranslations } ] : [ {} ];
-                          }
-                          if (sents[idx].examples.length < 3) {
-                            sents[idx].examples.push({});
-                            setSelectedLesson(prev => ({...prev, sentences: sents}));
-                            saveLessons(lessons.map(l => l.id === selectedLesson.id ? {...selectedLesson, sentences: sents} : l));
-                          }
-                        }}
-                        style={{background:'rgba(255,255,255,0.1)', color:'white', border:'none', padding:'12px 16px', borderRadius:12, cursor:'pointer', fontSize:13, fontWeight:800, marginTop:8, display:'flex', alignItems:'center', justifyContent:'center', width:'100%', gap:8}}
-                      >
-                        <span style={{fontSize: 16}}>+</span> Add Extra Example
-                      </button>
-                      )}
-                    </div>
-                </div>
-
-                <div className="card-bottom" tabIndex={0} onPaste={(e) => {
-                   const items = e.clipboardData.items;
-                   const text = e.clipboardData.getData('text');
-                   if (text && (text.startsWith('http') || text.startsWith('data:image'))) {
-                     selectCandidate(idx, text.trim());
-                     setStatusMsg("✅ تم لصق الرابط!"); setTimeout(()=>setStatusMsg(""), 2000);
-                     return;
-                   }
-                   for (let i = 0; i < items.length; i++) {
-                     if (items[i].type.indexOf("image") !== -1) {
-                       const blob = items[i].getAsFile();
-                       handleFileUpload(idx, blob);
-                       setStatusMsg("✅ تم رفع الصورة الملصقة!"); setTimeout(()=>setStatusMsg(""), 2000);
-                     }
-                   }
-                }} style={{outline:'none'}}>
-                  <div className="preview-box">
-                    {(sent.imageUrl || sent.image) ? (
-                      <img src={sent.imageUrl || sent.image} alt={sent.es} className="ai-img" />
-                    ) : (
-                      <div className="ai-img-placeholder" style={{fontSize:40, color:'rgba(255,255,255,0.05)', display:'flex', alignItems:'center', justifyContent:'center', height:'100%', background:'rgba(255,255,255,0.02)', borderRadius:20}}>?</div>
+                    {isAdmin && (
+                      <button onClick={(e) => deleteLesson(l.id, e)} style={{background:'rgba(239,68,68,0.1)', border:'none', color:'#ef4444', cursor:'pointer', padding:'4px 8px', borderRadius:6}} title="Delete Lesson">🗑</button>
                     )}
                   </div>
+                ))}
+              </div>
+            </aside>
 
-                  <div className="ai-controls" style={{flex:1, display:'flex', flexDirection:'column', gap:10}}>
-                    <div style={{display:'flex', gap:8, flexWrap:'wrap', alignItems:'center'}}>
-                      <button className="btn-search-quick" onClick={() => window.open(`https://www.google.com/search?q=${encodeURIComponent(sent.es)}+3d+render+icon&tbm=isch`,'_blank')}>🎨 3D Icon</button>
-                      <button className="btn-search-quick" onClick={() => window.open(`https://www.google.com/search?q=${encodeURIComponent(sent.es)}+real+photo&tbm=isch`,'_blank')}>📷 Photo</button>
-                      <button className="btn-search-quick" onClick={() => window.open(`https://www.google.com/search?q=${encodeURIComponent(sent.es)}+clipart+vector&tbm=isch`,'_blank')}>🃏 Graphic</button>
-                      <button className="btn-search-quick" style={{background:'rgba(139,92,246,0.1)', color:'#a78bfa'}} onClick={() => generateAI(idx)}>🪄 Draw AI</button>
-                      
-                      <button 
-                        className="btn-search-quick"
-                        style={{background:'rgba(14,165,233,0.1)', color:'#38bdf8', border:'1px dashed rgba(14,165,233,0.3)'}}
-                        onClick={async () => {
-                          let success = false;
-                          try {
-                            if(navigator.clipboard && navigator.clipboard.read) {
-                                const clipboardItems = await navigator.clipboard.read();
-                                for (const clipboardItem of clipboardItems) {
-                                  if (clipboardItem.types.some(t => t.startsWith('image/'))) {
-                                    const type = clipboardItem.types.find(t => t.startsWith('image/'));
-                                    const blob = await clipboardItem.getType(type);
-                                    handleFileUpload(idx, blob);
-                                    setStatusMsg("✅ تم لصق الصورة بنجاح!"); setTimeout(()=>setStatusMsg(""), 2000);
-                                    return;
-                                  }
-                                }
-                            }
-                          } catch (err) { console.warn("Image paste denied", err); }
+            <section className="stage">
+              {selectedLesson && <>
+                <div className="module-header">
+                  <input className="module-title-input" value={selectedLesson.title['en-US']} onChange={e=>{
+                    if(!user) return;
+                    const u={...selectedLesson,title:{...selectedLesson.title,'en-US':e.target.value}};
+                    setSelectedLesson(u);
+                    saveLessons(lessons.map(l=>l.id===u.id?u:l));
+                  }}/>
+                  <div style={{display:'flex', gap:10, alignItems:'center', flexWrap:'wrap'}}>
+                    {user && (
+                      <button onClick={syncSingleLessonWithCloud} style={{background:'linear-gradient(135deg,#3b82f6,#2563eb)',color:'white',border:'none',padding:'10px 18px',borderRadius:10,fontWeight:900,cursor:'pointer',fontSize:13,boxShadow:'0 4px 15px rgba(59,130,246,0.3)',whiteSpace:'nowrap'}}>☁ Sync Lesson to Cloud</button>
+                    )}
+                    {isAdmin && (
+                      <>
+                        <button onClick={exportForAndroid} style={{background:'linear-gradient(135deg,#10b981,#059669)',color:'white',border:'none',padding:'10px 18px',borderRadius:10,fontWeight:900,cursor:'pointer',fontSize:13,boxShadow:'0 4px 15px rgba(16,185,129,0.3)',whiteSpace:'nowrap'}}>📱 Export for Android</button>
+                        <button onClick={downloadJSON} style={{background:'rgba(139,92,246,0.1)',color:'#a78bfa',border:'1px solid rgba(139,92,246,0.2)',padding:'10px 18px',borderRadius:10,fontWeight:700,cursor:'pointer',fontSize:12,whiteSpace:'nowrap'}}>📥 Save Web Backup</button>
+                        <button onClick={downloadSingleLesson} style={{background:'linear-gradient(135deg,#0ea5e9,#0284c7)',color:'white',border:'none',padding:'10px 22px',borderRadius:10,fontWeight:800,cursor:'pointer',fontSize:13,boxShadow:'0 4px 15px rgba(14,165,233,0.3)', whiteSpace:'nowrap'}}>📄 Save This Lesson</button>
+                        <button onClick={rescueAssets} style={{background:'rgba(239,68,68,0.1)',color:'#f87171',border:'1px solid rgba(239,68,68,0.2)',padding:'10px 18px',borderRadius:10,fontWeight:800,cursor:'pointer',fontSize:12,whiteSpace:'nowrap'}}>🩹 Rescue Images</button>
+                        <button onClick={autoTranslateAll} style={{background:'rgba(16,185,129,0.1)',color:'#10b981',border:'1px solid rgba(16,185,129,0.2)',padding:'10px 18px',borderRadius:10,fontWeight:800,cursor:'pointer',fontSize:12,whiteSpace:'nowrap'}}>🌍 Bank All Words</button>
+                        <button onClick={generateAllPhotos} style={{background:'rgba(255,158,11,0.1)',color:'#f59e0b',border:'1px solid rgba(255,158,11,0.2)',padding:'10px 18px',borderRadius:10,fontWeight:800,cursor:'pointer',fontSize:12,whiteSpace:'nowrap'}}>🎨 Generate All</button>
+                        <button onClick={clearAllImages} style={{background:'rgba(239,68,68,0.08)',color:'#f87171',border:'1px solid rgba(239,68,68,0.25)',padding:'10px 14px',borderRadius:10,fontWeight:700,cursor:'pointer',fontSize:12,whiteSpace:'nowrap'}}>🗑 Clear Images</button>
+                      </>
+                    )}
+                    <div className="sync-badge">Ready for Sync</div>
+                  </div>
+                </div>
 
-                          try {
-                            if(navigator.clipboard && navigator.clipboard.readText) {
-                                const text = await navigator.clipboard.readText();
-                                if (text && (text.startsWith('http') || text.startsWith('data:image'))) {
-                                  selectCandidate(idx, text.trim());
-                                  setStatusMsg("✅ تم لصق الرابط بنجاح!"); setTimeout(()=>setStatusMsg(""), 2000);
-                                  return;
-                                }
-                            }
-                          } catch (err) { console.warn("Text paste denied", err); }
-                          
-                          setStatusMsg("⚠️ متصفحك يمنع الزر. اضغط (Ctrl+V) بلوحة المفاتيح للصق");
-                          setTimeout(()=>setStatusMsg(""), 3500);
-                        }}
-                        title="Click to Paste or Ctrl+V"
-                      >
-                        📋 Paste Image
-                      </button>
+                {selectedLesson.sentences.map((sent, idx) => (
+                  <div className="card" key={idx}>
+                    <div className="card-top">
+                      <div style={{display:'flex', gap:12, width:'100%', flexWrap:'wrap', alignItems:'center'}}>
+                        <div className="primary-input-wrap" style={{flex:'1 1 300px'}}>
+                          <button className="btn-speak" onClick={()=>speak(sent.translations?.es || sent.es)} title="Listen">🗣️</button>
+                          <input className="primary-input" placeholder="Primary Spanish Word" value={sent.translations?.es || sent.es} onChange={e=>{if(user)updateTranslation(idx,'es',e.target.value)}}/>
+                        </div>
+                        
+                        {user && (
+                          <button 
+                            className="btn-ai" 
+                            onClick={() => autoTranslateRow(idx)}
+                            disabled={sent.isTranslating}
+                            style={{height:60, flexShrink:0, background: 'linear-gradient(135deg, #3b82f6, #6366f1)', border:'none', color:'white', borderRadius:16, fontWeight:900, cursor:'pointer', padding:'0 24px', fontSize:14, display:'flex', alignItems:'center', gap:8, boxShadow:'0 4px 15px rgba(59,130,246,0.3)'}}
+                          >
+                            {sent.isTranslating ? '⏳ Processing...' : '✨ Magic Bank'}
+                          </button>
+                        )}
+                        
+                        {user && <button className="btn-delete" onClick={()=>deleteEntry(idx)} style={{flexShrink:0}} title="Delete">🗑️ Delete</button>}
+                      </div>
 
-                      <button 
-                         className="btn-search-quick"
-                         onClick={() => document.getElementById(`file-upload-${idx}`).click()}
-                         title="Upload File"
-                      >
-                         📂
-                      </button>
-                      <input type="file" id={`file-upload-${idx}`} style={{display:'none'}} accept="image/*" onChange={(e) => handleFileUpload(idx, e.target.files[0])} />
-                    </div>
-
-
-                    {sent.candidates && sent.candidates.length > 0 && (
-                      <div className="candidates-grid" style={{marginTop:15, display:'grid', gridTemplateColumns:'repeat(4, 1fr)', gap:10}}>
-                        {sent.candidates.map((url, cIdx) => (
-                          <div key={cIdx} className="candidate-item" style={{minHeight:100, borderRadius:12}} onClick={() => selectCandidate(idx, url)}>
-                            <img 
-                              src={url} 
-                              className="candidate-img" 
-                              alt="option" 
-                              style={{opacity:1, display:'block'}}
-                              onError={(e) => { e.target.src = getEmojiUrl(sent.es); }}
+                      <div className="lang-grid">
+                        {[
+                          {code:'ar', label:'Arabic', color:'#fbbf24', dir:'rtl'},
+                          {code:'en', label:'English', color:'#60a5fa', dir:'ltr'},
+                          {code:'fr', label:'French', color:'#f87171', dir:'ltr'},
+                          {code:'tr', label:'Turkish', color:'#34d399', dir:'ltr'},
+                          {code:'de', label:'German', color:'#a78bfa', dir:'ltr'},
+                          {code:'zh', label:'Chinese', color:'#fb7185', dir:'ltr'},
+                          {code:'ja', label:'Japanese', color:'#facc15', dir:'ltr'}
+                        ].map(lang => (
+                          <div className="lang-box" key={lang.code}>
+                            <div className="lang-label" style={{color: lang.color}}>{lang.label}</div>
+                            <input 
+                              className="lang-input" 
+                              dir={lang.dir} 
+                              value={sent.translations?.[lang.code] || sent[lang.code] || ''} 
+                              onChange={e=>updateTranslation(idx, lang.code, e.target.value)}
                             />
                           </div>
                         ))}
                       </div>
-                    )}
+
+                      <div className="examples-section">
+                          <div style={{fontSize:22, color:'#8b5cf6', marginBottom:20, marginTop:10, fontWeight:900, letterSpacing:1, textShadow:'0 2px 10px rgba(139,92,246,0.2)', borderBottom:'2px solid rgba(139,92,246,0.2)', paddingBottom:10, display:'flex', alignItems:'center', gap: 10}}>
+                            <span>📝 EXAMPLE SENTENCES</span>
+                            <span style={{fontSize: 20, opacity: 0.8}}>⬇️</span>
+                          </div>
+                          
+                          {(sent.examples || (sent.exampleTranslations ? [sent.exampleTranslations] : [{}])).map((ex, exIdx) => (
+                          <div key={exIdx} style={{display:'flex', flexDirection:'column', gap:12, marginBottom:16, paddingBottom:16, borderBottom:(exIdx===((sent.examples?.length || 1)-1) ? 'none' : '1px solid rgba(255,255,255,0.05)')}}>
+                            <div className="primary-input-wrap" style={{background:'rgba(0,0,0,0.2)', border:'1px solid rgba(255,255,255,0.05)', boxShadow:'none', padding:'2px 8px'}}>
+                              <span style={{color:'#3b82f6', fontWeight:900, fontSize:12, marginRight:10}}>ES {exIdx + 1}</span>
+                              <input className="primary-input" style={{fontSize:16}} value={ex.es || ''} onChange={e=>updateTranslation(idx,'es',e.target.value, true, exIdx)}/>
+                            </div>
+                            <div className="lang-grid">
+                              {[
+                                {code:'ar', label:'Arabic', color:'#fbbf24', dir:'rtl'},
+                                {code:'en', label:'English', color:'#60a5fa', dir:'ltr'},
+                                {code:'fr', label:'French', color:'#f87171', dir:'ltr'},
+                                {code:'tr', label:'Turkish', color:'#34d399', dir:'ltr'},
+                                {code:'de', label:'German', color:'#a78bfa', dir:'ltr'},
+                                {code:'zh', label:'Chinese', color:'#fb7185', dir:'ltr'},
+                                {code:'ja', label:'Japanese', color:'#facc15', dir:'ltr'}
+                              ].map(lang => (
+                                <div className="lang-box" key={lang.code} style={{padding:'8px 12px'}}>
+                                  <div className="lang-label" style={{color: lang.color}}>{lang.code}</div>
+                                  <input 
+                                    className="lang-input" 
+                                    style={{fontSize:14}}
+                                    dir={lang.dir}
+                                    value={ex[lang.code] || ''} 
+                                    onChange={e=>updateTranslation(idx,lang.code,e.target.value, true, exIdx)}
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          ))}
+                          
+                          {(!sent.examples || sent.examples.length < 4) && (
+                          <button 
+                            onClick={() => {
+                              const sents = [...selectedLesson.sentences];
+                              if (!sents[idx].examples) {
+                                sents[idx].examples = sents[idx].exampleTranslations ? [ { ...sents[idx].exampleTranslations } ] : [ {} ];
+                              }
+                              if (sents[idx].examples.length < 3) {
+                                sents[idx].examples.push({});
+                                setSelectedLesson(prev => ({...prev, sentences: sents}));
+                                saveLessons(lessons.map(l => l.id === selectedLesson.id ? {...selectedLesson, sentences: sents} : l));
+                              }
+                            }}
+                            style={{background:'rgba(255,255,255,0.1)', color:'white', border:'none', padding:'12px 16px', borderRadius:12, cursor:'pointer', fontSize:13, fontWeight:800, marginTop:8, display:'flex', alignItems:'center', justifyContent:'center', width:'100%', gap:8}}
+                          >
+                            <span style={{fontSize: 16}}>+</span> Add Extra Example
+                          </button>
+                          )}
+                        </div>
+                    </div>
+
+                    <div className="card-bottom" tabIndex={0} onPaste={(e) => {
+                       const items = e.clipboardData.items;
+                       const text = e.clipboardData.getData('text');
+                       if (text && (text.startsWith('http') || text.startsWith('data:image'))) {
+                         selectCandidate(idx, text.trim());
+                         setStatusMsg("✅ تم لصق الرابط!"); setTimeout(()=>setStatusMsg(""), 2000);
+                         return;
+                       }
+                       for (let i = 0; i < items.length; i++) {
+                         if (items[i].type.indexOf("image") !== -1) {
+                           const blob = items[i].getAsFile();
+                           handleFileUpload(idx, blob);
+                           setStatusMsg("✅ تم رفع الصورة الملصقة!"); setTimeout(()=>setStatusMsg(""), 2000);
+                         }
+                       }
+                    }} style={{outline:'none'}}>
+                      <div className="preview-box">
+                        {(sent.imageUrl || sent.image) ? (
+                          <img src={sent.imageUrl || sent.image} alt={sent.es} className="ai-img" />
+                        ) : (
+                          <div className="ai-img-placeholder" style={{fontSize:40, color:'rgba(255,255,255,0.05)', display:'flex', alignItems:'center', justifyContent:'center', height:'100%', background:'rgba(255,255,255,0.02)', borderRadius:20}}>?</div>
+                        )}
+                      </div>
+
+                      <div className="ai-controls" style={{flex:1, display:'flex', flexDirection:'column', gap:10}}>
+                        <div style={{display:'flex', gap:8, flexWrap:'wrap', alignItems:'center'}}>
+                          <button className="btn-search-quick" onClick={() => window.open(`https://www.google.com/search?q=${encodeURIComponent(sent.es)}+3d+render+icon&tbm=isch`,'_blank')}>🎨 3D Icon</button>
+                          <button className="btn-search-quick" onClick={() => window.open(`https://www.google.com/search?q=${encodeURIComponent(sent.es)}+real+photo&tbm=isch`,'_blank')}>📷 Photo</button>
+                          <button className="btn-search-quick" onClick={() => window.open(`https://www.google.com/search?q=${encodeURIComponent(sent.es)}+clipart+vector&tbm=isch`,'_blank')}>🃏 Graphic</button>
+                          <button className="btn-search-quick" style={{background:'rgba(139,92,246,0.1)', color:'#a78bfa'}} onClick={() => generateAI(idx)}>🪄 Draw AI</button>
+                          
+                          <button 
+                            className="btn-search-quick"
+                            style={{background:'rgba(14,165,233,0.1)', color:'#38bdf8', border:'1px dashed rgba(14,165,233,0.3)'}}
+                            onClick={async () => {
+                              let success = false;
+                              try {
+                                if(navigator.clipboard && navigator.clipboard.read) {
+                                    const clipboardItems = await navigator.clipboard.read();
+                                    for (const clipboardItem of clipboardItems) {
+                                      if (clipboardItem.types.some(t => t.startsWith('image/'))) {
+                                        const type = clipboardItem.types.find(t => t.startsWith('image/'));
+                                        const blob = await clipboardItem.getType(type);
+                                        handleFileUpload(idx, blob);
+                                        setStatusMsg("✅ تم لصق الصورة بنجاح!"); setTimeout(()=>setStatusMsg(""), 2000);
+                                        return;
+                                      }
+                                    }
+                                }
+                              } catch (err) { console.warn("Image paste denied", err); }
+
+                              try {
+                                if(navigator.clipboard && navigator.clipboard.readText) {
+                                    const text = await navigator.clipboard.readText();
+                                    if (text && (text.startsWith('http') || text.startsWith('data:image'))) {
+                                      selectCandidate(idx, text.trim());
+                                      setStatusMsg("✅ تم لصق الرابط بنجاح!"); setTimeout(()=>setStatusMsg(""), 2000);
+                                      return;
+                                    }
+                                }
+                              } catch (err) { console.warn("Text paste denied", err); }
+                              
+                              setStatusMsg("⚠️ متصفحك يمنع الزر. اضغط (Ctrl+V) بلوحة المفاتيح للصق");
+                              setTimeout(()=>setStatusMsg(""), 3500);
+                            }}
+                            title="Click to Paste or Ctrl+V"
+                          >
+                            📋 Paste Image
+                          </button>
+
+                          <button 
+                             className="btn-search-quick"
+                             onClick={() => document.getElementById(`file-upload-${idx}`).click()}
+                             title="Upload File"
+                          >
+                             📂
+                          </button>
+                          <input type="file" id={`file-upload-${idx}`} style={{display:'none'}} accept="image/*" onChange={(e) => handleFileUpload(idx, e.target.files[0])} />
+                        </div>
+
+
+                        {sent.candidates && sent.candidates.length > 0 && (
+                          <div className="candidates-grid" style={{marginTop:15, display:'grid', gridTemplateColumns:'repeat(4, 1fr)', gap:10}}>
+                            {sent.candidates.map((url, cIdx) => (
+                              <div key={cIdx} className="candidate-item" style={{minHeight:100, borderRadius:12}} onClick={() => selectCandidate(idx, url)}>
+                                <img 
+                                  src={url} 
+                                  className="candidate-img" 
+                                  alt="option" 
+                                  style={{opacity:1, display:'block'}}
+                                  onError={(e) => { e.target.src = getEmojiUrl(sent.es); }}
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
+                ))}
+
+                <button className="btn-add" onClick={()=>{
+                  const u={...selectedLesson,sentences:[...selectedLesson.sentences,{es:'Insert a new word',ar:'Insert a new word',imagePrompt:'',imageUrl:null}]};
+                  setSelectedLesson(u);
+                  saveLessons(lessons.map(l=>l.id===u.id?u:l));
+                }}>+ Add New Entry</button>
+              </>}
+            </section>
+          </div>
+        )}
+
+          {view === 'player' && (
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', background: '#030712' }}>
+            {/* Phone Mockup Preview */}
+            <div style={{ width: '360px', height: '740px', background: '#000', borderRadius: '48px', border: '8px solid #334155', boxShadow: '0 50px 100px -20px rgba(0,0,0,0.7)', overflow: 'hidden', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ height: '40px', background: '#000', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ width: '60px', height: '18px', background: '#1e293b', borderRadius: '10px' }}></div>
+                </div>
+                
+                <div style={{ flex: 1, background: '#f8fafc', overflowY: 'auto', padding: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                  <div style={{ fontSize: '24px', fontWeight: 900, color: '#1e293b', textAlign: 'center', marginBottom: '10px' }}>
+                    {selectedLesson?.title?.['en-US']}
+                  </div>
+                  
+                  {selectedLesson?.sentences.map((s, i) => (
+                    <div key={i} style={{ background: 'white', borderRadius: '24px', padding: '16px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column', gap: '12px', border: '1px solid #f1f5f9' }}>
+                      <div style={{ width: '100%', aspectRatio: '1', borderRadius: '16px', background: '#f1f5f9', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                         {(s.imageUrl || s.image) ? (
+                           <img src={s.imageUrl || s.image} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                         ) : (
+                           <span style={{ fontSize: '40px' }}>{s.es?.[0]}</span>
+                         )}
+                      </div>
+                      <div style={{ textAlign: 'center' }}>
+                        <div style={{ fontSize: '20px', fontWeight: 800, color: '#1e293b' }}>{s.translations?.es || s.es}</div>
+                        <div style={{ fontSize: '14px', color: '#64748b', marginTop: '4px' }}>{s.translations?.ar || s.ar}</div>
+                      </div>
+                      <div style={{ marginTop: '8px', borderTop: '1px solid #f1f5f9', paddingTop: '12px' }}>
+                        {(s.examples || (s.exampleTranslations ? [s.exampleTranslations] : [])).slice(0, 1).map((ex, exIdx) => (
+                          <div key={exIdx} style={{ fontSize: '13px', color: '#334155', fontStyle: 'italic', textAlign: 'center', lineHeight: '1.4' }}>
+                            "{ex.es}"
+                            <div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '2px' }}>{ex.ar}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                  
+                  <div style={{ height: '40px' }}></div>
+                </div>
+
+                <div style={{ height: '60px', background: 'white', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+                   <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: '#cbd5e1' }}></div>
+                   <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#8b5cf6', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontSize:20 }}>▶</div>
+                   <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: '#cbd5e1' }}></div>
+                </div>
+            </div>
+            
+            <div style={{ marginLeft: '40px', maxWidth: '400px', color: '#94a3b8' }}>
+              <h2 style={{ color: 'white', fontSize: '32px', marginBottom: '20px' }}>Mobile Preview</h2>
+              <p style={{ lineHeight: '1.6', marginBottom: '20px' }}>This is how your lesson will appear on the student's mobile device. All images, translations, and example sentences are synchronized in real-time.</p>
+              <div style={{ background: 'rgba(255,255,255,0.05)', padding: '20px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <div style={{ fontSize: '12px', fontWeight: 800, color: '#8b5cf6', marginBottom: '10px' }}>DEVICE STATS</div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                  <span>Screen Resolution</span>
+                  <span style={{ color: 'white' }}>360 x 740 (HD)</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Items Count</span>
+                  <span style={{ color: 'white' }}>{selectedLesson?.sentences.length} items</span>
                 </div>
               </div>
-            ))}
-
-            <button className="btn-add" onClick={()=>{
-              const u={...selectedLesson,sentences:[...selectedLesson.sentences,{es:'Nueva palabra',ar:'كلمة جديدة',imagePrompt:'',imageUrl:null}]};
-              setSelectedLesson(u);
-              saveLessons(lessons.map(l=>l.id===u.id?u:l));
-            }}>+ Add New Entry</button>
-          </>}
-        </section>
+              <button onClick={() => setView('studio')} style={{ marginTop: '30px', background: '#8b5cf6', color: 'white', border: 'none', padding: '12px 30px', borderRadius: '12px', fontWeight: 700, cursor: 'pointer' }}>Back to Editor</button>
+            </div>
+          </div>
+        )}
       </main>
 
       {statusMsg && <div className="toast">{statusMsg}</div>}

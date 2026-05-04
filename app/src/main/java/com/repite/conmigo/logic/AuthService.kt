@@ -12,7 +12,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.repite.conmigo.data.UserProfile
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withTimeout
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import android.util.Log
+import com.google.firebase.firestore.FieldValue
 
 class AuthService(private val context: Context) {
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -50,6 +54,12 @@ class AuthService(private val context: Context) {
     suspend fun signIn(email: String, password: String): Result<FirebaseUser?> {
         return try {
             val result = auth.signInWithEmailAndPassword(email, password).await()
+            // Track in background to speed up login
+            result.user?.let { user ->
+                CoroutineScope(Dispatchers.IO).launch {
+                    try { trackLogin(user) } catch (e: Exception) { /* ignore */ }
+                }
+            }
             Result.success(result.user)
         } catch (e: Exception) {
             Result.failure(e)
@@ -60,9 +70,33 @@ class AuthService(private val context: Context) {
         return try {
             val credential = GoogleAuthProvider.getCredential(idToken, null)
             val result = auth.signInWithCredential(credential).await()
+            // Track in background
+            result.user?.let { user ->
+                CoroutineScope(Dispatchers.IO).launch {
+                    try { trackLogin(user) } catch (e: Exception) { /* ignore */ }
+                }
+            }
             Result.success(result.user)
         } catch (e: Exception) {
             Result.failure(e)
+        }
+    }
+
+    private suspend fun trackLogin(user: FirebaseUser) {
+        try {
+            usersCollection.document(user.uid).set(
+                mapOf(
+                    "uid" to user.uid,
+                    "name" to (user.displayName ?: "Unknown"),
+                    "email" to (user.email ?: ""),
+                    "lastLogin" to FieldValue.serverTimestamp(),
+                    "visits" to FieldValue.increment(1),
+                    "source" to "Android App"
+                ),
+                com.google.firebase.firestore.SetOptions.merge()
+            ).await()
+        } catch (e: Exception) {
+            Log.e("AuthService", "Failed to track login: ${e.message}")
         }
     }
 

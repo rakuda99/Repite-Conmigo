@@ -383,8 +383,9 @@ fun LearningScreen(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     CircularProgressIndicator(color = Color.White)
                     Spacer(modifier = Modifier.height(16.dp))
+                    val syncLang = if (uiState.feedback.contains("en")) "English" else if (uiState.feedback.contains("ar")) "العربية" else if (uiState.feedback.contains("es")) "Spanish" else "..."
                     Text(
-                        "جاري مزامنة اللغة العربية... ⏳",
+                        "جاري المزامنة ($syncLang)... ⏳",
                         color = Color.White,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp

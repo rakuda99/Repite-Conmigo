@@ -249,6 +249,7 @@ fun AppNavigation(authService: AuthService) {
                 )
             }
             composable("lessons_hub") {
+                val scope = rememberCoroutineScope()
                 var hubLessons by remember { mutableStateOf<List<Lesson>>(emptyList()) }
                 var isLoading by remember { mutableStateOf(true) }
                 
@@ -259,6 +260,31 @@ fun AppNavigation(authService: AuthService) {
 
                 Box(modifier = Modifier.fillMaxSize()) {
                     LazyColumn(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+                        // NEW: GLOBAL REFRESH BUTTON FOR EVERYONE
+                        item {
+                            Row(
+                                modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
+                                horizontalArrangement = Arrangement.End
+                            ) {
+                                Button(
+                                    onClick = {
+                                        scope.launch {
+                                            isLoading = true
+                                            contentService.clearAllLocalData()
+                                            hubLessons = contentService.getLessons()
+                                            isLoading = false
+                                        }
+                                    },
+                                    colors = ButtonDefaults.buttonColors(containerColor = DuoBlue.copy(alpha = 0.1f)),
+                                    contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp)
+                                ) {
+                                    Icon(Icons.Rounded.Refresh, contentDescription = "Sync", tint = DuoBlue, modifier = Modifier.size(18.dp))
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text("تحديث الدروس 🔄", color = DuoBlue, fontSize = 12.sp)
+                                }
+                            }
+                        }
+
                         if (isLoading && hubLessons.isEmpty()) {
                             item {
                                Box(modifier = Modifier.fillParentMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) {
@@ -274,14 +300,26 @@ fun AppNavigation(authService: AuthService) {
                         }
                         
                         items(hubLessons) { lesson ->
-                            LessonItem(lesson) {
-                               viewModel.setQuizMode(false)
-                               viewModel.selectCategory(lesson.categoryId)
-                               if (lesson.content.isNotEmpty()) {
-                                   viewModel.selectContentType(lesson.content[0].contentType)
-                               }
-                               navController.navigate("learning")
-                            }
+                            LessonItem(
+                                lesson = lesson,
+                                canDelete = true, // Enabled for everyone to allow easy cleanup
+                                onDelete = {
+                                    scope.launch {
+                                        isLoading = true
+                                        contentService.deleteLesson(lesson.id)
+                                        hubLessons = contentService.getLessons()
+                                        isLoading = false
+                                    }
+                                },
+                                onClick = {
+                                    viewModel.setQuizMode(false)
+                                    viewModel.selectCategory(lesson.categoryId)
+                                    if (lesson.content.isNotEmpty()) {
+                                        viewModel.selectContentType(lesson.content[0].contentType)
+                                    }
+                                    navController.navigate("learning")
+                                }
+                            )
                         }
                     }
 
@@ -400,7 +438,7 @@ fun AppNavigation(authService: AuthService) {
     }
 }
 @Composable
-fun LessonItem(lesson: Lesson, onClick: () -> Unit) {
+fun LessonItem(lesson: Lesson, canDelete: Boolean, onDelete: () -> Unit, onClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -408,17 +446,26 @@ fun LessonItem(lesson: Lesson, onClick: () -> Unit) {
             .clickable(onClick = onClick),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+        Row(
+            modifier = Modifier.padding(16.dp).fillMaxWidth(),
+            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically, modifier = Modifier.weight(1f)) {
                 Text(text = lesson.icon, fontSize = 24.sp)
                 Spacer(modifier = Modifier.width(12.dp))
                 Column {
                     Text(text = lesson.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
                     Text(text = lesson.rawLevel, style = MaterialTheme.typography.labelSmall, color = Color.Gray)
+                    Text(text = stringResource(R.string.sentences_count, lesson.content.size), style = MaterialTheme.typography.bodySmall, color = DuoBlue)
                 }
             }
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(text = stringResource(R.string.sentences_count, lesson.content.size), style = MaterialTheme.typography.bodySmall, color = DuoBlue)
+            
+            if (canDelete) {
+                IconButton(onClick = onDelete) {
+                    Icon(Icons.Rounded.Delete, contentDescription = "Delete", tint = Color.Red.copy(alpha = 0.6f))
+                }
+            }
         }
     }
 }

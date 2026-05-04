@@ -16,20 +16,23 @@ class ContentService(private val context: Context, private val repository: Lesso
 
     suspend fun getLessons(): List<Lesson> {
         val allLessons = mutableListOf<Lesson>()
+        
+        // Get user's preferred language (mother tongue)
+        val authService = AuthService(context)
+        val userProfile = authService.getUserProfile()
+        val preferredLang = userProfile?.motherTongue ?: "ar" // Default to Arabic if not found
 
         // 1. Fetch Local Custom Lessons from Repository
         repository?.let { repo ->
             val sentences = repo.allSentences.first()
             val categories = sentences.groupBy { it.category }
             categories.forEach { (catName, catSentences) ->
-                // Only treat it as "custom" if it's not one of our standard presets
-                // or if it HAS sentences in it.
                 if (catSentences.isNotEmpty()) {
                     allLessons.add(
                         Lesson(
                             id = "local_$catName",
                             title = catName,
-                            categoryId = catName, // For local, title and category are same
+                            categoryId = catName,
                             content = catSentences,
                             type = "local",
                             icon = "📝"
@@ -39,19 +42,83 @@ class ContentService(private val context: Context, private val repository: Lesso
             }
         }
 
-        // 2. Fetch Remote/Assets lessons
+        // 2. Fetch Remote lessons from Firestore (new Magic Factory format)
         try {
             val snapshot = lessonsCollection.get().await()
             if (!snapshot.isEmpty) {
-                allLessons.addAll(snapshot.toObjects(Lesson::class.java))
+                for (document in snapshot.documents) {
+                    try {
+                        val data = document.data ?: continue
+                        val id = data["id"] as? String ?: document.id
+                        val title = data["title"] as? String ?: "Untitled"
+                        val categoryId = data["categoryId"] as? String ?: title
+                        val icon = data["icon"] as? String ?: "📚"
+                        val type = data["type"] as? String ?: "remote"
+                        val authorId = data["authorId"] as? String ?: ""
+                        val authorEmail = data["authorEmail"] as? String ?: ""
+                        
+                        val rawLevel = when (val rl = data["rawLevel"]) {
+                            is Long -> rl.toString()
+                            is Int -> rl.toString()
+                            is String -> rl
+                            else -> ""
+                        }
+
+                        val contentList = mutableListOf<Sentence>()
+                        val rawContent = data["content"] as? List<*>
+                        if (rawContent != null) {
+                            for (item in rawContent) {
+                                @Suppress("UNCHECKED_CAST")
+                                val s = item as? Map<String, Any?> ?: continue
+                                
+                                // Dynamic Translation Selection
+                                val translations = s["translations"] as? Map<String, String> ?: emptyMap()
+                                val selectedTranslation = translations[preferredLang] 
+                                    ?: translations["en"] 
+                                    ?: s["translation"] as? String 
+                                    ?: ""
+
+                                contentList.add(
+                                    Sentence(
+                                        text = s["text"] as? String ?: "",
+                                        translation = selectedTranslation,
+                                        targetLang = s["targetLang"] as? String ?: "es",
+                                        sourceLang = preferredLang,
+                                        category = s["category"] as? String ?: categoryId,
+                                        contentType = s["contentType"] as? String ?: "sentence",
+                                        imageUrl = s["imageUrl"] as? String
+                                    )
+                                )
+                            }
+                        }
+
+                        if (contentList.isNotEmpty()) {
+                            allLessons.add(
+                                Lesson(
+                                    id = id,
+                                    title = title,
+                                    categoryId = categoryId,
+                                    content = contentList,
+                                    type = type,
+                                    rawLevel = rawLevel,
+                                    icon = icon,
+                                    authorId = authorId,
+                                    authorEmail = authorEmail
+                                )
+                            )
+                        }
+                    } catch (parseEx: Exception) {
+                        android.util.Log.e("ContentService", "Failed to parse lesson: ${document.id}", parseEx)
+                    }
+                }
             } else {
                 allLessons.addAll(loadLessonsFromAssets())
             }
         } catch (e: Exception) {
+            android.util.Log.e("ContentService", "Firestore fetch failed, loading from assets", e)
             allLessons.addAll(loadLessonsFromAssets())
         }
 
-        // Deduplicate by ID to avoid showing same lesson twice if it exists locally and remote
         return allLessons.distinctBy { it.id }
     }
 
@@ -121,6 +188,10 @@ class ContentService(private val context: Context, private val repository: Lesso
 
     suspend fun updateLesson(lesson: Lesson) {
         lessonsCollection.document(lesson.id).set(lesson).await()
+    }
+
+    suspend fun clearAllLocalData() {
+        repository?.clearAll()
     }
 
     suspend fun deleteLesson(lessonId: String) {

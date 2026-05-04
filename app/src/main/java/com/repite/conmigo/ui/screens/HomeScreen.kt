@@ -23,6 +23,7 @@ import com.repite.conmigo.ui.theme.DuoOrange
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.platform.LocalContext
 import com.repite.conmigo.R
 import androidx.compose.foundation.clickable
 
@@ -42,6 +43,7 @@ fun HomeScreen(
     onNavigateToReverseShortAnswer: () -> Unit
 ) {
     val userProgress by viewModel.userProgress.collectAsState()
+    val context = LocalContext.current
 
     LazyColumn(
         modifier = Modifier
@@ -61,7 +63,7 @@ fun HomeScreen(
             ) {
                 // Sync Button (Admin/Owner Tool)
                 IconButton(
-                    onClick = { viewModel.syncRemoteContent() },
+                    onClick = { viewModel.syncRemoteContent(context) },
                     modifier = Modifier.background(DuoBlue.copy(alpha = 0.1f), CircleShape)
                 ) {
                     Icon(Icons.Default.Sync, contentDescription = "Sync", tint = DuoBlue)

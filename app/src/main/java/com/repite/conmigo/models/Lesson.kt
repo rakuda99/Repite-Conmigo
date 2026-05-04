@@ -9,5 +9,7 @@ data class Lesson(
     val content: List<Sentence> = emptyList(),
     val type: String = "local", // "local", "asset", "remote"
     val rawLevel: String = "",
-    val icon: String = "📚"
+    val icon: String = "📚",
+    val authorId: String = "",
+    val authorEmail: String = ""
 )

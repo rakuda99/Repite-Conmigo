@@ -5,9 +5,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.repite.conmigo.data.*
 import com.repite.conmigo.logic.*
+import com.repite.conmigo.models.Lesson
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.tasks.await
 import android.content.Context
 import android.util.Log
 
@@ -62,7 +64,10 @@ class LessonViewModel(
                     return@launch
                 }
                 
-                val updatedSentences = all.map { sentence ->
+                // Limit to 50 sentences to prevent hanging
+                val sentencesToSync = all.take(50)
+                
+                val updatedSentences = sentencesToSync.map { sentence ->
                     val textToTranslate = sentence.text
                     val translation = if (textToTranslate.length == 1 && textToTranslate[0].isLetter()) {
                          // Manual mapping for letters if ML Kit fails
@@ -436,28 +441,61 @@ class LessonViewModel(
     }
 
     fun clearAllSentences() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.clearAll()
+            _uiState.update { it.copy(feedback = "All local lessons cleared successfully 🗑️") }
+            loadSentences()
         }
     }
 
-    fun syncRemoteContent() {
+    fun syncRemoteContent(context: android.content.Context) {
         viewModelScope.launch {
-            _uiState.update { it.copy(feedback = "جاري مزامنة المحتوى... ⏳") }
-            val result = RemoteContentService.syncContent(repository)
-            if (result.isSuccess) {
-                val count = result.getOrNull() ?: 0
-                _uiState.update { it.copy(feedback = "Success: $count sentences.") }
-                loadSentences() // Refresh the UI
-            } else {
-                _uiState.update { it.copy(feedback = "Failed: ${result.exceptionOrNull()?.message}") }
+            _uiState.update { it.copy(feedback = "Searching for new lessons in cloud... ☁️") }
+            try {
+                val catalog = fetchCloudCatalog()
+                if (catalog.isEmpty()) {
+                    _uiState.update { it.copy(feedback = "No lessons found in cloud library ❌") }
+                    return@launch
+                }
+                
+                var addedCount = 0
+                catalog.forEach { meta ->
+                    val url = meta.url
+                    if (!url.isNullOrEmpty()) {
+                        importRemoteLesson(url, context)
+                        addedCount++
+                    }
+                }
+                _uiState.update { it.copy(feedback = "Sync Complete! Updated $addedCount lessons 🎈") }
+            } catch (e: Exception) {
+                _uiState.update { it.copy(feedback = "Sync Failed: ${e.message}") }
             }
         }
     }
 
     fun importRemoteLesson(url: String, context: android.content.Context) {
         viewModelScope.launch(Dispatchers.IO) {
-            _uiState.update { it.copy(feedback = "جاري تحميل الدرس... ⏳") }
+            _uiState.update { it.copy(feedback = "Downloading lesson... ⏳") }
+            
+            if (!url.startsWith("http")) {
+                // It's a Firestore ID
+                try {
+                    val db = com.google.firebase.firestore.FirebaseFirestore.getInstance()
+                    val doc = db.collection("lessons").document(url).get().await()
+                    val lesson = doc.toObject(com.repite.conmigo.models.Lesson::class.java)
+                    if (lesson != null) {
+                        repository.insertSentences(lesson.content)
+                        _uiState.update { it.copy(feedback = "Imported ${lesson.title} successfully ✅") }
+                        loadSentences()
+                    } else {
+                        _uiState.update { it.copy(feedback = "Lesson not found in cloud ❌") }
+                    }
+                } catch (e: Exception) {
+                    _uiState.update { it.copy(feedback = "Cloud Error: ${e.message}") }
+                }
+                return@launch
+            }
+
             val result = LessonLoader.fetchRemoteLesson(context, repository, url)
             
             if (result.isSuccess) {
@@ -484,9 +522,33 @@ class LessonViewModel(
     }
 
     suspend fun fetchCloudCatalog(): List<LessonMetadata> {
-        // الرابط العالمي النهائي المستقر
-        val catalogUrl = "https://jsonblob.com/api/jsonBlob/019d9864-1f9e-7334-9063-075468551478" 
-        return LessonLoader.fetchCatalog(catalogUrl)
+        return try {
+            val db = com.google.firebase.firestore.FirebaseFirestore.getInstance()
+            val snapshot = db.collection("lessons")
+                .get()
+                .await()
+            
+            val metadataList = mutableListOf<LessonMetadata>()
+            snapshot.documents.forEach { doc ->
+                val title = doc.getString("title") ?: "No Title"
+                val lang = doc.getString("targetLanguage") ?: "es"
+                val id = doc.id
+                metadataList.add(
+                    LessonMetadata(
+                        lesson_id = id,
+                        title = title,
+                        version = 1,
+                        target_lang = lang,
+                        source_lang = "ar",
+                        url = id
+                    )
+                )
+            }
+            metadataList
+        } catch (e: Exception) {
+            Log.e("LessonViewModel", "Error fetching cloud catalog: ${e.message}")
+            emptyList<LessonMetadata>()
+        }
     }
 
     fun speakText(text: String, lang: String = "es") {
