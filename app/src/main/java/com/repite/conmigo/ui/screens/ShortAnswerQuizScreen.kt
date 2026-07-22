@@ -75,6 +75,11 @@ fun ShortAnswerQuizScreen(
                                 val expected = currentSentence?.translation?.lowercase()?.trim() ?: ""
                                 val actual = userAnswer.lowercase().trim()
                                 isCorrect = actual == expected
+                                if (isCorrect) {
+                                    viewModel.playSuccessSound()
+                                } else {
+                                    viewModel.playFailureSound()
+                                }
                             }
                         }
                     },

@@ -15,7 +15,12 @@ class AudioRecorder(private val context: Context) {
         val file = File(context.cacheDir, "user_voice.m4a")
         lastRecordedFile = file
         
-        mediaRecorder = MediaRecorder().apply {
+        mediaRecorder = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+            MediaRecorder(context)
+        } else {
+            @Suppress("DEPRECATION")
+            MediaRecorder()
+        }.apply {
             setAudioSource(MediaRecorder.AudioSource.MIC)
             setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
             setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
@@ -59,6 +64,17 @@ class AudioRecorder(private val context: Context) {
                     e.printStackTrace()
                 }
             }
+        }
+    }
+
+    fun release() {
+        try {
+            mediaPlayer?.release()
+            mediaPlayer = null
+            mediaRecorder?.release()
+            mediaRecorder = null
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 }

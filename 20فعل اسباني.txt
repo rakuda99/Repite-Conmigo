@@ -1,0 +1,37 @@
+    . abrir (abro, abres, abre)
+        العبارة: Abro la puerta.
+        الترجمة: أفتح الباب.
+    2. cerrar (cierro, cierras, cierra)
+        العبارة: Cierro la ventana.
+        الترجمة: أغلق النافذة.
+    4. trabajar (trabajo, trabajas, trabaja)
+        العبارة: Trabajo en la oficina.
+        الترجمة: أعمل في المكتب.
+    6. preguntar (pregunto, preguntas, pregunta)
+        العبارة: Pregunto al profesor.
+        الترجمة: أسأل المعلم.
+    7. responder (respondo, respondes, responde)
+        العبارة: Respondo a la pregunta.
+        الترجمة: أجيب عن السؤال.
+    9. caminar (camino, caminas, camina)
+        العبارة: Camino todos los días.
+        الترجمة: أمشي كل يوم.
+    10. correr (corro, corres, corre)
+        العبارة: Corro en el parque.
+        الترجمة: أجري في الحديقة.
+    11. escribir (escribo, escribes, escribe)
+        العبارة: Escribo una carta.
+        الترجمة: أكتب رسالة.
+    12. leer (leo, lees, lee)
+        العبارة: Leo un libro.
+        الترجمة: أقرأ كتاباً.
+    14. entender (entiendo, entiendes, entiende)
+        العبارة: Entiendo la lección.
+        الترجمة: أفهم الدرس.
+    19. dar (doy, das, da)
+        العبارة: Doy un regalo.
+        الترجمة: أعطي هدية.
+    20. recibir (recibo, recibes, recibe)
+        العبارة: Recibo un mensaje.
+        الترجمة: أستقبل رسالة / أستلم رسالة.
+

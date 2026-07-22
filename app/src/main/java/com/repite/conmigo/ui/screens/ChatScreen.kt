@@ -38,6 +38,17 @@ fun ChatScreen(
     val learningLang by viewModel.learningLanguage.collectAsState()
     val uiState by viewModel.uiState.collectAsState()
 
+    val sttLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val spokenText = result.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)?.getOrNull(0) ?: ""
+            if (spokenText.isNotEmpty()) {
+                viewModel.handleChatTranscription(spokenText)
+            }
+        }
+    }
+
     // Auto-speak any new AI message
     LaunchedEffect(messages) {
         val lastMsg = messages.lastOrNull()
@@ -80,6 +91,8 @@ fun ChatScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             // Control Bar
+            val useSystemSpeech by viewModel.useSystemSpeechDialog.collectAsState()
+            // Control Bar
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center,
@@ -90,7 +103,22 @@ fun ChatScreen(
                         .size(85.dp)
                         .padding(bottom = 12.dp)
                         .clickable {
-                            viewModel.onRecordClick(isInChat = true)
+                            if (useSystemSpeech) {
+                                val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                                    val langTag = if (learningLang == "es") "es-ES" else "en-US"
+                                    putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+                                    putExtra(RecognizerIntent.EXTRA_LANGUAGE, langTag)
+                                    putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, langTag)
+                                    putExtra(RecognizerIntent.EXTRA_PROMPT, "تحدث الآن... 🎙️")
+                                }
+                                try {
+                                    sttLauncher.launch(intent)
+                                } catch (e: Exception) {
+                                    viewModel.handleChatTranscription("ERR: لا يتوفر محرك صوتي في النظام ⚠️")
+                                }
+                            } else {
+                                viewModel.onRecordClick(isInChat = true)
+                            }
                         },
                     shape = CircleShape,
                     color = if (uiState.isRecording) DuoRed else DuoBlue,

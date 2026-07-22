@@ -1,0 +1,364 @@
+<USER_REQUEST>
+#separator:tab
+#html:true
+#guid column:1
+#notetype column:2
+#deck column:3
+#tags column:6
+thE1V|&DCI	Basic+	Duo Spanish Vocab List duolingo	el agua [sound:google-c7e6f870-22eb81e0-2c44d349-3dad8dbe-60e2bccd.mp3]	الماء	
+Q(ZX%)DzIj	Basic+	Duo Spanish Vocab List duolingo	beber [sound:google-3e4c5057-d834430d-cf3438de-c60ea9f6-04b10735.mp3]	للشرب	
+wn~8)sLmPM	Basic+	Duo Spanish Vocab List duolingo	comer [sound:google-6d04a7d5-d184746a-0f48cdc0-40bf388e-31caefdd.mp3]	لتناول الطعام	
+u2cY6Oz)y[	Basic+	Duo Spanish Vocab List duolingo	él [sound:google-29a25edd-455930c2-856732dc-04904108-243d2536.mp3]	هو	
+iVk?0;yGRB	Basic+	Duo Spanish Vocab List duolingo	ella [sound:google-9ae71026-c9a96a24-0456f427-7a5820ac-81b932fe.mp3]	هي	
+tcH>abj<0>	Basic+	Duo Spanish Vocab List duolingo	el hombre [sound:google-4ccc4f12-d2d8ffa2-17152a40-4bb1eea2-33d38908.mp3]	الرجل	
+dzOLjuF%ar	Basic+	Duo Spanish Vocab List duolingo	la leche [sound:google-d88cbcd3-ddcb09a7-82cfb595-553280f2-99b07c5a.mp3]	الحليب	
+"M5{l#U2+1e"	Basic+	Duo Spanish Vocab List duolingo	la manzana [sound:google-e8624090-75840055-6a7cd854-cc64d488-8c3fa6cc.mp3]	التفاح	
+i^oG2BY)pG	Basic+	Duo Spanish Vocab List duolingo	la mujer [sound:google-e9e830eb-1d17654a-07a7684e-eadd7ce9-b6498440.mp3]	المرأة	
+kkX-3PSSQ*	Basic+	Duo Spanish Vocab List duolingo	el niño [sound:google-a310c170-d281a759-681d455c-eb0ff698-50174f53.mp3]	الصبي	
+yRpbpV;4Go	Basic+	Duo Spanish Vocab List duolingo	la niña [sound:google-ca0774ea-c6e71cd0-12b516e6-3b780f2e-9b34568d.mp3]	الفتاة (ن ..)	
+Hrmb.6:*dZ	Basic+	Duo Spanish Vocab List duolingo	el pan [sound:google-d3b1a991-ddd846af-9d0236d2-bfb14d32-d2c10475.mp3]	الخبز	
+I-1<*^aNdK	Basic+	Duo Spanish Vocab List duolingo	ser [sound:google-51984c83-fdca320b-18164606-ca2f8a47-2f9cbaa8.mp3]	يكون	
+xs.lFwgodL	Basic+	Duo Spanish Vocab List duolingo	eres [sound:google-769596dd-235a5c58-0f69f58b-ff0834d8-659c2f6f.mp3]	أنت (الغناء. غير رسمي)	
+c/5+WQl!7s	Basic+	Duo Spanish Vocab List duolingo	es [sound:google-03be9725-7ebe8e56-8fb81a88-73b75af2-357f01dc.mp3]	هو/هي/هو	
+qS:KyZV8pf	Basic+	Duo Spanish Vocab List duolingo	soy [sound:google-df0f0278-82ec0a37-e38fcf2b-ea49090b-ccaf6cf0.mp3]	أنا أكون	
+N{Jf^Pg5Zb	Basic+	Duo Spanish Vocab List duolingo	tú [sound:google-bcd1285f-bd4070d8-7f2f72e0-08c6b1f9-fa72fce1.mp3]	أنت (المفرد ، غير رسمي)	
+s@}iL>=||[	Basic+	Duo Spanish Vocab List duolingo	usted [sound:google-149b08e9-df280afa-c645225a-c4a3c609-7923c1c3.mp3]	أنت (رسمي)	
+NsYSpr`Dcq	Basic+	Duo Spanish Vocab List duolingo	yo [sound:google-2a268e6c-34cc4a25-f5d10d6a-528e4033-c6dcc56b.mp3]	أنا	
+p}Q,kfOYI1	Basic+	Duo Spanish Vocab List duolingo	adiós [sound:google-2de35011-63ee66da-ff977561-c595c9a5-e8b1a4b3.mp3]	مع السلامة	
+Akl>PT@Nwy	Basic+	Duo Spanish Vocab List duolingo	disculpe [sound:google-17f7995d-394418ee-005cae07-6d0622a1-0dd3e97d.mp3]	معذرة (د ..)	
+LPgz14fB2J	Basic+	Duo Spanish Vocab List duolingo	por favor [sound:google-1701cc3c-2f7cea1b-594c4873-486583b8-8f009cb4.mp3]	لو سمحت	
+iFYRyue~q0	Basic+	Duo Spanish Vocab List duolingo	buenos días [sound:google-d2de9e96-26d9bd57-716f797a-f4925ee0-977d4e94.mp3]	صباح الخير	
+E6(=`:RRh}	Basic+	Duo Spanish Vocab List duolingo	gracias [sound:google-9ea7622c-8e5750e5-753cb3db-6d61dba0-457385aa.mp3]	شكرًا لك	
+MTJd-SME{5	Basic+	Duo Spanish Vocab List duolingo	hola [sound:google-7ed93025-c5bc99e3-df9d0e56-5dbce155-9e62dfb2.mp3]	مرحبًا	
+"yiq#$H6hBm"	Basic+	Duo Spanish Vocab List duolingo	no [sound:google-58b6f897-7c0b083e-353f5c84-e8aa8574-f67acb26.mp3]	لا	
+MiC9IPa0uv	Basic+	Duo Spanish Vocab List duolingo	buenas noches [sound:google-ce8174ba-dae0b48c-82e5523a-4fac3502-a19206ed.mp3]	طاب مساؤك	
+x0!;K?urqK	Basic+	Duo Spanish Vocab List duolingo	buenas tardes [sound:google-c0c8da05-e0b783c0-94fc75ce-953ceb84-797550c0.mp3]	مساء الخير	
+"qW#ERQoR*t"	Basic+	Duo Spanish Vocab List duolingo	sí [sound:google-a0a2ca23-c6a85018-4fcd4b44-5bae6558-a7628756.mp3]	نعم	
+cdkDbyuyYV	Basic+	Duo Spanish Vocab List duolingo	mucho gusto [sound:google-db828db7-2cbe854f-96d6c804-594fdd8c-3e444fec.mp3]	سعيد بلقائك	
+O1~9ROt2a8	Basic+	Duo Spanish Vocab List duolingo	de nada [sound:google-9dd09d7a-cee13b2b-7d99934d-1ddbbaf1-c57ffdcb.mp3]	على الرحب والسعة	
+"fa.#~g4/FE"	Basic+	Duo Spanish Vocab List duolingo	lo siento [sound:google-2cf35d83-75094680-12f0f5d6-f37fa90f-a576e2ea.mp3]	أنا آسف	
+l7k80XOJ!p	Basic+	Duo Spanish Vocab List duolingo	hablar [sound:google-7b5bf96e-9a0d3aa7-006f95f1-d2c6c735-3ec16d50.mp3]	للتحدث	
+"DUO#HKb]6("	Basic+	Duo Spanish Vocab List duolingo	perdón [sound:google-53a0c7ed-bef1a25f-70e3f46e-37057d5c-5a1f24df.mp3]	معذرة ، آسف (ص ..)	
+vu8n|>)eBg	Basic+	Duo Spanish Vocab List duolingo	inglés [sound:google-485fca9f-2f7a6758-a06e130e-c83badb1-a6f6ae75.mp3]	إنجليزي	
+dSo+_/$[y7	Basic+	Duo Spanish Vocab List duolingo	nada [sound:google-4367b85c-e576af07-ee9fd9c1-32277a8a-c3fa3ab2.mp3]	لا شئ	
+y]TdUTMLjG	Basic+	Duo Spanish Vocab List duolingo	español [sound:google-3ed2e771-5d40c819-0e98cf7c-1ddf161b-940b3496.mp3]	الأسبانية	
+"d#z]uT9?Ap"	Basic+	Duo Spanish Vocab List duolingo	la tarde [sound:google-40dacdb4-0a1e2072-eb64336e-fcfd2430-85ce93c9.mp3]	بعد الظهر	
+K,`]ILuS$T	Basic+	Duo Spanish Vocab List duolingo	el pasaporte [sound:google-054b1a00-e336776d-ab4cfb04-4cba99a9-dc018632.mp3]	جواز السفر	
+e88Csq!JtE	Basic+	Duo Spanish Vocab List duolingo	mi [sound:google-d8fe161c-aaa8ab83-fd19b7a5-1e0045bd-deaf9ebf.mp3]	لي	
+ND*;}^i5>*	Basic+	Duo Spanish Vocab List duolingo	la maleta [sound:google-3af57e2a-8f45b2a8-4d23e446-a58952c2-f0480a4c.mp3]	حقيبة	
+h:n+/&0IwP	Basic+	Duo Spanish Vocab List duolingo	el taxi [sound:google-75184da8-e7039275-093a21ee-905ae095-056ca21e.mp3]	التاكسي	
+M:BWI`P1xN	Basic+	Duo Spanish Vocab List duolingo	el telefono [sound:google-46a7fec0-c3854d46-ed225cdb-34bf5969-9c1cd2d4.mp3]	الهاتف	
+cx<>=X[bh&	Basic+	Duo Spanish Vocab List duolingo	necesitar [sound:google-76d62cd3-60c516bc-18a38fb8-a0e778aa-bf1123df.mp3]	للحاجة	
+pD45S=$IZ:	Basic+	Duo Spanish Vocab List duolingo	el hotel [sound:google-c9f5160f-28f6c67a-ddf9240b-030cf9eb-02301ff4.mp3]	الفندق	
+o;${2cHt|o	Basic+	Duo Spanish Vocab List duolingo	tener [sound:google-855c124e-033e8bb7-ca377cb9-d1d30ef8-7caae18e.mp3]	أن يكون	
+hIRUP8!PF.	Basic+	Duo Spanish Vocab List duolingo	la reserva [sound:google-0fe9baf4-23b74e31-9ca3bfbc-1265acdc-71af7110.mp3]	الحجز	
+F$`%fAmi:t	Basic+	Duo Spanish Vocab List duolingo	en [sound:google-a6c43287-456c1771-8ea8b612-ead64f7b-0d94aa8c.mp3]	في	
+"ET9#zQ,_g"	Basic+	Duo Spanish Vocab List duolingo	dónde [sound:google-38a543e9-5509f34b-a9f17f71-e377a526-a3036642.mp3]	أين	
+IJL/*2h1Lu	Basic+	Duo Spanish Vocab List duolingo	estar [sound:google-5a19b7bb-93d56bfe-6a4db33f-6e3a9534-d4288e06.mp3]	ليكون (الصفات المؤقتة/الدول ، الموقع ، الشعور)	
+eB{]ac.Qj]	Basic+	Duo Spanish Vocab List duolingo	aquí [sound:google-57d44a99-9a2ef100-bcd29283-4fc820f1-5f2f09a6.mp3]	هنا	
+B>[J~=2Mwp	Basic+	Duo Spanish Vocab List duolingo	el autobús [sound:google-a830d6dd-ef2d6556-aa0c78e9-7e7ce3df-f24229a7.mp3]	الحافلة	
+bu,n^,0_kc	Basic+	Duo Spanish Vocab List duolingo	el tren [sound:google-e06e733b-8cc0afc5-625c704e-7da34072-51443be3.mp3]	القطار	
+hyh5p7){U-	Basic+	Duo Spanish Vocab List duolingo	el dinero [sound:google-8025d68a-c2339f5e-9e7f6d26-aa0cdadf-790f4db6.mp3]	المال	
+n$xz^/]@;g	Basic+	Duo Spanish Vocab List duolingo	el boleto [sound:google-b0d25c49-e13f4406-055fa8fa-b73b5634-d0e74e63.mp3]	التذكرة	
+"zI^,#6i.R%"	Basic+	Spanish language basics for arabic::Arabic Spanish Words::Duo Spanish Vocab List	a [sound:google-5056241c-d1124800-62a48603-982975e4-9a051da6.mp3]	ل	
+"E!V#oKg_%E"	Basic+	Duo Spanish Vocab List duolingo	tu [sound:google-09ecd6fb-fcbaae40-06dbaa41-56b76041-189a73d0.mp3]	لك	
+AnV0wKEn|$	Basic+	Duo Spanish Vocab List duolingo	el supermercado [sound:google-ad4ac3e6-3d0e597b-510d6cd6-168f4493-fda62038.mp3]	السوبر ماركت	
+"o_(#b;S9GY"	Basic+	Duo Spanish Vocab List duolingo	el baño [sound:google-e5fedd0a-ff96fbca-9980b8d1-abdf8c5a-28f3f9be.mp3]	الحمام	
+yd?~M6SrWH	Basic+	Duo Spanish Vocab List duolingo	cerrado [sound:google-7bddcecb-e9298717-34786f04-947f758f-02bdeb86.mp3]	مغلق	
+i}2W:>GL}O	Basic+	Duo Spanish Vocab List duolingo	el banco [sound:google-50928e7e-11ccdfa5-16504b53-9d3be60e-096a0426.mp3]	البنك ، المقعد	
+gNf/.j<~D_	Basic+	Duo Spanish Vocab List duolingo	la calle [sound:google-d1f27af3-16c3b3a2-1781d125-17481826-59a48959.mp3]	الشارع	
+QZpu>nPz|F	Basic+	Duo Spanish Vocab List duolingo	el hospital [sound:google-0087fc62-96dd2f20-2c1a7c70-40749d38-926379c4.mp3]	المستشفى	
+L/]-KkpE^(	Basic+	Duo Spanish Vocab List duolingo	el museo [sound:google-78b8b603-d17ec9dd-33b16a1a-5f3d17eb-95baae02.mp3]	المتحف	
+Gb^XMaQsM%	Basic+	Duo Spanish Vocab List duolingo	el restaurante [sound:google-5918efb5-1b25d221-cfd9ca3a-82179181-8137527a.mp3]	المطعم	
+dmtlE=G$bO	Basic+	Duo Spanish Vocab List duolingo	la mesa [sound:google-6ace93bc-8739b3ee-bff23214-ecf26727-2877de2f.mp3]	الطاوله	
+"N|q/C#<kD!"	Basic+	Duo Spanish Vocab List duolingo	la persona [sound:google-0d53d47d-f7d95c35-6253190e-7af2cc37-22570c32.mp3]	شخص	
+bl<9dMc4G5	Basic+	Duo Spanish Vocab List duolingo	para [sound:google-df85c60f-0e2d0605-7d8b3b98-3c7f1b09-aff8c707.mp3]	ل	
+jMk^;iHWAg	Basic+	Duo Spanish Vocab List duolingo	uno [sound:google-58eb06c5-87ff29e8-1b115950-b96e4512-f7c705b8.mp3]	واحد	
+mj|mV[-t}p	Basic+	Duo Spanish Vocab List duolingo	dos [sound:google-0a0dfaf0-24f905f4-93189ad1-87c483e6-8ce90d2b.mp3]	اثنين	
+b%|+K_utLl	Basic+	Duo Spanish Vocab List duolingo	tres [sound:google-f459a500-6d0df108-1379025c-0c19d5f8-dde8d152.mp3]	ثلاثة	
+f6TS0&`UK	Basic+	Duo Spanish Vocab List duolingo	el sándwich [sound:google-80fe8536-66f96897-0f1fef68-9a1c6fee-9e5571e8.mp3]	ساندويتش	
+hT_D.bCeCt	Basic+	Duo Spanish Vocab List duolingo	de [sound:google-b2733346-6c1eb902-c8e20ce2-ebd0adb8-63378a52.mp3]	من ، من	
+g7r9x81@;M	Basic+	Duo Spanish Vocab List duolingo	la carne [sound:google-fa5e92f0-eefae12d-19acd540-b5f1e2fd-21787226.mp3]	اللحم	
+jH_W/n]i<5	Basic+	Duo Spanish Vocab List duolingo	el pescado [sound:google-75293cec-20e6b7cb-c61b4e64-1f692833-5b3670b5.mp3]	سمكة	
+bmA,zB<c<%	Basic+	Duo Spanish Vocab List duolingo	el queso [sound:google-2fce4f9c-899a9c24-7cca1375-1e4963d1-48ecc979.mp3]	الجبن	
+MT;<^:ktA$	Basic+	Duo Spanish Vocab List duolingo	la hamburguesa [sound:google-38cf3d8b-9e256fcd-0561a0bb-4ce4cd88-a792bdc3.mp3]	الهامبرغر	
+KLDlT;m{>@	Basic+	Duo Spanish Vocab List duolingo	con [sound:google-3c41d056-9e0cdcf7-63e69a73-ad4786b3-1eff094d.mp3]	مع	
+HV=nUn^_&K	Basic+	Duo Spanish Vocab List duolingo	el café [sound:google-bdcd116d-e1a9e916-f656d4bc-94b87325-1ec0f2a9.mp3]	قهوة	
+r2+7z/}`8i	Basic+	Duo Spanish Vocab List duolingo	el vaso [sound:google-319202ef-cb84154b-6a2c23b3-a56f97b9-7990b591.mp3]	زجاج	
+l!}F[MV:V]	Basic+	Duo Spanish Vocab List duolingo	la taza [sound:google-65131717-9db3b6c0-0511fb49-2b8e9f84-c1898e95.mp3]	كوب؛ القدح	
+A{s1H-HNwT	Basic+	Duo Spanish Vocab List duolingo	el azúcar [sound:google-431eae1f-e709922f-c699f387-ffeca367-48677c4e.mp3]	سكر	
+cQ@h$`6Kg0	Basic+	Duo Spanish Vocab List duolingo	sin [sound:google-01cab67b-cceb5df8-7b08c395-82ec5cfa-10490cde.mp3]	بدون	
+rT4<{A%m9J	Basic+	Duo Spanish Vocab List duolingo	la naranja [sound:google-31e1f98d-c34cb695-03119d19-9c443ee2-c1b38f30.mp3]	البرتقال	
+g6,,uR@+,j	Basic+	Duo Spanish Vocab List duolingo	el jugo [sound:google-acabca7e-53f7bce5-59b474e0-80b5bc2b-c774f94b.mp3]	عصير	
+I`*27D-]xt	Basic+	Duo Spanish Vocab List duolingo	la cuenta [sound:google-49341ea6-ff6ac051-a7ca2f8d-590999cb-d066e06e.mp3]	مشروع القانون	
+"yaTiMbp,#~"	Basic+	Duo Spanish Vocab List duolingo	querer [sound:google-8aa145ac-3bb80c8f-5b9c3afc-a21f172d-4a3a286f.mp3]	لتريد	
+EQM:ijRPF6	Basic+	Duo Spanish Vocab List duolingo	pagar [sound:google-08f04b76-5bc113e8-fc768b04-8ee5e656-ee937375.mp3]	لدفع	
+ujq@K,59-=	Basic+	Duo Spanish Vocab List duolingo	la ensalada [sound:google-24e96087-dc6afb3d-55bf2743-dfca5835-d6a31bea.mp3]	السلطة	
+GCw),uv$8R	Basic+	Duo Spanish Vocab List duolingo	el tomate [sound:google-7d740a62-5838e089-9ab40729-aacc44e3-0356eecd.mp3]	الطماطم	
+N+cNYz>DG!	Basic+	Duo Spanish Vocab List duolingo	la sal [sound:google-80105876-bf4fbf62-fb0a7ea0-da064f1b-8ab18c04.mp3]	الملح	
+s.,[uMGD$Z	Basic+	Duo Spanish Vocab List duolingo	o [sound:google-e3e6fa25-9f3bd210-33ef6595-5f76f882-f91b3136.mp3]	أو	
+P<9djkAWWq	Basic+	Duo Spanish Vocab List duolingo	la madre [sound:google-91fd5417-69a1d43b-c01d9d20-87b58d68-f8ca0bcd.mp3]	الأم	
+CM|XsOYl+O	Basic+	Duo Spanish Vocab List duolingo	el padre [sound:google-ba3fa895-40a46c82-f52087ef-25002d29-64c5141f.mp3]	أب	
+He,v5bG=[g	Basic+	Duo Spanish Vocab List duolingo	inteligente [sound:google-a078e4f4-da87b5f9-3b5db4a8-0ebb0f6f-a182e83d.mp3]	ذكي	
+Mh!WQyz.8*	Basic+	Duo Spanish Vocab List duolingo	elegante [sound:google-015e72f4-c9f69198-899d1280-ec630506-54888a5a.mp3]	رائع	
+dUnsGU|RGC	Basic+	Duo Spanish Vocab List duolingo	el carro [sound:google-0e69b864-95834692-ff1ce0dd-be0fa74e-8cadbc39.mp3]	سيارة	
+n0z01814[g	Basic+	Duo Spanish Vocab List duolingo	la casa [sound:google-37b9c45f-bca669e5-f95c0569-a8a9c903-67346441.mp3]	المنزل ، البيت (ج ..)	
+t@pZN:kl}g	Basic+	Duo Spanish Vocab List duolingo	hermano/a [sound:google-23a0d099-e8470083-b7d9b861-54155000-ab282e00.mp3]	أخ أو أخت	
+tiQ;O_l3HY	Basic+	Duo Spanish Vocab List duolingo	muy [sound:google-753e90fc-4293b8f5-a5945208-228dd5b0-a3411c8c.mp3]	جداً	
+ln78D&nRBC	Basic+	Duo Spanish Vocab List duolingo	el perro [sound:google-09f67447-4489da45-8f284d1a-1f9ee791-0f81d71b.mp3]	كلب	
+MD!(nfb.NZ	Basic+	Duo Spanish Vocab List duolingo	el gato [sound:google-836dc1a7-9b57a6e4-76970f2c-f937f500-5c69e186.mp3]	القط	
+b>l)WJy;^(	Basic+	Duo Spanish Vocab List duolingo	bonito [sound:google-40929fad-fed9d213-660233be-62349d59-c9d865f8.mp3]	جميل	
+nFK3`E%$e!	Basic+	Duo Spanish Vocab List duolingo	grande [sound:google-d6c0e677-a8f13b21-c90a4ec5-993dfc4d-fbdb09e0.mp3]	كبير	
+HEKmrGDF{K	Basic+	Duo Spanish Vocab List duolingo	esposo/a [sound:google-7e87b40e-e41772c4-bb0e6036-24deebdc-4cc140b6.mp3]	الزوج/الزوجة	
+"ng{#{XW=yt"	Basic+	Duo Spanish Vocab List duolingo	el apartamento [sound:google-2075700e-ddaded66-c72735b5-e5fbfe79-f16c6f32.mp3]	شقة/شقة	
+ut_)5TW%-!	Basic+	Spanish language basics for arabic::Arabic Spanish Words::100 common Spanish vocabulary words	abuelo/a [sound:google-c35e0ec0-f929b890-a5158dcb-7c7139b9-36c3b21c.mp3]&nbsp;	الجد / الأم	
+Kb*Cnu7.w@	Basic+	Duo Spanish Vocab List duolingo	perfecto [sound:google-ff09d628-df193ad2-5d841c2a-ec772460-c9069ae3.mp3]	ممتاز	
+N[HzMy81M(	Basic+	Duo Spanish Vocab List duolingo	la familia [sound:google-7e6a7518-b93ae618-271d70b5-21950190-a3d8bf68.mp3]	الأسرة	
+Kp!d0M-7r&	Basic+	Duo Spanish Vocab List duolingo	la bicicleta [sound:google-2b3e19c8-2a216a30-162c9516-f2ac4273-cf82f5e6.mp3]	دراجة	
+"u(#]LBp;/4"	Basic+	Duo Spanish Vocab List duolingo	vivir [sound:google-30420932-169d5469-21c85f8b-71ff7bd0-1fe4c96c.mp3]	للعيش	
+q31fVKlo(G	Basic+	Duo Spanish Vocab List duolingo	hijo/a [sound:google-39758907-2c4218e0-ac83ff00-8d0017aa-ff662742.mp3]	الابن/الابنة	
+c`FRUQAjm	Basic+	Duo Spanish Vocab List duolingo	y [sound:google-7e7225c9-b22b5b7c-6634cee0-37b96cdb-0f9f61d2.mp3]	و	
+Or)9-mqm3d	Basic+	Duo Spanish Vocab List duolingo	interesante [sound:google-c08b218b-f56efd58-acd05803-9139ea20-0a7c966e.mp3]	مثير للاهتمام	
+om+H{;W2zA	Basic+	Duo Spanish Vocab List duolingo	la ropa [sound:google-061033eb-441d2c0e-f1eb94e3-dabe244c-162d6829.mp3]	الملابس	
+Rf~zK9;ux{	Basic+	Duo Spanish Vocab List duolingo	la tienda [sound:google-bc200309-176bbe85-d867872b-f76b0bdd-717d8943.mp3]	متجر ، متجر	
+z;oj}pAMx7	Basic+	Duo Spanish Vocab List duolingo	la camisa [sound:google-477f0e38-3bf1b3b4-8ff7986c-6133fbc0-de6837c4.mp3]	القميص	
+h4qJ}e*S&a	Basic+	Duo Spanish Vocab List duolingo	verde [sound:google-02cfd28a-5eed48df-0cf13819-f89008d2-2a6b93a1.mp3]	أخضر	
+LYk)vP`^TG	Basic+	Duo Spanish Vocab List duolingo	azul [sound:google-1a74fce8-9edda914-675cea11-aa1edf81-527d6eb7.mp3]	أزرق	
+JR_TOLP2-2	Basic+	Duo Spanish Vocab List duolingo	la chaqueta [sound:google-74be3a40-33bdbb6b-bf9b3e74-a18d04dd-cbf26bc7.mp3]	السترة	
+p5M_`Odk5,	Basic+	Duo Spanish Vocab List duolingo	el vestido [sound:google-3b33fb15-83d2b785-fb2bebc7-3091a718-efb9bc7b.mp3]	الفستان	
+kT<b,Cu9o*	Basic+	Duo Spanish Vocab List duolingo	el sombrero [sound:google-cad4a534-038c2832-aa4efc70-336ae0c4-bec891e4.mp3]	القبعة	
+uwsAG%ru2z	Basic+	Duo Spanish Vocab List duolingo	gris [sound:google-c0df8d62-88960962-549e6520-1c4b35c9-025b1ee0.mp3]	رمادي	
+o}?!Pyd)}U	Basic+	Duo Spanish Vocab List duolingo	marrón [sound:google-a99087dc-a96ab964-735af663-2210797e-3d30a6bc.mp3]	بني	
+M7GM3t?z[/	Basic+	Duo Spanish Vocab List duolingo	comprar [sound:google-823d6493-bed62140-67f9c19e-7fd668ab-54ebd703.mp3]	لشراء	
+e(?HXwq8lr	Basic+	Duo Spanish Vocab List duolingo	la camiseta [sound:google-d87837b3-6946b0a4-ef87ca1c-7df04c36-bb6ac9cf.mp3]	تي شيرت	
+A:v/n[-JY+	Basic+	Duo Spanish Vocab List duolingo	este [sound:google-423a6e82-6b5e91c3-8c9b0f2b-4a684704-1ce173c4.mp3]	هذا	
+r7;}P?Cxx;	Basic+	Duo Spanish Vocab List duolingo	la falda [sound:google-9ba2a847-62749670-246147c7-76149e70-dc5bcef8.mp3]	التنورة	
+DL;lsidV~s	Basic+	Duo Spanish Vocab List duolingo	el abrigo [sound:google-3ef0c9a5-d73e0320-ff6f843f-0d3f666a-1183c8af.mp3]	المعطف	
+p~9v,j=3w|	Basic+	Duo Spanish Vocab List duolingo	rojo [sound:google-d3e3dc6c-bf049986-6a2ce19c-8439cdab-f3a8352d.mp3]	أحمر	
+m/f$e6vSWS	Basic+	Duo Spanish Vocab List duolingo	caro [sound:google-98c85ac9-21d8cdba-3e3624f3-aa29f26c-5c5c62b5.mp3]	غالي	
+wqy~E]Eo<;	Basic+	Duo Spanish Vocab List duolingo	barato [sound:google-19fc1177-dd93523c-1ae860eb-642293f5-f89c8d12.mp3]	رخيص	
+q]qOsKBW~D	Basic+	Duo Spanish Vocab List duolingo	ese [sound:google-7bbd8625-0d5badb5-81cd47d7-8d221175-b939e174.mp3]	الذي - التي	
+"Qg?#ucu$!0"	Basic+	Duo Spanish Vocab List duolingo	diferente [sound:google-6d9fd60b-5217edc0-5c5992d3-f38d8c58-7a548d83.mp3]	مختلف	
+k}*6CRY86}	Basic+	Duo Spanish Vocab List duolingo	favorito [sound:google-7560c1d7-ef24fdea-48e7e625-df04f08e-e1af8359.mp3]	مفضل	
+u.RqA!+>`H	Basic+	Duo Spanish Vocab List duolingo	cómodo [sound:google-bee5e94f-dafa28ba-688a7816-adc01265-f23404d1.mp3]	مريح	
+yh~GQ9)rOn	Basic+	Duo Spanish Vocab List duolingo	la cartera [sound:google-884fad3f-82af6859-bcb26a5f-5163a2e7-16d59520.mp3]	محفظة	
+An`*JD~`n>	Basic+	Duo Spanish Vocab List duolingo	el reloj [sound:google-f47ebc9e-7d77d9ab-7d6b59da-60dc9ba7-ac6f9c14.mp3]	يشاهد	
+n8ODeD@u8V	Basic+	Duo Spanish Vocab List duolingo	el regalo [sound:google-a93cd3b0-ef98fedf-ca258915-b5bcc184-5f842f65.mp3]	هدية ، حاضر	
+i2P84!Odc!	Basic+	Duo Spanish Vocab List duolingo	demasiado [sound:google-93cf7c5e-3ce4e222-97edf281-08701b80-8c82008b.mp3]	أكثر مما ينبغي	
+LG3+b:Fwu!	Basic+	Duo Spanish Vocab List duolingo	el cinturón [sound:google-726dd0fe-c1604349-ae203272-ae490ed5-fd3b770a.mp3]	حزام	
+A.!IrLo5[e	Basic+	Duo Spanish Vocab List duolingo	la clase [sound:google-e2a3905d-3cf9e6b0-d0ae2185-f741ba7a-cc939f36.mp3]	الفصل	
+yQzx1}@UDp	Basic+	Duo Spanish Vocab List duolingo	el examen [sound:google-b6d9e285-759c4fe3-2d22a611-ad9ab2e3-e93e0a18.mp3]	امتحان	
+HcN:CN<vWq	Basic+	Duo Spanish Vocab List duolingo	fácil [sound:google-f633ec47-dbca83f9-1bcf7273-b17e4919-0f86e49c.mp3]	سهل	
+G^2J:dl%X^	Basic+	Duo Spanish Vocab List duolingo	el libro [sound:google-1227fcb7-50c43535-88bfc240-00efb9cb-fbf2064c.mp3]	الكتاب	
+Lz4E+3fLTM	Basic+	Duo Spanish Vocab List duolingo	el bolígrafo [sound:google-21bd15b2-5d06ce9e-a6f79121-3bb76416-d5a09c74.mp3]	القلم (ب ..)	
+n6b+<bIr17	Basic+	Duo Spanish Vocab List duolingo	la escuela [sound:google-2c7e236a-03913c20-d4048481-6e776915-4db23277.mp3]	المدرسة (ه ..)	
+L;i(+G~twZ	Basic+	Duo Spanish Vocab List duolingo	el maestro [sound:google-f68880fb-84a0f5e2-40e1117f-9e3ce190-e440eab9.mp3]	المعلم (م ..)	
+c.3O9i=.Fq	Basic+	Duo Spanish Vocab List duolingo	la pregunta [sound:google-b4bdb4be-5441dc0d-e02980ca-a625ce9e-8a560c72.mp3]	سؤال (ص ..)	
+y3_7lgmY@w	Basic+	Duo Spanish Vocab List duolingo	el estudiante [sound:google-34761b2f-0baaffe1-ef142823-7ed055eb-004f7b0a.mp3]	طالب	
+rnh3zv`vWX	Basic+	Duo Spanish Vocab List duolingo	difícil [sound:google-00bc14cf-20d4ffa3-aa9308c4-346f749f-3ed17ded.mp3]	صعب	
+F>dX{Ve6F9	Basic+	Duo Spanish Vocab List duolingo	el problema [sound:google-f0de4698-9ad791ff-bf5b5a84-9986985d-4d057a36.mp3]	مشكلة	
+ub-REM7{lP	Basic+	Duo Spanish Vocab List duolingo	estudiar [sound:google-9bcbf8d5-d004752f-31ce0842-62237b07-409c6a0a.mp3]	للدراسة	
+F}5G[^n3g^	Basic+	Duo Spanish Vocab List duolingo	leer [sound:google-78c78705-4c65c5ac-4e240839-b996dfc4-aaa90fbd.mp3]	للقراءة	
+s1pTBX(Yh^	Basic+	Duo Spanish Vocab List duolingo	escribir [sound:google-7eabac5e-4f041ca2-cb16b746-c5cc05b9-1859fab9.mp3]	للكتابة	
+wTkSKf3L/k	Basic+	Duo Spanish Vocab List duolingo	mucho [sound:google-c48f1466-a1d6329d-c040e978-f7b09a97-ca0aad74.mp3]	الكثير ، الكثير ، الكثير	
+gcE-<V|Wlh	Basic+	Duo Spanish Vocab List duolingo	importante [sound:google-e9ea544d-b32f3dc1-4c998ca9-2df6a26b-84e8fff7.mp3]	مهم	
+Fb($YkN^`t	Basic+	Duo Spanish Vocab List duolingo	comprender [sound:google-deb22043-5fcb11ac-dac9b221-8822bfa5-e6ceaf82.mp3]	لفهم	
+IJzt(]f7xe	Basic+	Duo Spanish Vocab List duolingo	la universidad [sound:google-4801b0fa-7b616f1c-d7e20aed-1473a76d-f1a3324a.mp3]	جامعة	
+dj$SUNqvvS	Basic+	Duo Spanish Vocab List duolingo	la medicina [sound:google-6d99911b-656f090d-07fff99d-ceb60bef-5a3f18dd.mp3]	الطب	
+pftKz>9Op:	Basic+	Duo Spanish Vocab List duolingo	el profesor [sound:google-1b0eaea9-4467e27e-4d3f7a3d-f825541a-6f27808f.mp3]	المعلم (ص ..)	
+Gey<NY]{u@	Basic+	Duo Spanish Vocab List duolingo	la computadora [sound:google-5fe436a6-a0baeff8-19efe0ab-f12f1c7c-887485d1.mp3]	الكمبيوتر	
+Mi~P3ogpgz	Basic+	Duo Spanish Vocab List duolingo	llamar [sound:google-772f6df1-38561ca5-8190c033-75807f0d-dd498292.mp3]	للاتصال	
+p(m$]DQXlc	Basic+	Duo Spanish Vocab List duolingo	americano [sound:google-525f34a0-18517cba-9539bfe3-77d86caa-14a0b926.mp3]	أمريكي	
+HmY;;T3K{s	Basic+	Duo Spanish Vocab List duolingo	los estados unidos [sound:google-205ded0e-445dd1e0-0d40c9cf-5a0dd522-c64e24d3.mp3]	الولايات المتحدة	
+s}<6%ny;4A	Basic+	Duo Spanish Vocab List duolingo	España [sound:google-3a52b8f2-98c44d06-ad8cc537-2884d404-112d5d3c.mp3]	إسبانيا	
+JflUuQN%>Z	Basic+	Duo Spanish Vocab List duolingo	China [sound:google-e5963b44-7604df94-a1ef29da-6c77bfbc-4b2315e2.mp3]	الصين	
+L?*k}9!5/G	Basic+	Duo Spanish Vocab List duolingo	el nombre [sound:google-d98d9a1f-c79ca56f-2f4fdea0-91700d56-855eb90b.mp3]	الاسم	
+o>C@96T$%G	Basic+	Duo Spanish Vocab List duolingo	México [sound:google-24bc3543-3e93ce97-2f62da96-07a277ae-60ae4e93.mp3]	المكسيك	
+Q<EYEZ^KE*	Basic+	Duo Spanish Vocab List duolingo	Cuba [sound:google-0136e8dd-d32b2a1d-364df00d-9d709748-3df32255.mp3]	كوبا	
+z?mlLPFm*U	Basic+	Duo Spanish Vocab List duolingo	cubano [sound:google-154dab50-bb629019-ba48fbd4-fa31858a-3a9e41f9.mp3]	كوبي	
+t>(hnRI]w|	Basic+	Duo Spanish Vocab List duolingo	mexicano [sound:google-567cea1e-0cbb528c-323989f1-642a5d9b-ada19328.mp3]	مكسيكي	
+nv178!M+dN	Basic+	Duo Spanish Vocab List duolingo	cómo [sound:google-e296fb76-8d5fbfa6-5049f6ef-bf47d64a-037d7de5.mp3]	كيف	
+K7)B[db_+q	Basic+	Duo Spanish Vocab List duolingo	bien [sound:google-62cf7011-42814f00-6158efe4-73216c72-52e5eff9.mp3]	حسنًا	
+IGGvtD5%pQ	Basic+	Duo Spanish Vocab List duolingo	cansado [sound:google-c9cc2c5f-e24369b7-a1404ee2-8ee54a6e-815911af.mp3]	مرهق	
+yPBOf8`xoa	Basic+	Duo Spanish Vocab List duolingo	señor [sound:google-b29b6d30-4572121f-193fa0c6-f7c14ffe-62445c84.mp3]	السيد.	
+"wZpZ#kb@h3"	Basic+	Duo Spanish Vocab List duolingo	señora [sound:google-16617cac-08b34b74-49d4af16-e764207f-04200dfb.mp3]	السّيدة.	
+JiDxP6&a?~	Basic+	Duo Spanish Vocab List duolingo	señorita [sound:google-7ab1f019-626cbc77-9b558c58-9aaba676-47bfdfe7.mp3]	ملكة جمال ، سيدة شابة	
+G:@V!Ip5(;	Basic+	Duo Spanish Vocab List duolingo	hasta mañana [sound:google-72303561-ec94a010-41d91074-6bbf6a6a-a205b5b3.mp3]	نراكم غدا	
+ibTf]j)K_,	Basic+	Duo Spanish Vocab List duolingo	¿Cómo está? [sound:google-64e23b5c-b659a6e1-37e42c94-0750632d-efc9f843.mp3]	كيف حالك؟ (رَسمِيّ)	
+wZF5;>/(j$	Basic+	Duo Spanish Vocab List duolingo	hasta luego [sound:google-b90ac95c-2111348a-bfd3f148-dc73507d-5c571764.mp3]	أراك لاحقًا	
+OS1>We~PQD	Basic+	Duo Spanish Vocab List duolingo	feliz [sound:google-7c2c720a-d4fe3927-87c9a6b5-088c7cd2-7bb96d92.mp3]	سعيد (و ..)	
+"Legld`=O3#"	Basic+	Duo Spanish Vocab List duolingo	mal [sound:google-949a00c8-a89e5eb9-2729aa62-b6bac31e-0df1dc4c.mp3]	سيئة ، خاطئة	
+icn84$gt2=	Basic+	Duo Spanish Vocab List duolingo	ocupado [sound:google-1e054c1d-7096c147-00354b74-d96f7199-de589985.mp3]	مشغول	
+O4iR-$1Z]G	Basic+	Duo Spanish Vocab List duolingo	la banana [sound:google-1d71db6a-847fc04d-12e4efa5-e2e6e516-199b7763.mp3]	موز	
+b*SC@ilX@*	Basic+	Duo Spanish Vocab List duolingo	más [sound:google-9b7c8751-944ac008-eea085b4-0888153c-93d6bcdb.mp3]	أكثر	
+JK.SMQBk1^	Basic+	Duo Spanish Vocab List duolingo	el té [sound:google-d6683dd4-ae7e39cc-c40f1e65-1984526d-4691c525.mp3]	الشاي	
+E2]&{77=LS	Basic+	Duo Spanish Vocab List duolingo	ayuda [sound:google-a57681e1-9f3a3687-9759287a-c2f3490e-c8e38620.mp3]	يساعد	
+G.p|U*3]2/	Basic+	Duo Spanish Vocab List duolingo	el teléfono [sound:google-84b0d9fb-e86a125d-dd78952b-72f730cf-b43326f6.mp3]	الهاتف	
+jZZEU,.YNW	Basic+	Duo Spanish Vocab List duolingo	usar [sound:google-87f6339c-a8a07ab6-9a926796-e6de2e8f-47ee2d82.mp3]	للاستخدام (ش .. ، باختصار)	
+Btsf%*Gxv1	Basic+	Duo Spanish Vocab List duolingo	hoy [sound:google-272fbcfe-a24eccde-ea5c4f51-f4a56929-6a67d13c.mp3]	اليوم	
+x97re}*>SL	Basic+	Duo Spanish Vocab List duolingo	lunes [sound:google-0e63fcf2-cda00c63-4128b2e9-e21602f6-8142f1c8.mp3]	الاثنين	
+nV>i;*L+`^	Basic+	Duo Spanish Vocab List duolingo	mañana [sound:google-3e104884-7d67c595-c778b0e6-6ee039f9-318cc327.mp3]	غداً	
+K4-`Q3{Kqw	Basic+	Duo Spanish Vocab List duolingo	el partido [sound:google-d7b3b364-18a39221-745beec7-1be0f8c2-3ebdf1d7.mp3]	لعبة (مباراة) ، حزب (سياسي)	
+DR=Yc}r!rF	Basic+	Duo Spanish Vocab List duolingo	martes [sound:google-df6e9fc9-1202ed1e-ebb517f3-2a4304c2-40e5ed43.mp3]	يوم الثلاثاء	
+I$1Bi]*YX;	Basic+	Duo Spanish Vocab List duolingo	el fútbol [sound:google-50863af2-51862361-8f417e52-b955e27f-d57fa36d.mp3]	كرة القدم	
+CU?RD$5/h&	Basic+	Duo Spanish Vocab List duolingo	cuándo [sound:google-b4ef520f-029f57cb-d3866d09-cd33b45e-e70c0640.mp3]	متى	
+BFD]vnLXQO	Basic+	Duo Spanish Vocab List duolingo	miércoles [sound:google-27b0a60e-1633bfe4-98946908-c0c434b1-ca0c2f97.mp3]	الأربعاء	
+s0!,r3JDth	Basic+	Duo Spanish Vocab List duolingo	jueves [sound:google-fcb8305f-7984e74e-2a831906-fef773f9-db2dd8f2.mp3]	يوم الخميس	
+s|N8(z}}G=	Basic+	Duo Spanish Vocab List duolingo	viernes [sound:google-8cea5f50-4d074dd5-ee8672d0-ee3880eb-2982a832.mp3]	جمعة	
+zHzSbqieqg	Basic+	Duo Spanish Vocab List duolingo	el día [sound:google-66104f89-81de48e2-2e878274-f461f0c3-5fff137b.mp3]	يوم	
+LIv>U}*$1:	Basic+	Duo Spanish Vocab List duolingo	el béisbol [sound:google-49156c98-3ffdb0f1-c533201d-5ed882d0-95ebf793.mp3]	البيسبول	
+yUa1DVoBvV	Basic+	Duo Spanish Vocab List duolingo	qué [sound:google-b4da692f-2729e676-97c3bd01-2b78f17f-12a51859.mp3]	ماذا؟ (س ..)	
+rsDl|*[keR	Basic+	Duo Spanish Vocab List duolingo	el cumpleaños [sound:google-caa1d711-3d43509d-a8a262e5-7d76a434-fda4ae3d.mp3]	عيد ميلاد	
+E.G6?i~Jdv	Basic+	Duo Spanish Vocab List duolingo	sábado [sound:google-78513423-6e89f376-98536625-60aaa875-2ddf060d.mp3]	السبت	
+hkl~KMb*/E	Basic+	Duo Spanish Vocab List duolingo	la fiesta [sound:google-3b541da9-6f9b5ed7-2d8493aa-e1686ee1-50b15376.mp3]	حزب	
+MISiB0O(W.	Basic+	Duo Spanish Vocab List duolingo	domingo [sound:google-4701c6d2-0bffbc01-5491fb76-4545156c-cd7889aa.mp3]	الأحد	
+G4stS;V^`u	Basic+	Duo Spanish Vocab List duolingo	el concierto [sound:google-c8d3343c-b9dc0228-b39eed13-710e971e-b09bc7ff.mp3]	حفلة موسيقية	
+Kf*GjE(L|p	Basic+	Duo Spanish Vocab List duolingo	divertido [sound:google-cf0b5746-0d842a74-b2625858-0d5bf6cc-67c8addb.mp3]	هزار	
+B9;*wtEsFv	Basic+	Duo Spanish Vocab List duolingo	el baile [sound:google-fe40b8eb-e15719c7-501d6844-cde4bcdb-ef90ecf4.mp3]	الرقص	
+r?*ATsa?VQ	Basic+	Duo Spanish Vocab List duolingo	la película [sound:google-f447cdd8-0417c34d-0ce96985-4e8c284d-de29c4f2.mp3]	فيلم	
+c8kQ|ju-?>	Basic+	Duo Spanish Vocab List duolingo	la semana [sound:google-f2987393-4d27c9b7-9d2cf616-6a7eb28a-1bf5fba8.mp3]	أسبوع	
+dN<19N6H7V	Basic+	Duo Spanish Vocab List duolingo	la fin de semana [sound:google-e377097f-c1bb9838-525b0b72-2e72cfdd-c7767b8b.mp3]	عطلة نهاية الأسبوع	
+obh@Uj[s9}	Basic+	Duo Spanish Vocab List duolingo	disfrutar de [sound:google-b0f96b9f-2238bdc4-33fa50fa-719b740f-f62599dc.mp3]	للاستمتاع	
+MK~gR<Zi[T	Basic+	Duo Spanish Vocab List duolingo	francés [sound:google-4a6c6666-7466caaa-d6e00b8a-ec18245f-59036322.mp3]	فرنسي	
+vG|UNTfz!h	Basic+	Duo Spanish Vocab List duolingo	trabajar [sound:google-3250d069-cf781fff-4d5234a8-deb3b71b-90807d33.mp3]	للعمل	
+Ah[V[$xyK)	Basic+	Duo Spanish Vocab List duolingo	la oficina [sound:google-396b9bba-55750391-f185528d-f541ce16-368ad8c9.mp3]	المكتب	
+JDLjA},$V3	Basic+	Duo Spanish Vocab List duolingo	la fábrica [sound:google-25067fd2-4d0b4217-218efa54-db6eacb4-86512e25.mp3]	المصنع	
+GV/^g=;d,*	Basic+	Duo Spanish Vocab List duolingo	quién [sound:google-9f440574-c66d673c-1aca4389-2fb9817b-e4335d23.mp3]	من	
+C!r^>4>w5k	Basic+	Duo Spanish Vocab List duolingo	Inglaterra [sound:google-03e769d6-9df28f39-4f0a0c36-900e2bfc-d098d7c8.mp3]	إنجلترا	
+"pLv75<I!-#"	Basic+	Duo Spanish Vocab List duolingo	Francia [sound:google-757042b7-c5279920-882b776f-17877488-b9a4aa93.mp3]	فرنسا	
+eX.kYa?d>f	Basic+	Duo Spanish Vocab List duolingo	Europa [sound:google-6e788e1f-79ac06c8-8f77b8c6-836fba8f-f62160fa.mp3]	أوروبا	
+hQK[H(FY.(	Basic+	Duo Spanish Vocab List duolingo	el camarero [sound:google-f0c74edc-4d2abb63-682a0d46-7eb4dc95-4d45f314.mp3]	النادل	
+Qpt?%e}>Fl	Basic+	Duo Spanish Vocab List duolingo	portugués [sound:google-eba3c550-4353f38c-44d14d62-8666c444-43246f73.mp3]	البرتغالية	
+"xthqrl=#V*"	Basic+	Duo Spanish Vocab List duolingo	joven [sound:google-6fc0621f-1cc0673c-4e379e13-5d2af7cb-d2ebc278.mp3]	شاب	
+JYOWb@e>2Q	Basic+	Duo Spanish Vocab List duolingo	la dirección [sound:google-ebb4799d-06dc4345-ded6969e-28514b35-40fd6264.mp3]	الاتجاه والعنوان	
+H>@%!D33E1	Basic+	Duo Spanish Vocab List duolingo	el número [sound:google-b821c0de-71785d2a-0852dd24-0a335c50-3147e048.mp3]	الرقم (ن ..)	
+gbAZob|[V*	Basic+	Duo Spanish Vocab List duolingo	celular [sound:google-dd8c079d-0100f1b4-afeac383-60202424-b1cf9c4b.mp3]	الخلوية	
+M<PO[C~Rd!	Basic+	Duo Spanish Vocab List duolingo	el amigo [sound:google-8a2753e3-ab867909-9cd9adb5-ce051d2a-f42fb776.mp3]	صديق	
+"j)|#G!lC(]"	Basic+	Duo Spanish Vocab List duolingo	el médico [sound:google-c3a30ff2-183d1d1b-a9eb5fe5-6290b130-6cdb4980.mp3]	الطبيب (م ..)	
+xW14w-$wdB	Basic+	Duo Spanish Vocab List duolingo	la ciudad [sound:google-d7bd8a99-13b3b7ea-222f257b-af38c08a-1f929a4a.mp3]	مدينة	
+O(?)+Dt;+=	Basic+	Duo Spanish Vocab List duolingo	el pueblo [sound:google-7baa795d-e7ed2080-e6bae0bf-fd2ec927-940b80bd.mp3]	المدينة	
+QN1FMVON-K	Basic+	Duo Spanish Vocab List duolingo	el novio [sound:google-cb7734f9-c6f2e7f9-8f3c5be2-3362f665-d345ac18.mp3]	صديقها	
+EFt[)PnVZP	Basic+	Duo Spanish Vocab List duolingo	cero [sound:google-298c3ca7-7b798adb-c8077b94-f4546167-2be2d5f1.mp3]	صفر	
+J9gw$d&fEZ	Basic+	Duo Spanish Vocab List duolingo	cuatro [sound:google-48267d94-f5b19910-8e3d2281-210ee1a7-ba699a1f.mp3]	أربعة	
+dCgbSbxLMB	Basic+	Duo Spanish Vocab List duolingo	la biblioteca [sound:google-3890aa33-269b2171-49e0e3f4-ef5bce59-4195836e.mp3]	مكتبة	
+jXM{xN<Rv<	Basic+	Duo Spanish Vocab List duolingo	cinco [sound:google-1b390d37-427882e2-a9a4331f-274e0eef-5546f0f5.mp3]	خمسة	
+H.*L*z[_bN	Basic+	Duo Spanish Vocab List duolingo	seis [sound:google-3a0fbf53-259086d3-736bf77f-f9030d83-9982919c.mp3]	ستة	
+jYx_:sl{+>	Basic+	Duo Spanish Vocab List duolingo	siete [sound:google-ba3ed51a-9c47ef2d-3816bc1e-bb50bae8-03a5e799.mp3]	سبعة	
+"mW04rHR#h,"	Basic+	Duo Spanish Vocab List duolingo	ocho [sound:google-0d3f628f-abac28fc-b59f8ab2-68e61918-49bf99ef.mp3]	ثمانية	
+iLGe]+6q@`	Basic+	Duo Spanish Vocab List duolingo	italiano [sound:google-dc90fe70-619578e7-0a78a12c-2bb81c6b-70277926.mp3]	إيطالي	
+BMca@)cQ3R	Basic+	Duo Spanish Vocab List duolingo	su [sound:google-befca641-a63e0b75-05ac6814-01d73845-35334b11.mp3]	له ، لها	
+Q}pe[KaIis	Basic+	Duo Spanish Vocab List duolingo	pequeño [sound:google-9b33ff66-35828988-6c5ca701-ef160336-a22c3d5d.mp3]	صغير	
+k4>Gii02z_	Basic+	Duo Spanish Vocab List duolingo	simpático [sound:google-68cc024b-2b494647-4225eb50-b045f21b-8dbd5476.mp3]	لطيفة (ق ..)	
+qI-~j%1.&b	Basic+	Duo Spanish Vocab List duolingo	alto [sound:google-f21e80be-692da780-b54dbab0-75829c12-327ede71.mp3]	طويل القامة (أ ..)	
+iUKXu@Q%q{	Basic+	Duo Spanish Vocab List duolingo	bajo [sound:google-9756a404-36cdb633-8d2c1e8e-0884d336-64f49f95.mp3]	قصير (ب ..)	
+OD1HA0FRf`	Basic+	Duo Spanish Vocab List duolingo	la mascota [sound:google-dc77c3aa-1a106f41-bd02a487-245db371-213a7309.mp3]	حيوان أليف	
+k~rpt6ON5!	Basic+	Duo Spanish Vocab List duolingo	el año [sound:google-d62cd4dd-6d016c2f-43e722b6-3e8877f0-292bae27.mp3]	سنة	
+"ph`.F-=j]#"	Basic+	Duo Spanish Vocab List duolingo	nueve [sound:google-e2d1910f-4e405fd2-b48bd1ec-5182b9fb-5bed431d.mp3]	تسعة	
+my0BN[aI?`	Basic+	Duo Spanish Vocab List duolingo	diez [sound:google-87fbbbbd-65c7a0c7-fb147070-b76bff84-cce2f1a5.mp3]	عشرة	
+k8j-|<7_&5	Basic+	Duo Spanish Vocab List duolingo	el trabajo [sound:google-e6ae4ac2-df054c51-03abe63b-07e85a0c-82c6cb1d.mp3]	عمل	
+M[_,@8CZ~[	Basic+	Duo Spanish Vocab List duolingo	el jefe [sound:google-3ebd6aa2-34959c45-6f33ffe0-b0b29331-e8746d53.mp3]	رئيس	
+"r?3w#Q3I$["	Basic+	Duo Spanish Vocab List duolingo	el mensaje [sound:google-bf66047b-b563aebd-b9c18efe-78bc6d3f-877aa31c.mp3]	رسالة	
+"Q~`>>Tbe#K"	Basic+	Duo Spanish Vocab List duolingo	el secretario [sound:google-e2184799-9d81d0fa-d8e67592-13c75ebb-b54d3dc2.mp3]	سكرتير	
+y2E4amFKW!	Basic+	Duo Spanish Vocab List duolingo	el escritorio [sound:google-b0432b8a-9fd0b52d-b5f0821f-d9fbf159-3f54a9fd.mp3]	مكتب	
+nXNm;Z9]cE	Basic+	Duo Spanish Vocab List duolingo	la carta [sound:google-5e8f576d-6d892f38-c83ce859-c194e35f-01d045a8.mp3]	رسالة ، قائمة	
+D?y[NXZgzR	Basic+	Duo Spanish Vocab List duolingo	cuál [sound:google-26a75ae9-42a34470-78d71520-77d0f77c-b100278d.mp3]	أيّ	
+f+58hqunDh	Basic+	Duo Spanish Vocab List duolingo	poco [sound:google-6d74959f-ca3e5e40-2a150a4c-a0663e6d-f1f07d31.mp3]	قليلا ، قليلة	
+tXViJP<^]Q	Basic+	Duo Spanish Vocab List duolingo	el correo electrónico [sound:google-6a3e267a-e985a3a8-f37b6bbf-84a39126-e8befe7e.mp3]	بريد إلكتروني	
+z?rL19Ipg+	Basic+	Duo Spanish Vocab List duolingo	nuevo [sound:google-fc4cbe46-0bcc0803-4a2f557c-cd47c1f5-217621ba.mp3]	جديد	
+cWC?u<4g@%	Basic+	Duo Spanish Vocab List duolingo	el negocio [sound:google-a82d2c72-2bbfa38e-83cc97b3-690eebd2-a28a7f38.mp3]	عمل	
+"s1Y:y![F#u"	Basic+	Duo Spanish Vocab List duolingo	ahora [sound:google-e367a52d-96076969-54c0b810-7b0cce7b-5d3a7a1f.mp3]	الآن	
+"IhKI_.DW#N"	Basic+	Duo Spanish Vocab List duolingo	qué tal [sound:google-e5a86e4b-369b9626-47bc0749-d3025d89-6448c5c6.mp3]	كيف حالك؟	
+l1.:[HZdqs	Basic+	Duo Spanish Vocab List duolingo	emocionar [sound:google-ab0add99-49030dd9-e257de08-e847bedf-ee03bfda.mp3]	للإثارة ، للإثارة	
+"ySl^#d2y.."	Basic+	Duo Spanish Vocab List duolingo	enfermo [sound:google-bee78f22-96bb683f-97f9e6bb-7d39e25a-e62b048f.mp3]	مريض	
+y[v)El-q)K	Basic+	Duo Spanish Vocab List duolingo	conmigo [sound:google-5fa084f8-f74a9e84-6a6f93f1-f70c3ca1-02e1990a.mp3]	معي	
+Oc_W.W`Q;8	Basic+	Duo Spanish Vocab List duolingo	contigo [sound:google-88e13346-3ca4c617-678b89bf-2edb5640-a754b455.mp3]	معك	
+sN[yJX5J*g	Basic+	Duo Spanish Vocab List duolingo	siempre [sound:google-abe2b21f-cf8b5d5c-ff9ec788-0115e734-c06ded2a.mp3]	دائماً	
+O_-/<kv=v_	Basic+	Duo Spanish Vocab List duolingo	triste [sound:google-2ad3fe53-5930b1b1-77897cd1-e1abbf93-367e148b.mp3]	حزين	
+J!yO>jW)jU	Basic+	Duo Spanish Vocab List duolingo	preocupado [sound:google-41e36074-6b6b6f04-5e5c64d3-2c89ea54-b29f6ae9.mp3]	قلق	
+"cM6y%{9Z#o"	Basic+	Duo Spanish Vocab List duolingo	por qué [sound:google-8a40b13d-6da021a4-80fd5fd2-5bdc92bb-502be678.mp3]	لماذا	
+K(6}lHNi:P	Basic+	Duo Spanish Vocab List duolingo	aburrido [sound:google-732a76be-c7e6929a-072d3a22-bea1fc60-03ab5719.mp3]	ممل	
+x?ugfoyZ;G	Basic+	Duo Spanish Vocab List duolingo	enojado [sound:google-185a0f84-ad6e4395-d633e5ac-b78dfacb-7e0c01a1.mp3]	غاضب	
+Qe$1qZVR)v	Basic+	Duo Spanish Vocab List duolingo	también [sound:google-80aef3fa-a62ab869-7acbb815-905edee6-a43ffae8.mp3]	أيضا ، أيضا	
+w35gyLo;=(	Basic+	Duo Spanish Vocab List duolingo	a veces [sound:google-c3e283f8-0711bc1e-873469b0-82da3ae0-120908ea.mp3]	أحيانا	
+HhW1&+RO%O	Basic+	Duo Spanish Vocab List duolingo	contento [sound:google-567f4f34-479ccb4f-593da076-a4c454fe-ba8e5bbf.mp3]	سعيد	
+c8kRGF(([Z	Basic+	Duo Spanish Vocab List duolingo	dormir [sound:google-2e3f919f-48218c3a-dfc69d60-0febcf3c-bfe0f4b4.mp3]	للنوم	
+fz{!%|x6E*	Basic+	Duo Spanish Vocab List duolingo	papá [sound:google-8df6f79a-455d7189-db0fa68a-24a3e9c2-ce1efde7.mp3]	أب	
+p1r1]N9zWG	Basic+	Duo Spanish Vocab List duolingo	mamá [sound:google-08b54700-0308ee6b-187987a3-f90e7777-5e3a169c.mp3]	الأم	
+tP{2hT-t.[	Basic+	Duo Spanish Vocab List duolingo	nunca [sound:google-edf0e0c3-7568b328-4bf23b43-3f9967c6-b1b86e34.mp3]	أبدا (ن ..)	
+Qlyy^03@-,	Basic+	Duo Spanish Vocab List duolingo	sentir [sound:google-a5edbba0-5637636e-0fade04d-08e61c48-bc0bd4f7.mp3]	لتشعر	
+JCZFNiuno4	Basic+	Duo Spanish Vocab List duolingo	otra vez [sound:google-7f93d1d4-c9eb859b-e326f1f7-e98de948-ff855154.mp3]	مرة أخرى	
+P;Y53CsyP`	Basic+	Duo Spanish Vocab List duolingo	el bebé [sound:google-f072035c-e4dd5195-20bd9d8e-e8a27125-2e5ff3a9.mp3]	طفل	
+M]^F}G__Sx	Basic+	Duo Spanish Vocab List duolingo	sorprendido [sound:google-f43ca513-7cf0fd2e-63248409-75f7b3e3-64b91072.mp3]	فوجئ	
+jL)Wt|[[sR	Basic+	Duo Spanish Vocab List duolingo	el zapato [sound:google-01b811bc-4775f074-e3c51d9f-6f0209d4-2129618b.mp3]	الحذاء	
+b$Cd6jn!V,	Basic+	Duo Spanish Vocab List duolingo	el pantalón [sound:google-eff05713-26bd6ea8-32078d93-9641dcb1-d32fc5f9.mp3]	السراويل	
+xYdx0-=~b4	Basic+	Duo Spanish Vocab List duolingo	viajar [sound:google-67b76ac2-6ac7b446-914725c3-7290efd1-9642b4f6.mp3]	للسفر	
+x{EK/7yv4O	Basic+	Duo Spanish Vocab List duolingo	cerca [sound:google-f006d51c-4bf2e746-69206bb1-bc856e7b-5c070619.mp3]	قريب	
+buf}>n.J*r	Basic+	Duo Spanish Vocab List duolingo	ir [sound:google-1f36115b-37fe2653-1b58e38f-09714834-158b75bc.mp3]	للذهاب	
+AtM*{P$)Sb	Basic+	Duo Spanish Vocab List duolingo	la estación [sound:google-27e9a1bd-17aefb21-80ae74b8-8e4584fd-22af9450.mp3]	محطة	
+JR}oq5Lj:b	Basic+	Duo Spanish Vocab List duolingo	el aeropuerto [sound:google-252a32f6-5af544d0-71c77f9f-31062e2f-f4c75b7e.mp3]	المطار	
+"b#OmhQmt@A"	Basic+	Duo Spanish Vocab List duolingo	del [sound:google-b5d17efb-aec9c7a1-fae1094c-e6da4194-9d5fe880.mp3]	التابع	
+o4l0j-2[36	Basic+	Duo Spanish Vocab List duolingo	el parque [sound:google-151e8f03-6df3b767-39bceb00-82f5b82e-e28a0bb6.mp3]	حديقة	
+HEzIE9)Q`k	Basic+	Duo Spanish Vocab List duolingo	al [sound:google-2dc015f6-d6972f7f-7db6eccc-a65bf0ee-6245d397.mp3]	إلى	
+AISQ7]TZV$	Basic+	Duo Spanish Vocab List duolingo	lejos [sound:google-c9a3cb2b-9efb4fb1-a5e59ddb-c80cda6b-189b0074.mp3]	بعيد	
+gKokvMpdjl	Basic+	Duo Spanish Vocab List duolingo	al lado [sound:google-1d4cc035-c40b2ef1-d1495bd0-b04ac30b-294d3cf3.mp3]	بجانب	
+j+AM~}mD<>	Basic+	Duo Spanish Vocab List duolingo	la parada [sound:google-f04c6c01-8c88bfaf-6bf1e20f-7f7259c6-74266e86.mp3]	محطة الحافلات	
+fW!3~41AWb	Basic+	Duo Spanish Vocab List duolingo	la puerta [sound:google-88468c44-20f738ac-ccb22ccb-9dbe0d09-13b44c97.mp3]	باب	
+b!uSFwft8/	Basic+	Duo Spanish Vocab List duolingo	tomar [sound:google-862bfdc5-ef8dc5d8-0f87d290-a4a8ede6-8a5facf9.mp3]	لأخذ ، أن يكون (شيء يأكله أو شربه)	
+I/2M>s*ajY	Basic+	Duo Spanish Vocab List duolingo	la izquierda [sound:google-015e394b-135bfe95-583e81e3-035c765f-241e5137.mp3]	اليسار	
+kbet[Z/7(t	Basic+	Duo Spanish Vocab List duolingo	la derecha [sound:google-6c0111d4-47e169f1-0f434af8-555a6752-2931e811.mp3]	اليمين (الاتجاه)	
+j-?N{s,`m]	Basic+	Duo Spanish Vocab List duolingo	el metro [sound:google-f8e0313c-557e1d14-a6fdfd5c-401ef869-c5115380.mp3]	المترو ، مترو الأنفاق	
+ecJz`(vO40	Basic+	Duo Spanish Vocab List duolingo	caminar [sound:google-a80eee5d-a1ebb88b-0eb55e28-90c05514-a372519f.mp3]	للمشي (ج ..)	
+DY}gDF[Y>S	Basic+	Duo Spanish Vocab List duolingo	el periódico [sound:google-e4c1bfd7-0fa83b8d-2614cd68-5b9198fc-38c6aa1e.mp3]	صحيفة	
+O@1C=.U,L-	Basic+	Duo Spanish Vocab List duolingo	la playa [sound:google-0a4afbed-19dc7874-feb90e0a-cb620871-c8276f28.mp3]	الشاطئ	
+_!0jx,sb,	Basic+	Duo Spanish Vocab List duolingo	la comida [sound:google-8ef32c69-5211cd3e-2036a056-f9d8f893-eff6cfc0.mp3]	طعام	
+OY@aQ@L.w]	Basic+	Duo Spanish Vocab List duolingo	el pollo [sound:google-0bd6effa-277e64ae-06324600-dca0c7b0-e09ceba4.mp3]	فرخة	
+J*F<qsoCsL	Basic+	Duo Spanish Vocab List duolingo	el arroz [sound:google-c1d12656-f6cd2b5f-2d278753-a47bc00a-f088783b.mp3]	أرز	
+xRkR@u=!u]	Basic+	Duo Spanish Vocab List duolingo	bueno [sound:google-da02f98a-b61b1191-b07f997c-87e63461-198cdcbd.mp3]	جيد	
+kb`4,V|j-u	Basic+	Duo Spanish Vocab List duolingo	abrir [sound:google-92b0b7c4-8c3d6fd2-b2e50473-cbc81ff9-8c7c61c1.mp3]	لفتح	
+"n.q#(&Ur/c"	Basic+	Duo Spanish Vocab List duolingo	el verano [sound:google-1041fbf5-b5c28f15-f3e6eb9f-b05538f0-c80cf281.mp3]	صيف	
+btV3qhP<cW	Basic+	Duo Spanish Vocab List duolingo	junto [sound:google-5e6694f7-83643cb1-1d4bb48e-6434c353-09d08215.mp3]	معاً	
+LW3mP;@;yX	Basic+	Duo Spanish Vocab List duolingo	aprender [sound:google-7e1afb0c-f42657a4-b897bbf3-1d7848a9-deedcf5f.mp3]	للتعلم	
+B.__9qx)!h	Basic+	Duo Spanish Vocab List duolingo	salir [sound:google-db145222-965091da-52aec9f6-cfd4248c-07298470.mp3]	للمغادرة ، للخروج	
+n!efiZmN.D	Basic+	Duo Spanish Vocab List duolingo	gustar [sound:google-224b6549-34b94c49-3ae5e121-d0b55910-9f81f25a.mp3]	ليحب	
+"I*~m,s#lJw"	Basic+	Duo Spanish Vocab List duolingo	el chocolate [sound:google-09ea9beb-e4b85721-8e5ab1eb-0b89b3b5-2a5b850a.mp3]	الشوكولاتة	
+"lk6W]d#4=-"	Basic+	Duo Spanish Vocab List duolingo	el pastel [sound:google-4cdee195-3fdd1f84-4c3d0beb-9280bbd6-79c64c1c.mp3]	كعكة	
+yvOBx$?u|i	Basic+	Duo Spanish Vocab List duolingo	porque [sound:google-98f7e261-a2865c0d-b639fc12-878ad840-34075ece.mp3]	لأن	
+JJ@S{?r}S0	Basic+	Duo Spanish Vocab List duolingo	creer [sound:google-043e2ff3-217b80a8-b4d83bc0-f8bb0a2e-f36b0131.mp3]	للتفكير ، للاعتقاد	
+HMU]L1?1mM	Basic+	Duo Spanish Vocab List duolingo	pero [sound:google-9380ed72-2f3e04ff-7d6a059f-806d136c-7398b271.mp3]	لكن	
+tNU|WQ0u*0	Basic+	Duo Spanish Vocab List duolingo	algo [sound:google-8e24aba5-3cd9d134-8e14a6b2-c463f718-f12662ec.mp3]	شئ ما	
+BeZ/zA1`$4	Basic+	Duo Spanish Vocab List duolingo	jugar [sound:google-da694e51-66d8d960-61b90946-8d98cfa1-d8bb7101.mp3]	للعب	
+A1H)u={HH$	Basic+	Duo Spanish Vocab List duolingo	correr [sound:google-322f3ebc-520fa347-85a3f00c-7af4b408-33a2345d.mp3]	لتشغيل	
+"J!eD=#78oL"	Basic+	Duo Spanish Vocab List duolingo	me encanta [sound:google-75a25d6a-b632a234-9697ad6b-9acc7e1e-9b692d30.mp3]	أنا أحب	
+wY2G~rbF-L	Basic+	Duo Spanish Vocab List duolingo	nadar [sound:google-530904f4-e39e9860-48cfa69d-5f0ea5eb-7cad3a98.mp3]	للسباحة	
+fdr(Heompf	Basic+	Duo Spanish Vocab List duolingo	te encanta [sound:google-bd508f03-f763af9f-d5710357-6988c515-ce0d6007.mp3]	أنت تحب	
+Cl8V~]D9cI	Basic+	Duo Spanish Vocab List duolingo	la piscina [sound:google-39ab78cd-90c9dc4e-d8fb6811-a506b12f-291a6b50.mp3]	حمام السباحة	
+"C+z47J3{#?"	Basic+	Duo Spanish Vocab List duolingo	dibujar [sound:google-ef70d4c2-834efa5f-372d7e2c-507a4644-9b7665ba.mp3]	لرسم	
+f6*Z,v=4w]	Basic+	Duo Spanish Vocab List duolingo	la música [sound:google-35a485f7-348c4d14-27ae2563-60ab627c-33756a62.mp3]	موسيقى	
+bXIT,T9_P	Basic+	Duo Spanish Vocab List duolingo	chico [sound:google-5edbfa44-855b1a66-e3cdaf86-7c48c07b-f5172f68.mp3]	صغير (ج ..)	
+Es)(@NBD)k	Basic+	Duo Spanish Vocab List duolingo	viejo [sound:google-33af9293-bfa47b21-fe776475-ec228bf4-498b8930.mp3]	قديم (v ..)	
+"jt}Rl#P(5`"	Basic+	Duo Spanish Vocab List duolingo	a menudo [sound:google-792174ba-bf479f07-5eadba9f-bdc845f2-285e1f76.mp3]	مرارًا	
+s{g@AyqT>a	Basic+	Duo Spanish Vocab List duolingo	todo [sound:google-ec26db14-9433a7c6-cac30bfb-74378516-07cfbc89.mp3]	كل شيء ، كل شيء	
+MlSPi7?/45	Basic+	Duo Spanish Vocab List duolingo	el cine [sound:google-312fbbf4-46d10a43-53ab3c16-d6aaa85d-1d5d28e4.mp3]	السينما	
+B{:y71K67*	Basic+	Duo Spanish Vocab List duolingo	la noche [sound:google-8e1d1156-0eb5289d-f9485e47-1b0f4af4-9914837d.mp3]	ليلة	
+GX+M%yg!+W	Basic+	Duo Spanish Vocab List duolingo	media [sound:google-b8c59841-12e28cee-811bf03c-61a2eda7-63962ea6.mp3]	متوسط؛ نصف	
+c?C92<fi46	Basic+	Duo Spanish Vocab List duolingo	la televisión [sound:google-b47d9041-dc4bb2ad-a918faf4-d4ae3fac-811805a5.mp3]	تلفزيون	
+u8R~m@:{,a	Basic+	Duo Spanish Vocab List duolingo	mirar [sound:google-d2d466e4-2fa63746-3d7cbd8a-68c694ca-67cddfff.mp3]	للنظر ، للمشاهدة	
+e@M7r(|>S/	Basic+	Duo Spanish Vocab List duolingo	tenir que [sound:google-a19b1d6b-bb1bb508-fb8f566e-3a47a8d8-82942eda.mp3]	(إلى) يجب أن	
+x;%hDzpN]:	Basic+	Duo Spanish Vocab List duolingo	levantar [sound:google-4bd97f70-e25002e3-c9b283be-8db15a07-95157c6f.mp3]	للرفع ، التقط ، لرفع	
+AN;pu:_WK|	Basic+	Duo Spanish Vocab List duolingo	duchar [sound:google-a0b0728f-220d727f-d9eb6708-82b40c40-391e5074.mp3]	للاستحمام	
+IE.iMVia^H	Basic+	Duo Spanish Vocab List duolingo	once [sound:google-cdb14d37-b75e0975-63497663-13df7ef6-3be2c758.mp3]	أحد عشر	
+Dg67U5.TQ-	Basic+	Duo Spanish Vocab List duolingo	doce [sound:google-3464096a-7bd6fdfd-3b9ca2e7-79c2eabe-73c56264.mp3]	اثنا عشر	
+lhQ@;wHR{8	Basic+	Duo Spanish Vocab List duolingo	hay [sound:google-6dc0c538-c97a453d-531b1787-c3c521df-3a1aed16.mp3]	هناك ، هناك	
+E?FRR?iJoT	Basic+	Duo Spanish Vocab List duolingo	la cocina [sound:google-6fe5522d-7be90336-fca19298-93f569c2-50b89a80.mp3]	مطبخ	
+yfj<}DVaf]	Basic+	Duo Spanish Vocab List duolingo	la nevera [sound:google-86e4c354-dd8a013a-e8cfa5a6-4bd3b504-7e42b5a3.mp3]	ثلاجة	
+rD5gS>]aie	Basic+	Duo Spanish Vocab List duolingo	el dormitorio [sound:google-eba3bdef-1991c562-1195e608-f8bdff10-0bad8b03.mp3]	غرفة نوم	
+l6p/aUx@!k	Basic+	Duo Spanish Vocab List duolingo	la cama [sound:google-87692624-f16315c9-00ee6415-c64c45c0-865c3eba.mp3]	سرير	
+OrG~R%t3^7	Basic+	Duo Spanish Vocab List duolingo	la sala [sound:google-298ea763-9f32a5e9-2f036c18-247b4c55-8651a23a.mp3]	غرفة ، غرفة معيشة	
+oI^Kr>$nxW	Basic+	Duo Spanish Vocab List duolingo	moderno [sound:google-00bdb67a-5cb600e7-c42e8a43-b50a02c6-64032562.mp3]	حديث	
+hqq0t;ciS6	Basic+	Duo Spanish Vocab List duolingo	la habitación [sound:google-cc9b4dc5-6dbb05d6-daafc8bd-980b4247-f79b4844.mp3]	غرفة (ح ..)	
+y1OXpioo(g	Basic+	Duo Spanish Vocab List duolingo	la ventana [sound:google-cafa4efb-3011b20f-5658f4cf-f9914cb1-a3398063.mp3]	نافذة	
+hR(CMiYHb/	Basic+	Duo Spanish Vocab List duolingo	la estanteria [sound:google-6cd6f5a7-6c962db8-b8c7b609-c651504c-8ccb940f.mp3]	الرف	
+Orh$Cd&x;g	Basic+	Duo Spanish Vocab List duolingo	la silla [sound:google-33713d12-747dba0b-2031f893-9
+<truncated 780766 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.

@@ -14,12 +14,21 @@ android {
         applicationId = "com.repite.conmigo"
         minSdk = 24
         targetSdk = 34
-        versionCode = 300
-        versionName = "12.0.0"
+        versionCode = 1509
+        versionName = "40.0.9"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
+        }
+    }
+
+    signingConfigs {
+        create("release") {
+            storeFile = file("../repite_release.jks")
+            storePassword = "password"
+            keyAlias = "repite"
+            keyPassword = "password"
         }
     }
 
@@ -30,6 +39,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
@@ -52,7 +62,7 @@ android {
         val variant = this
         variant.outputs.all {
             val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
-            output.outputFileName = "REPITE_V12_GOD_MODE.apk"
+            output.outputFileName = "RepiteConmigo_v${variant.versionName}_b${variant.versionCode}.apk"
         }
     }
 }
@@ -61,14 +71,7 @@ ksp {
     arg("room.generateKotlin", "true")
 }
 
-tasks.register<Copy>("copyLessonsJson") {
-    from("D:/MY APP/pingo ai/www/lessons.json")
-    into(layout.projectDirectory.dir("src/main/assets"))
-}
 
-tasks.named("preBuild") {
-    dependsOn("copyLessonsJson")
-}
 
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
@@ -113,6 +116,9 @@ dependencies {
 
     // Image Loading
     implementation("io.coil-kt:coil-compose:2.5.0")
+    
+    // Gemini AI
+    implementation("com.google.ai.client.generativeai:generativeai:0.7.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

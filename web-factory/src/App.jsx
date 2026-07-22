@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Plus, Trash2, Download, Cloud, Sparkles, Image as ImageIcon, Volume2, Save, Wand2, Globe, Copy, Check, ExternalLink, Smartphone, Archive, Languages, FileJson, Share2, Upload, LogOut, Lock, Mail, Key } from 'lucide-react';
+import { Search, Plus, Trash2, Download, Cloud, Sparkles, Image as ImageIcon, Volume2, Save, Wand2, Globe, Copy, Check, ExternalLink, Smartphone, Archive, Languages, FileJson, Share2, Upload, LogOut, Lock, Unlock, Mail, Key } from 'lucide-react';
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getDatabase, ref, set, get, child } from "firebase/database";
 import { getFirestore, collection, getDocs, doc, setDoc, serverTimestamp, increment, arrayUnion } from "firebase/firestore";
@@ -22,102 +22,76 @@ const db = getDatabase(app);
 const firestore = getFirestore(app);
 const auth = getAuth(app);
 
-function Login({ onGuest, onAdminSuccess }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [showEmailForm, setShowEmailForm] = useState(false);
+console.log("Magic Factory: Module Loading...");
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: 'select_account' });
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError('');
-    if (password === '2026') {
-      setLoading(true);
-      try {
-        await signInAnonymously(auth);
-        localStorage.setItem('repite_admin_session', 'true');
-        onAdminSuccess(true);
-        onGuest();
-      } catch (err) {
-        // Fallback: grant local admin rights even if auth fails
-        localStorage.setItem('repite_admin_session', 'true');
-        onAdminSuccess(true);
-        onGuest();
-        console.warn('Firebase Auth failed, but PIN is correct. Local Admin enabled.');
-      }
-      setLoading(false);
-    } else {
-      setError('❌ الكود السري غير صحيح');
-    }
-  };
+
+function Login({ onLogin }) {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleGoogleLogin = async () => {
     setLoading(true);
     setError('');
-    const provider = new GoogleAuthProvider();
     try {
-      const result = await signInWithPopup(auth, provider);
-      if (result?.user) {
-        if (result.user.email === 'rakuda99@gmail.com') {
-          localStorage.setItem('repite_admin_session', 'true');
-          onAdminSuccess(true);
-        } else {
-          localStorage.removeItem('repite_admin_session');
-          onAdminSuccess(false);
-        }
-        onGuest();
+      const result = await signInWithPopup(auth, googleProvider);
+      if (result.user) {
+        onLogin(result.user);
       }
     } catch (err) {
       console.error("Login Error:", err);
       if (err.code === 'auth/popup-closed-by-user') {
-        setError('❌ تم إغلاق نافذة تسجيل الدخول');
+        setError('❌ تم إغلاق النافذة قبل إكمال الدخول');
       } else {
-        setError('❌ خطأ في جوجل: ' + err.message);
+        setError('❌ فشل تسجيل الدخول: ' + err.message);
       }
     }
     setLoading(false);
   };
 
   return (
-    <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#030712', fontFamily: 'Inter, sans-serif' }}>
-      <div style={{ width: '420px', padding: '48px', background: 'rgba(30, 41, 59, 0.4)', borderRadius: '40px', border: '1px solid rgba(255,255,255,0.08)', backdropFilter: 'blur(30px)', textAlign: 'center', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}>
-        <div style={{ width: '80px', height: '80px', background: 'linear-gradient(135deg, #8b5cf6, #3b82f6)', borderRadius: '24px', margin: '0 auto 32px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 30px rgba(139,92,246,0.3)' }}>
-          <Lock size={36} color="white" />
+    <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#030712', color: 'white', fontFamily: 'system-ui, sans-serif' }}>
+      <div style={{ width: '100%', maxWidth: '400px', padding: '40px', background: '#111827', borderRadius: '24px', textAlign: 'center', border: '1px solid #1f2937', boxShadow: '0 20px 50px rgba(0,0,0,0.5)' }}>
+        <div style={{ width: '64px', height: '64px', background: 'linear-gradient(135deg, #6366f1, #a855f7)', borderRadius: '16px', margin: '0 auto 24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Lock size={32} />
         </div>
-        <h1 style={{ color: 'white', fontSize: '32px', fontWeight: 900, marginBottom: '8px', letterSpacing: '-1px' }}>MAGIC FACTORY</h1>
-        <p style={{ color: '#94a3b8', marginBottom: '40px', fontSize: '15px' }}>Welcome! Choose how you want to enter</p>
+        <h1 style={{ fontSize: '28px', fontWeight: 900, marginBottom: '8px' }}>MAGIC FACTORY</h1>
+        <p style={{ color: '#9ca3af', marginBottom: '32px' }}>Panel de Control - Repite Conmigo</p>
+        
+        {error && (
+          <div style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#f87171', padding: '12px', borderRadius: '12px', marginBottom: '24px', fontSize: '14px', border: '1px solid rgba(239, 68, 68, 0.2)' }}>
+            {error}
+          </div>
+        )}
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <button onClick={handleGoogleLogin} disabled={loading} style={{ width: '100%', padding: '16px', background: 'white', color: '#1f2937', border: 'none', borderRadius: '16px', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', transition: '0.3s' }}>
-            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" alt="G" />
-            Sign in with Google
-          </button>
+        <button 
+          onClick={handleGoogleLogin}
+          disabled={loading}
+          style={{ 
+            width: '100%', 
+            padding: '16px', 
+            background: 'white', 
+            color: '#111827', 
+            border: 'none', 
+            borderRadius: '12px', 
+            fontWeight: 800, 
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '12px',
+            fontSize: '16px',
+            transition: '0.2s'
+          }}
+        >
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/layout/google.svg" width="20" alt="" />
+          {loading ? 'Cargando...' : 'Entrar con Gmail'}
+        </button>
 
-          <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', margin: '10px 0' }}></div>
-
-          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <p style={{color:'#64748b', fontSize:11, fontWeight:700}}>ADMIN ACCESS</p>
-            <input 
-              type="password" 
-              placeholder="Enter Secret PIN" 
-              value={password} 
-              onChange={e => setPassword(e.target.value)} 
-              required 
-              style={{ padding: '16px', borderRadius: '16px', background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)', color: 'white', outline: 'none', textAlign: 'center', fontSize: 18, letterSpacing: 4 }} 
-            />
-            {error && <div style={{ color: '#ef4444', fontSize: '12px', fontWeight: 700 }}>{error}</div>}
-            <button type="submit" disabled={loading} style={{ padding: '16px', borderRadius: '16px', background: 'linear-gradient(135deg, #8b5cf6, #6366f1)', color: 'white', border: 'none', fontWeight: 800, cursor: 'pointer', boxShadow: '0 10px 20px rgba(139,92,246,0.2)' }}>
-              {loading ? 'Unlocking...' : 'Unlock Admin Dashboard'}
-            </button>
-          </form>
-
-          <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', margin: '10px 0' }}></div>
-
-          <button onClick={onGuest} style={{ width: '100%', padding: '16px', background: 'linear-gradient(135deg, #10b981, #059669)', color: 'white', border: 'none', borderRadius: '16px', fontWeight: 800, cursor: 'pointer', boxShadow: '0 10px 20px rgba(16,185,129,0.2)' }}>
-            Enter as Guest (View Only)
-          </button>
-        </div>
+        <p style={{ marginTop: '24px', fontSize: '12px', color: '#4b5563' }}>
+          Solo el administrador autorizado tiene acceso.
+        </p>
       </div>
     </div>
   );
@@ -238,41 +212,52 @@ function hasVector(word) {
 
 export default function App() {
   const [user, setUser] = useState(null);
-  const [hasEntered, setHasEntered] = useState(false);
-  const [adminSession, setAdminSession] = useState(localStorage.getItem('repite_admin_session') === 'true');
-  const isAdmin = (user && user.email === 'rakuda99@gmail.com') || adminSession;
   const [authLoading, setAuthLoading] = useState(true);
-  const [view, setView] = useState('studio'); // 'studio', 'player', 'users'
+  const isSuperAdmin = user && user.email === 'rakuda99@gmail.com';
+  const isEditor = !!user;
+  const isAdmin = isSuperAdmin; 
+
+  const [view, setView] = useState('studio'); 
   const [lessons, setLessons] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
   const [usersLoading, setUsersLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLesson, setSelectedLesson] = useState(null);
-  const [geminiKey, setGeminiKey] = useState(localStorage.getItem('repite_banana_key') || 'AIzaSyCjjvBx9VfEKOCMnxaFbp-FKc2u9z_V8Ec');
+  
+  // Safe localStorage access
+  const getInitialKey = () => {
+    try {
+      return localStorage.getItem('repite_banana_key') || 'AIzaSyCjjvBx9VfEKOCMnxaFbp-FKc2u9z_V8Ec';
+    } catch(e) { return 'AIzaSyCjjvBx9VfEKOCMnxaFbp-FKc2u9z_V8Ec'; }
+  };
+  const [geminiKey, setGeminiKey] = useState(getInitialKey());
+  
   const [isSyncing, setIsSyncing] = useState(false);
   const [statusMsg, setStatusMsg] = useState('');
   const [loadError, setLoadError] = useState('');
   const [lastSaved, setLastSaved] = useState(null);
 
+  // Load Initial Data
   useEffect(() => {
-    // Handle Redirect Result
-    getRedirectResult(auth).then((result) => {
-      if (result?.user) {
-        setHasEntered(true);
-        if (result.user.email === 'rakuda99@gmail.com') {
-          localStorage.setItem('repite_admin_session', 'true');
-          setAdminSession(true);
-        } else {
-          localStorage.removeItem('repite_admin_session');
-          setAdminSession(false);
-        }
-      }
-    }).catch((error) => {
-      console.error("Redirect Auth Error:", error);
-      setAuthLoading(false);
-    });
+    try {
+      console.log("Loading Local Lessons Data...");
+      const cleaned = (lessonsData || []).map(l => ({
+        ...l,
+        sentences: (l.sentences || []).map(s => ({ ...s, isGenerating: false }))
+      }));
+      setLessons(cleaned);
+      if (cleaned.length > 0) setSelectedLesson(cleaned[0]);
+    } catch(e) {
+      console.error("Data Load Error:", e);
+      setLoadError("خطأ في تحميل البيانات المحلية: " + e.message);
+    }
+  }, []);
 
+
+  useEffect(() => {
+    console.log("Initializing Auth...");
     const unsubscribe = onAuthStateChanged(auth, async (u) => {
+      console.log("Auth State Changed:", u ? u.email : "No User");
       setUser(u);
       if (u && !u.isAnonymous) {
          try {
@@ -287,17 +272,23 @@ export default function App() {
       setAuthLoading(false);
     }, (err) => {
       console.error("Auth State Error:", err);
+      setLoadError("Firebase Auth Error: " + err.message);
       setAuthLoading(false);
     });
 
-    // Fallback timeout in case Firebase is stuck (e.g., invalid API key)
-    const fallbackTimer = setTimeout(() => {
-      setAuthLoading(false);
-    }, 1500);
+    const timer = setTimeout(() => {
+      setAuthLoading((prev) => {
+        if(prev) {
+          console.warn("Auth loading timed out!");
+          setLoadError("يبدو أن الاتصال بسيرفر Firebase بطيء جداً أو هناك مشكلة في الإعدادات.");
+        }
+        return false;
+      });
+    }, 8000);
 
     return () => {
       unsubscribe();
-      clearTimeout(fallbackTimer);
+      clearTimeout(timer);
     };
   }, []);
 
@@ -452,6 +443,17 @@ export default function App() {
   }, [view, isAdmin]);
 
   const saveLessons = (all) => {
+    if (!isEditor) {
+      setStatusMsg("🚫 Unauthorized: Please login to save");
+      return;
+    }
+    
+    // Safety check: if editing a locked lesson and not super admin
+    if (selectedLesson?.isLocked && !isSuperAdmin) {
+       setStatusMsg("🔒 This lesson is locked by the Super Admin");
+       return;
+    }
+
     setLessons(all);
     try {
       localStorage.setItem('repite_factory_lessons', JSON.stringify(all));
@@ -505,9 +507,9 @@ export default function App() {
     if (!sourceWord || sourceWord === 'Nueva palabra') return;
 
     try {
-      const prompt = `Translate "${sourceWord}" (Spanish) to ar, en, fr, tr, de, zh, ja. 
+      const prompt = `Translate "${sourceWord}" (Spanish) to ar. 
         Also, generate 3 different simple sentences with it in Spanish and translate them to the same languages.
-        JSON ONLY: { "word": { "ar":"", "en":"", "fr":"", "tr":"", "de":"", "zh":"", "ja":"" }, "examples": [ { "es":"", "ar":"", "en":"", "fr":"", "tr":"", "de":"", "zh":"", "ja":"" }, { "es":"", "ar":"", "en":"", "fr":"", "tr":"", "de":"", "zh":"", "ja":"" }, { "es":"", "ar":"", "en":"", "fr":"", "tr":"", "de":"", "zh":"", "ja":"" } ] }`;
+        JSON ONLY: { "word": { "ar":"" }, "examples": [ { "es":"", "ar":"" }, { "es":"", "ar":"" }, { "es":"", "ar":"" } ] }`;
         
         const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`, {
         method: 'POST',
@@ -541,7 +543,7 @@ export default function App() {
     } catch (e) {
       console.warn("AI Failed, using Translate Fallback:", e.message);
       try {
-        const langs = { ar: 'ar', en: 'en', fr: 'fr', tr: 'tr', de: 'de', zh: 'zh-CN', ja: 'ja' };
+        const langs = { ar: 'ar' };
         const translations = {};
         let fallbackEsArray = [];
         
@@ -930,9 +932,31 @@ export default function App() {
     setSelectedLesson(cleaned);
   };
 
-  if (authLoading) return <div style={{height:'100vh', background:'#030712', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontSize:20}}>⏳ Loading Magic...</div>;
+  if (authLoading || loadError) return (
+    <div style={{height:'100vh', background:'#030712', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontSize:20, flexDirection:'column', gap:24, padding:40, textAlign:'center'}}>
+      <style>{`
+        @keyframes spin { to { transform: rotate(360deg); } }
+        body { margin: 0; background: #030712; }
+      `}</style>
+      {authLoading ? (
+        <>
+          <div style={{width:40, height:40, border:'4px solid #3b82f6', borderTopColor:'transparent', borderRadius:'50%', animation:'spin 1s linear infinite'}} />
+          <div style={{fontWeight:800, letterSpacing:1}}>⏳ Loading Magic Factory...</div>
+          <div style={{fontSize:12, color:'#4b5563'}}>جاري التحقق من الهوية والاتصال بقاعدة البيانات</div>
+        </>
+      ) : (
+        <>
+          <div style={{fontSize:60}}>⚠️</div>
+          <div style={{color:'#f87171', fontWeight:900, fontSize:24}}>حدث خطأ أثناء التشغيل</div>
+          <div style={{color:'#94a3b8', maxWidth:500}}>{loadError}</div>
+          <button onClick={()=>window.location.reload()} style={{marginTop:20, padding:'14px 28px', background:'#3b82f6', color:'white', border:'none', borderRadius:14, fontWeight:800, cursor:'pointer', boxShadow:'0 10px 20px rgba(59,130,246,0.3)'}}>إعادة المحاولة</button>
+        </>
+      )}
+    </div>
+  );
 
-  if (!hasEntered && !user) return <Login onGuest={() => setHasEntered(true)} onAdminSuccess={setAdminSession} />;
+
+  if (!user || user.isAnonymous) return <Login onLogin={setUser} />;
 
   return (
     <div className="app-container">
@@ -1029,7 +1053,7 @@ export default function App() {
         <div className="logo" style={{display:'flex', alignItems:'center', gap:10}}>
           <div className="logo-box" style={{background:'white'}} />
           <div className="logo-text" style={{color:'white', fontWeight:800, display:'flex', alignItems:'center', gap:10}}>
-            MAGIC FACTORY <span style={{fontSize:12, opacity:0.6, background:'rgba(0,0,0,0.2)', padding:'2px 8px', borderRadius:6}}>v10.9</span>
+            MAGIC FACTORY <span style={{fontSize:12, opacity:0.6, background:'rgba(0,0,0,0.2)', padding:'2px 8px', borderRadius:6}}>v11.0</span>
           </div>
         </div>
         <div className="tab-group" style={{display:'flex', gap:10}}>
@@ -1040,30 +1064,21 @@ export default function App() {
           )}
         </div>
         <div className="hdr-btns" style={{display:'flex', gap:12, alignItems:'center'}}>
-          {!user ? (
-             <div style={{display:'flex', alignItems:'center', gap:10}}>
-               <span style={{fontSize:12, color:'#a78bfa', fontWeight:800}}>🌍 GUEST MODE</span>
-               <button className="btn-upload" onClick={() => setHasEntered(false)} style={{padding:'6px 12px', fontSize:11, borderRadius:8}}>Login</button>
-             </div>
-          ) : (
-            <>
-              <div style={{display:'flex', alignItems:'center', gap:10, color:'#94a3b8', fontSize:12}}>
-                {isAdmin ? '🛡️ ADMIN' : '👤 USER'}
-              </div>
-              {isAdmin && (
-                <button className="btn-upload" style={{background:'white', color:'#6d28d9', padding:'8px 16px', borderRadius:10, fontWeight:800, border:'none', cursor:'pointer'}} 
-                  onClick={async ()=>{
-                    await syncWithCloud(lessons);
-                    setStatusMsg('🚀 تم التحديث النهائي بنجاح!');
-                  }}>
-                  🚀 Update
-                </button>
-              )}
-              <button onClick={() => { signOut(auth); localStorage.removeItem('repite_admin_session'); setHasEntered(false); window.location.reload(); }} style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', border: 'none', padding: '8px 12px', borderRadius: 8, fontWeight: 700, cursor: 'pointer' }}>
-                Exit
-              </button>
-            </>
+          <div style={{display:'flex', alignItems:'center', gap:10, color:'#e9d5ff', fontSize:12, fontWeight:700}}>
+            {isAdmin ? '🛡️ ADMIN' : '👤 USER'} | {user.email}
+          </div>
+          {isAdmin && (
+            <button className="btn-upload" style={{background:'white', color:'#6d28d9', padding:'8px 16px', borderRadius:10, fontWeight:800, border:'none', cursor:'pointer'}} 
+              onClick={async ()=>{
+                await syncWithCloud(lessons);
+                setStatusMsg('🚀 Cloud Sync Complete!');
+              }}>
+              🚀 Update
+            </button>
           )}
+          <button onClick={() => { signOut(auth); window.location.reload(); }} style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444', border: 'none', padding: '8px 12px', borderRadius: 8, fontWeight: 700, cursor: 'pointer' }}>
+            Logout
+          </button>
         </div>
       </header>
 
@@ -1147,7 +1162,22 @@ export default function App() {
                       <div className="lesson-name">{l.title['en-US']}</div>
                       <div className="lesson-count">{l.sentences ? l.sentences.length : 0} items</div>
                     </div>
-                    {isAdmin && (
+                    {l.isLocked && <Lock size={14} color="#fbbf24" style={{marginRight: 6}} />}
+                    {isSuperAdmin && (
+                       <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          const updated = lessons.map(item => item.id === l.id ? {...item, isLocked: !item.isLocked} : item);
+                          saveLessons(updated);
+                          if(selectedLesson?.id === l.id) setSelectedLesson({...selectedLesson, isLocked: !l.isLocked});
+                        }}
+                        style={{background: l.isLocked ? 'rgba(251,191,36,0.1)' : 'rgba(255,255,255,0.05)', border:'none', borderRadius:6, padding:4, cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', marginRight: 4}}
+                        title={l.isLocked ? "Unlock Lesson" : "Lock Lesson"}
+                       >
+                         {l.isLocked ? <Lock size={14} color="#fbbf24" /> : <Unlock size={14} color="#94a3b8" />}
+                       </button>
+                    )}
+                    {(isSuperAdmin || !l.isLocked) && (
                       <button onClick={(e) => deleteLesson(l.id, e)} style={{background:'rgba(239,68,68,0.1)', border:'none', color:'#ef4444', cursor:'pointer', padding:'4px 8px', borderRadius:6}} title="Delete Lesson">🗑</button>
                     )}
                   </div>
@@ -1208,13 +1238,7 @@ export default function App() {
 
                       <div className="lang-grid">
                         {[
-                          {code:'ar', label:'Arabic', color:'#fbbf24', dir:'rtl'},
-                          {code:'en', label:'English', color:'#60a5fa', dir:'ltr'},
-                          {code:'fr', label:'French', color:'#f87171', dir:'ltr'},
-                          {code:'tr', label:'Turkish', color:'#34d399', dir:'ltr'},
-                          {code:'de', label:'German', color:'#a78bfa', dir:'ltr'},
-                          {code:'zh', label:'Chinese', color:'#fb7185', dir:'ltr'},
-                          {code:'ja', label:'Japanese', color:'#facc15', dir:'ltr'}
+                          {code:'ar', label:'Arabic', color:'#fbbf24', dir:'rtl'}
                         ].map(lang => (
                           <div className="lang-box" key={lang.code}>
                             <div className="lang-label" style={{color: lang.color}}>{lang.label}</div>
@@ -1242,13 +1266,7 @@ export default function App() {
                             </div>
                             <div className="lang-grid">
                               {[
-                                {code:'ar', label:'Arabic', color:'#fbbf24', dir:'rtl'},
-                                {code:'en', label:'English', color:'#60a5fa', dir:'ltr'},
-                                {code:'fr', label:'French', color:'#f87171', dir:'ltr'},
-                                {code:'tr', label:'Turkish', color:'#34d399', dir:'ltr'},
-                                {code:'de', label:'German', color:'#a78bfa', dir:'ltr'},
-                                {code:'zh', label:'Chinese', color:'#fb7185', dir:'ltr'},
-                                {code:'ja', label:'Japanese', color:'#facc15', dir:'ltr'}
+                                {code:'ar', label:'Arabic', color:'#fbbf24', dir:'rtl'}
                               ].map(lang => (
                                 <div className="lang-box" key={lang.code} style={{padding:'8px 12px'}}>
                                   <div className="lang-label" style={{color: lang.color}}>{lang.code}</div>
@@ -1376,7 +1394,7 @@ export default function App() {
                                   className="candidate-img" 
                                   alt="option" 
                                   style={{opacity:1, display:'block'}}
-                                  onError={(e) => { e.target.src = getEmojiUrl(sent.es); }}
+                                  onError={(e) => { e.target.src = "https://api.dicebear.com/7.x/shapes/svg?seed=" + encodeURIComponent(sent.es); }}
                                 />
                               </div>
                             ))}

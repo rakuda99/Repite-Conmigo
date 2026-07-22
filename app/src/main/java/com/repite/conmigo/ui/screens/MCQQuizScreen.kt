@@ -104,8 +104,10 @@ fun MCQQuizScreen(
                                 isAnswered = true
                                 if (selectedOption == currentSentence?.translation) {
                                     resultColor = DuoGreen
+                                    viewModel.playSuccessSound()
                                 } else {
                                     resultColor = DuoRed
+                                    viewModel.playFailureSound()
                                 }
                             }
                         },

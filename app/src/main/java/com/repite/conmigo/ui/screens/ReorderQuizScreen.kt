@@ -78,6 +78,11 @@ fun ReorderQuizScreen(
                             val userText = selectedWords.joinToString(" ")
                             isAnswered = true
                             isCorrect = userText.lowercase() == currentSentence?.text?.lowercase()
+                            if (isCorrect) {
+                                viewModel.playSuccessSound()
+                            } else {
+                                viewModel.playFailureSound()
+                            }
                         }
                     },
                     enabled = (selectedWords.isNotEmpty() || isAnswered),

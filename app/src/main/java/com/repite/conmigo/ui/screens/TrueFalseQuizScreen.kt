@@ -173,6 +173,11 @@ fun TrueFalseQuizScreen(
                             onClick = { 
                                 userChoice = false
                                 isAnswered = true
+                                if (isActuallyCorrect == false) {
+                                    viewModel.playSuccessSound()
+                                } else {
+                                    viewModel.playFailureSound()
+                                }
                             },
                             modifier = Modifier.weight(1f).height(80.dp),
                             shape = RoundedCornerShape(24.dp),
@@ -189,6 +194,11 @@ fun TrueFalseQuizScreen(
                             onClick = { 
                                 userChoice = true
                                 isAnswered = true
+                                if (isActuallyCorrect == true) {
+                                    viewModel.playSuccessSound()
+                                } else {
+                                    viewModel.playFailureSound()
+                                }
                             },
                             modifier = Modifier.weight(1f).height(80.dp),
                             shape = RoundedCornerShape(24.dp),

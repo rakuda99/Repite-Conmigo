@@ -17,17 +17,45 @@ import androidx.compose.foundation.BorderStroke
 import com.repite.conmigo.ui.theme.DuoBlue
 import com.repite.conmigo.ui.theme.DuoGreen
 import androidx.compose.material.icons.rounded.CloudDownload
+import androidx.compose.material.icons.rounded.FileUpload
+import android.net.Uri
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.rounded.Assignment
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddLessonScreen(
     viewModel: LessonViewModel,
     onBack: () -> Unit,
-    onStartTraining: (String) -> Unit
+    onStartTraining: (String) -> Unit,
+    initialCategory: String = ""
 ) {
-    var titleInput by remember { mutableStateOf("") }
+    var titleInput by remember { mutableStateOf(initialCategory) }
     var textInput by remember { mutableStateOf("") }
     var selectedLang by remember { mutableStateOf("es") }
+    var explicitContentType by remember { mutableStateOf<String?>("word") }
+    val context = androidx.compose.ui.platform.LocalContext.current
+
+    val filePickerLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
+        uri?.let {
+            try {
+                context.contentResolver.openInputStream(it)?.use { inputStream ->
+                    val fileContent = inputStream.bufferedReader().use { reader -> reader.readText() }
+                    textInput = fileContent
+                    if (titleInput.isBlank()) {
+                        titleInput = "درس مستورد"
+                    }
+                }
+            } catch (e: Exception) {
+                // Ignore or handle
+            }
+        }
+    }
 
     Scaffold(
         topBar = {
@@ -41,11 +69,13 @@ fun AddLessonScreen(
             )
         }
     ) { padding ->
+        val scrollState = rememberScrollState()
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
                 .padding(24.dp)
+                .verticalScroll(scrollState)
         ) {
             Text("عنوان المجموعة (مثلاً: درس السفر، مقابلة عمل):", style = MaterialTheme.typography.titleMedium)
             OutlinedTextField(
@@ -57,15 +87,17 @@ fun AddLessonScreen(
                 shape = RoundedCornerShape(12.dp)
             )
 
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
-            Text("اختر اللغة التي تريد ممارستها:", style = MaterialTheme.typography.titleMedium)
-            Row(modifier = Modifier.padding(vertical = 12.dp)) {
+            Text("اللغة الهدف:", style = MaterialTheme.typography.titleMedium)
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.fillMaxWidth()
+            ) {
                 FilterChip(
                     selected = selectedLang == "es",
                     onClick = { selectedLang = "es" },
-                    label = { Text("الإسبانية") },
-                    modifier = Modifier.padding(end = 8.dp)
+                    label = { Text("الإسبانية") }
                 )
                 FilterChip(
                     selected = selectedLang == "en",
@@ -75,25 +107,96 @@ fun AddLessonScreen(
             }
 
             Spacer(modifier = Modifier.height(16.dp))
+            
+            Text("نوع المحتوى:", style = MaterialTheme.typography.titleMedium)
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                FilterChip(
+                    selected = explicitContentType == "word",
+                    onClick = { explicitContentType = "word" },
+                    label = { Text("كلمات (Words)") }
+                )
+                FilterChip(
+                    selected = explicitContentType == "sentence",
+                    onClick = { explicitContentType = "sentence" },
+                    label = { Text("جمل (Sentences)") }
+                )
+                FilterChip(
+                    selected = explicitContentType == null,
+                    onClick = { explicitContentType = null },
+                    label = { Text("تلقائي") }
+                )
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
 
             Text("أدخل الجمل أو الكلمات (كل جملة في سطر):", style = MaterialTheme.typography.titleMedium)
+            
+            Spacer(modifier = Modifier.height(8.dp))
+            
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                // Button to upload from file (.txt)
+                Button(
+                    onClick = { filePickerLauncher.launch("text/*") },
+                    colors = ButtonDefaults.buttonColors(containerColor = DuoBlue.copy(alpha = 0.1f)),
+                    modifier = Modifier.weight(1f),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Icon(Icons.Rounded.FileUpload, contentDescription = null, tint = DuoBlue)
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text("تحميل ملف (.txt)", color = DuoBlue, fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                }
+                
+                // Button to paste text from clipboard
+                val clipboardManager = androidx.compose.ui.platform.LocalClipboardManager.current
+                Button(
+                    onClick = {
+                        clipboardManager.getText()?.text?.let { pastedText ->
+                            textInput = pastedText
+                        }
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = DuoBlue.copy(alpha = 0.1f)),
+                    modifier = Modifier.weight(1f),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Icon(Icons.Rounded.Assignment, contentDescription = null, tint = DuoBlue)
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text("لصق النص", color = DuoBlue, fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                }
+            }
+            
+            Spacer(modifier = Modifier.height(12.dp))
+
             OutlinedTextField(
                 value = textInput,
                 onValueChange = { textInput = it },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f),
+                    .height(180.dp),
                 placeholder = { Text("مثال:\nHola amigo\n¿Cómo estás?") },
                 shape = RoundedCornerShape(16.dp)
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
+            val isAnkiMultiDeck = textInput.contains("\t") && 
+                (textInput.contains("#separator:tab") || textInput.split("\n").any { it.split("\t").size >= 5 })
+
             Button(
                 onClick = {
-                    if (titleInput.isNotBlank() && textInput.isNotBlank()) {
-                        viewModel.addCustomSentences(textInput, selectedLang, titleInput)
-                        onStartTraining(titleInput)
+                    if (textInput.isNotBlank()) {
+                        val finalTitle = if (titleInput.isBlank()) "مجموعة مستوردة" else titleInput
+                        viewModel.addCustomSentences(textInput, selectedLang, finalTitle, explicitContentType)
+                        if (isAnkiMultiDeck) {
+                            onBack()
+                        } else {
+                            onStartTraining(finalTitle)
+                        }
                     }
                 },
                 modifier = Modifier
@@ -101,7 +204,7 @@ fun AddLessonScreen(
                     .height(60.dp),
                 shape = RoundedCornerShape(16.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = DuoGreen),
-                enabled = titleInput.isNotBlank() && textInput.isNotBlank()
+                enabled = textInput.isNotBlank() && (titleInput.isNotBlank() || isAnkiMultiDeck)
             ) {
                 Text("حفظ والبدء في التدريب", fontWeight = FontWeight.Bold)
             }

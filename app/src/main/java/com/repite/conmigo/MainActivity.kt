@@ -39,7 +39,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ListItem
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.res.stringResource
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import android.content.Context
+import android.content.SharedPreferences
 
 class MainActivity : ComponentActivity() {
     private lateinit var authService: AuthService
@@ -48,15 +52,29 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         authService = AuthService(this)
-        // contentService will be initialized in AppNavigation to use the repository
-        
+        val sharedPreferences = getSharedPreferences("repite_prefs", Context.MODE_PRIVATE)
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) 
             != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 100)
         }
 
+        // Force Wipe for v35 (Build 1200) to clear legacy Arabic/Categorization mess
+        val lastWipe = sharedPreferences.getInt("last_force_wipe", 0)
+        if (lastWipe < 1200) {
+            val database = AppDatabase.getDatabase(this)
+            val repo = LessonRepository(database.lessonDao())
+            CoroutineScope(Dispatchers.IO).launch {
+                repo.clearAll()
+                sharedPreferences.edit()
+                    .putInt("last_force_wipe", 1200)
+                    .putString("native_lang", "en")
+                    .putString("learning_lang", "es")
+                    .apply()
+            }
+        }
+
         // Handle initial locale: Default to English ONLY if no locale is set at all.
-        // This allows the user to switch to Arabic on the login screen and it will stay.
         val currentLocales = AppCompatDelegate.getApplicationLocales()
         if (currentLocales.isEmpty && authService.currentUser == null) {
             val appLocale: LocaleListCompat = LocaleListCompat.forLanguageTags("en")
@@ -90,39 +108,61 @@ fun AppNavigation(authService: AuthService) {
     val audioRecorder = remember { AudioRecorder(context) }
     val backupManager = remember { BackupManager(context) }
     
-    val viewModel = remember { LessonViewModel(repository, ttsManager, translationManager, sttManager, audioRecorder, backupManager) }
+    val sharedPreferences = remember { context.getSharedPreferences("repite_prefs", android.content.Context.MODE_PRIVATE) }
+    val viewModel = remember { LessonViewModel(context, repository, ttsManager, translationManager, sttManager, audioRecorder, backupManager, sharedPreferences, authService) }
+
+    fun startLesson(
+        category: String?,
+        contentType: String,
+        isQuiz: Boolean = false,
+        quizType: String = "",
+        practiceMemorized: Boolean = false
+    ) {
+        viewModel.setQuizMode(isQuiz)
+        viewModel.selectContentType(contentType)
+        viewModel.selectCategory(category)
+        if (isQuiz) {
+            viewModel.setPracticeMemorizedMode(practiceMemorized)
+            when (quizType) {
+                "mcq" -> navController.navigate("mcq_quiz")
+                "tf" -> navController.navigate("true_false_quiz")
+                "fill_blank" -> navController.navigate("fill_blank_quiz")
+                "reorder" -> navController.navigate("reorder_quiz")
+                "matching" -> navController.navigate("matching_quiz")
+                "short_answer" -> navController.navigate("short_answer_quiz")
+                "reverse_short_answer" -> navController.navigate("reverse_short_answer_quiz")
+            }
+        } else {
+            navController.navigate("learning")
+        }
+    }
     
     var remoteLessons by remember { mutableStateOf<List<Lesson>>(emptyList()) }
     
     LaunchedEffect(Unit) {
         remoteLessons = contentService.getLessons()
         viewModel.loadGlobalLessons(context)
+        viewModel.syncAll(context, isManualTrigger = false)
+    }
+
+    DisposableEffect(Unit) {
+        onDispose {
+            ttsManager.shutDown()
+            sttManager.destroy()
+            audioRecorder.release()
+        }
     }
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
-    // Force English for Auth Screens
-    LaunchedEffect(currentRoute) {
-        if (currentRoute in listOf("login", "register")) {
-            val appLocale: LocaleListCompat = LocaleListCompat.forLanguageTags("en")
-            AppCompatDelegate.setApplicationLocales(appLocale)
-        }
-    }
+    // No longer need to force English for auth screens
     
     var startDestination by remember { mutableStateOf<String?>(null) }
     
-    LaunchedEffect(authService.currentUser) {
-        if (authService.currentUser == null) {
-            startDestination = "login"
-        } else {
-            val profile = authService.getUserProfile()
-            if (profile != null) {
-                startDestination = "home"
-            } else {
-                startDestination = "setup_profile"
-            }
-        }
+    LaunchedEffect(Unit) {
+        val profile = authService.getUserProfile()
+        startDestination = "anki_decks_words"
     }
 
     if (startDestination == null) {
@@ -135,8 +175,8 @@ fun AppNavigation(authService: AuthService) {
 
     Scaffold(
         bottomBar = {
-            val bottomRoutes = listOf("home", "lessons_hub", "stats", "settings")
-            val isAuthScreen = currentRoute in listOf("login", "register", "admin")
+            val bottomRoutes = listOf("anki_decks_words", "anki_decks_sentences", "anki_decks_stories", "verbs", "stats", "settings")
+            val isAuthScreen = currentRoute == "admin"
             if (currentRoute in bottomRoutes && !isAuthScreen) {
                 NavigationBar(
                     containerColor = MaterialTheme.colorScheme.surface,
@@ -145,16 +185,28 @@ fun AppNavigation(authService: AuthService) {
                     val labelStyle = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp)
                     
                     NavigationBarItem(
-                        icon = { Icon(Icons.Rounded.Home, contentDescription = stringResource(R.string.nav_home)) },
-                        label = { Text(stringResource(R.string.nav_home), style = labelStyle) },
-                        selected = currentRoute == "home",
-                        onClick = { navController.navigate("home") { launchSingleTop = true; restoreState = true } }
+                        icon = { Icon(Icons.Rounded.Translate, contentDescription = "الكلمات") },
+                        label = { Text("الكلمات", style = labelStyle) },
+                        selected = currentRoute == "anki_decks_words",
+                        onClick = { navController.navigate("anki_decks_words") { launchSingleTop = true; restoreState = true } }
                     )
                     NavigationBarItem(
-                        icon = { Icon(Icons.Rounded.MenuBook, contentDescription = stringResource(R.string.nav_lessons)) },
-                        label = { Text(stringResource(R.string.nav_lessons), style = labelStyle) },
-                        selected = currentRoute == "lessons_hub",
-                        onClick = { navController.navigate("lessons_hub") { launchSingleTop = true; restoreState = true } }
+                        icon = { Icon(Icons.Rounded.Chat, contentDescription = "الجمل") },
+                        label = { Text("الجمل", style = labelStyle) },
+                        selected = currentRoute == "anki_decks_sentences",
+                        onClick = { navController.navigate("anki_decks_sentences") { launchSingleTop = true; restoreState = true } }
+                    )
+                    NavigationBarItem(
+                        icon = { Icon(Icons.Rounded.AutoStories, contentDescription = "القصص") },
+                        label = { Text("القصص", style = labelStyle) },
+                        selected = currentRoute == "anki_decks_stories",
+                        onClick = { navController.navigate("anki_decks_stories") { launchSingleTop = true; restoreState = true } }
+                    )
+                    NavigationBarItem(
+                        icon = { Icon(Icons.Rounded.List, contentDescription = "الأفعال") },
+                        label = { Text("الأفعال", style = labelStyle) },
+                        selected = currentRoute == "verbs",
+                        onClick = { navController.navigate("verbs") { launchSingleTop = true; restoreState = true } }
                     )
                     NavigationBarItem(
                         icon = { Icon(Icons.Rounded.AutoGraph, contentDescription = stringResource(R.string.nav_progress)) },
@@ -173,38 +225,14 @@ fun AppNavigation(authService: AuthService) {
         }
     ) { innerPadding ->
         NavHost(navController = navController, startDestination = startDestination!!, modifier = Modifier.padding(innerPadding)) {
-            composable("login") {
-                val scope = rememberCoroutineScope()
-                LoginScreen(
-                    authService = authService,
-                    onLoginSuccess = { 
-                        scope.launch {
-                            val profile = authService.getUserProfile()
-                            if (profile == null) {
-                                navController.navigate("setup_profile") { popUpTo("login") { inclusive = true } }
-                            } else {
-                                navController.navigate("home") { popUpTo("login") { inclusive = true } }
-                            }
-                        }
-                    },
-                    onNavigateToRegister = { navController.navigate("register") }
-                )
-            }
-            composable("register") {
-                RegisterScreen(
-                    authService = authService,
-                    onRegisterSuccess = { 
-                        // New users always go to setup_profile
-                        navController.navigate("setup_profile") { popUpTo("register") { inclusive = true } }
-                    },
-                    onNavigateToLogin = { navController.popBackStack() }
-                )
-            }
             composable("setup_profile") {
                 SetupProfileScreen(
                     authService = authService,
                     onComplete = { navController.navigate("home") { popUpTo("setup_profile") { inclusive = true } } }
                 )
+            }
+            composable("verbs") {
+                VerbsScreen(viewModel = viewModel)
             }
             composable("admin") {
                 AdminDashboardScreen(
@@ -218,33 +246,16 @@ fun AppNavigation(authService: AuthService) {
                     onNavigateToBeginner = { navController.navigate("beginner_level") },
                     onNavigateToIntermediate = { navController.navigate("intermediate_level") },
                     onNavigateToAdvanced = { navController.navigate("advanced_level") },
-                    onNavigateToMCQ = { 
-                        viewModel.setQuizMode(true); viewModel.selectContentType("word"); viewModel.selectCategory(null)
-                        navController.navigate("mcq_quiz") 
-                    },
-                    onNavigateToTrueFalse = {
-                        viewModel.setQuizMode(true); viewModel.selectContentType("word"); viewModel.selectCategory(null)
-                        navController.navigate("true_false_quiz")
-                    },
-                    onNavigateToFillBlank = {
-                        viewModel.setQuizMode(true); viewModel.selectContentType("sentence"); viewModel.selectCategory(null)
-                        navController.navigate("fill_blank_quiz")
-                    },
-                    onNavigateToReorder = {
-                        viewModel.setQuizMode(true); viewModel.selectContentType("sentence"); viewModel.selectCategory(null)
-                        navController.navigate("reorder_quiz")
-                    },
-                    onNavigateToMatching = {
-                        viewModel.setQuizMode(true); viewModel.selectContentType("word"); viewModel.selectCategory(null)
-                        navController.navigate("matching_quiz")
-                    },
-                    onNavigateToShortAnswer = {
-                        viewModel.setQuizMode(true); viewModel.selectContentType("sentence"); viewModel.selectCategory(null)
-                        navController.navigate("short_answer_quiz")
-                    },
-                    onNavigateToReverseShortAnswer = {
-                        viewModel.setQuizMode(true); viewModel.selectContentType("sentence"); viewModel.selectCategory(null)
-                        navController.navigate("reverse_short_answer_quiz")
+                    onNavigateToMCQ = { startLesson(null, "word", isQuiz = true, quizType = "mcq") },
+                    onNavigateToTrueFalse = { startLesson(null, "word", isQuiz = true, quizType = "tf") },
+                    onNavigateToFillBlank = { startLesson(null, "sentence", isQuiz = true, quizType = "fill_blank") },
+                    onNavigateToReorder = { startLesson(null, "sentence", isQuiz = true, quizType = "reorder") },
+                    onNavigateToMatching = { startLesson(null, "word", isQuiz = true, quizType = "matching") },
+                    onNavigateToShortAnswer = { startLesson(null, "sentence", isQuiz = true, quizType = "short_answer") },
+                    onNavigateToReverseShortAnswer = { startLesson(null, "sentence", isQuiz = true, quizType = "reverse_short_answer", practiceMemorized = true) },
+                    onNavigateToAnki = { navController.navigate("anki_decks_words") },
+                    onNavigateToDeck = { deckName, contentType ->
+                        navController.navigate("deck_words_planner/$deckName/$contentType")
                     }
                 )
             }
@@ -271,6 +282,8 @@ fun AppNavigation(authService: AuthService) {
                                         scope.launch {
                                             isLoading = true
                                             contentService.clearAllLocalData()
+                                            viewModel.loadGlobalLessons(context) // Ensure DB is repopulated instantly
+                                            kotlinx.coroutines.delay(500) // Give DB a moment to process inserts
                                             hubLessons = contentService.getLessons()
                                             isLoading = false
                                         }
@@ -280,7 +293,7 @@ fun AppNavigation(authService: AuthService) {
                                 ) {
                                     Icon(Icons.Rounded.Refresh, contentDescription = "Sync", tint = DuoBlue, modifier = Modifier.size(18.dp))
                                     Spacer(modifier = Modifier.width(4.dp))
-                                    Text("تحديث الدروس 🔄", color = DuoBlue, fontSize = 12.sp)
+                                    Text("Update Lessons 🔄", color = DuoBlue, fontSize = 12.sp)
                                 }
                             }
                         }
@@ -294,7 +307,7 @@ fun AppNavigation(authService: AuthService) {
                         } else if (hubLessons.isEmpty()) {
                             item {
                                 Box(modifier = Modifier.fillParentMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) {
-                                    Text("لا توجد دروس حالياً.\nاضغط على الزر لإضافة أول درس!", textAlign = TextAlign.Center, color = Color.Gray)
+                                    Text("No lessons available yet.\nTap the + button to add your first lesson!", textAlign = TextAlign.Center, color = Color.Gray)
                                 }
                             }
                         }
@@ -324,7 +337,7 @@ fun AppNavigation(authService: AuthService) {
                     }
 
                     FloatingActionButton(
-                        onClick = { navController.navigate("add_lesson") },
+                        onClick = { navController.navigate("cloud_library") },
                         modifier = Modifier
                             .align(androidx.compose.ui.Alignment.BottomEnd)
                             .padding(24.dp),
@@ -342,57 +355,78 @@ fun AppNavigation(authService: AuthService) {
                     onBack = { navController.popBackStack() },
                     onNavigateToLesson = { lessonId -> 
                         when(lessonId) {
-                            "alphabet" -> { 
-                                viewModel.setQuizMode(false); viewModel.selectContentType("word"); viewModel.selectCategory("Letters (الحروف)") 
-                                navController.navigate("learning")    
-                            }
-                            "sounds" -> { 
-                                viewModel.setQuizMode(false); viewModel.selectContentType("word"); viewModel.selectCategory("Sounds (الأصوات)") 
-                                navController.navigate("learning")
-                            }
-                            "quiz_alphabet" -> {
-                                viewModel.setQuizMode(true); viewModel.selectContentType("word"); viewModel.selectCategory("Letters (الحروف)")
-                                navController.navigate("hidden_audio_quiz")
-                            }
-                            "quiz_sounds" -> {
-                                viewModel.setQuizMode(true); viewModel.selectContentType("word"); viewModel.selectCategory("Sounds (الأصوات)")
-                                navController.navigate("hidden_audio_quiz")
-                            }
-                            "quiz_mcq_beginner" -> {
-                                viewModel.setQuizMode(true); viewModel.selectContentType("word"); viewModel.selectCategory(null)
-                                navController.navigate("mcq_quiz")
-                            }
-                            else -> { 
-                                navController.navigate("learning") 
-                            }
+                            "Pingo: Alphabet" -> startLesson("The Alphabet", "word")
+                            "Pingo: Numbers" -> startLesson("Numbers 1-100", "word")
+                            "Pingo: Colors" -> startLesson("Colors", "word")
+                            "quiz_mcq_beginner" -> startLesson(null, "word", isQuiz = true, quizType = "mcq", practiceMemorized = true)
+                            "quiz_tf_beginner" -> startLesson(null, "word", isQuiz = true, quizType = "tf", practiceMemorized = true)
+                            "quiz_fill_blank_beginner" -> startLesson(null, "sentence", isQuiz = true, quizType = "fill_blank", practiceMemorized = true)
+                            else -> navController.navigate("learning")
+                        }
+                    },
+                    onAddLesson = { navController.navigate("add_lesson") }
+                )
+            }
+            composable("intermediate_level") {
+                IntermediateScreen(
+                    viewModel = viewModel,
+                    onBack = { navController.popBackStack() },
+                    onNavigateToLesson = { lessonId -> 
+                        when(lessonId) {
+                            "Pingo: Conversation" -> startLesson("Greetings & Basics", "sentence")
+                            "Pingo: Time" -> startLesson("Time", "word")
+                            "Pingo: Restaurant" -> startLesson("Restaurant Reservation", "sentence")
+                            "Pingo: Directions" -> startLesson("Asking Directions", "sentence")
+                            "quiz_mcq_intermediate" -> startLesson(null, "word", isQuiz = true, quizType = "mcq", practiceMemorized = true)
+                            "quiz_tf_intermediate" -> startLesson(null, "word", isQuiz = true, quizType = "tf", practiceMemorized = true)
+                            "quiz_fill_blank_intermediate" -> startLesson(null, "sentence", isQuiz = true, quizType = "fill_blank", practiceMemorized = true)
+                            else -> navController.navigate("learning")
+                        }
+                    },
+                    onAddLesson = { navController.navigate("add_lesson") }
+                )
+            }
+            composable("advanced_level") {
+                AdvancedScreen(
+                    viewModel = viewModel,
+                    onBack = { navController.popBackStack() },
+                    onNavigateToLesson = { lessonId -> 
+                        when(lessonId) {
+                            "Pingo: Ser y Estar" -> startLesson("Ser vs Estar", "sentence")
+                            "Pingo: Past Tense" -> startLesson("Verbs 2", "sentence")
+                            "Pingo: Linkers" -> startLesson("Verbs 1", "word")
+                            "quiz_mcq_advanced" -> startLesson(null, "word", isQuiz = true, quizType = "mcq", practiceMemorized = true)
+                            "quiz_tf_advanced" -> startLesson(null, "word", isQuiz = true, quizType = "tf", practiceMemorized = true)
+                            "quiz_fill_blank_advanced" -> startLesson(null, "sentence", isQuiz = true, quizType = "fill_blank", practiceMemorized = true)
+                            else -> navController.navigate("learning")
                         }
                     },
                     onAddLesson = { navController.navigate("add_lesson") }
                 )
             }
             composable("true_false_quiz") {
-                TrueFalseQuizScreen(viewModel = viewModel, onBack = { navController.popBackStack() })
+                TrueFalseQuizScreen(viewModel = viewModel, onBack = { viewModel.setQuizMode(false); navController.popBackStack() })
             }
             composable("fill_blank_quiz") {
-                FillBlankQuizScreen(viewModel = viewModel, onBack = { navController.popBackStack() })
+                FillBlankQuizScreen(viewModel = viewModel, onBack = { viewModel.setQuizMode(false); navController.popBackStack() })
             }
             composable("mcq_quiz") {
-                MCQQuizScreen(viewModel = viewModel, onBack = { navController.popBackStack() })
+                MCQQuizScreen(viewModel = viewModel, onBack = { viewModel.setQuizMode(false); navController.popBackStack() })
             }
             composable("hidden_audio_quiz") {
-                HiddenAudioQuizScreen(viewModel = viewModel, onBack = { navController.popBackStack() })
+                HiddenAudioQuizScreen(viewModel = viewModel, onBack = { viewModel.setQuizMode(false); navController.popBackStack() })
             }
             composable("matching_quiz") {
-                MatchingQuizScreen(viewModel = viewModel, onBack = { navController.popBackStack() })
+                MatchingQuizScreen(viewModel = viewModel, onBack = { viewModel.setQuizMode(false); navController.popBackStack() })
             }
             composable("reorder_quiz") {
-                ReorderQuizScreen(viewModel = viewModel, onBack = { navController.popBackStack() })
+                ReorderQuizScreen(viewModel = viewModel, onBack = { viewModel.setQuizMode(false); navController.popBackStack() })
             }
             composable("short_answer_quiz") {
-                ShortAnswerQuizScreen(viewModel = viewModel, onBack = { navController.popBackStack() })
+                ShortAnswerQuizScreen(viewModel = viewModel, onBack = { viewModel.setQuizMode(false); navController.popBackStack() })
             }
             composable("reverse_short_answer_quiz") {
-                ReverseShortAnswerQuizScreen(viewModel = viewModel, onBack = { navController.popBackStack() })
+                ReverseShortAnswerQuizScreen(viewModel = viewModel, onBack = { viewModel.setQuizMode(false); navController.popBackStack() })
             }
             composable("stats") {
                 StatsScreen(viewModel = viewModel, onBack = { navController.popBackStack() })
@@ -415,10 +449,21 @@ fun AppNavigation(authService: AuthService) {
                     }
                 )
             }
-            composable("add_lesson") {
+            composable("cloud_library") {
+                CloudLibraryScreen(
+                    viewModel = viewModel,
+                    onBack = { navController.popBackStack() }
+                )
+            }
+            composable(
+                route = "add_lesson?category={category}",
+                arguments = listOf(navArgument("category") { defaultValue = ""; type = androidx.navigation.NavType.StringType })
+            ) { backStackEntry ->
+                val category = backStackEntry.arguments?.getString("category") ?: ""
                 AddLessonScreen(
                     viewModel = viewModel, 
                     onBack = { navController.popBackStack() },
+                    initialCategory = category,
                     onStartTraining = { category ->
                         viewModel.setQuizMode(false)
                         viewModel.selectCategory(category)
@@ -431,6 +476,118 @@ fun AppNavigation(authService: AuthService) {
                         navController.navigate("learning") {
                             popUpTo("add_lesson") { inclusive = true }
                         }
+                    }
+                )
+            }
+            composable("anki_decks_words") {
+                AnkiDecksScreen(
+                    viewModel = viewModel,
+                    filterType = "word",
+                    onBack = { navController.popBackStack() },
+                    onNavigateToStudy = { navController.navigate("anki_study") },
+                    onNavigateToAddLesson = { navController.navigate("add_lesson") },
+                    onNavigateToAddLessonWithCategory = { category -> 
+                        navController.navigate("add_lesson?category=$category") 
+                    },
+                    onNavigateToCloudLibrary = { navController.navigate("cloud_library") },
+                    onNavigateToMatching = { navController.navigate("matching_quiz") },
+                    onNavigateToMCQ = { navController.navigate("mcq_quiz") },
+                    onNavigateToFillBlank = { navController.navigate("fill_blank_quiz") },
+                    onNavigateToReorder = { navController.navigate("reorder_quiz") },
+                    onNavigateToPlanner = { deck, type ->
+                        navController.navigate("deck_words_planner/$deck/$type")
+                    },
+                    onNavigateToVerbs = { navController.navigate("verbs") }
+                )
+            }
+            composable("anki_decks_sentences") {
+                AnkiDecksScreen(
+                    viewModel = viewModel,
+                    filterType = "sentence",
+                    onBack = { navController.popBackStack() },
+                    onNavigateToStudy = { navController.navigate("anki_study") },
+                    onNavigateToAddLesson = { navController.navigate("add_lesson") },
+                    onNavigateToAddLessonWithCategory = { category -> 
+                        navController.navigate("add_lesson?category=$category") 
+                    },
+                    onNavigateToCloudLibrary = { navController.navigate("cloud_library") },
+                    onNavigateToMatching = { navController.navigate("matching_quiz") },
+                    onNavigateToMCQ = { navController.navigate("mcq_quiz") },
+                    onNavigateToFillBlank = { navController.navigate("fill_blank_quiz") },
+                    onNavigateToReorder = { navController.navigate("reorder_quiz") },
+                    onNavigateToPlanner = { deck, type ->
+                        navController.navigate("deck_words_planner/$deck/$type")
+                    },
+                    onNavigateToVerbs = { navController.navigate("verbs") }
+                )
+            }
+            composable("anki_decks_stories") {
+                AnkiDecksScreen(
+                    viewModel = viewModel,
+                    filterType = "passage",
+                    onBack = { navController.popBackStack() },
+                    onNavigateToStudy = { navController.navigate("anki_study") },
+                    onNavigateToAddLesson = { navController.navigate("add_lesson") },
+                    onNavigateToAddLessonWithCategory = { category -> 
+                        navController.navigate("add_lesson?category=$category") 
+                    },
+                    onNavigateToCloudLibrary = { navController.navigate("cloud_library") },
+                    onNavigateToMatching = { navController.navigate("matching_quiz") },
+                    onNavigateToMCQ = { navController.navigate("mcq_quiz") },
+                    onNavigateToFillBlank = { navController.navigate("fill_blank_quiz") },
+                    onNavigateToReorder = { navController.navigate("reorder_quiz") },
+                    onNavigateToPlanner = { deck, type ->
+                        navController.navigate("deck_words_planner/$deck/$type")
+                    },
+                    onNavigateToStoryReader = { deck ->
+                        navController.navigate("story_reader/$deck")
+                    },
+                    onNavigateToVerbs = { navController.navigate("verbs") }
+                )
+            }
+            composable(
+                route = "story_reader/{deckName}",
+                arguments = listOf(
+                    navArgument("deckName") { type = androidx.navigation.NavType.StringType }
+                )
+            ) { backStackEntry ->
+                val deckName = backStackEntry.arguments?.getString("deckName") ?: ""
+                StoryReaderScreen(
+                    viewModel = viewModel,
+                    deckName = deckName,
+                    onBack = { navController.popBackStack() }
+                )
+            }
+            composable("anki_study") {
+                AnkiStudyScreen(
+                    viewModel = viewModel,
+                    onBack = { navController.popBackStack() }
+                )
+            }
+            composable(
+                route = "deck_words_planner/{deckName}/{contentType}",
+                arguments = listOf(
+                    navArgument("deckName") { type = androidx.navigation.NavType.StringType },
+                    navArgument("contentType") { type = androidx.navigation.NavType.StringType }
+                )
+            ) { backStackEntry ->
+                val deckName = backStackEntry.arguments?.getString("deckName") ?: ""
+                val contentType = backStackEntry.arguments?.getString("contentType") ?: ""
+                
+                DeckWordsPlannerScreen(
+                    viewModel = viewModel,
+                    deckName = deckName,
+                    contentType = contentType,
+                    onBack = { navController.popBackStack() },
+                    onNavigateToAnkiStudy = { navController.navigate("anki_study") },
+                    onNavigateToMatching = { navController.navigate("matching_quiz") },
+                    onNavigateToMCQ = { navController.navigate("mcq_quiz") },
+                    onNavigateToPronunciation = { 
+                        viewModel.setQuizMode(true)
+                        viewModel.selectContentType(contentType)
+                        viewModel.selectCategory(deckName)
+                        viewModel.setPracticeMemorizedMode(true)
+                        navController.navigate("reverse_short_answer_quiz")
                     }
                 )
             }

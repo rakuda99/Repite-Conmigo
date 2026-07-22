@@ -53,11 +53,7 @@ fun SetupProfileScreen(
     
     // Using resource IDs for language names and standard ISO codes
     val languageOptions = listOf(
-        R.string.lang_arabic to "ar",
-        R.string.lang_english to "en",
-        R.string.lang_spanish to "es",
-        R.string.lang_french to "fr",
-        R.string.lang_other to "other"
+        R.string.lang_arabic to "ar"
     )
 
     Column(
@@ -165,9 +161,7 @@ fun SetupProfileScreen(
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             val targetOptions = listOf(
-                stringResource(R.string.lang_spanish) to "es",
-                stringResource(R.string.lang_english) to "en",
-                stringResource(R.string.lang_french) to "fr"
+                stringResource(R.string.lang_spanish) to "es"
             )
             targetOptions.forEach { (name, code) ->
                 FilterChip(
@@ -190,9 +184,7 @@ fun SetupProfileScreen(
             errorMessage = ""
         }
 
-        if (errorMessage.isNotEmpty()) {
-            Text(errorMessage, color = Color.Red, fontSize = 14.sp, fontWeight = FontWeight.Medium, modifier = Modifier.padding(top = 16.dp), textAlign = androidx.compose.ui.text.style.TextAlign.Center)
-        }
+
 
         Spacer(modifier = Modifier.height(40.dp))
 
@@ -219,7 +211,8 @@ fun SetupProfileScreen(
                             AppCompatDelegate.setApplicationLocales(appLocale)
                             onComplete()
                         } else {
-                            errorMessage = "connection_error"
+                            val exception = result.exceptionOrNull()
+                            errorMessage = "unexpected_error|${exception?.localizedMessage ?: "Unknown error"}"
                         }
                     } catch (e: Exception) {
                         isLoading = false

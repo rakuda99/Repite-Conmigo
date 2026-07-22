@@ -103,6 +103,15 @@ fun IntermediateScreen(
                     onClick = { onNavigateToLesson("Pingo: Restaurant") }
                 )
             }
+            item {
+                LessonCard(
+                    title = "شوارع ومدن واتجاهات",
+                    subtitle = "السؤال عن الاتجاهات والمدن",
+                    icon = "🗺️",
+                    color = DuoBlue,
+                    onClick = { onNavigateToLesson("Pingo: Directions") }
+                )
+            }
 
             // Quizzes Section
             item {
@@ -110,7 +119,7 @@ fun IntermediateScreen(
                     text = "اختبارات المستوى",
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Black,
-                    color = Color.DarkGray,
+                    color = MaterialTheme.colorScheme.onBackground,
                     modifier = Modifier.padding(top = 32.dp, bottom = 16.dp),
                     textAlign = TextAlign.Right
                 )

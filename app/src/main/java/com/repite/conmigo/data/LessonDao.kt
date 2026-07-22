@@ -17,6 +17,9 @@ interface LessonDao {
     @Query("SELECT DISTINCT category FROM sentences")
     fun getCategories(): Flow<List<String>>
 
+    @Query("SELECT * FROM sentences WHERE category = :category")
+    suspend fun getByCategory(category: String): List<Sentence>
+
     @Query("SELECT DISTINCT contentType FROM sentences")
     fun getContentTypes(): Flow<List<String>>
 
@@ -43,4 +46,10 @@ interface LessonDao {
 
     @Query("DELETE FROM sentences WHERE category = :category")
     suspend fun deleteByCategory(category: String)
+
+    @Query("DELETE FROM sentences WHERE id IN (:ids)")
+    suspend fun deleteSentencesByIds(ids: List<Int>)
+
+    @Query("UPDATE sentences SET pronunciationScore = :score, memorizationDifficulty = :difficulty WHERE id = :id")
+    suspend fun updateRatings(id: Int, score: Float, difficulty: Int)
 }

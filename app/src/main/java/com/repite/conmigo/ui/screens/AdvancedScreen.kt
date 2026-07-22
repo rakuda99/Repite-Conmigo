@@ -112,7 +112,7 @@ fun AdvancedScreen(
                     text = stringResource(R.string.level_quizzes),
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Black,
-                    color = Color.DarkGray,
+                    color = MaterialTheme.colorScheme.onBackground,
                     modifier = Modifier.padding(top = 32.dp, bottom = 16.dp),
                     textAlign = TextAlign.Right
                 )

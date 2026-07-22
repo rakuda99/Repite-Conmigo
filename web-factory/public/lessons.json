@@ -121,13 +121,13 @@
       "color": "bg-blue-500",
       "sentences": [
         {
-          "es": "Hola",
-          "ar": "مرحباً",
+          "es": "Hola, ¿qué tal?",
+          "ar": "مرحباً، ما الأخبار؟",
           "imagePrompt": "Illustration of Hola"
         },
         {
-          "es": "Adiós",
-          "ar": "وداعاً",
+          "es": "Adiós, nos vemos.",
+          "ar": "وداعاً، نلتقي لاحقاً.",
           "imagePrompt": "Illustration of Adiós"
         },
         {
@@ -136,18 +136,18 @@
           "imagePrompt": "Illustration of Por favor"
         },
         {
-          "es": "Gracias",
-          "ar": "شكراً",
+          "es": "Muchas gracias, amigo.",
+          "ar": "شكراً جزيلاً يا صديقي.",
           "imagePrompt": "Illustration of Gracias"
         },
         {
-          "es": "Sí",
-          "ar": "نعم",
+          "es": "Sí, de acuerdo.",
+          "ar": "نعم، أنا موافق.",
           "imagePrompt": "Illustration of Sí"
         },
         {
-          "es": "No",
-          "ar": "لا",
+          "es": "No, lo siento.",
+          "ar": "لا، أنا آسف.",
           "imagePrompt": "Illustration of No"
         },
         {
@@ -161,13 +161,13 @@
           "imagePrompt": "Illustration of Buenas noches"
         },
         {
-          "es": "Bien",
-          "ar": "جيد",
+          "es": "Todo bien, gracias.",
+          "ar": "كل شيء على ما يرام، شكراً.",
           "imagePrompt": "Illustration of Bien"
         },
         {
-          "es": "Mal",
-          "ar": "سيء",
+          "es": "No está mal.",
+          "ar": "ليس سيئاً.",
           "imagePrompt": "Illustration of Mal"
         },
         {
@@ -327,8 +327,8 @@
     {
       "id": "lesson_1771530939995_j1n51",
       "title": {
-        "ar-SA": "الأرقام 1-10",
-        "en-US": "Numbers 1-10"
+        "ar-SA": "الأرقام 1-100",
+        "en-US": "Numbers 1-100"
       },
       "rawLevel": "المستوى الابتدائي 👶",
       "icon": "🔢",
@@ -337,7 +337,13 @@
         {
           "es": "Uno",
           "ar": "واحد",
-          "imagePrompt": "Illustration of Uno"
+          "imagePrompt": "Illustration of Uno",
+          "imageUrl": "numbers"
+        },
+        {
+          "es": "Compré una manzana.",
+          "ar": "اشتريت تفاحة واحدة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         },
         {
           "es": "Dos",
@@ -345,9 +351,19 @@
           "imagePrompt": "Illustration of Dos"
         },
         {
+          "es": "Tengo dos gatos en mi casa.",
+          "ar": "لدي قطتان في منزلي.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
           "es": "Tres",
           "ar": "ثلاثة",
           "imagePrompt": "Illustration of Tres"
+        },
+        {
+          "es": "El tren llegará en tres minutos.",
+          "ar": "سيصل القطار خلال ثلاث دقائق.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         },
         {
           "es": "Cuatro",
@@ -355,9 +371,19 @@
           "imagePrompt": "Illustration of Cuatro"
         },
         {
+          "es": "Tengo cuatro amigos muy cercanos.",
+          "ar": "لدي أربعة أصدقاء مقربين جداً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
           "es": "Cinco",
           "ar": "خمسة",
           "imagePrompt": "Illustration of Cinco"
+        },
+        {
+          "es": "Hay cinco manzanas en la mesa.",
+          "ar": "هناك خمس تفاحات على الطاولة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         },
         {
           "es": "Seis",
@@ -365,9 +391,19 @@
           "imagePrompt": "Illustration of Seis"
         },
         {
+          "es": "El pastel necesita seis huevos.",
+          "ar": "تحتاج الكعكة إلى ست بيضات.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
           "es": "Siete",
           "ar": "سبعة",
           "imagePrompt": "Illustration of Siete"
+        },
+        {
+          "es": "La semana tiene siete días.",
+          "ar": "الأسبوع يتكون من سبعة أيام.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         },
         {
           "es": "Ocho",
@@ -375,9 +411,19 @@
           "imagePrompt": "Illustration of Ocho"
         },
         {
+          "es": "Duermo ocho horas cada noche.",
+          "ar": "أنام ثماني ساعات كل ليلة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
           "es": "Nueve",
           "ar": "تسعة",
           "imagePrompt": "Illustration of Nueve"
+        },
+        {
+          "es": "Viví en Madrid durante nueve años.",
+          "ar": "عشت في مدريد لمدة تسع سنوات.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         },
         {
           "es": "Diez",
@@ -385,49 +431,909 @@
           "imagePrompt": "Illustration of Diez"
         },
         {
-          "es": "Tengo uno.",
-          "ar": "لدي واحد.",
-          "imagePrompt": "Scene showing Numbers 1-10 concept"
+          "es": "Tengo diez dedos en mis manos.",
+          "ar": "لدي عشرة أصابع في يدي.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         },
         {
-          "es": "Son las dos.",
-          "ar": "إنها الساعة الثانية."
+          "es": "Once",
+          "ar": "أحد عشر",
+          "imagePrompt": "Illustration of Once"
         },
         {
-          "es": "Tres gatos.",
-          "ar": "ثلاث قطط.",
-          "imagePrompt": "Scene showing Numbers 1-10 concept"
+          "es": "La clase empieza en once minutos.",
+          "ar": "يبدأ الفصل خلال أحد عشر دقيقة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         },
         {
-          "es": "Cuatro coches.",
-          "ar": "أربع سيارات."
+          "es": "Doce",
+          "ar": "اثنا عشر",
+          "imagePrompt": "Illustration of Doce"
         },
         {
-          "es": "Cinco dedos.",
-          "ar": "خمسة أصابع.",
-          "imagePrompt": "Scene showing Numbers 1-10 concept"
+          "es": "El año tiene doce meses.",
+          "ar": "السنة تتكون من اثني عشر شهراً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         },
         {
-          "es": "Seis libros.",
-          "ar": "ستة كتب."
+          "es": "Trece",
+          "ar": "ثلاثة عشر",
+          "imagePrompt": "Illustration of Trece"
         },
         {
-          "es": "Siete días.",
-          "ar": "سبعة أيام.",
-          "imagePrompt": "Scene showing Numbers 1-10 concept"
+          "es": "Hoy es el día trece del mes.",
+          "ar": "اليوم هو اليوم الثالث عشر من الشهر.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         },
         {
-          "es": "Ocho horas.",
-          "ar": "ثماني ساعات."
+          "es": "Catorce",
+          "ar": "أربعة عشر",
+          "imagePrompt": "Illustration of Catorce"
         },
         {
-          "es": "Nueve vidas.",
-          "ar": "تسعة أرواح.",
-          "imagePrompt": "Scene showing Numbers 1-10 concept"
+          "es": "Hay catorce estudiantes en el aula.",
+          "ar": "يوجد أربعة عشر طالباً في الفصل الدراسي.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         },
         {
-          "es": "Diez puntos.",
-          "ar": "عشر نقاط."
+          "es": "Quince",
+          "ar": "خمسة عشر",
+          "imagePrompt": "Illustration of Quince"
+        },
+        {
+          "es": "Mi hermana cumple quince años hoy.",
+          "ar": "تبلغ أختي خمسة عشر عاماً اليوم.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Dieciséis",
+          "ar": "ستة عشر",
+          "imagePrompt": "Illustration of Dieciséis"
+        },
+        {
+          "es": "El libro tiene dieciséis capítulos.",
+          "ar": "يحتوي الكتاب على ستة عشر فصلاً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Diecisiete",
+          "ar": "سبعة عشر",
+          "imagePrompt": "Illustration of Diecisiete"
+        },
+        {
+          "es": "El billete de autobús cuesta diecisiete pesos.",
+          "ar": "تذكرة الحافلة تكلف سبعة عشر بيزو.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Dieciocho",
+          "ar": "ثمانية عشر",
+          "imagePrompt": "Illustration of Dieciocho"
+        },
+        {
+          "es": "El restaurante abre a las dieciocho horas.",
+          "ar": "يفتح المطعم في الساعة الثامنة عشرة (6 مساءً).",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Diecinueve",
+          "ar": "تسعة عشر",
+          "imagePrompt": "Illustration of Diecinueve"
+        },
+        {
+          "es": "Mi primo tiene diecinueve camisetas.",
+          "ar": "ابن عمي لديه تسعة عشر قميصاً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Veinte",
+          "ar": "عشرون",
+          "imagePrompt": "Illustration of Veinte"
+        },
+        {
+          "es": "Hay veinte sillas en la sala de conferencias.",
+          "ar": "هناك عشرون كرسياً في غرفة المؤتمرات.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Veintiuno",
+          "ar": "واحد وعشرون",
+          "imagePrompt": "Illustration of Veintiuno"
+        },
+        {
+          "es": "Él compró veintiún globos para la fiesta.",
+          "ar": "اشترى واحداً وعشرين بالوناً للحفلة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Veintidós",
+          "ar": "اثنان وعشرون",
+          "imagePrompt": "Illustration of Veintidós"
+        },
+        {
+          "es": "La temperatura es de veintidós grados.",
+          "ar": "درجة الحرارة اثنان وعشرون درجة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Veintitrés",
+          "ar": "ثلاثة وعشرون",
+          "imagePrompt": "Illustration of Veintitrés"
+        },
+        {
+          "es": "La tienda está a veintitrés kilómetros.",
+          "ar": "المحل يبعد ثلاثة وعشرين كيلومتراً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Veinticuatro",
+          "ar": "أربعة وعشرون",
+          "imagePrompt": "Illustration of Veinticuatro"
+        },
+        {
+          "es": "El examen dura veinticuatro minutos.",
+          "ar": "يستمر الامتحان لأربعة وعشرين دقيقة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Veinticinco",
+          "ar": "خمسة وعشرون",
+          "imagePrompt": "Illustration of Veinticinco"
+        },
+        {
+          "es": "El apartamento está en el piso veinticinco.",
+          "ar": "الشقة تقع في الطابق الخامس والعشرين.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Veintiséis",
+          "ar": "ستة وعشرون",
+          "imagePrompt": "Illustration of Veintiséis"
+        },
+        {
+          "es": "He leído veintiséis páginas del libro.",
+          "ar": "لقد قرأت ستة وعشرين صفحة من الكتاب.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Veintisiete",
+          "ar": "سبعة وعشرون",
+          "imagePrompt": "Illustration of Veintisiete"
+        },
+        {
+          "es": "El boleto cuesta veintisiete dólares.",
+          "ar": "التذكرة تكلف سبعة وعشرين دولاراً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Veintiocho",
+          "ar": "ثمانية وعشرون",
+          "imagePrompt": "Illustration of Veintiocho"
+        },
+        {
+          "es": "Mi tío tiene veintiocho vacas en su granja.",
+          "ar": "عمي لديه ثمانية وعشرون بقرة في مزرعته.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Veintinueve",
+          "ar": "تسعة وعشرون",
+          "imagePrompt": "Illustration of Veintinueve"
+        },
+        {
+          "es": "Hay veintinueve días en febrero este año.",
+          "ar": "هناك تسعة وعشرون يوماً في فبراير هذا العام.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Treinta",
+          "ar": "ثلاثون",
+          "imagePrompt": "Illustration of Treinta"
+        },
+        {
+          "es": "El profesor tiene treinta estudiantes.",
+          "ar": "المعلم لديه ثلاثون طالباً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Treinta y uno",
+          "ar": "واحد وثلاثون",
+          "imagePrompt": "Illustration of Treinta y uno"
+        },
+        {
+          "es": "He caminado treinta y un kilómetros hoy.",
+          "ar": "لقد مشيت واحداً وثلاثين كيلومتراً اليوم.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Treinta y dos",
+          "ar": "اثنان وثلاثون",
+          "imagePrompt": "Illustration of Treinta y dos"
+        },
+        {
+          "es": "La sopa necesita treinta y dos minutos de cocción.",
+          "ar": "يحتاج الحساء إلى اثنين وثلاثين دقيقة من الطهي.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Treinta y tres",
+          "ar": "ثلاثة وثلاثون",
+          "imagePrompt": "Illustration of Treinta y tres"
+        },
+        {
+          "es": "Compré este reloj por treinta y tres euros.",
+          "ar": "اشتريت هذه الساعة بثلاثة وثلاثين يورو.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Treinta y cuatro",
+          "ar": "أربعة وثلاثون",
+          "imagePrompt": "Illustration of Treinta y cuatro"
+        },
+        {
+          "es": "Mi tía vivió en París durante treinta y cuatro años.",
+          "ar": "عاشت عمتي في باريس لمدة أربعة وثلاثين عاماً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Treinta y cinco",
+          "ar": "خمسة وثلاثون",
+          "imagePrompt": "Illustration of Treinta y cinco"
+        },
+        {
+          "es": "Hay treinta y cinco fotos en el álbum.",
+          "ar": "يوجد خمس وثلاثون صورة في الألبوم.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Treinta y seis",
+          "ar": "ستة وثلاثون",
+          "imagePrompt": "Illustration of Treinta y seis"
+        },
+        {
+          "es": "El autobús tiene treinta y seis asientos.",
+          "ar": "الحافلة تحتوي على ستة وثلاثين مقعداً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Treinta y siete",
+          "ar": "سبعة وثلاثون",
+          "imagePrompt": "Illustration of Treinta y siete"
+        },
+        {
+          "es": "El termómetro marca treinta y siete grados.",
+          "ar": "ميزان الحرارة يشير إلى سبعة وثلاثين درجة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Treinta y ocho",
+          "ar": "ثمانية وثلاثون",
+          "imagePrompt": "Illustration of Treinta y ocho"
+        },
+        {
+          "es": "Mi padre tiene treinta y ocho herramientas.",
+          "ar": "والدي لديه ثمانية وثلاثون أداة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Treinta y nueve",
+          "ar": "تسعة وثلاثون",
+          "imagePrompt": "Illustration of Treinta y nueve"
+        },
+        {
+          "es": "El viaje en tren tarda treinta y nueve minutos.",
+          "ar": "تستغرق رحلة القطار تسعة وثلاثين دقيقة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cuarenta",
+          "ar": "أربعون",
+          "imagePrompt": "Illustration of Cuarenta"
+        },
+        {
+          "es": "Mi madre tiene cuarenta años de experiencia.",
+          "ar": "أمي لديها أربعون عاماً من الخبرة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cuarenta y uno",
+          "ar": "واحد وأربعون",
+          "imagePrompt": "Illustration of Cuarenta y uno"
+        },
+        {
+          "es": "Hay cuarenta y un pasajeros en el avión.",
+          "ar": "هناك واحد وأربعون راكباً على متن الطائرة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cuarenta y dos",
+          "ar": "اثنان وأربعون",
+          "imagePrompt": "Illustration of Cuarenta y dos"
+        },
+        {
+          "es": "El canal de televisión es el número cuarenta y dos.",
+          "ar": "قناة التلفزيون هي رقم اثنين وأربعين.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cuarenta y tres",
+          "ar": "ثلاثة وأربعون",
+          "imagePrompt": "Illustration of Cuarenta y tres"
+        },
+        {
+          "es": "Mi abuela plantó cuarenta y tres flores.",
+          "ar": "جدتي زرعت ثلاثة وأربعين زهرة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cuarenta y cuatro",
+          "ar": "أربعة وأربعون",
+          "imagePrompt": "Illustration of Cuarenta y cuatro"
+        },
+        {
+          "es": "El museo tiene cuarenta y cuatro pinturas.",
+          "ar": "المتحف يحتوي على أربعة وأربعين لوحة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cuarenta y cinco",
+          "ar": "خمسة وأربعون",
+          "imagePrompt": "Illustration of Cuarenta y cinco"
+        },
+        {
+          "es": "He perdido cuarenta y cinco minutos esperando.",
+          "ar": "لقد أضعت خمسة وأربعين دقيقة في الانتظار.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cuarenta y seis",
+          "ar": "ستة وأربعون",
+          "imagePrompt": "Illustration of Cuarenta y seis"
+        },
+        {
+          "es": "La caja pesa cuarenta y seis kilos.",
+          "ar": "الصندوق يزن ستة وأربعين كيلوغراماً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cuarenta y siete",
+          "ar": "سبعة وأربعون",
+          "imagePrompt": "Illustration of Cuarenta y siete"
+        },
+        {
+          "es": "El edificio tiene cuarenta y siete ventanas.",
+          "ar": "المبنى يحتوي على سبعة وأربعين نافذة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cuarenta y ocho",
+          "ar": "ثمانية وأربعون",
+          "imagePrompt": "Illustration of Cuarenta y ocho"
+        },
+        {
+          "es": "La farmacia está a cuarenta y ocho metros de aquí.",
+          "ar": "الصيدلية تبعد ثمانية وأربعين متراً من هنا.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cuarenta y nueve",
+          "ar": "تسعة وأربعون",
+          "imagePrompt": "Illustration of Cuarenta y nueve"
+        },
+        {
+          "es": "Compré cuarenta y nueve cuadernos para la escuela.",
+          "ar": "اشتريت تسعة وأربعين دفتراً للمدرسة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cincuenta",
+          "ar": "خمسون",
+          "imagePrompt": "Illustration of Cincuenta"
+        },
+        {
+          "es": "La velocidad máxima es de cincuenta kilómetros.",
+          "ar": "السرعة القصوى هي خمسون كيلومتراً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cincuenta y uno",
+          "ar": "واحد وخمسون",
+          "imagePrompt": "Illustration of Cincuenta y uno"
+        },
+        {
+          "es": "Hay cincuenta y un coches en el aparcamiento.",
+          "ar": "يوجد واحد وخمسون سيارة في موقف السيارات.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cincuenta y dos",
+          "ar": "اثنان وخمسون",
+          "imagePrompt": "Illustration of Cincuenta y dos"
+        },
+        {
+          "es": "Él resolvió cincuenta y dos problemas de matemáticas.",
+          "ar": "حل اثنتين وخمسين مسألة رياضية.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cincuenta y tres",
+          "ar": "ثلاثة وخمسون",
+          "imagePrompt": "Illustration of Cincuenta y tres"
+        },
+        {
+          "es": "El collar tiene cincuenta y tres perlas.",
+          "ar": "القلادة تحتوي على ثلاث وخمسين لؤلؤة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cincuenta y cuatro",
+          "ar": "أربعة وخمسون",
+          "imagePrompt": "Illustration of Cincuenta y cuatro"
+        },
+        {
+          "es": "La conferencia dura cincuenta y cuatro minutos.",
+          "ar": "تستمر المحاضرة أربعاً وخمسين دقيقة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cincuenta y cinco",
+          "ar": "خمسة وخمسون",
+          "imagePrompt": "Illustration of Cincuenta y cinco"
+        },
+        {
+          "es": "Mi abuelo tiene cincuenta y cinco años de casado.",
+          "ar": "جدي متزوج منذ خمسة وخمسين عاماً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cincuenta y seis",
+          "ar": "ستة وخمسون",
+          "imagePrompt": "Illustration of Cincuenta y seis"
+        },
+        {
+          "es": "Recibí cincuenta y seis mensajes hoy.",
+          "ar": "تلقيت ستة وخمسين رسالة اليوم.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cincuenta y siete",
+          "ar": "سبعة وخمسون",
+          "imagePrompt": "Illustration of Cincuenta y siete"
+        },
+        {
+          "es": "El juego tiene cincuenta y siete niveles.",
+          "ar": "اللعبة تحتوي على سبعة وخمسين مستوى.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cincuenta y ocho",
+          "ar": "ثمانية وخمسون",
+          "imagePrompt": "Illustration of Cincuenta y ocho"
+        },
+        {
+          "es": "Necesitamos cincuenta y ocho platos para los invitados.",
+          "ar": "نحتاج إلى ثمانية وخمسين طبقاً للضيوف.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cincuenta y nueve",
+          "ar": "تسعة وخمسون",
+          "imagePrompt": "Illustration of Cincuenta y nueve"
+        },
+        {
+          "es": "El boleto de tren cuesta cincuenta y nueve francos.",
+          "ar": "تذكرة القطار تكلف تسعة وخمسين فرنكاً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Sesenta",
+          "ar": "ستون",
+          "imagePrompt": "Illustration of Sesenta"
+        },
+        {
+          "es": "La película dura sesenta minutos.",
+          "ar": "يستمر الفيلم لمدة ستين دقيقة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Sesenta y uno",
+          "ar": "واحد وستون",
+          "imagePrompt": "Illustration of Sesenta y uno"
+        },
+        {
+          "es": "El agricultor vendió sesenta y un sacos de café.",
+          "ar": "باع المزارع واحداً وستين كيساً من القهوة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Sesenta y dos",
+          "ar": "اثنان وستون",
+          "imagePrompt": "Illustration of Sesenta y dos"
+        },
+        {
+          "es": "La oficina está en la calle sesenta y dos.",
+          "ar": "المكتب يقع في الشارع الثاني والستين.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Sesenta y tres",
+          "ar": "ثلاثة وستون",
+          "imagePrompt": "Illustration of Sesenta y tres"
+        },
+        {
+          "es": "El libro tiene sesenta y tres páginas ilustradas.",
+          "ar": "يحتوي الكتاب على ثلاث وستين صفحة مصورة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Sesenta y cuatro",
+          "ar": "أربعة وستون",
+          "imagePrompt": "Illustration of Sesenta y cuatro"
+        },
+        {
+          "es": "He gastado sesenta y cuatro dólares en el supermercado.",
+          "ar": "أنفقت أربعة وستين دولاراً في السوبرماركت.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Sesenta y cinco",
+          "ar": "خمسة وستون",
+          "imagePrompt": "Illustration of Sesenta y cinco"
+        },
+        {
+          "es": "La temperatura en el desierto es de sesenta y cinco grados.",
+          "ar": "درجة الحرارة في الصحراء تبلغ خمسة وستين درجة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Sesenta y seis",
+          "ar": "ستة وستون",
+          "imagePrompt": "Illustration of Sesenta y seis"
+        },
+        {
+          "es": "Mi tío tiene sesenta y seis años.",
+          "ar": "عمي يبلغ من العمر ستة وستين عاماً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Sesenta y siete",
+          "ar": "سبعة وستون",
+          "imagePrompt": "Illustration of Sesenta y siete"
+        },
+        {
+          "es": "Hay sesenta y siete árboles en el jardín.",
+          "ar": "يوجد سبعة وستين شجرة في الحديقة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Sesenta y ocho",
+          "ar": "ثمانية وستون",
+          "imagePrompt": "Illustration of Sesenta y ocho"
+        },
+        {
+          "es": "El hotel tiene sesenta y ocho habitaciones disponibles.",
+          "ar": "يحتوي الفندق على ثماني وستين غرفة متاحة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Sesenta y nueve",
+          "ar": "تسعة وستون",
+          "imagePrompt": "Illustration of Sesenta y nueve"
+        },
+        {
+          "es": "Compré sesenta y nueve globos para la boda.",
+          "ar": "اشتريت تسعة وستين بالوناً لحفل الزفاف.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Setenta",
+          "ar": "سبعون",
+          "imagePrompt": "Illustration of Setenta"
+        },
+        {
+          "es": "Mi tía tiene setenta discos de música clásica.",
+          "ar": "عمتي لديها سبعون أسطوانة من الموسيقى الكلاسيكية.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Setenta y uno",
+          "ar": "واحد وسبعون",
+          "imagePrompt": "Illustration of Setenta y uno"
+        },
+        {
+          "es": "El vuelo dura setenta y un minutos.",
+          "ar": "تستغرق الرحلة الجوية واحداً وسبعين دقيقة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Setenta y dos",
+          "ar": "اثنان وسبعون",
+          "imagePrompt": "Illustration of Setenta y dos"
+        },
+        {
+          "es": "Mi abuelo construyó esta mesa hace setenta y dos años.",
+          "ar": "صنع جدي هذه الطاولة قبل اثنين وسبعين عاماً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Setenta y tres",
+          "ar": "ثلاثة وسبعون",
+          "imagePrompt": "Illustration of Setenta y tres"
+        },
+        {
+          "es": "Hay setenta y tres estudiantes en el curso de español.",
+          "ar": "هناك ثلاثة وسبعون طالباً في دورة اللغة الإسبانية.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Setenta y cuatro",
+          "ar": "أربعة وسبعون",
+          "imagePrompt": "Illustration of Setenta y cuatro"
+        },
+        {
+          "es": "La enciclopedia tiene setenta y cuatro tomos.",
+          "ar": "الموسوعة تتكون من أربعة وسبعين مجلداً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Setenta y cinco",
+          "ar": "خمسة وسبعون",
+          "imagePrompt": "Illustration of Setenta y cinco"
+        },
+        {
+          "es": "El puente mide setenta y cinco metros de largo.",
+          "ar": "الجسر يبلغ طوله خمسة وسبعين متراً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Setenta y seis",
+          "ar": "ستة وسبعون",
+          "imagePrompt": "Illustration of Setenta y seis"
+        },
+        {
+          "es": "El restaurante tiene setenta y seis mesas.",
+          "ar": "المطعم يحتوي على ستة وسبعين طاولة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Setenta y siete",
+          "ar": "سبعة وسبعون",
+          "imagePrompt": "Illustration of Setenta y siete"
+        },
+        {
+          "es": "La temperatura del agua es de setenta y siete grados.",
+          "ar": "درجة حرارة الماء سبعة وسبعون درجة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Setenta y ocho",
+          "ar": "ثمانية وسبعون",
+          "imagePrompt": "Illustration of Setenta y ocho"
+        },
+        {
+          "es": "Mi coche ha recorrido setenta y ocho mil kilómetros.",
+          "ar": "قطعت سيارتي ثمانية وسبعين ألف كيلومتر.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Setenta y nueve",
+          "ar": "تسعة وسبعون",
+          "imagePrompt": "Illustration of Setenta y nueve"
+        },
+        {
+          "es": "El museum está a setenta y nueve kilómetros de aquí.",
+          "ar": "المتحف يبعد تسعة وسبعين كيلومتراً من هنا.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Ochenta",
+          "ar": "ثمانون",
+          "imagePrompt": "Illustration of Ochenta"
+        },
+        {
+          "es": "La abuela preparó ochenta galletas deliciosas.",
+          "ar": "أعدت الجدة ثمانين قطعة كعك لذيذة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Ochenta y uno",
+          "ar": "واحد وثمانون",
+          "imagePrompt": "Illustration of Ochenta y uno"
+        },
+        {
+          "es": "Hay ochenta y un pasajeros esperando el tren.",
+          "ar": "هناك واحد وثمانون راكباً ينتظرون القطار.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Ochenta y dos",
+          "ar": "اثنان وثمانون",
+          "imagePrompt": "Illustration of Ochenta y dos"
+        },
+        {
+          "es": "El libro tiene ochenta y dos capítulos cortos.",
+          "ar": "يحتوي الكتاب على اثنين وثمانين فصلاً قصيراً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Ochenta y tres",
+          "ar": "ثلاثة وثمانون",
+          "imagePrompt": "Illustration of Ochenta y tres"
+        },
+        {
+          "es": "Compré este abrigo por ochenta y tres euros.",
+          "ar": "اشتريت هذا المعطف بثلاثة وثمانين يورو.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Ochenta y cuatro",
+          "ar": "أربعة وثمانون",
+          "imagePrompt": "Illustration of Ochenta y cuatro"
+        },
+        {
+          "es": "Mi vecino vivió en Italia durante ochenta y cuatro años.",
+          "ar": "عاش جاري في إيطاليا لمدة أربعة وثمانين عاماً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Ochenta y cinco",
+          "ar": "خمسة وثمانون",
+          "imagePrompt": "Illustration of Ochenta y cinco"
+        },
+        {
+          "es": "El apartamento cuesta ochenta y cinco mil dólares.",
+          "ar": "الشقة تكلف خمسة وثمانين ألف دولار.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Ochenta y seis",
+          "ar": "ستة وثمانون",
+          "imagePrompt": "Illustration of Ochenta y seis"
+        },
+        {
+          "es": "Hay ochenta y seis tipos de aves en este bosque.",
+          "ar": "يوجد ستة وثمانون نوعاً من الطيور في هذه الغابة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Ochenta y siete",
+          "ar": "سبعة وثمانون",
+          "imagePrompt": "Illustration of Ochenta y siete"
+        },
+        {
+          "es": "La escuela tiene ochenta y siete profesores.",
+          "ar": "المدرسة بها سبعة وثمانون معلماً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Ochenta y ocho",
+          "ar": "ثمانية وثمانون",
+          "imagePrompt": "Illustration of Ochenta y ocho"
+        },
+        {
+          "es": "El atleta corrió ochenta y ocho kilómetros en una semana.",
+          "ar": "جرى العداء ثمانية وثمانين كيلومتراً في أسبوع واحد.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Ochenta y nueve",
+          "ar": "تسعة وثمانون",
+          "imagePrompt": "Illustration of Ochenta y nueve"
+        },
+        {
+          "es": "El boleto de avión cuesta ochenta y nueve libras.",
+          "ar": "تذكرة الطائرة تكلف تسعة وثمانين جنيهاً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Noventa",
+          "ar": "تسعون",
+          "imagePrompt": "Illustration of Noventa"
+        },
+        {
+          "es": "El supermercado tiene noventa empleados.",
+          "ar": "يضم السوبرماركت تسعين موظفاً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Noventa y uno",
+          "ar": "واحد وتسعون",
+          "imagePrompt": "Illustration of Noventa y uno"
+        },
+        {
+          "es": "El viaje en avión dura noventa y un minutos.",
+          "ar": "تستغرق الرحلة الجوية واحداً وتسعين دقيقة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Noventa y dos",
+          "ar": "اثنان وتسعون",
+          "imagePrompt": "Illustration of Noventa y dos"
+        },
+        {
+          "es": "Mi abuela tiene noventa y dos años y está muy sana.",
+          "ar": "جدتي تبلغ من العمر اثنين وتسعين عاماً وهي بصحة جيدة جداً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Noventa y tres",
+          "ar": "ثلاثة وتسعون",
+          "imagePrompt": "Illustration of Noventa y tres"
+        },
+        {
+          "es": "Hay noventa y tres estrellas visibles esta noche.",
+          "ar": "هناك ثلاثة وتسعون نجماً مرئياً الليلة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Noventa y cuatro",
+          "ar": "أربعة وتسعون",
+          "imagePrompt": "Illustration of Noventa y cuatro"
+        },
+        {
+          "es": "La receta necesita noventa y cuatro gramos de azúcar.",
+          "ar": "تحتاج الوصفة إلى أربعة وتسعين غراماً من السكر.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Noventa y cinco",
+          "ar": "خمسة وتسعون",
+          "imagePrompt": "Illustration of Noventa y cinco"
+        },
+        {
+          "es": "El canal de televisión es el número noventa y cinco.",
+          "ar": "قناة التلفزيون هي رقم خمسة وتسعين.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Noventa y seis",
+          "ar": "ستة وتسعون",
+          "imagePrompt": "Illustration of Noventa y seis"
+        },
+        {
+          "es": "El edificio mide noventa y seis metros de altura.",
+          "ar": "يبلغ ارتفاع المبنى ستة وتسعين متراً.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Noventa y siete",
+          "ar": "سبعة وتسعون",
+          "imagePrompt": "Illustration of Noventa y siete"
+        },
+        {
+          "es": "El diccionario tiene noventa y siete mil palabras.",
+          "ar": "يحتوي القاموس على سبعة وتسعين ألف كلمة.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Noventa y ocho",
+          "ar": "ثمانية وتسعون",
+          "imagePrompt": "Illustration of Noventa y ocho"
+        },
+        {
+          "es": "Necesitamos noventa y ocho sillas para el evento.",
+          "ar": "نحتاج إلى ثمانية وتسعين كرسياً للحدث.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Noventa y nueve",
+          "ar": "تسعة وتسعون",
+          "imagePrompt": "Illustration of Noventa y nueve"
+        },
+        {
+          "es": "He gastado noventa y nueve centavos en este chicle.",
+          "ar": "أنفقت تسعة وتسعين سنتاً على علكة المضغ هذه.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
+        },
+        {
+          "es": "Cien",
+          "ar": "مئة",
+          "imagePrompt": "Illustration of Cien"
+        },
+        {
+          "es": "El libro tiene cien ilustraciones a color.",
+          "ar": "يحتوي الكتاب على مئة رسم توضيحي ملون.",
+          "imagePrompt": "Scene showing Numbers 1-100 concept"
         }
       ]
     },
@@ -2546,55 +3452,109 @@
       "color": "bg-green-500",
       "sentences": [
         {
-          "es": "Me gusta aprender sobre Asking Directions.",
-          "ar": "أحب أن أتعلم عن السؤال عن الاتجاهات.",
-          "imagePrompt": "Illustration of Asking Directions context 0"
+          "es": "La calle",
+          "ar": "الشارع",
+          "imagePrompt": "A city street with buildings"
         },
         {
-          "es": "¿Qué sabes sobre Asking Directions?",
-          "ar": "ماذا تعرف عن السؤال عن الاتجاهات؟"
+          "es": "La ciudad",
+          "ar": "المدينة",
+          "imagePrompt": "A panoramic view of a beautiful city"
         },
         {
-          "es": "Asking Directions es interesante.",
-          "ar": "السؤال عن الاتجاهات أمر مثير للاهتمام."
+          "es": "La avenida",
+          "ar": "الجادة / الشارع العريض",
+          "imagePrompt": "A wide avenue with trees on the sides"
         },
         {
-          "es": "Vamos a practicar Asking Directions.",
-          "ar": "لنتدرب على السؤال عن الاتجاهات."
+          "es": "La esquina",
+          "ar": "الزاوية",
+          "imagePrompt": "A street corner in a city"
         },
         {
-          "es": "Hablamos mucho de Asking Directions.",
-          "ar": "نتحدث كثيراً عن السؤال عن الاتجاهات.",
-          "imagePrompt": "Illustration of Asking Directions context 4"
+          "es": "La dirección",
+          "ar": "الاتجاه / العنوان",
+          "imagePrompt": "A compass or directional sign post"
         },
         {
-          "es": "Esto es importante para Asking Directions.",
-          "ar": "هذا مهم لـ السؤال عن الاتجاهات."
+          "es": "El cruce",
+          "ar": "التقاطع",
+          "imagePrompt": "A busy street intersection"
         },
         {
-          "es": "Me gusta aprender sobre Asking Directions.",
-          "ar": "أحب أن أتعلم عن السؤال عن الاتجاهات."
+          "es": "El semáforo",
+          "ar": "إشارة المرور",
+          "imagePrompt": "A traffic light showing green"
         },
         {
-          "es": "¿Qué sabes sobre Asking Directions?",
-          "ar": "ماذا تعرف عن السؤال عن الاتجاهات؟"
+          "es": "Gira a la derecha.",
+          "ar": "انعطف يميناً.",
+          "imagePrompt": "An arrow pointing to the right"
         },
         {
-          "es": "Asking Directions es interesante.",
-          "ar": "السؤال عن الاتجاهات أمر مثير للاهتمام.",
-          "imagePrompt": "Illustration of Asking Directions context 8"
+          "es": "Gira a la izquierda.",
+          "ar": "انعطف يساراً.",
+          "imagePrompt": "An arrow pointing to the left"
         },
         {
-          "es": "Vamos a practicar Asking Directions.",
-          "ar": "لنتدرب على السؤال عن الاتجاهات."
+          "es": "Sigue recto.",
+          "ar": "اذهب مباشرة / استمر في السير للأمام.",
+          "imagePrompt": "A straight road going forward"
         },
         {
-          "es": "Hablamos mucho de Asking Directions.",
-          "ar": "نتحدث كثيراً عن السؤال عن الاتجاهات."
+          "es": "El puente",
+          "ar": "الجسر",
+          "imagePrompt": "A bridge over a river in a city"
         },
         {
-          "es": "Esto es importante para Asking Directions.",
-          "ar": "هذا مهم لـ السؤال عن الاتجاهات."
+          "es": "La plaza",
+          "ar": "الساحة / الميدان",
+          "imagePrompt": "A beautiful public square in a town"
+        },
+        {
+          "es": "La estación de metro",
+          "ar": "محطة المترو",
+          "imagePrompt": "Entrance to a subway station"
+        },
+        {
+          "es": "¿Dónde está la estación?",
+          "ar": "أين تقع المحطة؟",
+          "imagePrompt": "A person looking at a map near a station"
+        },
+        {
+          "es": "Gira a la derecha en la esquina.",
+          "ar": "انعطف يميناً عند الزاوية.",
+          "imagePrompt": "A car turning right at a street corner"
+        },
+        {
+          "es": "Cruza la calle en el semáforo.",
+          "ar": "اعبر الشارع عند إشارة المرور.",
+          "imagePrompt": "People crossing the street at a pedestrian crossing"
+        },
+        {
+          "es": "La farmacia está al lado del supermercado.",
+          "ar": "الصيدلية تقع بجانب السوبرماركت.",
+          "imagePrompt": "A street view showing a pharmacy next to a supermarket"
+        },
+        {
+          "es": "¿Cómo puedo ir al centro de la ciudad?",
+          "ar": "كيف يمكنني الذهاب إلى وسط المدينة？",
+          "imagePrompt": "A traveler asking for directions in a city"
+        },
+        {
+          "es": "Gira a la izquierda después del puente.",
+          "ar": "انعطف يساراً بعد الجسر.",
+          "imagePrompt": "A scenic view of a road turning left after a bridge"
+        },
+        {
+          "es": "Perdón, estoy perdido.",
+          "ar": "معذرة، أنا تائه.",
+          "imagePrompt": "A confused tourist looking at a map"
+        },
+        {
+          "es": "¿Está lejos de aquí?",
+          "ar": "هل هو بعيد من هنا؟",
+          "imagePrompt": "A person pointing to a distant landmark"
         }
       ]
     },

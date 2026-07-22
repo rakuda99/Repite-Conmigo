@@ -40,6 +40,8 @@ import com.repite.conmigo.ui.components.WordTranslationDialog
 import com.repite.conmigo.ui.components.SuccessAnimation
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.unit.LayoutDirection
 
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -53,13 +55,24 @@ fun LearningScreen(
     var showTranslation by remember { mutableStateOf(false) }
 
     val selectedWord by viewModel.selectedWord.collectAsState()
+    val selectedWordTranslation by viewModel.selectedWordTranslation.collectAsState()
+    val context = androidx.compose.ui.platform.LocalContext.current
 
     val sttLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
-            val spokenText = result.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)?.getOrNull(0) ?: ""
-            viewModel.analyzeSpokenText(spokenText)
+            val results = result.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+            if (!results.isNullOrEmpty()) {
+                // Pass all candidates joined by | so analyzeSpokenText picks the best match
+                val spokenText = results.joinToString("|")
+                viewModel.analyzeSpokenText(spokenText)
+            } else {
+                viewModel.analyzeSpokenText("")
+            }
+        } else {
+            // User cancelled or no speech detected — show feedback instead of silently ignoring
+            viewModel.analyzeSpokenText("")
         }
     }
 
@@ -74,21 +87,21 @@ fun LearningScreen(
                 IconButton(onClick = onBack) {
                     Icon(
                         Icons.Rounded.ArrowBack,
-                        contentDescription = "العودة",
-                        tint = Color.Black
+                        contentDescription = "Back",
+                        tint = MaterialTheme.colorScheme.onBackground
                     )
                 }
                 
                 // BACK SENTENCE BUTTON
                 IconButton(onClick = { viewModel.previousSentence() }) {
-                    Icon(Icons.Rounded.ChevronLeft, contentDescription = "السابق", tint = DuoBlue)
+                    Icon(Icons.Rounded.ChevronLeft, contentDescription = "Previous", tint = DuoBlue)
                 }
 
                 Text("${uiState.currentIndex + 1}/${uiState.sentences.size}", fontWeight = FontWeight.Bold)
 
                 // NEXT SENTENCE BUTTON
                 IconButton(onClick = { viewModel.nextSentence() }) {
-                    Icon(Icons.Rounded.ChevronRight, contentDescription = "التالي", tint = DuoBlue)
+                    Icon(Icons.Rounded.ChevronRight, contentDescription = "Next", tint = DuoBlue)
                 }
 
                 Spacer(modifier = Modifier.weight(1f))
@@ -102,63 +115,143 @@ fun LearningScreen(
             }
         },
         bottomBar = {
-            // FIXED: MICROPHONE PINNED TO BOTTOM
-            Surface(
-                modifier = Modifier.fillMaxWidth(),
-                shadowElevation = 16.dp,
-                color = Color.White,
-                shape = RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp)
-            ) {
-                Row(
-                    modifier = Modifier.padding(16.dp).padding(bottom = 8.dp),
-                    horizontalArrangement = Arrangement.SpaceEvenly,
-                    verticalAlignment = Alignment.CenterVertically
+            if (uiState.isRecording) {
+                Surface(
+                    modifier = Modifier.fillMaxWidth(),
+                    shadowElevation = 16.dp,
+                    color = MaterialTheme.colorScheme.surface,
+                    shape = RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp)
                 ) {
-                    val speechRate by viewModel.speechRate.collectAsState()
-
-                    // Left Block: Trans + Speed
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        IconButton(onClick = { showTranslation = !showTranslation }) {
-                            Icon(
-                                if (showTranslation) Icons.Rounded.VisibilityOff else Icons.Rounded.Visibility,
-                                contentDescription = "Trans",
-                                tint = if (showTranslation) DuoBlue else Color.Gray,
-                                modifier = Modifier.size(28.dp)
-                            )
-                        }
+                    Column(
+                        modifier = Modifier
+                            .padding(24.dp)
+                            .padding(bottom = 8.dp)
+                            .fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "جاري الاستماع... تحدث الآن 🎙️",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = DuoBlue
+                        )
+                        Spacer(modifier = Modifier.height(12.dp))
                         
-                        TextButton(onClick = { viewModel.toggleSpeechRate() }, modifier = Modifier.width(60.dp)) {
-                            Text("${speechRate}x", color = DuoBlue, fontWeight = FontWeight.Black)
+                        val partialText by viewModel.partialText.collectAsState()
+                        Text(
+                            text = if (partialText.isNotEmpty()) "\"$partialText\"" else "...",
+                            fontSize = 18.sp,
+                            fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.DarkGray,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.padding(vertical = 12.dp)
+                        )
+                        
+                        Spacer(modifier = Modifier.height(12.dp))
+                        // Stop button
+                        Button(
+                            onClick = { viewModel.onRecordClick() },
+                            colors = ButtonDefaults.buttonColors(containerColor = Color.Red),
+                            shape = RoundedCornerShape(16.dp),
+                            modifier = Modifier.height(48.dp).width(140.dp)
+                        ) {
+                            Icon(Icons.Rounded.Stop, contentDescription = "Stop", tint = Color.White)
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text("إيقاف", fontWeight = FontWeight.Bold, color = Color.White)
                         }
                     }
+                }
+            } else {
+                Surface(
+                    modifier = Modifier.fillMaxWidth(),
+                    shadowElevation = 16.dp,
+                    color = MaterialTheme.colorScheme.surface,
+                    shape = RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(16.dp).padding(bottom = 8.dp),
+                        horizontalArrangement = Arrangement.SpaceEvenly,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        val speechRate by viewModel.speechRate.collectAsState()
 
-                    // Main Mic Action
-                    Box(contentAlignment = Alignment.Center, modifier = Modifier.padding(horizontal = 12.dp)) {
-                        MicPulse(rmsDb, uiState.isRecording)
-                        Surface(
-                            modifier = Modifier.size(75.dp).clickable { viewModel.onRecordClick() },
-                            shape = CircleShape,
-                            color = if (uiState.isRecording) DuoRed else DuoBlue,
-                            shadowElevation = 8.dp
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
+                        // Left Block: Trans + Speed
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            IconButton(onClick = { showTranslation = !showTranslation }) {
                                 Icon(
-                                    if (uiState.isRecording) Icons.Rounded.GraphicEq else Icons.Rounded.Mic,
-                                    contentDescription = "Mic",
-                                    tint = Color.White,
-                                    modifier = Modifier.size(36.dp)
+                                    if (showTranslation) Icons.Rounded.VisibilityOff else Icons.Rounded.Visibility,
+                                    contentDescription = "Trans",
+                                    tint = if (showTranslation) DuoBlue else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f),
+                                    modifier = Modifier.size(28.dp)
                                 )
                             }
+                            
+                            TextButton(onClick = { viewModel.toggleSpeechRate() }, modifier = Modifier.width(60.dp)) {
+                                Text("${speechRate}x", color = DuoBlue, fontWeight = FontWeight.Black)
+                            }
                         }
-                    }
 
-                    // Right Block: Prev + Next
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        IconButton(onClick = { viewModel.previousSentence() }) {
-                            Icon(Icons.Rounded.ChevronLeft, contentDescription = "Prev", tint = DuoBlue, modifier = Modifier.size(28.dp))
+                        val useSystemSpeech by viewModel.useSystemSpeechDialog.collectAsState()
+                        // Main Mic Action
+                        Box(contentAlignment = Alignment.Center, modifier = Modifier.padding(horizontal = 12.dp)) {
+                            MicPulse(rmsDb, uiState.isRecording)
+                            Surface(
+                                modifier = Modifier.size(75.dp).clickable {
+                                    if (useSystemSpeech) {
+                                        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                                            val langTag = if (uiState.sentences.getOrNull(uiState.currentIndex)?.targetLang == "es") "es-ES" else "en-US"
+                                            val secondaryLangs = if (langTag.startsWith("es")) 
+                                                arrayListOf("es", "es-MX", "es-US", "es-ES") 
+                                            else 
+                                                arrayListOf("en", "en-GB", "en-AU")
+                                            val promptText = if (currentSentence != null) {
+                                                val langName = if (currentSentence.targetLang == "es") "الإسبانية" else "الإنجليزية"
+                                                "انطق باللغة $langName 🎙️"
+                                            } else {
+                                                "اسمعك.. تحدث الآن 🎙️"
+                                            }
+                                            putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+                                            putExtra(RecognizerIntent.EXTRA_LANGUAGE, langTag)
+                                            putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, langTag)
+                                            putExtra(RecognizerIntent.EXTRA_SUPPORTED_LANGUAGES, secondaryLangs)
+                                            putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, false)
+                                            putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5)
+                                            putExtra(RecognizerIntent.EXTRA_PROMPT, promptText)
+                                        }
+                                        try {
+                                            sttLauncher.launch(intent)
+                                        } catch (e: Exception) {
+                                            viewModel.analyzeSpokenText("ERR: لا يتوفر محرك صوتي في النظام ⚠️")
+                                        }
+                                    } else {
+                                        viewModel.onRecordClick()
+                                    }
+                                },
+                                shape = CircleShape,
+                                color = if (uiState.isRecording) DuoRed else DuoBlue,
+                                shadowElevation = 8.dp
+                            ) {
+                                Box(contentAlignment = Alignment.Center) {
+                                    Icon(
+                                        if (uiState.isRecording) Icons.Rounded.GraphicEq else Icons.Rounded.Mic,
+                                        contentDescription = "Mic",
+                                        tint = Color.White,
+                                        modifier = Modifier.size(36.dp)
+                                    )
+                                }
+                            }
                         }
-                        IconButton(onClick = { viewModel.nextSentence() }) {
-                            Icon(Icons.Rounded.ChevronRight, contentDescription = "Next", tint = DuoBlue, modifier = Modifier.size(28.dp))
+
+                        // Right Block: Prev + Next
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            IconButton(onClick = { viewModel.previousSentence() }) {
+                                Icon(Icons.Rounded.ChevronLeft, contentDescription = "Prev", tint = DuoBlue, modifier = Modifier.size(28.dp))
+                            }
+                            IconButton(onClick = { viewModel.nextSentence() }) {
+                                Icon(Icons.Rounded.ChevronRight, contentDescription = "Next", tint = DuoBlue, modifier = Modifier.size(28.dp))
+                            }
                         }
                     }
                 }
@@ -177,9 +270,19 @@ fun LearningScreen(
             if (selectedWord != null) {
                 com.repite.conmigo.ui.components.WordTranslationDialog(
                     word = selectedWord!!,
-                    translation = "Traducción...",
+                    translation = selectedWordTranslation,
                     onDismiss = { viewModel.dismissWordDialog() },
-                    onPlayTts = { viewModel.speakWord(selectedWord!!) }
+                    onPlayNormal = { viewModel.speakWord(selectedWord!!, slow = false) },
+                    onPlaySlow = { viewModel.speakWord(selectedWord!!, slow = true) },
+                    onSaveWord = {
+                        viewModel.addCardToDeck(
+                            text = selectedWord!!,
+                            translation = selectedWordTranslation?.takeIf { it.isNotBlank() && it != "Translating..." } ?: "بدون ترجمة",
+                            category = "الكلمات المختارة",
+                            contentType = "word"
+                        )
+                        android.widget.Toast.makeText(context, "تم حفظ الكلمة للمراجعة", android.widget.Toast.LENGTH_SHORT).show()
+                    }
                 )
             }
 
@@ -189,8 +292,9 @@ fun LearningScreen(
                 color = DuoBlue.copy(alpha = 0.1f),
                 shape = RoundedCornerShape(12.dp)
             ) {
+                val selectedCat by viewModel.selectedCategory.collectAsState()
                 Text(
-                    text = uiState.sentences.firstOrNull()?.category ?: "مراجعة عشوائية كاملة",
+                    text = selectedCat ?: "General Review",
                     modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
                     color = DuoBlue,
                     fontWeight = FontWeight.Bold,
@@ -232,39 +336,56 @@ fun LearningScreen(
 
             // THE IMAGE (AI Content)
             if (currentSentence?.imageUrl != null) {
-                Surface(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(200.dp)
-                        .padding(bottom = 16.dp),
-                    shape = RoundedCornerShape(24.dp),
-                    color = Color(0xFFF0F2FF),
-                    border = BorderStroke(2.dp, DuoBlue.copy(alpha = 0.2f))
-                ) {
-                    Box(contentAlignment = Alignment.Center) {
-                        // Support both local resource names and URLs
-                        val model = if (currentSentence.imageUrl!!.startsWith("http")) {
-                            currentSentence.imageUrl
-                        } else {
-                            // Map local name to android resource ID if needed, 
-                            // but AsyncImage handles resource names if formatted correctly or context provided
-                            // For simplicity, we assume we use local res names
-                            "android.resource://com.repite.conmigo/drawable/${currentSentence.imageUrl}"
-                        }
-                        
-                        AsyncImage(
-                            model = model,
-                            contentDescription = "AI Illustration",
-                            modifier = Modifier.fillMaxSize().padding(8.dp),
-                            contentScale = androidx.compose.ui.layout.ContentScale.Fit
-                        )
-                    }
+                val imageUrl = currentSentence.imageUrl!!
+                val bitmap = remember(imageUrl) {
+                    if (imageUrl.startsWith("data:image")) {
+                        try {
+                            val base64String = imageUrl.substringAfter("base64,")
+                            val imageBytes = android.util.Base64.decode(base64String, android.util.Base64.DEFAULT)
+                            android.graphics.BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+                        } catch (e: Exception) { null }
+                    } else null
                 }
+                val model = bitmap ?: if (imageUrl.startsWith("http")) {
+                    imageUrl
+                } else {
+                    "android.resource://com.repite.conmigo/drawable/$imageUrl"
+                }
+
+                coil.compose.SubcomposeAsyncImage(
+                    model = model,
+                    contentDescription = "AI Illustration",
+                    contentScale = androidx.compose.ui.layout.ContentScale.Fit,
+                    success = { state ->
+                        Surface(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(200.dp)
+                                .padding(bottom = 16.dp),
+                            shape = RoundedCornerShape(24.dp),
+                            color = Color(0xFFF0F2FF),
+                            border = BorderStroke(2.dp, DuoBlue.copy(alpha = 0.2f))
+                        ) {
+                            androidx.compose.foundation.Image(
+                                painter = state.painter,
+                                contentDescription = "AI Illustration",
+                                modifier = Modifier.fillMaxSize().padding(8.dp),
+                                contentScale = androidx.compose.ui.layout.ContentScale.Fit
+                            )
+                        }
+                    },
+                    error = {
+                        // Show nothing if image fails to load, so we don't have a huge blank box
+                    },
+                    loading = {
+                        // Optional: loading state. We can keep it empty to not flash white boxes unnecessarily
+                    }
+                )
             }
 
             // THE SENTENCE
             if (currentSentence != null) {
-                val words = currentSentence.text.split(" ")
+                val words = currentSentence.text.replace(" 🔴", "🔴").split(" ")
                 FlowRow(
                     modifier = Modifier.fillMaxWidth().padding(top = 16.dp, bottom = 12.dp),
                     horizontalArrangement = Arrangement.Center
@@ -280,41 +401,46 @@ fun LearningScreen(
                             isWrong = isWrong,
                             isCorrect = isCorrect,
                             isPassageMode = currentSentence.contentType != "word",
+                            isSingleWord = words.size == 1,
                             onClick = { viewModel.onWordClick(word) }
                         )
                     }
                 }
-
                 if (showTranslation) {
-                    FlowRow(
-                        modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
-                        horizontalArrangement = Arrangement.Center
-                    ) {
-                        val translationWords = currentSentence.translation.split(" ")
-                        // Simplified approximate mapping for long texts
-                        if (uiState.highlightedIndex != -1 && words.isNotEmpty() && translationWords.isNotEmpty()) {
-                            val factor = translationWords.size.toFloat() / words.size.toFloat()
-                            val approxTargetIndex = (uiState.highlightedIndex * factor).toInt().coerceIn(0, translationWords.size - 1)
+                    val translationText = if (currentSentence.translation.isBlank()) "No translation" else currentSentence.translation
+                    val isRtl = isArabic(translationText)
+                    CompositionLocalProvider(LocalLayoutDirection provides (if (isRtl) LayoutDirection.Rtl else LayoutDirection.Ltr)) {
+                        FlowRow(
+                            modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            val translationWords = translationText.split(" ")
+                            val wordsCount = words.size
+                            val tWordsCount = translationWords.size
                             
-                            translationWords.forEachIndexed { tIndex, tWord ->
-                                val isTWordHighlighted = tIndex == approxTargetIndex
+                            if (uiState.highlightedIndex != -1 && wordsCount > 0 && tWordsCount > 0) {
+                                val factor = tWordsCount.toFloat() / wordsCount.toFloat()
+                                val approxTargetIndex = (uiState.highlightedIndex * factor).toInt().coerceIn(0, tWordsCount - 1)
                                 
-                                Text(
-                                    tWord + " ",
-                                    style = MaterialTheme.typography.titleLarge,
-                                    color = if (isTWordHighlighted) DuoYellow else DuoBlue,
-                                    fontWeight = if (isTWordHighlighted) FontWeight.ExtraBold else FontWeight.Normal,
-                                    textAlign = TextAlign.Center
-                                )
-                            }
-                        } else {
-                            translationWords.forEach { tWord ->
-                                Text(
-                                    tWord + " ",
-                                    style = MaterialTheme.typography.titleLarge,
-                                    color = DuoBlue,
-                                    textAlign = TextAlign.Center
-                                )
+                                translationWords.forEachIndexed { tIndex, tWord ->
+                                    val isTWordHighlighted = tIndex == approxTargetIndex
+                                    Text(
+                                        tWord + " ",
+                                        style = MaterialTheme.typography.titleLarge,
+                                        color = if (isTWordHighlighted) com.repite.conmigo.ui.theme.DuoYellow else MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
+                                        fontWeight = if (isTWordHighlighted) FontWeight.ExtraBold else FontWeight.Normal,
+                                        textAlign = TextAlign.Center
+                                    )
+                                }
+                            } else {
+                                translationWords.forEach { tWord ->
+                                    Text(
+                                        tWord + " ",
+                                        style = MaterialTheme.typography.titleLarge,
+                                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
+                                        textAlign = TextAlign.Center
+                                    )
+                                }
                             }
                         }
                     }
@@ -328,7 +454,7 @@ fun LearningScreen(
                 "Escucha y repite:",
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold,
-                color = Color.Gray
+                color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.7f)
             )
             Spacer(modifier = Modifier.height(24.dp))
             Divider()
@@ -383,15 +509,15 @@ fun LearningScreen(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     CircularProgressIndicator(color = Color.White)
                     Spacer(modifier = Modifier.height(16.dp))
-                    val syncLang = if (uiState.feedback.contains("en")) "English" else if (uiState.feedback.contains("ar")) "العربية" else if (uiState.feedback.contains("es")) "Spanish" else "..."
+                    val syncLang = if (uiState.feedback.contains("en")) "English" else if (uiState.feedback.contains("ar")) "Arabic" else if (uiState.feedback.contains("es")) "Spanish" else "..."
                     Text(
-                        "جاري المزامنة ($syncLang)... ⏳",
+                        "Syncing ($syncLang)... ⏳",
                         color = Color.White,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp
                     )
                     Text(
-                        "يرجى الانتظار ثوانٍ قليلة",
+                        "Please wait a few seconds",
                         color = Color.White.copy(alpha = 0.7f),
                         fontSize = 14.sp
                     )
@@ -402,7 +528,7 @@ fun LearningScreen(
 }
 
 @Composable
-fun WordItem(word: String, isHighlighted: Boolean, isWrong: Boolean, isCorrect: Boolean, isPassageMode: Boolean, onClick: () -> Unit) {
+fun WordItem(word: String, isHighlighted: Boolean, isWrong: Boolean, isCorrect: Boolean, isPassageMode: Boolean, isSingleWord: Boolean, onClick: () -> Unit) {
     val backgroundColor = when {
         isWrong -> DuoRed.copy(alpha = 0.15f)
         isCorrect -> DuoGreen.copy(alpha = 0.15f)
@@ -418,13 +544,25 @@ fun WordItem(word: String, isHighlighted: Boolean, isWrong: Boolean, isCorrect: 
         else -> Color(0xFFE5E5E5)
     }
 
-    val isLetterMode = word.length <= 2 && !isPassageMode
+    val isLetterMode = word.length <= 2 && !isPassageMode && isSingleWord
+
+    val textColor = when {
+        isWrong -> DuoRed
+        isCorrect -> DuoGreen
+        isHighlighted -> Color.Black
+        else -> Color.DarkGray
+    }
 
     Surface(
         modifier = Modifier
             .padding(if (isPassageMode) 2.dp else if (isLetterMode) 16.dp else 4.dp)
             .height(if (isPassageMode) 40.dp else if (isLetterMode) 120.dp else 54.dp)
-            .clickable { onClick() },
+            .pointerInput(word) {
+                detectTapGestures(
+                    onTap = { onClick() },
+                    onDoubleTap = { onClick() }
+                )
+            },
         shape = RoundedCornerShape(if (isPassageMode) 8.dp else if (isLetterMode) 32.dp else 14.dp),
         color = backgroundColor,
         border = BorderStroke(if (isPassageMode) 0.dp else 2.dp, borderColor),
@@ -435,10 +573,14 @@ fun WordItem(word: String, isHighlighted: Boolean, isWrong: Boolean, isCorrect: 
                 text = word,
                 fontSize = if (isPassageMode) 24.sp else if (isLetterMode) 80.sp else 20.sp,
                 fontWeight = FontWeight.Bold,
-                color = if (isWrong) DuoRed else if (isCorrect) DuoGreen else Color.DarkGray
+                color = textColor
             )
         }
     }
+}
+
+private fun isArabic(text: String): Boolean {
+    return text.any { Character.UnicodeBlock.of(it) == Character.UnicodeBlock.ARABIC }
 }
 
 @Composable
@@ -464,7 +606,7 @@ fun FeedbackCard(score: Float, feedback: String, transcription: String, currentL
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                Text("تقرير النطق الذكي", fontWeight = FontWeight.Black, fontSize = 12.sp, color = Color.Gray)
+                Text("AI Pronunciation Report", fontWeight = FontWeight.Black, fontSize = 12.sp, color = Color.Gray)
                 IconButton(onClick = onDismiss, modifier = Modifier.size(28.dp).background(color.copy(alpha = 0.1f), CircleShape)) {
                     Icon(Icons.Rounded.Close, contentDescription = "Close", tint = color, modifier = Modifier.size(16.dp))
                 }
@@ -494,7 +636,7 @@ fun FeedbackCard(score: Float, feedback: String, transcription: String, currentL
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text("ما سمعه البرنامج:", fontSize = 10.sp, fontWeight = FontWeight.Bold, color = Color.Gray)
+                        Text("Recognition result:", fontSize = 10.sp, fontWeight = FontWeight.Bold, color = Color.Gray)
                         Text(
                             "\"$transcription\"",
                             fontSize = 16.sp,

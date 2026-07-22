@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">كرر معي</string>
+    <string name="app_name">Repite Conmigo 1</string>
     
     <!-- Register Screen -->
     <string name="register_title">إنشاء حساب جديد ✨</string>
@@ -96,10 +96,7 @@
     
     <!-- Languages -->
     <string name="lang_arabic">العربية</string>
-    <string name="lang_english">الإنجليزية</string>
     <string name="lang_spanish">الإسبانية</string>
-    <string name="lang_french">الفرنسية</string>
-    <string name="lang_other">أخرى</string>
 
     <!-- Stats Screen -->
     <string name="stats_title">إحصائياتك 📊</string>

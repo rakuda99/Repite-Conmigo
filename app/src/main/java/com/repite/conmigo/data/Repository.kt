@@ -10,6 +10,7 @@ class LessonRepository(private val lessonDao: LessonDao) {
     val userProgress: Flow<UserProgress?> = lessonDao.getUserProgress()
 
     fun getByContentType(type: String): Flow<List<Sentence>> = lessonDao.getByContentType(type)
+    suspend fun getByCategory(category: String): List<Sentence> = lessonDao.getByCategory(category)
 
     suspend fun insertSentences(sentences: List<Sentence>) {
         lessonDao.insertSentences(sentences)
@@ -35,5 +36,13 @@ class LessonRepository(private val lessonDao: LessonDao) {
 
     suspend fun deleteByCategory(category: String) {
         lessonDao.deleteByCategory(category)
+    }
+
+    suspend fun deleteSentencesByIds(ids: List<Int>) {
+        lessonDao.deleteSentencesByIds(ids)
+    }
+
+    suspend fun updateRatings(id: Int, score: Float, difficulty: Int) {
+        lessonDao.updateRatings(id, score, difficulty)
     }
 }

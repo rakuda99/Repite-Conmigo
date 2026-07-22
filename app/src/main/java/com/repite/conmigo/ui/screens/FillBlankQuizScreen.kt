@@ -117,6 +117,12 @@ fun FillBlankQuizScreen(
                             viewModel.nextSentence()
                         } else {
                             isAnswered = true
+                            val correctWord = sentenceParts.getOrNull(blankIndex)
+                            if (selectedWord == correctWord) {
+                                viewModel.playSuccessSound()
+                            } else {
+                                viewModel.playFailureSound()
+                            }
                         }
                     },
                     enabled = selectedWord != null || isAnswered,

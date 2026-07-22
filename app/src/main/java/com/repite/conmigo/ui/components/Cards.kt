@@ -23,9 +23,9 @@ fun LessonCard(title: String, subtitle: String, icon: String, color: Color, onCl
             .padding(vertical = 6.dp)
             .clickable { onClick() },
         shape = RoundedCornerShape(16.dp),
-        color = Color.White,
+        color = MaterialTheme.colorScheme.surface,
         shadowElevation = 2.dp,
-        border = androidx.compose.foundation.BorderStroke(1.dp, Color(0xFFEEEEEE))
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f))
     ) {
         Row(
             modifier = Modifier.padding(16.dp),
@@ -34,8 +34,8 @@ fun LessonCard(title: String, subtitle: String, icon: String, color: Color, onCl
             Text(icon, fontSize = 24.sp)
             Spacer(modifier = Modifier.width(16.dp))
             Column {
-                Text(title, fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Color.DarkGray)
-                Text(subtitle, fontSize = 13.sp, color = Color.Gray)
+                Text(title, fontSize = 18.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+                Text(subtitle, fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f))
             }
         }
     }

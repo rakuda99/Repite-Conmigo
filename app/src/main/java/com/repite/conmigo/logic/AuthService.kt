@@ -1,132 +1,77 @@
 package com.repite.conmigo.logic
 
 import android.content.Context
-import android.content.Intent
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
 import com.repite.conmigo.data.UserProfile
+import com.repite.conmigo.data.UserProgress
 import kotlinx.coroutines.tasks.await
-import kotlinx.coroutines.withTimeout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import android.util.Log
-import com.google.firebase.firestore.FieldValue
 
 class AuthService(private val context: Context) {
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
-    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
-    private val usersCollection = db.collection("users")
-
-    private val adminEmail = "sulaiman.repite@gmail.com" // You can change this to your email
+    private val sharedPreferences = context.getSharedPreferences("user_profile_prefs", Context.MODE_PRIVATE)
+    private val gson = Gson()
 
     val currentUser: FirebaseUser?
         get() = auth.currentUser
 
     val isAdmin: Boolean
-        get() = auth.currentUser?.email == adminEmail
+        get() = true // For a fully local app, we can consider the local user as admin, or keep it true to allow creating lessons locally.
 
-    fun getGoogleSignInClient(): GoogleSignInClient {
-        // IMPORTANT: Get this from Firebase Console -> Authentication -> Sign-in method -> Google -> Web SDK configuration
-        val webClientId = "245336262893-d52trismp61rdfukn8h31uf33c6iuojr.apps.googleusercontent.com" 
-        
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(webClientId)
-            .requestEmail()
-            .build()
-        return GoogleSignIn.getClient(context, gso)
-    }
-
-    suspend fun signUp(email: String, password: String): Result<FirebaseUser?> {
-        return try {
-            val result = auth.createUserWithEmailAndPassword(email, password).await()
-            Result.success(result.user)
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
-    }
-
-    suspend fun signIn(email: String, password: String): Result<FirebaseUser?> {
-        return try {
-            val result = auth.signInWithEmailAndPassword(email, password).await()
-            // Track in background to speed up login
-            result.user?.let { user ->
-                CoroutineScope(Dispatchers.IO).launch {
-                    try { trackLogin(user) } catch (e: Exception) { /* ignore */ }
+    init {
+        // Sign in anonymously on startup to ensure Firestore can be accessed for importing lessons from web.
+        if (auth.currentUser == null) {
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    auth.signInAnonymously().await()
+                    Log.d("AuthService", "Anonymous sign-in successful")
+                } catch (e: Exception) {
+                    Log.e("AuthService", "Anonymous sign-in failed: ${e.message}")
                 }
             }
-            Result.success(result.user)
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
-    }
-
-    suspend fun signInWithGoogle(idToken: String): Result<FirebaseUser?> {
-        return try {
-            val credential = GoogleAuthProvider.getCredential(idToken, null)
-            val result = auth.signInWithCredential(credential).await()
-            // Track in background
-            result.user?.let { user ->
-                CoroutineScope(Dispatchers.IO).launch {
-                    try { trackLogin(user) } catch (e: Exception) { /* ignore */ }
-                }
-            }
-            Result.success(result.user)
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
-    }
-
-    private suspend fun trackLogin(user: FirebaseUser) {
-        try {
-            usersCollection.document(user.uid).set(
-                mapOf(
-                    "uid" to user.uid,
-                    "name" to (user.displayName ?: "Unknown"),
-                    "email" to (user.email ?: ""),
-                    "lastLogin" to FieldValue.serverTimestamp(),
-                    "visits" to FieldValue.increment(1),
-                    "source" to "Android App"
-                ),
-                com.google.firebase.firestore.SetOptions.merge()
-            ).await()
-        } catch (e: Exception) {
-            Log.e("AuthService", "Failed to track login: ${e.message}")
         }
     }
 
     suspend fun signOut() {
-        auth.signOut()
-        getGoogleSignInClient().signOut().await()
+        // No-op for local app
     }
 
     suspend fun saveUserProfile(profile: UserProfile): Result<Unit> {
         return try {
-            withTimeout(10000L) { // 10 seconds timeout
-                val uid = auth.currentUser?.uid ?: throw Exception("User not logged in")
-                usersCollection.document(uid).set(profile.copy(uid = uid)).await()
-                Result.success(Unit)
-            }
+            val json = gson.toJson(profile.copy(uid = "local_user"))
+            sharedPreferences.edit().putString("local_profile", json).apply()
+            Result.success(Unit)
         } catch (e: Exception) {
-            Log.e("AuthService", "Error saving profile: ${e.message}")
+            Log.e("AuthService", "Error saving local profile: ${e.message}")
             Result.failure(e)
         }
     }
 
+    suspend fun saveUserProgress(progress: UserProgress): Result<Unit> {
+        // Local progress is fully handled by Room in LessonViewModel. No need to sync to cloud.
+        return Result.success(Unit)
+    }
+
+    suspend fun getUserProgress(): UserProgress? {
+        // Return null so LessonViewModel knows there's no cloud progress to fetch.
+        return null
+    }
+
     suspend fun getUserProfile(): UserProfile? {
         return try {
-            withTimeout(5000L) { // 5 seconds timeout for quick check
-                val uid = auth.currentUser?.uid ?: return@withTimeout null
-                val doc = usersCollection.document(uid).get().await()
-                doc.toObject(UserProfile::class.java)
+            val json = sharedPreferences.getString("local_profile", null)
+            if (json != null) {
+                gson.fromJson(json, UserProfile::class.java)
+            } else {
+                null
             }
         } catch (e: Exception) {
-            Log.e("AuthService", "Error getting profile: ${e.message}")
+            Log.e("AuthService", "Error getting local profile: ${e.message}")
             null
         }
     }

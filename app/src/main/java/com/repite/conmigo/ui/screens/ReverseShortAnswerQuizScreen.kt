@@ -75,6 +75,11 @@ fun ReverseShortAnswerQuizScreen(
                                 val expected = currentSentence?.text?.lowercase()?.trim() ?: ""
                                 val actual = userAnswer.lowercase().trim()
                                 isCorrect = actual == expected
+                                if (isCorrect) {
+                                    viewModel.playSuccessSound()
+                                } else {
+                                    viewModel.playFailureSound()
+                                }
                             }
                         }
                     },

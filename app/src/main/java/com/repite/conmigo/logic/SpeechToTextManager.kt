@@ -13,15 +13,29 @@ import kotlinx.coroutines.flow.StateFlow
 import java.util.Locale
 
 class SpeechToTextManager(private val context: Context) {
-    private val googleServiceComponent = android.content.ComponentName(
-        "com.google.android.googlequicksearchbox",
-        "com.google.android.voicesearch.service.GoogleRecognitionService"
-    )
-
     private val speechRecognizer: SpeechRecognizer = try {
-        SpeechRecognizer.createSpeechRecognizer(context, googleServiceComponent)
-    } catch (e: Exception) {
+        // Use system default SpeechRecognizer (safer, prevents silent hangs on Samsung/Xiaomi/etc.)
         SpeechRecognizer.createSpeechRecognizer(context)
+    } catch (e: Exception) {
+        // Fallback to Google Search app service if default creation fails
+        try {
+            val isGoogleInstalled = try {
+                context.packageManager.getPackageInfo("com.google.android.googlequicksearchbox", 0)
+                true
+            } catch (_: Exception) {
+                false
+            }
+            if (isGoogleInstalled) {
+                SpeechRecognizer.createSpeechRecognizer(context, android.content.ComponentName(
+                    "com.google.android.googlequicksearchbox",
+                    "com.google.android.voicesearch.service.GoogleRecognitionService"
+                ))
+            } else {
+                SpeechRecognizer.createSpeechRecognizer(context)
+            }
+        } catch (_: Exception) {
+            SpeechRecognizer.createSpeechRecognizer(context)
+        }
     }
     private val mainHandler = Handler(Looper.getMainLooper())
     
@@ -35,6 +49,8 @@ class SpeechToTextManager(private val context: Context) {
     val rmsDb: StateFlow<Float> = _rmsDb
 
     private var onResult: ((String) -> Unit)? = null
+    private var pendingIntent: Intent? = null
+    private var retryCount = 0
 
     init {
         speechRecognizer.setRecognitionListener(object : RecognitionListener {
@@ -55,12 +71,33 @@ class SpeechToTextManager(private val context: Context) {
 
             override fun onError(error: Int) {
                 _isListening.value = false
+                _rmsDb.value = 0f
+                if (error == SpeechRecognizer.ERROR_RECOGNIZER_BUSY && retryCount < 3) {
+                    // Auto-retry after a brief delay
+                    retryCount++
+                    val intentToRetry = pendingIntent ?: return
+                    mainHandler.postDelayed({
+                        try {
+                            speechRecognizer.stopListening()
+                        } catch (_: Exception) {}
+                        mainHandler.postDelayed({
+                            try {
+                                _isListening.value = true
+                                speechRecognizer.startListening(intentToRetry)
+                            } catch (e: Exception) {
+                                onResult?.invoke("ERR: تعذّر تشغيل الميكروفون 🎤")
+                            }
+                        }, 300L)
+                    }, 200L)
+                    return
+                }
+                retryCount = 0
                 val errorMsg = when(error) {
                     SpeechRecognizer.ERROR_NETWORK -> "خطأ في الشبكة ⚠️"
                     SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> "انتهت مهلة الشبكة ⚠️"
                     SpeechRecognizer.ERROR_AUDIO -> "خطأ في الميكروفون 🎤"
                     SpeechRecognizer.ERROR_NO_MATCH -> "لم أتعرف على أي كلمات ⏹️"
-                    SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> "المحرك مشغول، انتظر لحظة..."
+                    SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> "المحرك مشغول، حاول مجدداً..."
                     SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "يجب تفعيل إذن الميكروفون 🎙️"
                     else -> "عذراً، محرك الصوت لا يستجيب ⚙️"
                 }
@@ -91,10 +128,11 @@ class SpeechToTextManager(private val context: Context) {
 
     fun startListening(language: String, callback: (String) -> Unit) {
         if (!SpeechRecognizer.isRecognitionAvailable(context)) {
-            callback("")
+            callback("ERR: التعرف على الصوت غير متاح على هذا الجهاز 🎙️")
             return
         }
         onResult = callback
+        retryCount = 0
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
             val langTag = if (language == "es") "es-ES" else "en-US"
             val secondaryLangs = if (language == "es") arrayListOf("es", "es-MX", "es-US") else arrayListOf("en", "en-GB")
@@ -111,15 +149,24 @@ class SpeechToTextManager(private val context: Context) {
             putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, context.packageName)
         }
         
+        // Stop any existing session first to avoid ERROR_RECOGNIZER_BUSY
         mainHandler.post {
             try {
-                speechRecognizer.startListening(intent)
+                speechRecognizer.stopListening()
+            } catch (_: Exception) {}
+        }
+        
+        mainHandler.postDelayed({
+            try {
                 _isListening.value = true
                 _partialText.value = ""
+                pendingIntent = intent
+                speechRecognizer.startListening(intent)
             } catch (e: Exception) {
-                callback("")
+                _isListening.value = false
+                callback("ERR: تعذّر تشغيل الميكروفون، حاول مرة أخرى 🎤")
             }
-        }
+        }, 200L)
     }
 
     fun stopListening() {
